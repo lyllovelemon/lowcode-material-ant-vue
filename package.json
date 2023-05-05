@@ -1,6 +1,6 @@
 {
   "name": "lowcode-material-ant-vue",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "main": "./dist/index.min.js",
   "module": "./dist/lowcode-material-ant-vue.mjs",
   "typings": "./dist/lowcode-material-ant-vue.d.ts",
@@ -18,6 +18,7 @@
     "core-js": "^3.30.1",
     "dayjs": "^1.11.7",
     "less-loader": "^6.2.0",
+    "lodash": "^4.17.21",
     "vue": "^3.2.47"
   },
   "devDependencies": {

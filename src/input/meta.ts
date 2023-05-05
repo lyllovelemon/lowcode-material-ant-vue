@@ -4,7 +4,7 @@ export default {
   group: 'Antd',
   componentName: 'AInput',
   title: '输入框',
-  category: '基础组件',
+  category: '表单',
   npm: {
     destructuring: true,
     componentName: 'AInput'
@@ -58,7 +58,7 @@ export default {
   snippets:[
     {
       title:'输入框',
-      screenshot:'https://img.alicdn.com/tfs/TB1ysp3u8v0gK0jSZKbXXbK2FXa-112-64.png',
+      screenshot:'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/input-1.png',
       schema:{
         componentName:'AInput',
         props:{

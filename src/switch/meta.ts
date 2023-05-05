@@ -12,68 +12,100 @@ export default {
   configure: {
     props: [
       {
-        title: '当前状态',
-        name: 'checked-value',
-        setter: ['StringSetter','VariableSetter'],
+        name: 'defaultChecked',
+        title: { label: '默认选中', tip: '默认是否选中' },
+        propType: 'bool',
+        defaultValue: false,
+        setter: 'BoolSetter'
       },
       {
-        title:'是否禁用',
-        name:'disabled',
-        setter:'BoolSetter',
-        defaultValue:false,
-        supportVariable:true
+        name: 'checked',
+        title: { label: '是否选中', tip: '当前是否选中' },
+        propType: 'bool',
+        defaultValue: false,
+        setter: 'BoolSetter',
+        supportVariable: true,
       },
       {
-        title:'是否在loading',
-        name:'loading',
-        setter:'BoolSetter',
-        defaultValue:false,
-        supportVariable:true
+        name: 'autoFocus',
+        title: { label: '自动聚焦', tip: '组件自动获取焦点' },
+        propType: 'bool',
+        defaultValue: false,
+        setter: 'BoolSetter'
       },
       {
-        title:'尺寸',
-        name:'size',
-        setter:{
-          componentName:'RadioGroupSetter',
-          props:{
-            options:[
-              {label:'default',value:'default'},
-              {label:'small',value:'small'}
-            ]
-          }
+        name: 'checkedChildren',
+        title: { label: '选中时内容', tip: '选中时的内容' },
+        propType: 'string',
+        setter: 'StringSetter'
+      },
+      {
+        name: 'unCheckedChildren',
+        title: { label: '非选中时内容', tip: '非选中时的内容' },
+        propType: 'string',
+        setter: 'StringSetter'
+      },
+      {
+        name: 'disabled',
+        title: { label: '是否禁用', tip: '是否为禁用状态' },
+        propType: 'bool',
+        defaultValue: false,
+        setter: 'BoolSetter'
+      },
+      {
+        name: 'loading',
+        title: { label: '加载中', tip: '加载中' },
+        propType: 'bool',
+        defaultValue: false,
+        setter: 'BoolSetter'
+      },
+      {
+        name: 'size',
+        title: { label: '尺寸', tip: '开关大小' },
+        propType: { type: 'oneOf', value: ['default', 'small'] },
+        setter: {
+          componentName: 'RadioGroupSetter',
+          props: {
+            options: [
+              {
+                title: '默认',
+                value: 'default',
+              },
+              {
+                title: '小',
+                value: 'small',
+              },
+            ],
+          },
         },
-        defaultValue:'default'
+        defaultValue: 'default',
       },
-      {
-        title:'选中时的内容',
-        name:'checked-children',
-        setter:['StringSetter','SlotSetter'],
-        supportVariable:true
-      },
-      {
-        title:'非选中时的内容',
-        name:'unchecked-children',
-        setter:['StringSetter','SlotSetter'],
-        supportVariable:true
-      }
     ],
     supports:{
       style:true,
-      events:['click','change']
+      events:[
+        {
+          name: 'change',
+          template: "change(checked,event,${extParams}){\n// 变化时回调函数\nconsole.log('change',checked,event);}",
+        },
+        {
+          name: 'click',
+          template:
+            "click(checked,event,${extParams}){\n// 点击时回调函数\nconsole.log('click',checked,event);}",
+        },
+      ]
     }
   },
   snippets: [
     {
       title: '开关',
+      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/switch-1.png",
       schema: {
-        componentName: 'ASwitch',
+        componentName: "ASwitch",
         props: {
-          checkedChildren: '选中内容',
-          uncheckedChildren:'非选中内容',
-          color:'#fff',
-          checkedValue:true
-        },
-      },
-    },
-  ],
+         defaultChecked:true
+        }
+      }
+    }
+  ]
 };

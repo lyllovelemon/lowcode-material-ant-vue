@@ -10,49 +10,173 @@ export default {
     componentName: 'ASlider',
   },
   props:[
-    { name:'value',propType:'number',defaultValue:1},
-    { name:'max',propType:'number',defaultValue:10},
-    { name:'min',propType:'number',defaultValue:0},
-    { name:'disabled',propType:'bool',defaultValue:false},
-    { name:'show-input',propType:'bool',defaultValue:false},
-    { name:'show-input-controls',propType:'bool',defaultValue:true},
-    { name:'size',title:{label:'size',tip:'slider的大小'},propType:{ type:'oneOf',value:['large','default','small']}},
-    { name:'input-size',title:{label:'输入框大小',tip:'输入框的大小'},propType:{ type:'oneOf',value:['large','default','small']}},
-    { name:'show-tooltip',title:{label:'提示信息',tip:'是否展示提示信息'},propType:'bool',defaultValue:true},
-    { name:'height',title:'滑块高度',propType:'string'},
-    { name:'debounce',title:'输入时的去抖延迟',propType:'number',defaultValue:300},
-    { name:'range',title:'是否开启选择范围',propType:'bool',defaultValue:false},
-    { name:'vertical',title:'垂直模式',propType:'bool',defaultValue:false},
-    { name:'placement',title:'tooltip出现位置',propType:{type:'oneOf',value:['top','top-start','top-end','bottom','bottom-start','bottom-end','left','left-start','left-end','right','right-start','right-end']},defaultValue:'top'},
-    { name:'marks',title:'标记',propType:'object',defaultValue:null},
-    { name:'validate-event',propType:'bool',description:'输入时是否触发表单的校验',defaultValue:true}
+    {
+      name: 'defaultValue',
+      title: {
+        label: '默认值',
+        tip: '设置初始取值。当 `range` 为 false 时，使用 number，否则用 \\[number, number]',
+      },
+      propType: {
+        type: 'oneOfType',
+        value: ['number', { type: 'arrayOf', value: 'number' }],
+      },
+    },
+    {
+      name: 'range',
+      title: { label: '双滑块模式', tip: '双滑块模式' },
+      propType: 'bool',
+      defaultValue: false,
+      setter: 'BoolSetter',
+      setValue(target: { node: { getPropValue: (arg0: string) => any; setPropValue: (arg0: string, arg1: any) => void; }; }, range: any) {
+        let defaultValue = target.node.getPropValue('defaultValue');
+        if (range) {
+          defaultValue = Array.isArray(defaultValue) ? defaultValue : [0, defaultValue];
+        } else {
+          defaultValue = Array.isArray(defaultValue)
+            ? defaultValue[1] || defaultValue[0]
+            : defaultValue;
+        }
+        target.node.setPropValue('defaultValue', defaultValue);
+      },
+    },
+    {
+      name: 'value',
+      title: {
+        label: '当前值',
+        tip:
+          '设置当前取值。当 `range` 为 false 时，使用 number，否则用 \\[number, number]',
+      },
+      propType: {
+        type: 'oneOfType',
+        value: ['number', { type: 'arrayOf', value: 'number' }],
+      },
+    },
+    {
+      name: 'allowClear',
+      title: { label: '支持清除', tip: '是否允许清除' },
+      condition(target: { getProps: () => { (): any; new(): any; getPropValue: { (arg0: string): boolean; new(): any; }; }; }) {
+        return target.getProps().getPropValue('range');
+      },
+      propType: 'bool',
+      defaultValue: false,
+      setter: 'BoolSetter'
+    },
+    {
+      name: 'disabled',
+      title: {
+        label: '是否禁用',
+        tip: '是否为禁用状态',
+      },
+      propType: 'bool',
+      defaultValue: false,
+      setter: 'BoolSetter'
+    },
+    {
+      name: 'dots',
+      title: { label: '对齐刻度', tip: '是否只能拖拽到刻度上' },
+      propType: 'bool',
+      defaultValue: false,
+      setter: 'BoolSetter'
+    },
+    // {
+    //   name: 'included',
+    //   title: {
+    //     label:
+    //       '`marks` 不为空对象时有效，值为 true 时表示值为包含关系，false 表示并列',
+    //     tip:
+    //       '`marks` 不为空对象时有效，值为 true 时表示值为包含关系，false 表示并列',
+    //   },
+    //   propType: 'bool',
+    //   defaultValue: true,
+    // },
+    // {
+    //   name: 'marks',
+    //   title: {
+    //     label:
+    //       '刻度标记，key 的类型必须为 `number` 且取值在闭区间 \\[min, max] 内，每个标签可以单独设置样式',
+    //     tip:
+    //       '刻度标记，key 的类型必须为 `number` 且取值在闭区间 \\[min, max] 内，每个标签可以单独设置样式',
+    //   },
+    //   propType: 'object',
+    // },
+    {
+      name: 'max',
+      title: { label: '最大值', tip: '最大值' },
+      propType: 'number',
+      setter: 'NumberSetter'
+    },
+    {
+      name: 'min',
+      title: { label: '最小值', tip: '最小值' },
+      propType: 'number',
+      setter: 'NumberSetter'
+    },
+    {
+      name: 'reverse',
+      title: { label: '反向坐标轴', tip: '反向坐标轴' },
+      propType: 'bool',
+      defaultValue: false,
+      setter: 'BoolSetter'
+    },
+    {
+      name: 'step',
+      title: {
+        label: '步长',
+        tip:
+          '步长，取值必须大于 0，并且可被 (max - min) 整除。当 `marks` 不为空对象时，可以设置 `step` 为 null，此时 Slider 的可选值仅有 marks 标出来的部分',
+      },
+      propType: 'number',
+      setter: 'NumberSetter'
+    },
+    // {
+    //   name: 'tipFormatter',
+    //   title: {
+    //     label:
+    //       'Slider 会把当前值传给 `tipFormatter`，并在 Tooltip 中显示 `tipFormatter` 的返回值，若为 null，则隐藏 Tooltip',
+    //     tip:
+    //       'Slider 会把当前值传给 `tipFormatter`，并在 Tooltip 中显示 `tipFormatter` 的返回值，若为 null，则隐藏 Tooltip',
+    //   },
+    //   propType: 'func',
+    // },
+    {
+      name: 'vertical',
+      title: {
+        label: '垂直方向',
+        tip: '值为 true 时，Slider 为垂直方向',
+      },
+      propType: 'bool',
+      defaultValue: false,
+      setter: 'BoolSetter'
+    },
   ],
   configure:{
     component:{
       isContainer:true
     },
-    props:{
-      isExtends:true,
-      override:[]
-    },
     supports:{
       style:true,
-      loop:false,
       events:[
-        { name:'change',propType:'func',description:'值改变时触发（使用鼠标拖曳时，只在松开鼠标后触发）'},
-        { name:'input',propType:'func',description:'数据改变时触发（使用鼠标拖曳时，活动过程实时触发）'}
+        {
+          name: 'afterChange',
+          template:
+            "afterChange(value,${extParams}){\n// 与 onmouseup 触发时机一致\nconsole.log('afterChange',value);}",
+        },
+        {
+          name: 'change',
+          template:
+            "change(value,${extParams}){\n// 当 Slider 的值发生改变时触发回调\nconsole.log('change',value);}",
+        },
       ]
     }
   },
   snippets:[
     {
-      title:'滑块',
+      title:"滑块",
+      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/slider-1.png",
       schema:{
-        componentName:'ASlider',
+        componentName:"ASlider",
         props:{
-          value:1,
-          disabled:false,
-          placement:'top'
+          defaultValue:30
         }
       }
     }

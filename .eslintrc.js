@@ -26,6 +26,7 @@ module.exports = {
     '@typescript-eslint/no-explicit-any': 'off',
     '@typescript-eslint/no-empty-interface': 'off',
     '@typescript-eslint/no-non-null-assertion': 'off',
+    "prettier/prettier": "off",
     '@typescript-eslint/ban-types': [
       'error',
       { types: { '{}': false }, extendDefaults: true },
