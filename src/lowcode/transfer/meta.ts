@@ -1,4 +1,4 @@
-import {uuid} from '../utils/index';
+import {uuid} from '../../utils/index';
 
 export default {
   group: 'Antd',

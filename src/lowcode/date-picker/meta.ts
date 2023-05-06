@@ -3,7 +3,7 @@
 export default {
   group:'Antd',
   componentName:'ADatePicker',
-  title:'日期选择',
+  title:'日期选择框',
   category:'表单',
   npm:{
     destructuring:true,
@@ -243,52 +243,52 @@ export default {
   },
   snippets: [
     {
-    title: '选择日期',
-    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/date-picker-1.png',
-    schema:{
-      componentName:'ADatePicker',
-      props:{}
-    }
-  },
-  {
-    title:'选择周',
-    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/date-picker-2.png',
-    schema: {
-      componentName: 'ADatePicker',
-      props: {
-        picker: 'week',
+      title: '选择日期',
+      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/date-picker-1.png',
+      schema: {
+        componentName: "ADatePicker",
+        props: {},
       },
-    }
-  },
-  {
-    title:'选择月',
-    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/date-picker-3.png',
-    schema: {
-      componentName: 'ADatePicker',
-      props: {
-        picker: 'month',
-      },
-    }
-  },
-  {
-    title:'选择季度',
-    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/date-picker-4.png',
-    schema: {
-      componentName: 'ADatePicker',
-      props: {
-        picker: 'quarter',
-      },
-    }
-  },
-  {
-    title:'选择年',
-    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/date-picker-5.png',
-    schema: {
-    componentName: 'ADatePicker',
-    props: {
-    picker: 'year',
     },
-   }
-  }
+    {
+      title: '选择周',
+      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/date-picker-2.png',
+      schema: {
+        componentName: 'ADatePicker',
+        props: {
+          picker: 'week',
+        },
+      },
+    },
+    {
+      title: '选择月份',
+      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/date-picker-3.png',
+      schema: {
+        componentName: 'ADatePicker',
+        props: {
+          picker: 'month',
+        },
+      },
+    },
+    {
+      title: '选择季度',
+      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/date-picker-4.png',
+      schema: {
+        componentName: 'ADatePicker',
+        props: {
+          picker: 'quarter',
+        },
+      },
+    },
+    {
+      title: '选择年份',
+      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/date-picker-5.png',
+      schema: {
+        componentName: 'ADatePicker',
+        props: {
+          picker: 'year',
+        },
+      },
+    },
   ]
 }

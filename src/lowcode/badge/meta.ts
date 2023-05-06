@@ -21,7 +21,10 @@ export default [
           label: '展示数字',
           tip: '展示的数字，大于 overflowCount 时显示为 `${overflowCount}+`，为 0 时隐藏',
         },
-        propType:'node'
+        propType:{
+          type:'oneOfType',
+          value:['node','number','string']
+        }
       },
       {
         name: 'dot',

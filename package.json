@@ -9,11 +9,13 @@
     "build": "vue-cli-service lowcode:build"
   },
   "files": [
-    "dist",
-    "./src/**/__screenshots__"
+    "dist/",
+    "build/",
+    "src/lowcode/"
   ],
   "dependencies": {
     "@alilc/lowcode-types": "^1.1.6",
+    "@ant-design/icons-vue": "^6.1.0",
     "ant-design-vue": "^3.2.19",
     "core-js": "^3.30.1",
     "dayjs": "^1.11.7",

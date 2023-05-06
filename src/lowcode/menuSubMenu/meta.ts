@@ -1,4 +1,4 @@
-import {uuid} from '../utils/index';
+import {uuid} from '../../utils/index';
 import {itemsExtraProps} from '../menu/util';
 
 export default {
