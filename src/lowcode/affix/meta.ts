@@ -27,7 +27,7 @@ export default {
       propType: 'func',
     },
     {
-      name: 'change',
+      name: 'onChange ',
       title: { label: '监听状态改变', tip: '固定状态改变时触发的回调函数' },
       propType: 'func',
     },
@@ -37,9 +37,9 @@ export default {
       style:true,
       events: [
         {
-          name: 'change',
+          name: 'onChange ',
           template:
-            "change(affixed,${extParams}){\n// 固定状态变更回调函数\nconsole.log('change', affixed);}",
+            "onChange (affixed,${extParams}){\n// 固定状态变更回调函数\nconsole.log('onChange ', affixed);}",
         },
       ],
     }

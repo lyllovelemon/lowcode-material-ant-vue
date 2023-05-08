@@ -46,8 +46,8 @@ export default {
       style:true,
       events: [
         {
-          name: 'close',
-          template: "close(event,${extParams}){\n// 关闭时的回调\nconsole.log('close',event);}",
+          name: 'onClose',
+          template: "onClose(event,${extParams}){\n// 关闭时的回调\nconsole.log('onClose',event);}",
         },
       ],
     }

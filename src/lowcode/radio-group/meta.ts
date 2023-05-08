@@ -160,7 +160,7 @@ export default {
       defaultValue: 'middle',
     },
     {
-      name: 'change',
+      name: 'onChange ',
       title: { label: '变化时回调函数', tip: '变化时回调函数' },
       propType: 'func',
     },
@@ -170,8 +170,8 @@ export default {
       style:true,
       events:[
         {
-          name:'change',
-          template:"change(event,${extParams}){\n//选项变化回调函数\nconsole.log('change',event);}"
+          name:'onChange',
+          template:"onChange(event,${extParams}){\n//选项变化回调函数\nconsole.log('onChange',event);}"
         }
       ]
     }

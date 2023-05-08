@@ -42,7 +42,7 @@ export default {
       supportVariable: true
     },
     {
-      name: 'confirm',
+      name: 'onConfirm',
       title: { label: '点击确认回调', tip: '点击确认回调' },
       propType: 'func',
     },
@@ -112,8 +112,8 @@ export default {
       style:true,
       events: [
         {
-          name: 'confirm',
-          template: "confirm(${extParams}){\n// 点击确认的回调\nconsole.log('confirm');}",
+          name: 'onConfirm',
+          template: "onConfirm(${extParams}){\n// 点击确认的回调\nconsole.log('onConfirm');}",
         }
       ]
     }

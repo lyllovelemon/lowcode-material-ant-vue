@@ -52,7 +52,7 @@ export default {
     ],
     supports:{
       style:true,
-      events:['input','change','focus','blur','keydown','clear','mouseleave','mouseenter']
+      events:['onInput','onChange','onFocus','onBlur','onKeydown','onClear','onMouseLeave','onMouseEnter']
     }
   },
   snippets:[

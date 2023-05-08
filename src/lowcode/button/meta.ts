@@ -285,7 +285,7 @@ export default {
       ],
     },
     {
-      name: 'click',
+      name: 'onClick',
       title: { label: '点击回调', tip: '点击按钮时的回调' },
       propType: 'func',
     },
@@ -294,9 +294,9 @@ export default {
     supports: {
       events: [
         {
-          name: 'click',
+          name: 'onClick',
           template:
-            "click(event,${extParams}){\n// 点击按钮时的回调\nconsole.log('click', event);}",
+            "onClick(event,${extParams}){\n// 点击按钮时的回调\nconsole.log('onClick', event);}",
         },
       ],
       style: true,

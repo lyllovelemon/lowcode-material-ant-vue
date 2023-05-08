@@ -98,12 +98,12 @@ export default{
       propType: { type: 'oneOfType', value: ['string', 'node'] },
     },
     {
-      name: 'change',
+      name: 'onChange',
       title: { label: '输入框内容变化时的回调', tip: '输入框内容变化时的回调' },
       propType: 'func',
     },
     {
-      name: 'pressEnter',
+      name: 'onPressEnter',
       title: { label: '按下回车的回调', tip: '按下回车的回调' },
       propType: 'func',
     },
@@ -116,14 +116,14 @@ export default{
       style:true,
       events:[
         {
-          name: 'change',
+          name: 'onChange',
           template:
-            "change(event,${extParams}){\n// 输入框内容变化时的回调\nconsole.log('change',event);}",
+            "onChange(event,${extParams}){\n// 输入框内容变化时的回调\nconsole.log('onChange',event);}",
         },
         {
-          name: 'pressEnter',
+          name: 'onPressEnter',
           template:
-            "pressEnter(event,${extParams}){\n// 按下回车的回调\nconsole.log('pressEnter',event);}",
+            "onPressEnter(event,${extParams}){\n// 按下回车的回调\nconsole.log('onPressEnter',event);}",
         },
       ]
     }

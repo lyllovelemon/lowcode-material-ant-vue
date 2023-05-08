@@ -256,7 +256,7 @@ export default {
       defaultValue: 0,
     },
     {
-      name: 'change',
+      name: 'onChange ',
       title: { label: '点击切换步骤时触发', tip: '点击切换步骤时触发' },
       propType: 'func',
     },
@@ -270,9 +270,9 @@ export default {
       style:true,
       events: [
         {
-          name: 'change',
+          name: 'onChange',
           template:
-            "change(current,${extParams}){\n// 点击切换步骤时触发\nconsole.log('change',current);}",
+            "onChange(current,${extParams}){\n// 点击切换步骤时触发\nconsole.log('onChange ',current);}",
         },
       ],
     }

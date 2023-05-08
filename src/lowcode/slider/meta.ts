@@ -78,27 +78,6 @@ export default {
       defaultValue: false,
       setter: 'BoolSetter'
     },
-    // {
-    //   name: 'included',
-    //   title: {
-    //     label:
-    //       '`marks` 不为空对象时有效，值为 true 时表示值为包含关系，false 表示并列',
-    //     tip:
-    //       '`marks` 不为空对象时有效，值为 true 时表示值为包含关系，false 表示并列',
-    //   },
-    //   propType: 'bool',
-    //   defaultValue: true,
-    // },
-    // {
-    //   name: 'marks',
-    //   title: {
-    //     label:
-    //       '刻度标记，key 的类型必须为 `number` 且取值在闭区间 \\[min, max] 内，每个标签可以单独设置样式',
-    //     tip:
-    //       '刻度标记，key 的类型必须为 `number` 且取值在闭区间 \\[min, max] 内，每个标签可以单独设置样式',
-    //   },
-    //   propType: 'object',
-    // },
     {
       name: 'max',
       title: { label: '最大值', tip: '最大值' },
@@ -128,16 +107,6 @@ export default {
       propType: 'number',
       setter: 'NumberSetter'
     },
-    // {
-    //   name: 'tipFormatter',
-    //   title: {
-    //     label:
-    //       'Slider 会把当前值传给 `tipFormatter`，并在 Tooltip 中显示 `tipFormatter` 的返回值，若为 null，则隐藏 Tooltip',
-    //     tip:
-    //       'Slider 会把当前值传给 `tipFormatter`，并在 Tooltip 中显示 `tipFormatter` 的返回值，若为 null，则隐藏 Tooltip',
-    //   },
-    //   propType: 'func',
-    // },
     {
       name: 'vertical',
       title: {
@@ -157,14 +126,14 @@ export default {
       style:true,
       events:[
         {
-          name: 'afterChange',
+          name: 'onAfterChange',
           template:
-            "afterChange(value,${extParams}){\n// 与 onmouseup 触发时机一致\nconsole.log('afterChange',value);}",
+            "onAfterChange(value,${extParams}){\n// 与 onmouseup 触发时机一致\nconsole.log('onAfterChange',value);}",
         },
         {
-          name: 'change',
+          name: 'onChange',
           template:
-            "change(value,${extParams}){\n// 当 Slider 的值发生改变时触发回调\nconsole.log('change',value);}",
+            "onChange(value,${extParams}){\n// 当 Slider 的值发生改变时触发回调\nconsole.log('onChange',value);}",
         },
       ]
     }

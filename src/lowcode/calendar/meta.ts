@@ -62,19 +62,19 @@ export default {
       style: true,
       events: [
         {
-          name: 'panelChange',
+          name: 'onPanelChange',
           template:
-            "panelChange(date,mode,${extParams}){\n// 日期面板变化回调\nconsole.log('panelChange', date, mode);}",
+            "onPanelChange(date,mode,${extParams}){\n// 日期面板变化回调\nconsole.log('onPanelChange', date, mode);}",
         },
         {
-          name: 'select',
+          name: 'onSelect',
           template:
-            "select(date,${extParams}){\n// 点击选择日期回调\nconsole.log('select', date);}",
+            "onSelect(date,${extParams}){\n// 点击选择日期回调\nconsole.log('onSelect', date);}",
         },
         {
-          name: 'change',
+          name: 'onChange',
           template:
-            "change(date,${extParams}){\n// 日期变化回调\nconsole.log('change', date);}",
+            "onChange (date,${extParams}){\n// 日期变化回调\nconsole.log('onChange', date);}",
         },
       ],
     }

@@ -74,10 +74,10 @@ export default {
           defaultValue: false,
         },
         {
-          name: 'showSizeChanger',
+          name: 'onShowSizeChanger',
           title: {
             label: '页数切换',
-            tip: 'showSizeChanger | 是否展示 pageSize 切换器',
+            tip: 'onShowSizeChanger | 是否展示 pageSize 切换器',
           },
           propType: 'bool',
           setter: 'BoolSetter',
@@ -208,8 +208,8 @@ export default {
     supports:{
       style:true,
       events: [
-        { name:'change',template:'change(page,pageSize){\n//页码或 pageSize 改变的回调\nconsole.log("change",page,pageSize);}'},
-        { name:'showSizeChange',template:'showSizeChange(current,size){\n//pageSize 变化的回调\nconsole.log("showSizeChange",current,size);}'}
+        { name:'onChange',template:'onChange (page,pageSize){\n//页码或 pageSize 改变的回调\nconsole.log("onChange ",page,pageSize);}'},
+        { name:'onShowSizeChange',template:'onShowSizeChange(current,size){\n//pageSize 变化的回调\nconsole.log("onShowSizeChange",current,size);}'}
         ],
     }
   },

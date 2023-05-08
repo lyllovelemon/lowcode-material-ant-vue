@@ -78,27 +78,27 @@ export default {
       propType: 'string',
     },
     {
-      name: 'change',
+      name: 'onChange ',
       title: { label: '值改变时触发', tip: '值改变时触发' },
       propType: 'func',
     },
     {
-      name: 'select',
+      name: 'onSelect',
       title: { label: '选择选项时触发', tip: '选择选项时触发' },
       propType: 'func',
     },
     {
-      name: 'search',
+      name: 'onSearch',
       title: { label: '搜索时触发', tip: '搜索时触发' },
       propType: 'func',
     },
     {
-      name: 'focus',
+      name: 'onFocus',
       title: { label: '获得焦点时触发', tip: '获得焦点时触发' },
       propType: 'func',
     },
     {
-      name: 'blur',
+      name: 'onBlur',
       title: { label: '失去焦点时触发', tip: '失去焦点时触发' },
       propType: 'func',
     },
@@ -117,26 +117,26 @@ export default {
     },
     events:[
       {
-        name: 'change',
-        template: "change(text,${extParams}){\n// 值改变时触发\nconsole.log('change',text);}",
+        name: 'onChange ',
+        template: "onChange (text,${extParams}){\n// 值改变时触发\nconsole.log('onChange ',text);}",
       },
       {
-        name: 'select',
+        name: 'onSelect',
         template:
-          "select(option,prefix,${extParams}){\n// 选择选项时触发\nconsole.log('select',option,prefix);}",
+          "onSelect(option,prefix,${extParams}){\n// 选择选项时触发\nconsole.log('onSelect',option,prefix);}",
       },
       {
-        name: 'search',
+        name: 'onSearch',
         template:
-          "search(text,prefix,${extParams}){\n// 搜索时触发\nconsole.log('search',text,prefix);}",
+          "onSearch(text,prefix,${extParams}){\n// 搜索时触发\nconsole.log('onSearch',text,prefix);}",
       },
       {
-        name: 'focus',
-        template: "focus(${extParams}){\n// 获得焦点时触发\nconsole.log('focus');}",
+        name: 'onFocus',
+        template: "onFocus(${extParams}){\n// 获得焦点时触发\nconsole.log('onFocus');}",
       },
       {
-        name: 'blur',
-        template: "blur(${extParams}){\n// 失去焦点时触发\nconsole.log('blur');}",
+        name: 'onBlur',
+        template: "onBlur(${extParams}){\n// 失去焦点时触发\nconsole.log('onBlur');}",
       },
     ]
   },

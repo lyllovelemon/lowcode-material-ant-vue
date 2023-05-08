@@ -68,26 +68,26 @@ export default {
       style:true,
       events: [
         {
-          name: 'change',
-          template: "change(value,${extParams}){\n// 选择时的回调\nconsole.log('change',value);}",
+          name: 'onChange ',
+          template: "onChange (value,${extParams}){\n// 选择时的回调\nconsole.log('onChange ',value);}",
         },
         {
-          name: 'hoverChange',
+          name: 'onHoverChange',
           template:
-            "hoverChange(value,${extParams}){\n// 鼠标经过时数值变化的回调\nconsole.log('hoverChange',value);}",
+            "onHoverChange(value,${extParams}){\n// 鼠标经过时数值变化的回调\nconsole.log('onHoverChange',value);}",
         },
         {
-          name: 'keydown',
+          name: 'onKeyDown',
           template:
-            "keydown(event,${extParams}){\n// 按键回调\nconsole.log('keydown',event);}",
+            "onKeyDown(event,${extParams}){\n// 按键回调\nconsole.log('onKeyDown',event);}",
         },
         {
-          name: 'focus',
-          template: "focus(${extParams}){\n// 获得焦点时触发\nconsole.log('focus');}",
+          name: 'onFocus',
+          template: "onFocus(${extParams}){\n// 获得焦点时触发\nconsole.log('onFocus');}",
         },
         {
-          name: 'blur',
-          template: "blur(${extParams}){\n// 失去焦点时触发\nconsole.log('blur');}",
+          name: 'onBlur',
+          template: "onBlur(${extParams}){\n// 失去焦点时触发\nconsole.log('onBlur');}",
         },
       ],
     }

@@ -159,25 +159,25 @@ export default{
       ]
     },
     {
-      name:'open',
+      name:'popupVisible',
       title:'控制浮层显隐',
       propType:'bool',
       setter:'BoolSetter',
       supportVariable:true
     },
     {
-      name:'change',
+      name:'onChange',
       title:'选择完成回调',
       propType:'func'
     },
     {
-      name:'dropdownVisibleChange',
-      title:{label:'显隐回调',tip:'dropdownVisibleChange|显隐浮层的回调'},
+      name:'onPopupVisibleChange',
+      title:{label:'显隐回调',tip:'onPopupVisibleChange|显隐浮层的回调'},
       propType:'func'
     },
     {
-      name:'search',
-      title:{label:'search',tip:'search|监听搜索，返回输入的值'},
+      name:'onSearch',
+      title:{label:'onSearch',tip:'onSearch|监听搜索，返回输入的值'},
       propType:'func'
     }
   ],
@@ -186,16 +186,16 @@ export default{
       style:true,
       events:[
         {
-          name:'change',
-          template:"change(value,selectedOptions,${extParams}){\n//选择完成后回调\nconsole.log('change',value,selectedOptions);}"
+          name:'onChange',
+          template:"onChange(value,selectedOptions,${extParams}){\n//选择完成后回调\nconsole.log('onChange',value,selectedOptions);}"
         },
         {
-          name:'dropdownVisibleChange',
-          template:"dropdownVisibleChange(value){\n//显示/隐藏浮层的回调\nconsole.log('dropdownVisibleChange',value);}"
+          name:'onPopupVisibleChange',
+          template:"onPopupVisibleChange(value){\n//显示/隐藏浮层的回调\nconsole.log('onPopupVisibleChange',value);}"
         },
         {
-          name:'search',
-          template:"search(value){\n//监听搜索，返回输入的值\nconsole.log('search',value);}"
+          name:'onSearch',
+          template:"onSearch(value){\n//监听搜索，返回输入的值\nconsole.log('onSearch',value);}"
         }
       ]
     }

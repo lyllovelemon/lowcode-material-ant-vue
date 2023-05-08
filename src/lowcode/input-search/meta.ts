@@ -103,17 +103,17 @@ export default {
       propType: { type: 'oneOfType', value: ['string', 'node'] },
     },
     {
-      name: 'change',
+      name: 'onChange',
       title: { label: '输入框内容变化时的回调', tip: '输入框内容变化时的回调' },
       propType: 'func',
     },
     {
-      name: 'pressEnter',
+      name: 'onPressEnter',
       title: { label: '按下回车的回调', tip: '按下回车的回调' },
       propType: 'func',
     },
     {
-      name: 'search',
+      name: 'onSearch',
       title: {
         label: '点击搜索或按下回车键时的回调',
         tip: '点击搜索或按下回车键时的回调',
@@ -129,19 +129,19 @@ export default {
       style:true,
       events:[
         {
-          name: 'change',
+          name: 'onChange',
           template:
-            "change(event,${extParams}){\n// 输入框内容变化时的回调\nconsole.log('change',event);}",
+            "onChange(event,${extParams}){\n// 输入框内容变化时的回调\nconsole.log('onChange',event);}",
         },
         {
-          name: 'pressEnter',
+          name: 'onPressEnter',
           template:
-            "pressEnter(event,${extParams}){\n// 按下回车的回调\nconsole.log('pressEnter',event);}",
+            "onPressEnter(event,${extParams}){\n// 按下回车的回调\nconsole.log('onPressEnter',event);}",
         },
         {
-          name: 'search',
+          name: 'onSearch',
           template:
-            "search(value,event,${extParams}){\n// 点击搜索图标、清除图标，或按下回车键时的回调\nconsole.log('search',value,event);}",
+            "onSearch(value,event,${extParams}){\n// 点击搜索图标、清除图标，或按下回车键时的回调\nconsole.log('onSearch',value,event);}",
         },
       ]
     }

@@ -256,24 +256,24 @@ export default {
     },
     events:[
       {
-        name: 'change',
+        name: 'onChange',
         template:
-          "change(targetKeys,direction,moveKeys,${extParams}){\n// 选项在两栏之间转移时的回调函数\nconsole.log('change',targetKeys,direction,moveKeys);}",
+          "onChange(targetKeys,direction,moveKeys,${extParams}){\n// 选项在两栏之间转移时的回调函数\nconsole.log('onChange',targetKeys,direction,moveKeys);}",
       },
       {
-        name: 'scroll',
+        name: 'onScroll',
         template:
-          "scroll(direction,event,${extParams}){\n// 选项列表滚动时的回调函数\nconsole.log('scroll',direction,event);}",
+          "onScroll(direction,event,${extParams}){\n// 选项列表滚动时的回调函数\nconsole.log('onScroll',direction,event);}",
       },
       {
-        name: 'search',
+        name: 'onSearch',
         template:
-          "search(direction,value,${extParams}){\n// 搜索框内容时改变时的回调函数\nconsole.log('search',direction,value);}",
+          "onSearch(direction,value,${extParams}){\n// 搜索框内容时改变时的回调函数\nconsole.log('onSearch',direction,value);}",
       },
       {
-        name: 'selectChange',
+        name: 'onSelectChange',
         template:
-          "selectChange(sourceSelectedKeys,targetSelectedKeys,${extParams}){\n// 选中项发生改变时的回调函数\nconsole.log('selectChange',sourceSelectedKeys,targetSelectedKeys);}",
+          "onSelectChange(sourceSelectedKeys,targetSelectedKeys,${extParams}){\n// 选中项发生改变时的回调函数\nconsole.log('onSelectChange',sourceSelectedKeys,targetSelectedKeys);}",
       },
     ]
   },

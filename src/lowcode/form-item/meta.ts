@@ -33,7 +33,21 @@ export default {
     },
     supports:{
       style:true
-    }
+    },
+    advanced: {
+      callbacks: {
+        onNodeRemove: (removedNode: any, currentNode: { remove?: any; children?: any; }) => {
+          if (!removedNode || !currentNode) {
+            return;
+          }
+          const { children } = currentNode;
+          // 若无children,则说明当前P组件内已为空,需要删除P组件本身
+          if (children && children.length === 0) {
+            currentNode.remove();
+          }
+        },
+      },
+    },
   },
   snippets:[
     {

@@ -85,13 +85,13 @@ export default {
       style:true,
       events:[
         {
-          name: 'change',
-          template: "change(checked,event,${extParams}){\n// 变化时回调函数\nconsole.log('change',checked,event);}",
+          name: 'onChange',
+          template: "onChange(checked,event,${extParams}){\n// 变化时回调函数\nconsole.log('onChange',checked,event);}",
         },
         {
-          name: 'click',
+          name: 'onClick',
           template:
-            "click(checked,event,${extParams}){\n// 点击时回调函数\nconsole.log('click',checked,event);}",
+            "onClick(checked,event,${extParams}){\n// 点击时回调函数\nconsole.log('onClick',checked,event);}",
         },
       ]
     }

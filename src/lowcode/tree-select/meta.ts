@@ -238,24 +238,24 @@ export default {
     },
     events:[
       {
-        name: 'change',
+        name: 'onChange',
         template:
-          "change(value,label,extra,${extParams}){\n// 选中树节点时调用此函数\nconsole.log('change',value,label,extra);}",
+          "onChange(value,label,extra,${extParams}){\n// 选中树节点时调用此函数\nconsole.log('onChange',value,label,extra);}",
       },
       {
-        name: 'search',
+        name: 'onSearch',
         template:
-          "search(value,${extParams}){\n// 文本框值变化时回调\nconsole.log('search',value);}",
+          "onSearch(value,${extParams}){\n// 文本框值变化时回调\nconsole.log('onSearch',value);}",
       },
       {
-        name: 'select',
+        name: 'onSelect',
         template:
-          "select(value,node,extra,${extParams}){\n// 被选中时调用\nconsole.log('select',value,node,extra);}",
+          "onSelect(value,node,extra,${extParams}){\n// 被选中时调用\nconsole.log('onSelect',value,node,extra);}",
       },
       {
-        name: 'treeExpand',
+        name: 'onTreeExpand',
         template:
-          "treeExpand(expandedKeys,${extParams}){\n// 展示节点时调用\nconsole.log('treeExpand',expandedKeys);}",
+          "onTreeExpand(expandedKeys,${extParams}){\n// 展示节点时调用\nconsole.log('onTreeExpand',expandedKeys);}",
       },
     ]
   },

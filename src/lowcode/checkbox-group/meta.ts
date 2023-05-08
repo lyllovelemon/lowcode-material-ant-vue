@@ -109,7 +109,7 @@ export default {
       supportVariable: true
     },
     {
-      name: 'change',
+      name: 'onChange',
       title: { label: '变化时回调函数', tip: '变化时回调函数' },
       propType: 'func',
     },
@@ -122,9 +122,9 @@ export default {
       style:true,
       events: [
         {
-          name: 'change',
+          name: 'onChange',
           template:
-            "change(checkedValue,${extParams}){\n// 变化时回调函数\nconsole.log('change', checkedValue);}",
+            "onChange(checkedValue,${extParams}){\n// 变化时回调函数\nconsole.log('onChange', checkedValue);}",
         },
       ],
     }

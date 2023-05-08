@@ -206,8 +206,8 @@ export default {
     },
     events:[
       {
-        name: 'change',
-        template: "change(key,${extParams}){\n// 切换面板的回调\nconsole.log('change',key);}",
+        name: 'onChange ',
+        template: "onChange (key,${extParams}){\n// 切换面板的回调\nconsole.log('onChange ',key);}",
       }
     ]
   },

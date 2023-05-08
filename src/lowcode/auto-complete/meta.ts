@@ -98,12 +98,12 @@ export default{
       propType: 'string',
     },
     {
-      name:'blur',
+      name:'onBlur',
       title:{label:'失焦回调',tip:'失去焦点时的回调'},
       propType:'func'
     },
     {
-      name:'change',
+      name:'onChange',
       title:{label:'选中回调',tip:'选中 option，或 input 的 value 变化回调'},
       propType:'func'
     },
@@ -113,22 +113,22 @@ export default{
       propType: 'bool',
     },
     {
-      name:'dropdownVisibleChange',
+      name:'onDropdownVisibleChange',
       title:'下拉菜单回调',
       propType:'func'
     },
     {
-      name:'focus',
+      name:'onFocus',
       title:'聚焦回调',
       propType:'func'
     },
     {
-      name:'search',
+      name:'onSearch',
       title:'搜索补全回调',
       propType:'func'
     },
     {
-      name:'select',
+      name:'onSelect',
       title:'被选中时调用',
       propType:'func'
     },
@@ -266,7 +266,7 @@ export default{
           tip: {
             type: 'i18n',
             zh_CN: '属性: backfill | 说明：使用键盘选择选项的时候把选中项回填到输入框中',
-            en_US: 'prop: backfill | description: When using the keyboard to select options, backfill the selected items into the input box',
+            en_US: 'prop: backfill | description: When using the keyboard to onSelect options, backfill the onSelected items into the input box',
           }
         },
         setter: 'BoolSetter',
@@ -381,12 +381,12 @@ export default{
       style:true,
       loop:false,
       events:[
-        { name:'blur',template: "blur(${extParams}){\n// 失去焦点时的回调\nconsole.log('blur');}",},
-        { name:'change',template:"change(value){\n//选中 option，或 input 的 value 变化时，调用此函数\nconsole.log('change',value);}"},
-        { name:'dropdownVisibleChange', template:"dropdownVisibleChange(open){\nconsole.log('dropdownVisibleChange',open);}" },
-        { name:'focus',template:"focus(${extParams}){\n// 获得焦点时的回调\nconsole.log('focus');}"},
-        { name:'search',template:"search(value){\n// 搜索补全项的时候调用\nconsole.log('search',value);}"},
-        { name:'select',template:"select(value,option){\n//被选中时调用，参数为选中项的 value 值\nconsole.log('select',value,option);}"}
+        { name:'onBlur',template: "onBlur(${extParams}){\n// 失去焦点时的回调\nconsole.log('onBlur');}",},
+        { name:'onChange',template:"onChange(value){\n//选中 option，或 input 的 value 变化时，调用此函数\nconsole.log('onChange',value);}"},
+        { name:'onDropdownVisibleChange', template:"onDropdownVisibleChange(open){\nconsole.log('onDropdownVisibleChange',open);}" },
+        { name:'onFocus',template:"onFocus(${extParams}){\n// 获得焦点时的回调\nconsole.log('onFocus');}"},
+        { name:'onSearch',template:"onSearch(value){\n// 搜索补全项的时候调用\nconsole.log('onSearch',value);}"},
+        { name:'onSelect',template:"onSelect(value,option){\n//被选中时调用，参数为选中项的 value 值\nconsole.log('onSelect',value,option);}"}
         ]
     }
   },

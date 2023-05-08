@@ -67,7 +67,7 @@ export default {
       defaultValue: false,
     },
     {
-      name: 'change',
+      name: 'onChange ',
       title: {
         label: '当用户提交编辑内容时触发',
         tip: '当用户提交编辑内容时触发',

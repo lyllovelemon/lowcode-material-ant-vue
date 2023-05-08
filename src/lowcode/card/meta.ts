@@ -82,9 +82,9 @@ export default {
     },
     events:[
       {
-        name: 'tabChange',
+        name: 'onTabChange',
         template:
-          "tabChange(key,${extParams}){\n// 页签切换的回调\nconsole.log('tabChange', key);}",
+          "onTabChange(key,${extParams}){\n// 页签切换的回调\nconsole.log('onTabChange', key);}",
       },
     ]
   },

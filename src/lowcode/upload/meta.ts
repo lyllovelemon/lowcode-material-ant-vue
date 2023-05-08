@@ -406,28 +406,28 @@ export default {
     },
     events:[
       {
-        name: 'change',
+        name: 'onChange',
         template:
-          "change({file,fileList,event},${extParams}){\n// 上传文件改变时的回调\nconsole.log('change',file,fileList,event);}",
+          "onChange ({file,fileList,event},${extParams}){\n// 上传文件改变时的回调\nconsole.log('onChange ',file,fileList,event);}",
       },
       {
-        name: 'preview',
+        name: 'onPreview',
         template:
-          "preview(file,${extParams}){\n// 点击文件链接或预览图标时的回调\nconsole.log('preview',file);}",
+          "onPreview(file,${extParams}){\n// 点击文件链接或预览图标时的回调\nconsole.log('onPreview',file);}",
       },
       {
-        name: 'remove',
+        name: 'onRemove',
         template:
-          "remove(file,${extParams}){\n// 点击移除文件时的回调\nconsole.log('remove',file);}",
+          "onRemove(file,${extParams}){\n// 点击移除文件时的回调\nconsole.log('onRemove',file);}",
       },
       {
-        name: 'download',
+        name: 'onDownload',
         template:
-          "download(file,${extParams}){\n// 点击下载文件时的回调\nconsole.log('download',file);}",
+          "onDownload(file,${extParams}){\n// 点击下载文件时的回调\nconsole.log('onDownload',file);}",
       },
       {
-        name:'drop',
-        template:"drop(event,${extParams}){\n// 当文件被拖入上传区域时执行的回调功能\nconsole.log('drop',event);}"
+        name:'onDrop',
+        template:"onDrop(event,${extParams}){\n// 当文件被拖入上传区域时执行的回调功能\nconsole.log('onDrop',event);}"
       }
     ]
   },

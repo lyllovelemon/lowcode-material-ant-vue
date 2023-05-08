@@ -801,8 +801,8 @@ export default {
                   'customRow(record,index,${extParams}){\n// 设置行属性\nreturn {onClick: (event) => {},       // 点击行\n' +
                   '      onDblclick: (event) => {},\n' +
                   '      onContextmenu: (event) => {},\n' +
-                  '      onMouseenter: (event) => {},  // 鼠标移入行\n' +
-                  '      onMouseleave: (event) => {}};\n}',
+                  '      onMouseEnter: (event) => {},  // 鼠标移入行\n' +
+                  '      onMouseLeave: (event) => {}};\n}',
               },
             },
             'VariableSetter',
@@ -831,22 +831,32 @@ export default {
       style:true,
       events: [
         {
-          name: 'change',
+          name: 'onChange',
           template:
-            "change(pagination, filters, sorter,${extParams}){\n// 表格分页、排序、筛选变化时触发\nconsole.log('change', pagination);}",
+            "onChange(pagination, filters, sorter,${extParams}){\n// 表格分页、排序、筛选变化时触发\nconsole.log('onChange', pagination);}",
         },
         {
-          name:'expand',
-          template:"expand(expanded,record){\n//点击展开图标时触发\nconsole.log('expand',expanded,record);}"
+          name:'onExpand',
+          template:"onExpand(expanded,record){\n//点击展开图标时触发\nconsole.log('onExpand',expanded,record);}"
         },
         {
-          name:'expandedRowsChange',
-          template:"expandedRowsChange(expandedRows){\n//展开的行变化时触发\nconsole.log('expandedRowsChange',expandedRows);}"
+          name:'onExpandedRowsChange',
+          template:"onExpandedRowsChange(expandedRows){\n//展开的行变化时触发\nconsole.log('onExpandedRowsChange',expandedRows);}"
         },
         {
-          name:'resizeColumn',
-          template:"resizeColumn(width,column){\n//拖动列时触发\nconsole.log('resizeColumn',width,column);}"
-        }
+          name:'onResizeColumn',
+          template:"onResizeColumn(width,column){\n//拖动列时触发\nconsole.log('onResizeColumn',width,column);}"
+        },
+        {
+          name: 'rowSelection.onChange',
+          template:
+            "onRowSelectionChange(selectedRowKeys,selectedRows,${extParams}){\n// 选中项发生变化时的回调\nconsole.log('onRowSelectionChange', selectedRowKeys, selectedRows);}",
+        },
+        {
+          name: 'expandable.onExpand',
+          template:
+            "onExpandableExpand(expanded,record){\n// 点击展开图标时触发\nconsole.log('onRowSelectionChange', expanded, record);}",
+        },
       ],
     }
   },

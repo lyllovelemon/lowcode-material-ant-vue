@@ -1,11 +1,11 @@
 export default {
   group: 'Antd',
-  componentName: "APopover",
-  title: '通知提醒框',
-  category: '反馈',
+  componentName:'ATooltip',
+  title: '文字提示',
+  category: '数据展示',
   npm: {
     destructuring: true,
-    componentName: 'APopover'
+    componentName: 'ATooltip'
   },
   props:[
     {
@@ -16,26 +16,11 @@ export default {
         {
           name: 'title',
           title: {
-            label: '卡片标题',
-            tip: 'title | 卡片标题',
+            label: '提示文字',
+            tip: 'title | 提示文字',
           },
-          propType: {
-            type: 'oneOfType',
-            value: ['string', 'node', 'func'],
-          },
-          setter: ['StringSetter', 'SlotSetter', 'FunctionSetter', 'VariableSetter'],
-        },
-        {
-          name: 'content',
-          title: {
-            label: '卡片内容',
-            tip: 'content | 卡片内容',
-          },
-          propType: {
-            type: 'oneOfType',
-            value: ['string', 'node', 'func'],
-          },
-          setter: ['StringSetter', 'SlotSetter', 'FunctionSetter', 'VariableSetter'],
+          propType: { type: 'oneOfType', value: ['string', 'node'] },
+          setter: ['StringSetter', 'SlotSetter', 'VariableSetter'],
         },
       ],
     },
@@ -53,17 +38,15 @@ export default {
           propType: 'bool',
           setter: 'BoolSetter',
           defaultValue: false,
-          supportVariable:true
         },
         {
           name: 'visible',
           title: {
-            label: '手动显隐',
-            tip: 'visible | 手动控制浮层显隐',
+            label: '当前显隐',
+            tip: 'visible | 当前是否显隐',
           },
           propType: 'bool',
           setter: 'BoolSetter',
-          supportVariable:true
         },
       ],
     },
@@ -74,10 +57,7 @@ export default {
       items: [
         {
           name: 'placement',
-          title: {
-            label: '气泡位置',
-            tip: 'placement | 气泡位置',
-          },
+          title: { label: '气泡位置', tip: 'placement | 气泡位置' },
           propType: {
             type: 'oneOf',
             value: [
@@ -202,10 +182,7 @@ export default {
       items: [
         {
           name: 'overlayStyle',
-          title: {
-            label: '样式设置',
-            tip: 'overlayStyle | 卡片样式',
-          },
+          title: { label: '样式设置', tip: 'overlayStyle | 卡片样式' },
           setter: 'StyleSetter',
           extraProps: {
             display: 'block',
@@ -241,13 +218,10 @@ export default {
       items: [
         {
           name: 'trigger',
-          title: {
-            label: '触发行为',
-            tip: 'trigger | 触发行为',
-          },
+          title: { label: '触发行为', tip: 'trigger | 触发行为' },
           propType: {
             type: 'oneOf',
-            value: ['hover', 'focus', 'click', 'contextMenu'],
+            value: ['hover', 'onFocus', 'click', 'contextMenu'],
           },
           defaultValue: 'hover',
           setter: {
@@ -305,31 +279,30 @@ export default {
           },
         },
       ],
-    },
+    }
   ],
   configure: {
-    component: {
-      isContainer: true,
-    },
+    component: { isContainer: true },
     supports: {
-      style: true,
-      events: [
-        {
-          name: 'onVisibleChange',
-          template:
-            "onVisibleChange(open,${extParams}){\n// 显示隐藏的回调\nconsole.log('onVisibleChange',open);}",
-        },
-      ],
-    }
+      style:true
+    },
+    events:[
+      {
+        name: 'onVisibleChange',
+        template: "onVisibleChange(visible,${extParams}){\n// 显示隐藏的回调\nconsole.log('onVisibleChange',visible);}",
+      }
+    ]
   },
   snippets:[
     {
-      title: '气泡卡片',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/popover-1.jpg',
+      title: '文字提示',
+      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/tooltip-1.jpg',
       schema: {
-        componentName: 'APopover',
-        props: {},
+        componentName: 'ATooltip',
+        props: {
+          title: '提示内容',
+        },
       },
-    }
+    },
   ]
 }

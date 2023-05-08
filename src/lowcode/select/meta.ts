@@ -224,18 +224,18 @@ export default {
       }
     },
     {
-      name:'blur',
+      name:'onBlur',
       title:{label:'失焦回调',tip:'失去焦点的时回调'},
       propType:'func'
     },
     {
-      name:'change',
-      title:{label:'change回调',tip:'选中 option，或 input 的 value 变化（combobox 模式下）时，调用此函数'},
+      name:'onChange',
+      title:{label:'onChange回调',tip:'选中 option，或 input 的 value 变化（combobox 模式下）时，调用此函数'},
       propType:'func'
     },
     {
-      name:'deselect',
-      title:{label:'deselect回调',tip:'取消选中时调用'},
+      name:'onDeselect',
+      title:{label:'onDeselect回调',tip:'取消选中时调用'},
       condition(target: any): boolean {
         const mode = target.getProps().getPropValue('mode')
         return mode === 'tags' || mode === 'multiple'
@@ -243,38 +243,38 @@ export default {
       propType:'func'
     },
     {
-      name:'focus',
-      title:{label:'focus回调',tip:'获得焦点时回调'},
+      name:'onFocus',
+      title:{label:'onFocus回调',tip:'获得焦点时回调'},
       propType:'func'
     },
     {
-      name:'inputKeyDown',
-      title:{label:'inputKeyDown回调',tip:'键盘按下时回调'},
+      name:'onInputKeyDown',
+      title:{label:'onInputKeyDown回调',tip:'键盘按下时回调'},
       propType:'func'
     },
     {
-      name:'mouseenter',
-      title:{label:'mouseenter回调',tip:'鼠标移入时回调'},
+      name:'onMouseEnter',
+      title:{label:'onMouseEnter回调',tip:'鼠标移入时回调'},
       propType:'func'
     },
     {
-      name:'mouseleave',
-      title:{label:'mouseleave',tip:'鼠标移出时回调'},
+      name:'onMouseLeave',
+      title:{label:'onMouseLeave',tip:'鼠标移出时回调'},
       propType:'func'
     },
     {
-      name:'popupScroll',
+      name:'onPopupScroll',
       title:'下拉列表滚动时的回调',
       propType:'func'
     },
     {
-      name:'search',
-      title:{label:'search回调',tip:'文本框值变化时回调'},
+      name:'onSearch',
+      title:{label:'onSearch回调',tip:'文本框值变化时回调'},
       propType:'func'
     },
     {
-      name:'select',
-      title:{label:'select回调',tip:'被选中时调用，参数为选中项的 value (或 key) 值'},
+      name:'onSelect',
+      title:{label:'onSelect回调',tip:'被选中时调用，参数为选中项的 value (或 key) 值'},
       propType:'func'
     }
   ],
@@ -286,20 +286,20 @@ export default {
       style:true,
       events:[
         {
-          name:'blur',
-          template:"blur(${extParams}){\n//失焦回调\n console.log('blur')}"
+          name:'onBlur',
+          template:"onBlur(${extParams}){\n//失焦回调\n console.log('onBlur')}"
         },
         {
-          name:'change',
-          template:"change(value,option){\n console.log('change',value,option)}"
+          name:'onChange',
+          template:"onChange(value,option){\n console.log('onChange',value,option)}"
         },
         {
-          name:'deselect',
-          template:"deselect(value,option){\n console.log('deselect',value,option)}"
+          name:'onDeselect',
+          template:"onDeselect(value,option){\n console.log('onDeselect',value,option)}"
         },
         {
-          name:'focus',
-          template:"focus(${extParams}){\n//聚焦回调\n console.log('focus')}"
+          name:'onFocus',
+          template:"onFocus(${extParams}){\n//聚焦回调\n console.log('onFocus')}"
         }
       ]
     }
@@ -307,7 +307,7 @@ export default {
   snippets: [
     {
       title: '选择器',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/select-1.png',
+      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/onSelect-1.png',
       schema: {
         componentName: 'ASelect',
         props: {

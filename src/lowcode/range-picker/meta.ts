@@ -286,16 +286,16 @@ export default{
       style:true,
       events:[
         {
-          name:'change',
-          template:"change(dates,dateStrings){\n//日期范围发生变化的回调\nconsole.log('change',JSON.stringify(dates));}"
+          name:'onChange',
+          template:"onChange(dates,dateStrings){\n//日期范围发生变化的回调\nconsole.log('onChange ',JSON.stringify(dates));}"
         },
         {
-          name:'calendarChange',
-          template:"calendarChange(dates,dateStrings){\n//待选日期发生变化的回调\nconst [start,end] = dates;\nconsole.log('calendarChange',start,end);}"
+          name:'onCalendarChange',
+          template:"onCalendarChange(dates,dateStrings){\n//待选日期发生变化的回调\nconst [start,end] = dates;\nconsole.log('onCalendarChange',start,end);}"
         },
         {
-          name:'ok',
-          template:"ok(dates){\n//点击确定按钮的回调\nconst [start,end] = dates;\nconsole.log('ok',start,end);}"
+          name:'onOk',
+          template:"onOk(dates){\n//点击确定按钮的回调\nconst [start,end] = dates;\nconsole.log('onOk',start,end);}"
         }
       ]
     }

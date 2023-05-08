@@ -152,13 +152,13 @@ export default {
     },
     events:[
       {
-        name: 'change',
-        template: "change(time,timeString,${extParams}){\n// 时间发生变化的回调\nconsole.log('change',time,timeString);}",
+        name: 'onChange ',
+        template: "onChange (time,timeString,${extParams}){\n// 时间发生变化的回调\nconsole.log('onChange ',time,timeString);}",
       },
       {
-        name: 'openChange',
+        name: 'onOpenChange',
         template:
-          "openChange(open,${extParams}){\n// 面板打开/关闭时的回调\nconsole.log('openChange',open);}",
+          "onOpenChange(open,${extParams}){\n// 面板打开/关闭时的回调\nconsole.log('onOpenChange',open);}",
       }
     ]
   },

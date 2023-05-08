@@ -82,7 +82,7 @@ export default {
       defaultValue: 'line',
     },
     {
-      name:'change',
+      name:'onChange',
       title:'切换面板的回调',
       propType:'func'
     },
@@ -108,7 +108,7 @@ export default {
     },
     supports:{
       style:true,
-      events: ['change','edit','tabClick','tabScroll'],
+      events: ['onChange','onEdit','onTabClick','onTabScroll'],
     }
   },
   snippets:[

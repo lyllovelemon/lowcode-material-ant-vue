@@ -116,7 +116,7 @@ export default {
     supports:{
       style:true,
       loop:true,
-      events:['change','blur','focus']
+      events:['onChange','onBlur','onFocus']
     }
   },
   snippets: [
