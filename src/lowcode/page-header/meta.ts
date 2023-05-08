@@ -145,7 +145,7 @@ export default {
         componentName:"APageHeader",
         props:{
           title:"Title",
-          subTitle:"lyl test for pageHeader"
+          subTitle:"lyl test for page-header"
         }
       }
     }

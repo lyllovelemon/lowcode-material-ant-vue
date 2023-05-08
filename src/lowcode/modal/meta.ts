@@ -236,7 +236,7 @@ export default {
       isModal: true,
       rootSelector: '.ant-modal-content',
       nestingRule: {
-        parentWhitelist: ['APage', 'AComponent'],
+        parentWhitelist: ['Page', 'Component'],
       },
     },
     supports: {
