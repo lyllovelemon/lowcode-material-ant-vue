@@ -226,7 +226,7 @@ export default {
               type: 'JSSlot',
               value: [
                 {
-                  componentName: 'Icon',
+                  componentName: 'AIcon',
                   props: {
                     type: 'SmileOutlined',
                     size: 20,

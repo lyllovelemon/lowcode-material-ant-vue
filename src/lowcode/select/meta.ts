@@ -149,14 +149,14 @@ export default {
       name:'open',
       propType:'bool',
       setter:'BoolSetter',
-      defaultValue:true
+      defaultValue:false
     },
     {
       title:'是否默认展开下拉菜单',
       name:'defaultOpen',
       propType:'bool',
       setter:'BoolSetter',
-      defaultValue:true
+      defaultValue:false
     },
     {
       title:{label:'模式',tip:'模式为多选或标签'},
@@ -222,6 +222,11 @@ export default {
         const mode = target.getProps().getPropValue('mode')
         return mode === 'tags' || mode === 'multiple'
       }
+    },
+    {
+      name: 'tokenSeparators',
+      title: { label: '自动分词的分隔符', tip: '自动分词的分隔符' },
+      propType: { type: 'arrayOf', value: 'string' },
     },
     {
       name:'onBlur',
@@ -307,12 +312,12 @@ export default {
   snippets: [
     {
       title: '选择器',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/onSelect-1.png',
+      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/select-1.png',
       schema: {
         componentName: 'ASelect',
         props: {
           style:{
-            width:200
+            width:"200px"
           },
           options:[
             {label:'选项一',value:'1'},

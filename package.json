@@ -1,11 +1,12 @@
 {
   "name": "lowcode-material-ant-vue",
-  "version": "0.0.7",
+  "version": "0.0.9",
+  "description": "Ant design vue for lowcode",
   "main": "./dist/index.min.js",
   "module": "./dist/lowcode-material-ant-vue.mjs",
   "typings": "./dist/lowcode-material-ant-vue.d.ts",
   "scripts": {
-    "start": "vue-cli-service lowcode:dev",
+    "start": "vue-cli-service lowcode:dev --config ./build.lowcode.js",
     "build": "vue-cli-service lowcode:build"
   },
   "files": [
@@ -24,7 +25,10 @@
     "vue": "^3.2.47"
   },
   "devDependencies": {
+    "@alifd/build-plugin-lowcode": "^0.3.16",
     "@babel/core": "^7.21.4",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.18.6",
+    "@babel/plugin-proposal-optional-chaining": "^7.21.0",
     "@knxcloud/vue-cli-plugin-lowcode": "^1.0.3",
     "@rushstack/eslint-patch": "^1.2.0",
     "@typescript-eslint/eslint-plugin": "^5.59.1",

@@ -228,6 +228,27 @@ export default {
                         }],
                         defaultValue:'menu'
                       },
+                      {
+                        name: 'render',
+                        title: {
+                          label: '自定义渲染',
+                          tip:
+                            'render | 插槽内的物料表达式可通过this.record获取当前行数据，this.index获取索引(该项用于自定义操作列)',
+                        },
+                        propType: 'func',
+                        setter: [
+                          {
+                            componentName: 'SlotSetter',
+                            title: '单元格插槽',
+                            initialValue: {
+                              type: 'JSSlot',
+                              params: ['text', 'record', 'index'],
+                              value: [],
+                            },
+                          },
+                          'VariableSetter',
+                        ],
+                      },
                     ],
                   },
                 },
@@ -833,19 +854,7 @@ export default {
         {
           name: 'onChange',
           template:
-            "onChange(pagination, filters, sorter,${extParams}){\n// 表格分页、排序、筛选变化时触发\nconsole.log('onChange', pagination);}",
-        },
-        {
-          name:'onExpand',
-          template:"onExpand(expanded,record){\n//点击展开图标时触发\nconsole.log('onExpand',expanded,record);}"
-        },
-        {
-          name:'onExpandedRowsChange',
-          template:"onExpandedRowsChange(expandedRows){\n//展开的行变化时触发\nconsole.log('onExpandedRowsChange',expandedRows);}"
-        },
-        {
-          name:'onResizeColumn',
-          template:"onResizeColumn(width,column){\n//拖动列时触发\nconsole.log('onResizeColumn',width,column);}"
+            "onChange(pagination,filters,sorter,extra,${extParams}){\n// 表格翻页事件\nconsole.log('onChange', pagination);}",
         },
         {
           name: 'rowSelection.onChange',
@@ -878,7 +887,7 @@ export default {
               name: '邓紫棋',
               age: 28,
               address: '滨江区网商路699号',
-            },],
+            }],
           columns: [
             {
               title: '姓名',
@@ -890,6 +899,20 @@ export default {
               dataIndex: 'age',
               key: 'age',
             },
+            {
+              title:'地址',
+              dataIndex:'address',
+              key:'address'
+            },
+            {
+              title:'操作',
+              align:'left',
+              fixed:'right',
+              render:{
+                type:"JSSlot",
+                params:["text","record","index"]
+              }
+            }
           ],
           rowKey: 'id',
           pagination: {

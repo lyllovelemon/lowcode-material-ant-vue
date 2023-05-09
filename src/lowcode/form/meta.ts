@@ -1,4 +1,5 @@
 /* eslint-disable */
+import {uuid} from '../../utils/index';
 // @ts-ignore
 export default {
   group: 'Antd',
@@ -10,58 +11,374 @@ export default {
     componentName: 'AForm'
   },
   props:[
-    { name:'value',propType:{type:'oneOfType',value:['Json','JSExpression']},description:'表单数值'},
-    { name:'rules',propType:'object',description:'表单验证规则',defaultValue:null},
-    { name:'inline',propType:'bool',description:'内联表单',defaultValue:false },
-    { name:'size',title:{label:'Size',tip:'表单尺寸'},propType:{type:'oneOf',value:['large','default','small']},description:'"单个 Item 的 size 自定义，优先级高于 Form 的 size, 并且当组件与 Item 一起使用时，组件自身设置 size 属性无效。',defaultValue:'default'},
-    { name:'labelPosition',title:{label:'标签位置',tip:'左、右、上'},propType:{type:'oneOf',value:['left','right','top']},defaultValue:'right'},
-    { name:'labelWidth',title:'标签长度',propType:{type:'oneOfType',value:['string','number']}},
-    { name:'className',propType:'string',description:'扩展class'},
-    { name:'style',propType:'object',description:'自定义内联样式'},
-    { name:'disabled',propType:'bool',description:'是否禁用该表单内所有组件',defaultValue:false},
-    { name:'validateOnRuleChange',propType:'bool',description:'是否在 rules 属性改变后立即触发一次验证',defaultValue:true},
-    { name:'onSubmit',propType:'func',description:'form内有 `htmlType=\\"submit\\"` 的元素的时候会触发'},
-    { name:'onChange',propType:'func',description:'表单变化回调'}
+    {
+      name: 'ref',
+      title: {
+        label: 'ref',
+        tip: 'ref | 通过 this.$(\'xxx\') 获取到组件实例',
+      },
+      defaultValue: () => {
+        return `form_${uuid()}`
+      },
+      setter: 'StringSetter',
+      supportVariable: true
+    },
+    {
+      name: 'values',
+      title: { label: '表单数据源', tip: '表单数据源' },
+      propType: 'object',
+      setter: 'JsonSetter',
+      supportVariable: true
+    },
+    {
+      name: 'colon',
+      title: { label: '展示冒号', tip: '' },
+      propType: 'bool',
+      defaultValue: true,
+      setter: 'BoolSetter',
+      supportVariable: true
+    },
+    {
+      name: 'hideRequiredMark',
+      title: { label: '隐藏必填标记', tip: '隐藏必填标记' },
+      propType: 'bool',
+      defaultValue: false,
+      setter: 'BoolSetter',
+      supportVariable: true
+    },
+    {
+      type: 'group',
+      title: '布局',
+      display: 'accordion',
+      items:[
+        {
+          name: 'labelCol',
+          title: '标签栅格布局设置',
+          display: 'inline',
+          setter: {
+            componentName: 'ObjectSetter',
+            props: {
+              config: {
+                items: [
+                  {
+                    name: 'span',
+                    title: '宽度',
+                    setter: {
+                      componentName: 'NumberSetter',
+                      props: {
+                        min: 0,
+                        max: 24,
+                      },
+                    },
+                  },
+                  {
+                    name: 'offset',
+                    title: '偏移',
+                    setter: {
+                      componentName: 'NumberSetter',
+                      props: {
+                        min: 0,
+                        max: 24,
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          },
+          description:
+            'label 标签布局，同 `<Col>` 组件，设置 span offset 值，如 {span: 8, offset: 16}，该项仅在垂直表单有效',
+        },
+        {
+          name: 'wrapperCol',
+          title: '内容栅格布局设置',
+          display: 'inline',
+          setter: {
+            componentName: 'ObjectSetter',
+            props: {
+              config: {
+                items: [
+                  {
+                    name: 'span',
+                    title: '宽度',
+                    setter: {
+                      componentName: 'NumberSetter',
+                      props: {
+                        min: 0,
+                        max: 24,
+                      },
+                    },
+                  },
+                  {
+                    name: 'offset',
+                    title: '偏移',
+                    setter: {
+                      componentName: 'NumberSetter',
+                      props: {
+                        min: 0,
+                        max: 24,
+                      },
+                    },
+                  },
+                ],
+              },
+            },
+          },
+          description: '需要为输入控件设置布局样式时，使用该属性，用法同 labelCol',
+        },
+      ]
+    },
+    {
+      name: 'labelAlign',
+      title: {
+        label: '标签对齐',
+        tip: 'label 标签的文本对齐方式',
+      },
+      setter: {
+        componentName: 'RadioGroupSetter',
+        props: {
+          options: [
+            {
+              title: '左',
+              value: 'left',
+            },
+            {
+              title: '右',
+              value: 'right',
+            },
+          ],
+        },
+      },
+      propType: { type: 'oneOf', value: ['left', 'right'] },
+      defaultValue: 'right',
+    },
+    {
+      name: 'layout',
+      title: { label: '表单布局', tip: '表单布局' },
+      setter: {
+        componentName: 'RadioGroupSetter',
+        props: {
+          options: [
+            {
+              title: '水平',
+              value: 'horizontal',
+            },
+            {
+              title: '垂直',
+              value: 'vertical',
+            },
+            {
+              title: '行内',
+              value: 'inline',
+            },
+          ],
+        },
+      },
+      propType: { type: 'oneOf', value: ['horizontal', 'vertical', 'inline'] },
+      defaultValue: 'horizontal',
+    },
+    {
+      name: 'name',
+      title: {
+        label: '表单名称',
+        tip: '表单名称，会作为表单字段 `id` 前缀使用',
+      },
+      propType: 'string',
+      setter: 'StringSetter',
+      supportVariable: true
+    },
+    {
+      name: 'preserve',
+      title: {
+        label: '删除时保留值',
+        tip: '当字段被删除时保留字段值',
+      },
+      propType: 'bool',
+      defaultValue: true,
+      setter: 'BoolSetter',
+      supportVariable: true
+    },
+    {
+      name: 'scrollToFirstError',
+      title: {
+        label: '滚至错误',
+        tip: '提交失败自动滚动到第一个错误字段',
+      },
+      propType: 'bool',
+      defaultValue: true,
+      setter: 'BoolSetter',
+      supportVariable: true
+    },
+    {
+      name: 'size',
+      title: {
+        label: '字段组件尺寸',
+        tip: '设置字段组件的尺寸（仅限 antd 组件）',
+      },
+      propType: { type: 'oneOf', value: ['small', 'middle', 'large'] },
+      setter: {
+        componentName: 'RadioGroupSetter',
+        props: {
+          options: [
+            {
+              title: '大',
+              value: 'large',
+            },
+            {
+              title: '中',
+              value: 'middle',
+            },
+            {
+              title: '小',
+              value: 'small',
+            },
+          ],
+        },
+      },
+      defaultValue: 'middle',
+    },
+    {
+      type: 'group',
+      title: '事件',
+      display: 'accordion',
+      items:[
+        {
+          name: 'validateMessages',
+          title: { label: '验证提示模板', tip: '验证提示模板' },
+          setter: 'JsonSetter',
+          defaultValue: { required: "'${name}' 不能为空" },
+        },
+        {
+          name: 'validateTrigger',
+          title: { label: '校验时机', tip: '所有字段校验触发时机' },
+          propType: {
+            type: 'oneOf',
+            value: ['onChange', 'onBlur'],
+          },
+          setter: {
+            componentName: 'RadioGroupSetter',
+            props: {
+              options: [
+                {
+                  title: '当前值变化时',
+                  value: 'onChange',
+                },
+                {
+                  title: '失去焦点时',
+                  value: 'onBlur',
+                },
+              ],
+            },
+          },
+        },
+        {
+          name: 'onFinish',
+          title: {
+            label: '提交表单且数据验证成功后回调事件',
+            tip: '提交表单且数据验证成功后回调事件',
+          },
+          propType: 'func',
+        },
+        {
+          name: 'onFinishFailed',
+          title: {
+            label: '提交表单且数据验证失败后回调事件',
+            tip: '提交表单且数据验证失败后回调事件',
+          },
+          propType: 'func',
+        },
+        {
+          name: 'onFieldsChange',
+          title: { label: '字段更新时触发回调事件', tip: '字段更新时触发回调事件' },
+          propType: 'func',
+        },
+        {
+          name: 'onValuesChange',
+          title: {
+            label: '字段值更新时触发回调事件',
+            tip: '字段值更新时触发回调事件',
+          },
+          propType: 'func',
+        }
+      ]
+    }
   ],
   configure:{
     component:{
       isContainer:true
     },
-    props:[
-      { name:'value',title:'表单数值',setter:{componentName:'MixedSetter',props:{setters:['JsonSetter','ExpressionSetter']}},supportVariable: true },
-      { name:'rules',title:'表单验证规则',setter:{componentName:'ExpressionSetter'}},
-      { name:'inline', title:{ label:'内联表单',tip:'内联表单' }, setter:'BoolSetter' },
-      { name:'size',title:'尺寸',setter:{componentName:'RadioGroupSetter',props:{options:['large','default','small']}}},
-      { name:'labelPosition',title:'标签位置',setter:{componentName:'RadioGroupSetter',props:{options:['left','right','top']}}},
-      { name:'labelWidth',title:'标签长度',setter:{componentName:'MixedSetter',props:{setters:['StringSetter','NumberSetter']}}},
-      { name:'className',title:'class',setter:'StringSetter'},
-      { name:'style',title:'style',setter:{componentName:'ExpressionSetter'}},
-      { name:'field',title:'Field实例',setter:{componentName:'ExpressionSetter'}},
-      { name:'disabled',title:'禁用',setter:'BoolSetter'},
-      { name:'validateOnRuleChange',title:'rules规则改变立即触发验证',setter:'BoolSetter'},
-
-    ],
     supports:{
       style:true,
-      loop:true,
       events:[
-        { name:'resetFields',propType:'func',description:'重置该表单项并移除校验结果'},
-        { name:'validate',propType:'func',description:'对整个表单进行验证'},
-        { name:'validateField',propType:'func',description:'验证具体的某个字段'},
-        { name:'clearValidate',propType:'func',description:'清理某个字段的表单验证信息'},
-        { name:'onSubmit',propType:'func',description:'表单提交'},
-        { name:'onChange',propType:'func',description:'表单某一项改变'}
+        {
+          name:'onFinish',
+          template:
+            "onFinish(values,${extParams}){\n// 提交表单且数据验证成功后回调事件\nconsole.log('onFinish',values);}",
+        },
+        {
+          name: 'onFinishFailed',
+          template:
+            "onFinishFailed({values,errorFields,outOfDate},${extParams}){\n// 提交表单且数据验证失败后回调事件\nconsole.log('onFinishFailed',values, errorFields, outOfDate);}",
+        },
+        {
+          name: 'onFieldsChange',
+          template:
+            "onFieldsChange(changedFields,allFields,${extParams}){\n// 字段更新时触发回调事件\nconsole.log('onFieldsChange',changedFields,allFields);}",
+        },
+        {
+          name: 'onValuesChange',
+          template:
+            "onValuesChange(changedValues,allValues,${extParams}){\n// 字段值更新时触发回调事件\nconsole.log('onValuesChange',changedValues,allValues);}",
+        },
       ]
     },
     advanced:{
       callbacks:{
-        onNodeAdd:{
-          type:'JSFunction',
-          value:'(dragment, currentNode) => {\\n        \\n        if (!dragment || dragment.componentName === \\"AFormItem\\") {\\n          return;\\n        }\\n        \\n        const layoutPNode = currentNode.document.createNode({\\n          componentName: \\"AFormItem\\",\\n          title: \\"表单项\\",\\n          props: {\\n            label: \\"表单项: \\"\\n          },\\n          children: [dragment.schema]\\n        });\\n        \\n        setTimeout(() => {\\n          if (!currentNode.getChildren().has(dragment)) {\\n            return;\\n          }\\n          const newNode = currentNode.document.createNode(Object.assign(layoutPNode.schema));\\n          currentNode.insertBefore(newNode, dragment, false);\\n          dragment.remove(false);\\n          newNode.getChildren().get(0).select();\\n        }, 1);\\n      }'
-        }
+        onNodeAdd: (dragment: { componentMeta: { npm: { package: string | string[]; }; }; componentName: string | string[]; exportSchema: () => any; }, currentNode: { document: { createNode: (arg0: { componentName: string; props: { label: string; }; children: any[]; }) => any; }; replaceChild: (arg0: any, arg1: any, arg2: { reserveSchemaNodeId: boolean; }) => void; }) => {
+          const comps = [
+            'AInput',
+            'ASelect',
+            'ARadio',
+            'ACheckbox',
+            'ASwitch',
+            'AUpload',
+            'ADatePicker',
+            'ARate',
+            'ATransfer',
+          ];
+
+          if (
+            !dragment ||
+            !dragment.componentMeta ||
+            !dragment.componentMeta.npm ||
+            !dragment.componentMeta.npm.package ||
+            dragment.componentMeta.npm.package.indexOf('lowcode-material-ant-vue') === -1 ||
+            comps.every((comp) => dragment.componentName.indexOf(comp) === -1)
+          ) {
+            return;
+          }
+
+          // 为目标元素包裹一层P
+          const layoutPNode = currentNode.document.createNode({
+            componentName: 'AFormItem',
+            props: {
+              label: '表单项: ',
+            },
+            children: [dragment.exportSchema()],
+          });
+          // 当前dragment还未添加入node子节点,需要setTimeout处理
+          setTimeout(() => {
+            currentNode.replaceChild(
+              dragment,
+              layoutPNode.exportSchema(),
+              // 避免生成新的 nodeId
+              { reserveSchemaNodeId: true },
+            );
+          }, 1);
+        },
+      },
       }
-    }
-  },
+      },
   snippets: [
     {
       title: '表单',
@@ -95,14 +412,32 @@ export default {
               labelAlign:'right',
               colon:true,
               required:true,
-              name:'a'
+              valuePropName:"value",
+              name:'a',
+              requiredobj:{
+                required:true,
+                message:"必填"
+              },
+              typeobj:{
+                type:null,
+                message:null
+              },
+              lenobj:{
+                max:null,
+                min:null,
+                message:null
+              },
+              patternobj:{
+                pattern:null,
+                message:null
+              }
             },
             children:[
               {
                 componentName:'AInput',
                 props:{
                   name:'userName',
-                  size:'medium',
+                  size:'default',
                   placeholder:'用户名'
                 }
               }
@@ -112,9 +447,29 @@ export default {
             componentName:'AFormItem',
             props:{
               label:'密码:',
+              labelAlign:"right",
               colon:true,
               required:true,
+              noStyle:false,
+              valuePropName:"password",
               name:'b',
+              requiredobj:{
+                required:true,
+                message:"必填"
+              },
+              typeobj:{
+                type:null,
+                message:null
+              },
+              lenobj:{
+                max:null,
+                min:null,
+                message:null
+              },
+              patternobj:{
+                pattern:null,
+                message:null
+              }
             },
             children:[
               {
@@ -122,7 +477,8 @@ export default {
                 props:{
                   name:'password',
                   placeholder:'请输入密码',
-                  size:'medium'
+                  size:'medium',
+                  disabled:false
                 }
               }
             ]
@@ -133,12 +489,32 @@ export default {
               label:'表单项',
               name:'c',
               labelAlign:'right',
+              colon:true,
+              required:false,
+              valuePropName:"shareUnit",
+              requiredobj: {
+                required: null,
+                message: null
+              },
+              typeobj: {
+                type: null,
+                message: null
+              },
+              lenobj: {
+                max: null,
+                min: null,
+                message: null
+              },
+              patternobj: {
+                pattern: null,
+                message: null
+              },
               children:[
                 {
                   componentName:'ASelect',
                   props:{
                     style:{
-                      width:200
+                      width:'200px'
                     },
                     options:[
                       { label:'A',value:'A'},
@@ -147,7 +523,11 @@ export default {
                     ],
                     allowClear:true,
                     autoFocus:false,
-                    filterOption:true
+                    filterOption:true,
+                    optionFilterProp:"value",
+                    labelInValue:false,
+                    loading:false,
+                    tokenSeparators:[]
                   },
 
                 }
@@ -163,23 +543,50 @@ export default {
             },
             children:[
               {
-                componentName:'AFormSubmit',
+                componentName: "ACheckboxGroup",
+                props: {
+                  options: [
+                    {
+                      label: "A",
+                      value: "A"
+                    },
+                    {
+                      label: "B",
+                      value: "B"
+                    },
+                    {
+                      label: "C",
+                      value: "C"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          {
+            componentName:'AFormItem',
+            props:{
+              wrapperCol:{
+                offset:7
+              }
+            },
+            children:[
+              {
+                componentName:'AButton',
                 props:{
                   type:'primary',
-                  validate:true,
-                  onClick:{
-                    type:'JSFunction',
-                    value:"(v,e)=>{console.log(v,e)}"
-                  }
+                  children:"提交",
+                  htmlType:"submit"
                 }
               },
               {
-                componentName:'AFormReset',
+                componentName:'AButton',
                 props:{
                   style:{
-                    marginLeft:10
+                    marginLeft:'10px'
                   },
-                  children:'Reset'
+                  children:'重置',
+                  htmlType:"reset"
                 }
               }
             ]

@@ -217,7 +217,7 @@ export default {
       propType: { type: 'oneOfType', value: ['node', 'func'] },
     },
     {
-      name: 'cancel',
+      name: 'onCancel',
       title: {
         label: '取消按钮回调',
         tip: '点击遮罩层或右上角叉或取消按钮的回调',
@@ -225,7 +225,7 @@ export default {
       propType: 'func',
     },
     {
-      name: 'ok',
+      name: 'onOk',
       title: { label: '点击确定回调', tip: '点击确定回调' },
       propType: 'func',
     },

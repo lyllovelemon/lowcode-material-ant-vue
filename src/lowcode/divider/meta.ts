@@ -85,6 +85,23 @@ const meta = {
         },
       },
     },
+    {
+      title: '带文字分割线',
+      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/divider-2.png',
+      schema: {
+        componentName: 'ADivider',
+        props: {
+          children: [
+            {
+              componentName: 'ATypographyText',
+              props: {
+                children: '分割文字',
+              }
+            }
+          ]
+        }
+      }
+    }
   ],
 };
 

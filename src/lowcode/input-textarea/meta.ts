@@ -2,51 +2,39 @@
 // @ts-ignore
 export default {
   group: 'Antd',
-  componentName: 'AInput',
-  title: '输入框',
+  componentName: 'AInputTextArea',
+  title: '长文本(文本框)',
   category: '表单',
   npm: {
     destructuring: true,
-    componentName: 'AInput'
+    componentName: 'AInputTextArea'
   },
   props: [
     {
       name: 'defaultValue',
       title: { label: '默认值', tip: '默认内容' },
       propType: 'string',
-      setter: 'StringSetter',
+      setter: 'TextAreaSetter',
     },
     {
       name: 'value',
       title: { label: '当前值', tip: '当前值' },
       propType: 'string',
-      setter: 'StringSetter'
-    },
-    {
-      name: 'label',
-      propType: 'string',
-      title: '标签文案',
-      description: 'label'
-    },
-    {
-      name: 'allowClear',
-      title: { label: '支持清除', tip: '是否允许清除' },
-      propType: 'bool',
-      setter: 'BoolSetter',
+      setter: 'TextAreaSetter',
     },
     {
       name: 'bordered',
       title: { label: '显示边框', tip: '是否有边框' },
       propType: 'bool',
       defaultValue: true,
-      setter: 'BoolSetter',
+      setter: 'BoolSetter'
     },
     {
       name: 'disabled',
       title: { label: '是否禁用', tip: '是否为禁用状态' },
       propType: 'bool',
       defaultValue: false,
-      setter: 'BoolSetter',
+      setter: 'BoolSetter'
     },
     {
       name: 'placeholder',
@@ -55,24 +43,29 @@ export default {
       defaultValue: '请输入',
       setter: 'StringSetter'
     },
-    { name: 'id', propType: 'string', description: 'ID' },
-    { name: 'name', propType: 'string' },
     {
-      name: 'type',
-      propType: {
-        type: 'oneOf',
-        value: ['text', 'number', 'password', 'radio', 'range', 'reset', 'search', 'submit', 'tel', 'time', 'url', 'week', 'button', 'checkbox', 'color', 'date', 'textarea']
-      }
+      name: 'showCount',
+      title: { label: '展示字数', tip: '是否展示字数' },
+      propType: 'bool',
+      defaultValue: false,
+      setter: 'BoolSetter'
+    },
+    {
+      name: 'id',
+      title: { label: '输入框ID', tip: '输入框的ID' },
+      propType: 'string',
+      setter: 'StringSetter'
     },
     {
       name: 'maxLength',
       title: { label: '最大长度', tip: '最大长度' },
       propType: 'number',
-      setter: 'NumberSetter',
+      setter: 'NumberSetter'
     },
     {
       name: 'size',
       title: { label: '控件大小', tip: '控件大小' },
+      propType: { type: 'oneOf', value: ['large', 'middle', 'small'] },
       setter: {
         componentName: 'RadioGroupSetter',
         props: {
@@ -92,28 +85,35 @@ export default {
           ],
         },
       },
-      propType: { type: 'oneOf', value: ['large', 'middle', 'small'] },
       defaultValue: 'middle',
     },
     {
-      name: 'addonAfter',
-      title: { label: '后置标签', tip: '后置标签' },
-      propType: { type: 'oneOfType', value: ['string', 'node'] },
-    },
-    {
-      name: 'addonBefore',
-      title: { label: '前置标签', tip: '前置标签' },
-      propType: { type: 'oneOfType', value: ['string', 'node'] },
-    },
-    {
-      name: 'prefix',
-      title: { label: '前缀', tip: '前缀' },
-      propType: { type: 'oneOfType', value: ['string', 'node'] },
-    },
-    {
-      name: 'suffix',
-      title: { label: '后缀', tip: '后缀' },
-      propType: { type: 'oneOfType', value: ['string', 'node'] },
+      name: 'autoSize',
+      title: { label: '高度自适应设置', tip: '高度自适应设置' },
+      propType: {
+        type: 'oneOfType',
+        value: [
+          'bool',
+          {
+            type: 'shape',
+            value: [
+              {
+                name: 'minRows',
+                title: '最小行数',
+                setter: 'NumberSetter',
+                defaultValue: 3,
+              },
+              {
+                name: 'maxRows',
+                title: '最大行数',
+                setter: 'NumberSetter',
+                defaultValue: 3,
+              },
+            ],
+          },
+        ],
+      },
+      defaultValue: false,
     },
     {
       name: 'onChange',
@@ -123,6 +123,11 @@ export default {
     {
       name: 'onPressEnter',
       title: { label: '按下回车的回调', tip: '按下回车的回调' },
+      propType: 'func',
+    },
+    {
+      name: 'onResize',
+      title: { label: 'resize 回调', tip: 'resize 回调' },
       propType: 'func',
     },
     {
@@ -149,7 +154,7 @@ export default {
       name: 'onBlur',
       title: { label: '失去焦点回调', tip: '失去焦点回调' },
       propType: 'func',
-    }
+    },
   ],
   configure: {
     supports: {
@@ -164,6 +169,11 @@ export default {
           name: 'onPressEnter',
           template:
             "onPressEnter(event,${extParams}){\n// 按下回车的回调\nconsole.log('onPressEnter',event);}",
+        },
+        {
+          name: 'onResize',
+          template:
+            "onResize({width,height},${extParams}){\n// resize 回调\nconsole.log('onResize',width,height);}",
         },
         {
           name: 'onFocus',
@@ -186,21 +196,22 @@ export default {
         {
           name: 'onBlur',
           template: "onBlur(event,${extParams}){\n// 按键释放回调\nconsole.log('onBlur',event);}",
-        }
+        },
       ]
     }
   },
   snippets: [
     {
-      title: '输入框',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/input-1.png',
+      title: '长文本(文本框)',
+      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/input-text-area-1.png',
       schema: {
-        componentName: 'AInput',
+        componentName: 'AInputTextArea',
         props: {
-          type: 'text',
-          size: 'default',
-          placeholder: '请输入',
-          autocomplete: 'off'
+          autoSize: {
+            minRows: 3,
+            maxRows: 3,
+          },
+          placeholder: '请输入'
         }
       }
     }

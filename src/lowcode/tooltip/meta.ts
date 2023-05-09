@@ -301,8 +301,8 @@ export default {
         componentName: 'ATooltip',
         props: {
           title: '提示内容',
-        },
-      },
-    },
+        }
+      }
+    }
   ]
 }
