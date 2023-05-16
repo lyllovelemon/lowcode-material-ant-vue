@@ -589,8 +589,8 @@ export default {
         {
           name: 'rowSelection',
           title: { label: '行选择', tip: 'rowSelection | 行选择' },
-          propType: 'object',
-          setter: 'BoolSetter',
+          propType: {type:'oneOfType',value:['object','bool']},
+          setter:['JsonSetter','boolSetter'],
           extraProps: {
             setValue: (target: { parent: { setPropValue: (arg0: string, arg1: { type: string; }) => void; }; }, value: any) => {
               if (value) {
@@ -697,10 +697,10 @@ export default {
       type: 'group',
       items: [
         {
-          name: 'expandable.expandedRowRender',
+          name: 'expandedRowRender',
           title: {
             label: '展开行渲染',
-            tip: 'expandable.expandedRowRender | 额外的展开行',
+            tip: 'expandedRowRender | 额外的展开行',
           },
           propType: 'func',
           setter: [
@@ -717,17 +717,26 @@ export default {
               componentName: 'FunctionSetter',
               props: {
                 template:
-                  'expandedRowRender(record,index,indent,expanded,${extParams}){\n// 展开行渲染\nreturn `${record.id}`}',
+                  'onExpandedRowRender(record,index,indent,expanded,${extParams}){\n// 展开行渲染\nreturn `${record.id}`}',
               },
             },
             'VariableSetter',
           ],
         },
         {
-          name: 'expandable.rowExpandable',
+          name:'defaultExpandAllRows',
+          title:{
+            label:'初始是否展开所有行',
+            tip:'defaultExpandAllRows|初始时，是否展开所有行'
+          },
+          propType:'bool',
+          setter:['BoolSetter','VariableSetter']
+        },
+        {
+          name: 'rowExpandable',
           title: {
             label: '是否可展开',
-            tip: 'expandable.rowExpandable | 行是否可展开',
+            tip: 'rowExpandable | 行是否可展开',
           },
           propType: 'func',
           setter: [
@@ -843,8 +852,8 @@ export default {
             },
             'VariableSetter',
           ],
-        },
-      ],
+        }
+      ]
     },
   ],
   configure:{
@@ -854,17 +863,17 @@ export default {
         {
           name: 'onChange',
           template:
-            "onChange(pagination,filters,sorter,extra,${extParams}){\n// 表格翻页事件\nconsole.log('onChange', pagination);}",
+            "onChange(pagination,filters,sorter,extra,${extParams}){\n// 分页、排序、筛选变化时触发\nconsole.log('onChange', pagination);}",
         },
         {
-          name: 'rowSelection.onChange',
+          name: 'onExpandedRowsChange',
           template:
-            "onRowSelectionChange(selectedRowKeys,selectedRows,${extParams}){\n// 选中项发生变化时的回调\nconsole.log('onRowSelectionChange', selectedRowKeys, selectedRows);}",
+            "onExpandedRowsChange(expanded, record,${extParams}){\n// 展开的行变化时触发\nconsole.log('onExpandedRowsChange', expanded, record);}",
         },
         {
-          name: 'expandable.onExpand',
+          name: 'onExpand',
           template:
-            "onExpandableExpand(expanded,record){\n// 点击展开图标时触发\nconsole.log('onRowSelectionChange', expanded, record);}",
+            "onExpand(expanded,record){\n// 点击展开图标时触发\nconsole.log('onExpand', expanded, record);}",
         },
       ],
     }

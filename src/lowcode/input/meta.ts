@@ -2,19 +2,20 @@
 // @ts-ignore
 export default {
   group: 'Antd',
-  componentName: 'AInput',
-  title: '输入框',
-  category: '表单',
+  componentName: 'AInput',// 组件名
+  title: '输入框', // 组件对应标题
+  category: '表单', // 分类
   npm: {
-    destructuring: true,
-    componentName: 'AInput'
+    destructuring: true,  // 是否解构
+    componentName: 'AInput'// 导出组件名
   },
+  // props 支持配置的属性
   props: [
     {
-      name: 'defaultValue',
-      title: { label: '默认值', tip: '默认内容' },
-      propType: 'string',
-      setter: 'StringSetter',
+      name: 'defaultValue', // 属性名
+      title: { label: '默认值', tip: '默认内容' },// 属性标题
+      propType: 'string',// 类型检查
+      setter: 'StringSetter',// 设置器定义
     },
     {
       name: 'value',
@@ -153,10 +154,11 @@ export default {
   ],
   configure: {
     supports: {
-      style: true,
+      style: true,// 是否支持css样式
       events: [
         {
-          name: 'onChange',
+          name: 'onChange',// 事件名
+          // 事件对应回调
           template:
             "onChange(event,${extParams}){\n// 输入框内容变化时的回调\nconsole.log('onChange',event);}",
         },
@@ -190,12 +192,14 @@ export default {
       ]
     }
   },
+  // snippets组件库展示字段
   snippets: [
     {
-      title: '输入框',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/input-1.png',
+      title: '输入框',//标题
+      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/input-1.png',// 图片
       schema: {
-        componentName: 'AInput',
+        componentName: 'AInput',// 组件名
+        // props定义了默认属性
         props: {
           type: 'text',
           size: 'default',

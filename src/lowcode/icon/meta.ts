@@ -1,4 +1,5 @@
 /* eslint-disable */
+import AntdIconSetter from './antd-icon-setter-vue/index.vue';
 // @ts-ignore
 export default {
   group: 'Antd',
@@ -27,7 +28,7 @@ export default {
       name: 'type',
       description: '图标',
       propType: 'string',
-      setter: 'IconSetter',
+      setter: AntdIconSetter,
     },
     {
       name: 'size',

@@ -2,4 +2,4 @@ dist
 node_modules
 *.d.ts
 typings/*
-src/lowcode/icon/antd-icon-setter/*.vue
+src/lowcode/icon/antd-icon-setter/*

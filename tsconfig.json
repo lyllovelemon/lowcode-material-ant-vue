@@ -5,5 +5,5 @@
     "types": ["webpack-env"]
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue", "typings/*.d.ts"],
-  "exclude": ["dist", "node_modules"]
+  "exclude": ["dist", "node_modules","src/icon/antd-icon-setter/**"]
 }

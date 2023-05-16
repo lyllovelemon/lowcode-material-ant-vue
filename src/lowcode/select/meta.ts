@@ -66,6 +66,31 @@ export default {
       }
     },
     {
+      title:{label:'支持清除',tip:'allowClear|支持清除'},
+      name: 'allowClear',
+      propType:'bool',
+      setter:'BoolSetter',
+      defaultValue:true,
+      supportVariable: true
+    },
+    {
+      title: {label:'自动聚焦',tip:'默认获取焦点'},
+      name: 'autoFocus',
+      propType:'bool',
+      setter: 'BoolSetter',
+      defaultValue:false,
+    },
+    {
+      name: 'labelInValue',
+      title: {
+        label: '值包含label',
+        tip: '把每个选项的 label 包装到 value 中',
+      },
+      propType: 'bool',
+      defaultValue: false,
+      setter: 'BoolSetter'
+    },
+    {
       title:'占位提示',
       name:'placeholder',
       propType:'string',
@@ -96,14 +121,6 @@ export default {
       defaultValue:'value'
     },
     {
-      title:{label:'allowClear',tip:'支持清除'},
-      name: 'allowClear',
-      propType:'bool',
-      setter:'BoolSetter',
-      defaultValue:false,
-      supportVariable: true
-    },
-    {
       title:{label:'autoClearSearchValue',tip:'是否在选中项后清空搜索框，只在 mode 为 multiple 或 tags 时有效' },
       name:'autoClearSearchValue',
       propType:'bool',
@@ -111,7 +128,13 @@ export default {
       defaultValue:true
     },
     {
-      title:'可搜索',
+      name: 'showArrow',
+      title: { label: '是否显示下拉箭头', tip: '是否显示下拉小箭头' },
+      propType: 'bool',
+      setter: 'BoolSetter'
+    },
+    {
+      title:'是否可搜索',
       name:'showSearch',
       propType:'bool',
       setter:'BoolSetter',
@@ -136,13 +159,6 @@ export default {
         }
       },
       defaultValue:'default'
-    },
-    {
-      title: '默认获取焦点',
-      name: 'autoFocus',
-      propType:'bool',
-      setter: 'BoolSetter',
-      defaultValue:false,
     },
     {
       title:'是否展开菜单',
@@ -201,18 +217,23 @@ export default {
       title:'搜索为空时提示文案',
       name:'notFoundContent',
       propType:'string',
-      setter:'StringSetter',
-      defaultValue:'not found'
+      setter:'StringSetter'
     },
     {
-      name:'suffixIcon',
-      title:{label:'后缀图标',tip:'自定义的选择框后缀图标'},
-      propType:'node'
-    },
-    {
-      name:'removeIcon',
-      title:{label:'清除图标',tip:'自定义的多选框清除图标'},
-      propType:'node'
+      name:'dropdownRender',
+      title:{label:'自定义下拉框',tip:'dropdownRender|自定义下拉框内容'},
+      propType:'node',
+      setter:[
+        {
+          componentName: 'SlotSetter',
+          title: '自定义下拉框',
+          initialValue: {
+            type: 'JSSlot',
+            params: ['menuNode'],
+            value: [],
+          },
+        },
+      ]
     },
     {
       name:'tagRender',
@@ -284,9 +305,6 @@ export default {
     }
   ],
   configure: {
-    component:{
-      isContainer:true
-    },
     supports:{
       style:true,
       events:[
