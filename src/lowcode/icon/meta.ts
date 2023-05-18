@@ -1,5 +1,5 @@
 /* eslint-disable */
-import AntdIconSetter from './antd-icon-setter-vue/index.vue';
+import {AntdIconSetter} from './antd-icon-setter/index';
 // @ts-ignore
 export default {
   group: 'Antd',

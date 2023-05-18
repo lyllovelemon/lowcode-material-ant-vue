@@ -62,7 +62,7 @@ export default {
   },
   snippets:[
     {
-      title: '两栏',
+      title: '栅格-两栏',
       screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/1-1.png',
       schema: {
         componentName: 'ARow',
@@ -84,7 +84,7 @@ export default {
       },
     },
     {
-      title: '三栏',
+      title: '栅格-三栏',
       screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/1-1-1.png',
       schema: {
         componentName: 'ARow',
@@ -112,7 +112,7 @@ export default {
       },
     },
     {
-      title: '四栏',
+      title: '栅格-四栏',
       screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/1-1-1-1.png',
       schema: {
         componentName: 'ARow',
@@ -146,7 +146,7 @@ export default {
       },
     },
     {
-      title: '1:3',
+      title: '栅格-1:3',
       screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/1-3.png',
       schema: {
         componentName: 'ARow',

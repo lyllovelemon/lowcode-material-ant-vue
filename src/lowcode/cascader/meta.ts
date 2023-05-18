@@ -3,7 +3,7 @@
 export default{
   group:'Antd',
   componentName:'ACascader',
-  title:'级联选择',
+  title:'级联选择框',
   category:'表单',
   npm:{
     destructuring:true,
@@ -201,7 +201,7 @@ export default{
     }
   },
   snippets: {
-    title: '级联选择',
+    title: '级联选择框',
     screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/cascader-1.png',
     schema:{
       componentName:'ACascader',

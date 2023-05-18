@@ -1,14 +1,17 @@
 /* eslint-disable */
+export * from './lowcode/icon';
+export * from './lowcode/button';
 export * from './lowcode/affix';
 export * from './lowcode/alert';
-export * from './lowcode/anchor';
 export * from './lowcode/anchor-link';
+export * from './lowcode/anchor';
+export * from './lowcode/typography-text';
+
 export * from './lowcode/auto-complete';
 export * from './lowcode/avatar';
 export * from './lowcode/back-top';
 export * from './lowcode/badge';
 export * from './lowcode/breadcrumb';
-export * from './lowcode/button';
 export * from './lowcode/cascader';
 export * from './lowcode/checkbox';
 export * from './lowcode/calendar';
@@ -46,7 +49,6 @@ export * from './lowcode/form-item';
 export * from './lowcode/form-list';
 export * from './lowcode/grid-col';
 export * from './lowcode/grid-row';
-export * from './lowcode/icon';
 export * from './lowcode/image';
 export * from './lowcode/input';
 export * from './lowcode/input-group';
@@ -80,7 +82,6 @@ export * from './lowcode/transfer';
 export * from './lowcode/tree';
 export * from './lowcode/tree-select';
 export * from './lowcode/typography-link';
-export * from './lowcode/typography-text';
 export * from './lowcode/typography-title';
 export * from './lowcode/typography-paragraph';
 export * from './lowcode/slot/view';

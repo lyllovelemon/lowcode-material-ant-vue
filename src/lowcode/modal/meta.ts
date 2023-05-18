@@ -115,7 +115,7 @@ export default {
       name: 'footer',
       title: {
         label: '底部内容',
-        tip: '底部内容，当不需要默认底部按钮时，可以设为 `footer={null}`',
+        tip: 'footer|底部内容，当不需要默认底部按钮时，可以设为 `footer={null}`',
       },
       propType: { type: 'oneOfType', value: ['string', 'node'] },
     },
@@ -184,6 +184,34 @@ export default {
       },
     },
     {
+      name:'cancelButtonProps',
+      title: { label: '取消按钮props', tip: '取消按钮props' },
+      propType: 'object',
+      setter: {
+        componentName: 'ObjectSetter',
+        props: {
+          config: {
+            items: [
+              {
+                name: 'disabled',
+                title: { label: '是否可点击', tip: 'disabled' },
+                propType: 'bool',
+                setter: [
+                  {
+                    componentName: 'BoolSetter',
+
+                    initialValue: false,
+                  },
+                  'VariableSetter',
+                ],
+                isRequired: true,
+              },
+            ],
+          },
+        },
+      },
+    },
+    {
       name: 'bodyStyle',
       title: { label: 'body样式', tip: 'Modal body 样式' },
       propType: 'object',
@@ -194,12 +222,18 @@ export default {
       propType: 'object',
     },
     {
-      name: 'style',
+      name: 'dialogStyle',
       title: {
         label: '浮层样式',
         tip: '可用于设置浮层的样式，调整浮层位置等',
       },
       propType: 'object',
+    },
+    {
+      name:'dialogClass',
+      title:{label:'浮层class',tip:'浮层类名'},
+      propType:'string',
+      setter:'StringSetter'
     },
     {
       name: 'wrapClassName',
@@ -260,7 +294,7 @@ export default {
   },
   snippets:[
     {
-      title: '普通型',
+      title: '弹窗-普通型',
       screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/modal-1.png',
       schema: {
         componentName: 'AModal',
@@ -275,7 +309,7 @@ export default {
       },
     },
     {
-      title: '隐藏底部',
+      title: '弹窗-隐藏底部',
       screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/modal-2.png',
       schema: {
         componentName: 'AModal',

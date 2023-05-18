@@ -52,7 +52,7 @@ export default {
             'VariableSetter',
           ],
         },
-      ],
+      ]
     },
     {
       title: '外观',
@@ -63,7 +63,7 @@ export default {
           name: 'itemLayout',
           title: {
             label: '尺寸',
-            tip: 'itemLayout  | 设置 List.Item 布局, 设置成 vertical 则竖直样式显示, 默认横排',
+            tip: 'itemLayout  | 设置 AListItem 布局, 设置成 vertical 则竖直样式显示, 默认横排',
           },
           propType: { type: 'oneOf', value: ['horizontal', 'vertical'] },
           defaultValue: 'horizontal',
@@ -127,8 +127,8 @@ export default {
           propType: 'bool',
           defaultValue: true,
           setter: 'BoolSetter',
-        },
-      ],
+        }
+      ]
     },
     {
       title: '栅格',
@@ -170,8 +170,8 @@ export default {
             type: 'JSFunction',
             value: 'target => !!target.getProps().getPropValue("gridEnable")',
           },
-        },
-      ],
+        }
+      ]
     },
     {
       title: '分页',
@@ -211,26 +211,6 @@ export default {
             value: 'target => !!target.getProps().getPropValue("pagination")',
           },
         },
-        // {
-        //   name: 'pagination.defaultCurrent',
-        //   title: {
-        //     label: '默认当前页',
-        //     tip: 'pagination.defaultCurrent | 默认的当前页数',
-        //   },
-        //   setter: [
-        //     {
-        //       componentName: 'NumberSetter',
-        //       props: {
-        //         initialValue: 1,
-        //       },
-        //     },
-        //     'VariableSetter',
-        //   ],
-        //   condition: {
-        //     type: 'JSFunction',
-        //     value: 'target => !!target.getProps().getPropValue("pagination")',
-        //   },
-        // },
         {
           name: 'pagination.current',
           title: { label: '当前页数', tip: 'pagination.current | 当前页数' },
@@ -359,8 +339,8 @@ export default {
             type: 'JSFunction',
             value: 'target => !!target.getProps().getPropValue("pagination")',
           },
-        },
-      ],
+        }
+      ]
     },
     {
       title: '扩展',
@@ -464,7 +444,7 @@ export default {
               type: 'JSSlot',
               value: [
                 {
-                  componentName: 'Button',
+                  componentName: 'AButton',
                   props: {
                     children: 'loading more',
                   },
@@ -472,9 +452,9 @@ export default {
               ],
             },
           },
-        },
-      ],
-    },
+        }
+      ]
+    }
   ],
   configure: {
     supports: {
@@ -686,6 +666,6 @@ export default {
           },
         },
       },
-    },
+    }
   ]
 }

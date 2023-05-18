@@ -100,7 +100,7 @@ function getAntdIconList() {
 function getIconList() {
   const iconfontIconList = getIconfontIconList();
   const antdIconList = getAntdIconList();
-
+  console.log('iconList',iconfontIconList,'antdIconList',antdIconList)
   return [...antdIconList, ...iconfontIconList];
 }
 
@@ -158,7 +158,7 @@ const AntdIconSetter = (props: AntdIconSetterProps) => {
     const icons: any = {};
 
     iconList.forEach(item => {
-      const { group, name, icon } = item!;
+      const { group } = item!;
       if (groups.every(item => item.group !== group)) {
         groups.push({ group: group as IconGroup, list: [] });
       }

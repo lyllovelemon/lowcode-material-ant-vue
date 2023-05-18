@@ -225,18 +225,18 @@ export default {
             initialValue: {
               type: 'JSSlot',
               value: [
-                {
-                  componentName: 'AIcon',
-                  props: {
-                    type: 'SmileOutlined',
-                    size: 20,
-                    rotate: 0,
-                    spin: false,
-                  },
-                },
-              ],
-            },
-          },
+                // {
+                //   componentName: 'AIcon',
+                //   props: {
+                //     type: 'SmileOutlined',
+                //     size: 20,
+                //     rotate: 0,
+                //     spin: false,
+                //   }
+                // }
+              ]
+            }
+          }
         },
         {
           name: 'block',

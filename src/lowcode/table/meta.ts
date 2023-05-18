@@ -63,7 +63,7 @@ export default {
                     items: [
                       {
                         name: 'title',
-                        title: { label: '列标题', tip: 'title | 列标题' },
+                        title: { label: '列标题', tip: 'title | 列头显示文字' },
                         propType: { type: 'oneOfType', value: ['string', 'func'] },
                         setter: [
                           'StringSetter',
@@ -75,7 +75,7 @@ export default {
                               params: ['options'],
                               value: [],
                             },
-                          },
+                          }
                         ],
                       },
                       {
@@ -132,7 +132,6 @@ export default {
                           value: ['', 'left', 'right',true,false],
                         },
                         setter: [
-                          'BoolSetter',
                           {
                             componentName: 'RadioGroupSetter',
                             props: {
@@ -152,6 +151,7 @@ export default {
                               ],
                             },
                           },
+                          'BoolSetter',
                           'VariableSetter',
                         ],
                       },
@@ -229,25 +229,36 @@ export default {
                         defaultValue:'menu'
                       },
                       {
-                        name: 'render',
+                        name:'class',
+                        title:{
+                          label:'列的class',
+                          tip:'class|列的class'
+                        },
+                        propType:{ type: 'oneOfType', value: ['string', 'func'] },
+                        setter:[
+                          'StringSetter','FunctionSetter'
+                        ]
+                      },
+                      {
+                        name: 'customRender',
                         title: {
                           label: '自定义渲染',
                           tip:
-                            'render | 插槽内的物料表达式可通过this.record获取当前行数据，this.index获取索引(该项用于自定义操作列)',
+                            'customRender | 插槽内的物料表达式可通过this.data.record获取当前行数据，this.data.index获取索引(该项用于自定义操作列)',
                         },
-                        propType: 'func',
+                        propType: { type: 'oneOfType', value: ['string','node','func'] },
                         setter: [
                           {
                             componentName: 'SlotSetter',
                             title: '单元格插槽',
                             initialValue: {
                               type: 'JSSlot',
-                              params: ['text', 'record', 'index'],
+                              params: ['data'],
                               value: [],
                             },
                           },
-                          'VariableSetter',
-                        ],
+                          'VariableSetter'
+                        ]
                       },
                     ],
                   },
@@ -709,15 +720,14 @@ export default {
               title: '展开行插槽',
               initialValue: {
                 type: 'JSSlot',
-                params: ['record', 'index', 'indent', 'expanded'],
-                value: [],
+                params: ['data']
               },
             },
             {
               componentName: 'FunctionSetter',
               props: {
                 template:
-                  'onExpandedRowRender(record,index,indent,expanded,${extParams}){\n// 展开行渲染\nreturn `${record.id}`}',
+                  'onExpandedRowRender(data,${extParams}){\n// 展开行渲染\nreturn `${data.id}`}',
               },
             },
             'VariableSetter',
@@ -916,11 +926,7 @@ export default {
             {
               title:'操作',
               align:'left',
-              fixed:'right',
-              render:{
-                type:"JSSlot",
-                params:["text","record","index"]
-              }
+              fixed:'right'
             }
           ],
           rowKey: 'id',

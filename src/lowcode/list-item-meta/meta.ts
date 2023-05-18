@@ -37,7 +37,7 @@ export default {
     component:{
       isContainer:true,
       nestingRule:{
-        parentWhitelist:['AList']
+        parentWhitelist:['AList','AListItem']
       }
     },
     supports: {

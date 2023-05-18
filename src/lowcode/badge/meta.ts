@@ -97,7 +97,8 @@ export default [
         schema:{
           componentName:"ABadge",
           props:{
-            count:25
+            count:25,
+            color:'red'
           }
         }
       }
