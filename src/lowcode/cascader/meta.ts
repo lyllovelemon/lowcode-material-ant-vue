@@ -4,7 +4,7 @@ export default{
   group:'Antd',
   componentName:'ACascader',
   title:'级联选择框',
-  category:'表单',
+  category:'数据录入',
   npm:{
     destructuring:true,
     componentName:'ACascader'

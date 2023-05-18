@@ -23,11 +23,11 @@ export default {
             title: '操作组插槽',
             initialValue: {
               type: 'JSSlot',
-              value: [],
-            },
-          },
-        },
-      },
+              value: []
+            }
+          }
+        }
+      }
     },
     {
       name: 'extra',
@@ -36,7 +36,7 @@ export default {
         tip: '额外内容',
       },
       propType: 'node',
-      setter: 'SlotSetter',
+      setter: 'SlotSetter'
     },
   ],
   configure: {

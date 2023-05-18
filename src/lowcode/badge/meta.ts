@@ -2,7 +2,7 @@ export default [
   {
     group:'Antd',
     componentName:"ABadge",
-    title:"徽章",
+    title:"徽章(徽标数)",
     category:"数据展示",
     npm:{
       destructuring:true,
@@ -92,7 +92,7 @@ export default [
     },
     snippets:[
       {
-        title:"徽章",
+        title:"徽章(徽标数)",
         screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/badge-1.png",
         schema:{
           componentName:"ABadge",

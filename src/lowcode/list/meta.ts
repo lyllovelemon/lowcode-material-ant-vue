@@ -368,15 +368,12 @@ export default {
                     children: {
                       componentName: 'ATypographyText',
                       props: {
-                        children: {
-                          type: 'JSExpression',
-                          value: 'this.item.text',
-                        },
-                      },
-                    },
-                  },
-                ],
-              },
+                        children: "oh my god",
+                      }
+                    }
+                  }
+                ]
+              }
             },
             {
               componentName: 'FunctionSetter',
@@ -403,11 +400,11 @@ export default {
                   componentName: 'ATypographyText',
                   props: {
                     children: '列表头部',
-                  },
-                },
-              ],
-            },
-          },
+                  }
+                }
+              ]
+            }
+          }
         },
         {
           name: 'footer',
@@ -425,9 +422,9 @@ export default {
                   componentName: 'ATypographyText',
                   props: {
                     children: '列表底部',
-                  },
-                },
-              ],
+                  }
+                }
+              ]
             },
           },
         },
@@ -447,16 +444,19 @@ export default {
                   componentName: 'AButton',
                   props: {
                     children: 'loading more',
-                  },
-                },
-              ],
-            },
-          },
+                  }
+                }
+              ]
+            }
+          }
         }
       ]
     }
   ],
   configure: {
+    component:{
+      isComponent:true
+    },
     supports: {
       style:true,
       events:[
@@ -506,14 +506,11 @@ export default {
                 children: {
                   componentName: 'ATypographyText',
                   props: {
-                    children: {
-                      type: 'JSExpression',
-                      value: 'this.item.text',
-                    },
-                  },
-                },
-              },
-            ],
+                    children: "文本"
+                  }
+                }
+              }
+            ]
           },
           header: {
             type: 'JSSlot',
@@ -522,9 +519,9 @@ export default {
                 componentName: 'ATypographyText',
                 props: {
                   children: '列表头部',
-                },
-              },
-            ],
+                }
+              }
+            ]
           },
           footer: {
             type: 'JSSlot',
@@ -533,9 +530,9 @@ export default {
                 componentName: 'ATypographyText',
                 props: {
                   children: '列表底部',
-                },
-              },
-            ],
+                }
+              }
+            ]
           },
           itemLayout: 'horizontal',
           size: 'default',

@@ -81,13 +81,16 @@ export default {
                       {
                         name: 'dataIndex',
                         title: { label: '数据字段', tip: 'dataIndex | 数据字段' },
-                        propType: 'string',
-                        setter: 'StringSetter',
+                        propType: {
+                          type:'oneOfType',
+                          value:['string',{type:'arrayOf',value:'string'}]
+                        },
+                        setter: ['StringSetter','ArraySetter'],
                         isRequired: true,
                       },
                       {
                         name: 'key',
-                        title: { label: 'key', tip: 'Vue 需要的 key' },
+                        title: { label: 'key', tip: 'Vue 需要的 key,设置了dataIndex可以忽略这个属性' },
                         propType: 'string',
                         setter: 'StringSetter',
                       },
@@ -165,6 +168,18 @@ export default {
                         setter: ['NumberSetter', 'StringSetter', 'VariableSetter'],
                       },
                       {
+                        name:'maxWidth',
+                        title:{label:'最大宽度',tip:'maxWidth|最大宽度'},
+                        propType:'number',
+                        setter:['NumberSetter']
+                      },
+                      {
+                        name:'minWidth',
+                        title:{label:'最小宽度',tip:'minWidth|最小宽度'},
+                        propType:'number',
+                        setter:['NumberSetter']
+                      },
+                      {
                         name: 'sorter',
                         title: {
                           label: '排序规则',
@@ -172,6 +187,42 @@ export default {
                         },
                         propType: { type: 'oneOfType', value: ['bool', 'func'] },
                         setter: ['BoolSetter', 'FunctionSetter', 'VariableSetter'],
+                      },
+                      {
+                        name:'sortDirections',
+                        title:{
+                          label:'排序方式',
+                          tip:'sortDirections|支持的排序方式'
+                        },
+                        propType:{ type:'oneOf',value:['','ascend','descend']},
+                        setter:{
+                          componentName:'RadioGroupSetter',
+                          props:{
+                            options:[
+                              { title:'不排序',value:''},
+                              { title:'升序',value:'ascend'},
+                              { title:'降序',value:'descend'}
+                            ]
+                          }
+                        }
+                      },
+                      {
+                        name:'sortOrder',
+                        title:{
+                          label:'排序受控属性',
+                          tip:'sortOrder|排序的受控属性，外界可用此控制列的排序'
+                        },
+                        propType:{ type:'oneOf',value:['','ascend','descend']},
+                        setter:{
+                          componentName:'RadioGroupSetter',
+                          props:{
+                            options:[
+                              { title:'不排序',value:''},
+                              { title:'升序',value:'ascend'},
+                              { title:'降序',value:'descend'}
+                            ]
+                          }
+                        }
                       },
                       {
                         name:'ellipsis',
@@ -743,6 +794,16 @@ export default {
           setter:['BoolSetter','VariableSetter']
         },
         {
+          name:'expandedRowKeys',
+          title:{
+            label:'展开的行',
+            tip:'expandedRowKeys|展开的行，控制属性'
+          },
+          propType:{
+            type: 'arrayOf', value:'string'
+          }
+        },
+        {
           name: 'rowExpandable',
           title: {
             label: '是否可展开',
@@ -793,7 +854,10 @@ export default {
         {
           name: 'footer',
           title: { label: '表格尾部', tip: 'footer | 表格尾部' },
-          propType: 'func',
+          propType: {
+            type:'oneOfType',
+            value:['func','node']
+          },
           setter: [
             {
               componentName: 'SlotSetter',

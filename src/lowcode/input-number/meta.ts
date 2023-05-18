@@ -207,6 +207,7 @@ export default {
   snippets: [
     {
       title: '数字输入框',
+      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/input-number-1.png',
       schema: {
         componentName: 'AInputNumber',
         props: {

@@ -1,6 +1,6 @@
 {
   "name": "lowcode-material-ant-vue",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "Ant design vue for lowcode",
   "main": "./dist/index.min.js",
   "module": "./dist/lowcode-material-ant-vue.mjs",

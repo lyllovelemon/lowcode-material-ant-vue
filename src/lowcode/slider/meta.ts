@@ -3,8 +3,8 @@
 export default {
   group: 'Antd',
   componentName: 'ASlider',
-  title: '滑块',
-  category: '基础组件',
+  title: '滑块(滑动输入条)',
+  category: '表单',
   npm: {
     destructuring: true,
     componentName: 'ASlider',
@@ -140,7 +140,7 @@ export default {
   },
   snippets:[
     {
-      title:"滑块",
+      title:"滑块(滑动输入条)",
       screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/slider-1.png",
       schema:{
         componentName:"ASlider",
