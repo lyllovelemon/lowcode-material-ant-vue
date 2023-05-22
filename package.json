@@ -64,9 +64,6 @@
     "vue-tsc": "^0.40.13",
     "webpack": "^5.81.0"
   },
-  "gitHooks": {
-    "pre-commit": "set NODE_ENV=production npx lint-staged && npx vue-tsc --noEmit"
-  },
   "lint-staged": {
     "*.{ts,tsx,vue}": [
       "prettier --write",

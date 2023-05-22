@@ -15,7 +15,7 @@ export default {
       name: 'ref',
       title: {
         label: 'ref',
-        tip: 'ref | 通过 this.$(\'xxx\') 获取到组件实例',
+        tip: 'ref | 通过 this.$refs[\'xxx\'] 获取到组件实例',
       },
       defaultValue: () => {
         return `form_${uuid()}`
@@ -24,11 +24,18 @@ export default {
       supportVariable: true
     },
     {
-      name: 'values',
-      title: { label: '表单数据源', tip: '表单数据源' },
+      name: 'model',
+      title: { label: '表单数据对象', tip: '表单数据对象' },
       propType: 'object',
       setter: 'JsonSetter',
       supportVariable: true
+    },
+    {
+      name:'rules',
+      title:{label:'表单验证规则',tip:'表单验证规则'},
+      propType:'object',
+      setter:'JsonSetter',
+      supportVariable:true
     },
     {
       name: 'colon',
@@ -187,17 +194,17 @@ export default {
       setter: 'StringSetter',
       supportVariable: true
     },
-    {
-      name: 'preserve',
-      title: {
-        label: '删除时保留值',
-        tip: '当字段被删除时保留字段值',
-      },
-      propType: 'bool',
-      defaultValue: true,
-      setter: 'BoolSetter',
-      supportVariable: true
-    },
+    // {
+    //   name: 'validateOnRuleChange',
+    //   title: {
+    //     label: 'rules改变触发验证',
+    //     tip: '是否在 rules 属性改变后立即触发一次验证',
+    //   },
+    //   propType: 'bool',
+    //   defaultValue: true,
+    //   setter: 'BoolSetter',
+    //   supportVariable: true
+    // },
     {
       name: 'scrollToFirstError',
       title: {
@@ -272,31 +279,31 @@ export default {
           },
         },
         {
-          name: 'onFinish',
+          name: 'onClearValidate',
           title: {
-            label: '提交表单且数据验证成功后回调事件',
-            tip: '提交表单且数据验证成功后回调事件',
+            label: '移除表单项的校验结果',
+            tip: '移除表单项的校验结果。传入待移除的表单项的 name 属性或者 name 组成的数组，如不传则移除整个表单的校验结果',
           },
           propType: 'func',
         },
         {
-          name: 'onFinishFailed',
+          name: 'onResetFields',
           title: {
-            label: '提交表单且数据验证失败后回调事件',
-            tip: '提交表单且数据验证失败后回调事件',
+            label: '重置表单并移除校验结果',
+            tip: '对整个表单进行重置，将所有字段值重置为初始值并移除校验结果',
           },
           propType: 'func',
         },
         {
-          name: 'onFieldsChange',
-          title: { label: '字段更新时触发回调事件', tip: '字段更新时触发回调事件' },
+          name: 'onValidateFields',
+          title: { label: '触发表单验证', tip: '触发表单验证' },
           propType: 'func',
         },
         {
-          name: 'onValuesChange',
+          name: 'onValidate',
           title: {
-            label: '字段值更新时触发回调事件',
-            tip: '字段值更新时触发回调事件',
+            label: '任一表单项被校验后触发',
+            tip: '任一表单项被校验后触发',
           },
           propType: 'func',
         }
@@ -310,6 +317,18 @@ export default {
     supports:{
       style:true,
       events:[
+        // {
+        //   name:'onClearValidate',
+        //   template:"onClearValidate(nameList){\n //移除表单项的校验结果\n console.log('onClearValidate',nameList);}"
+        // },
+        // {
+        //   name:'onResetFields',
+        //   template:"onResetFields(nameList){\n // 重置表单并移除校验结果\n console.log('onResetFields',nameList);}"
+        // },
+        // {
+        //   name:'onValidate',
+        //   template:"onValidate(nameList){\n // 触发表单验证\n console.log('onValidate',nameList);}"
+        // },
         {
           name:'onFinish',
           template:
@@ -321,14 +340,14 @@ export default {
             "onFinishFailed({values,errorFields,outOfDate},${extParams}){\n// 提交表单且数据验证失败后回调事件\nconsole.log('onFinishFailed',values, errorFields, outOfDate);}",
         },
         {
-          name: 'onFieldsChange',
+          name: 'onSubmit',
           template:
-            "onFieldsChange(changedFields,allFields,${extParams}){\n// 字段更新时触发回调事件\nconsole.log('onFieldsChange',changedFields,allFields);}",
+            "onSubmit(e,${extParams}){\n// 数据验证成功后回调事件\nconsole.log('onSubmit',e);}",
         },
         {
-          name: 'onValuesChange',
+          name: 'onValidate',
           template:
-            "onValuesChange(changedValues,allValues,${extParams}){\n// 字段值更新时触发回调事件\nconsole.log('onValuesChange',changedValues,allValues);}",
+            "onValidate(name,status,errorMsgs,${extParams}){\n// 任一表单项被校验后触发\nconsole.log('onValidate',name,status,errorMsgs);}",
         },
       ]
     },
@@ -388,11 +407,14 @@ export default {
         props: {
           labelCol:{
             span:6,
-            labelAlign:'left'
+            labelAlign:'right'
           },
-          onValuesChange: {
+          wrapperCol:{
+            span:14
+          },
+          onValidate: {
             type: "JSFunction",
-            value: "function onValuesChange(changedValues, allValues) {\n  console.log('onValuesChange', changedValues, allValues);\n}"
+            value: "function onValidate(e) {\n  console.log('e', changedValues, allValues);\n}"
           },
           onFinish: {
             type: "JSFunction",
@@ -402,7 +424,11 @@ export default {
             type: "JSFunction",
             value: "function onFinishFailed({ values, errorFields, outOfDate }) {\n  console.log('onFinishFailed', values, errorFields, outOfDate);\n}"
           },
-          "name": "basic"
+          onSubmit:{
+            type:"JSFunction",
+            value:"function onSubmit(e){\n console.log('onSubmit',e);\n}"
+          },
+          name: "basic"
         },
         children:[
           {
@@ -438,7 +464,9 @@ export default {
                 props:{
                   name:'userName',
                   size:'default',
-                  placeholder:'用户名'
+                  bordered:true,
+                  disabled:false,
+                  placeholder:'请输入用户名'
                 }
               }
             ]
@@ -451,7 +479,7 @@ export default {
               colon:true,
               required:true,
               noStyle:false,
-              valuePropName:"password",
+              valuePropName:"value",
               name:'b',
               requiredobj:{
                 required:true,
@@ -475,8 +503,10 @@ export default {
               {
                 componentName:'AInputPassword',
                 props:{
-                  name:'password',
                   placeholder:'请输入密码',
+                  autoFocus:false,
+                  controls:true,
+                  bordered:true,
                   size:'medium',
                   disabled:false
                 }
@@ -491,7 +521,7 @@ export default {
               labelAlign:'right',
               colon:true,
               required:false,
-              valuePropName:"shareUnit",
+              valuePropName:"value",
               requiredobj: {
                 required: null,
                 message: null
@@ -523,6 +553,7 @@ export default {
                     ],
                     allowClear:true,
                     autoFocus:false,
+                    disabled:false,
                     filterOption:true,
                     optionFilterProp:"value",
                     labelInValue:false,
@@ -539,7 +570,8 @@ export default {
             props:{
               wrapperCol:{
                 offset:7
-              }
+              },
+              name:"d"
             },
             children:[
               {
@@ -568,7 +600,48 @@ export default {
             props:{
               wrapperCol:{
                 offset:7
+              },
+              name:"e",
+            },
+            children:[
+              {
+                componentName: "ADatePicker",
+                props: {
+                  allowClear:true,
+                  autoFocus:false,
+                  bordered:true,
+                  disabled:false
+                }
               }
+            ]
+          },
+          {
+            componentName:'AFormItem',
+            props:{
+              wrapperCol:{
+                offset:7
+              },
+              name:"f",
+            },
+            children:[
+              {
+                componentName: "ASwitch",
+                props: {
+                  allowClear:true,
+                  autoFocus:false,
+                  bordered:true,
+                  disabled:false
+                }
+              }
+            ]
+          },
+          {
+            componentName:'AFormItem',
+            props:{
+              wrapperCol:{
+                offset:7
+              },
+              name:"g",
             },
             children:[
               {
@@ -585,8 +658,8 @@ export default {
                   style:{
                     marginLeft:'10px'
                   },
-                  children:'重置',
-                  htmlType:"reset"
+                  children:'取消',
+                  htmlType:"text"
                 }
               }
             ]

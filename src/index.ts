@@ -86,5 +86,7 @@ export * from './lowcode/typography-title';
 export * from './lowcode/typography-paragraph';
 export * from './lowcode/slot/view';
 export * from './lowcode/upload';
+export * from 'ant-design-vue/es/message/style';
 export {message} from 'ant-design-vue';
+export * from 'ant-design-vue/es/notification/style';
 export {notification} from 'ant-design-vue';

@@ -113,7 +113,11 @@ export default {
       events: [
         {
           name: 'onConfirm',
-          template: "onConfirm(${extParams}){\n// 点击确认的回调\nconsole.log('onConfirm');}",
+          template: "onConfirm(${extParams}){\n// 点击确认的回调\nwindow.LowcodeMaterialAntVue.message.success('点击确定');}",
+        },
+        {
+          name:'onCancel',
+          template:"onCancel(${extParams}){\n // 点击取消的回调\n window.LowcodeMaterialAntVue.message.error('点击取消');}"
         }
       ]
     }

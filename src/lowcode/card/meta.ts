@@ -33,15 +33,27 @@ export default {
       defaultValue: true,
     },
     {
-      name: 'bodyStyle',
-      title: { label: '内容样式', tip: '内容区域自定义样式' },
-      propType: 'object',
+      name:'customTab',
+      title:{label:'自定义tab',tip:'自定义 tabList tab 标签'},
+      propType:'node',
+      initialValue: {
+        type: 'JSSlot',
+        params: ['data'],
+        value: [],
+      },
     },
-    {
-      name:'headStyle',
-      title:{label:'标题样式',tip:'自定义标题区域样式'},
-      propType:'object'
-    },
+    // {
+    //   name: 'bodyStyle',
+    //   title: { label: '内容样式', tip: '内容区域自定义样式' },
+    //   propType: 'object',
+    //   defaultValue:{}
+    // },
+    // {
+    //   name:'headStyle',
+    //   title:{label:'标题样式',tip:'自定义标题区域样式'},
+    //   propType:'object',
+    //   defaultValue:{}
+    // },
     {
       name: 'extra',
       title: { label: '额外元素', tip: '卡片右上角的操作区域' },
@@ -95,7 +107,7 @@ export default {
       schema:{
         componentName: "ACard",
         props:{
-          title:"Default card for lyl",
+          title:"卡片标题-lyl-test",
           style:{
             width:"300px"
           }

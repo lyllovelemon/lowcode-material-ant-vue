@@ -19,28 +19,22 @@ export default {
       supportVariable: true
     },
     { name: 'label',
-      title: '标签名',
+      title: '标签',
       propType: { type: 'oneOfType', value: ['string', 'node'] }
-      },
+    },
     {
       name: 'labelAlign',
-      title: '标签文本对齐方式',
+      title: '标签对齐',
       propType: { type: 'oneOf', value: ['left', 'right'] },
       setter: {
         componentName: 'RadioGroupSetter',
-        props: { options: [{ title: 'left', value: 'left' }, { title: 'right', value: 'right' }] }
+        props: { options: [{ title: '左', value: 'left' }, { title: '右', value: 'right' }] }
       },
       defaultValue: 'right'
     },
-    { name: 'autoLink',
-      title: '是否自动关联表单域',
-      propType: 'bool',
-      defaultValue: true,
-      setter: 'BoolSetter'
-    },
-    {
+      {
       name: 'colon',
-      title: '是否显示 label 后面的冒号',
+      title: '展示冒号',
       propType: 'bool',
       defaultValue: true,
       setter: 'BoolSetter',
@@ -48,12 +42,12 @@ export default {
     },
     {
       name: 'extra',
-      title: '额外的提示信息',
+      title: '提示信息',
       propType: { type: 'oneOfType', value: ['string', 'node'] }
       },
     {
       name: 'required',
-      title: '是否必填',
+      title: '必填',
       propType: 'bool',
       setter: 'BoolSetter',
       defaultValue: false
@@ -68,6 +62,12 @@ export default {
       setter: 'StringSetter',
       supportVariable: true
     },
+    { name: 'autoLink',
+      title: '是否自动关联表单域',
+      propType: 'bool',
+      defaultValue: true,
+      setter: 'BoolSetter'
+    },
     {
       name: 'noStyle',
       title: {
@@ -78,25 +78,6 @@ export default {
       defaultValue: false,
       setter: 'BoolSetter',
       supportVariable: true
-    },
-    {
-      name: 'valuePropName',
-      title: {
-        label: '子组件值字段',
-        tip: `子节点的值的字段，如 Switch 的是 'checked'`,
-      },
-      propType: 'string',
-      defaultValue: 'value',
-      setter: 'StringSetter',
-      supportVariable: true
-    },
-    {
-      name: 'getValueFromEvent',
-      title: {
-        label: 'event转换器',
-        tip: `设置如何将 event 的值转换成字段值，如将上传组件的fileList作为value值传出`,
-      },
-      propType: 'func',
     },
     {
       name: 'hasFeedback',
@@ -249,10 +230,10 @@ export default {
                     title: '字符串',
                     value: 'string',
                   },
-                  // {
-                  //   title: '纯数字',
-                  //   value: 'number',
-                  // },
+                  {
+                    title: '纯数字',
+                    value: 'number',
+                  },
                   {
                     title: '邮箱',
                     value: 'email',
@@ -305,25 +286,19 @@ export default {
       },
       propType: 'func',
     },
-    {
-      name: 'validateFirst',
-      title: { label: 'validateFirst', tip: '当某一规则校验不通过时，是否停止剩下的规则的校验' },
-      prop: 'bool',
-      setter: 'BoolSetter',
-      defaultValue: false
-    },
-    {
-      name: 'validateStatus',
-      title: { label: 'validateStatus', tip: '校验状态，如不设置，则会根据校验规则自动生成' },
-      prop: { type: 'oneOf', value: ['success', 'warning', 'error', 'validating'] },
-      defaultValue: 'error'
-    },
-    {
-      name: 'validateTrigger',
-      title: { label: 'validateTrigger', tip: '设置字段校验的时机' },
-      propType: { type: 'oneOfType', value: ['string', 'array'] },
-      defaultValue: 'change'
-    }
+    // {
+    //   name: 'validateTrigger',
+    //   title: { label: '校验时机', tip: '设置字段校验的时机' },
+    //   propType: { type: 'oneOfType', value: ['string', 'array'] },
+    //   defaultValue: 'onChange'
+    // }
+    // {
+    //   name: 'validateFirst',
+    //   title: { label: 'validateFirst', tip: '当某一规则校验不通过时，是否停止剩下的规则的校验' },
+    //   prop: 'bool',
+    //   setter: 'BoolSetter',
+    //   defaultValue: false
+    // },
   ],
   configure: {
     component: {
@@ -355,7 +330,8 @@ export default {
       schema: {
         componentName: 'AFormItem',
         props: {
-          label: '表单项'
+          label: '表单项',
+          validateStatus:'error'
         }
       }
     }

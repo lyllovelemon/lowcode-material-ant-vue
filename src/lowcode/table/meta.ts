@@ -751,6 +751,48 @@ export default {
             value: 'target => !!target.getProps().getPropValue("rowSelection")',
           },
         },
+        {
+          name:'rowSelection.onSelect',
+          title:{
+            label:'选择/反选回调',
+            tip:'用户手动选择/取消选择某列的回调'
+          },
+          propType: 'func',
+          setter: [
+            {
+              componentName: 'FunctionSetter',
+              props: {
+                template:
+                  'onSelect(record,${extParams}){\n// 用户手动选择/取消选择某列的回调\nreturn ${record.id};\n}',
+              },
+            }
+          ],
+          condition: {
+            type: 'JSFunction',
+            value: 'target => !!target.getProps().getPropValue("rowSelection")',
+          }
+        },
+        {
+          name:'rowSelection.onSelectAll',
+          title:{
+            label:'全选/反选回调',
+            tip:'用户手动选择/取消选择所有列的回调'
+          },
+          propType: 'func',
+          setter: [
+            {
+              componentName: 'FunctionSetter',
+              props: {
+                template:
+                  'onSelectAll(record,${extParams}){\n// 用户手动选择/取消选择所有列的回调\nreturn ${record.id};\n}',
+              },
+            }
+          ],
+          condition: {
+            type: 'JSFunction',
+            value: 'target => !!target.getProps().getPropValue("rowSelection")',
+          }
+        }
       ],
     },
     {
