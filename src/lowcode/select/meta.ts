@@ -160,20 +160,20 @@ export default {
       },
       defaultValue:'default'
     },
-    {
-      title:'是否展开菜单',
-      name:'open',
-      propType:'bool',
-      setter:'BoolSetter',
-      defaultValue:false
-    },
-    {
-      title:'是否默认展开下拉菜单',
-      name:'defaultOpen',
-      propType:'bool',
-      setter:'BoolSetter',
-      defaultValue:false
-    },
+    // {
+    //   title:'是否展开菜单',
+    //   name:'open',
+    //   propType:'bool',
+    //   setter:'BoolSetter',
+    //   defaultValue:false
+    // },
+    // {
+    //   title:'是否默认展开下拉菜单',
+    //   name:'defaultOpen',
+    //   propType:'bool',
+    //   setter:'BoolSetter',
+    //   defaultValue:false
+    // },
     {
       title:{label:'模式',tip:'模式为多选或标签'},
       name:'mode',
@@ -222,7 +222,7 @@ export default {
     {
       name:'dropdownRender',
       title:{label:'自定义下拉框',tip:'dropdownRender|自定义下拉框内容'},
-      propType:'node',
+      propType: { type: 'oneOfType', value: ['node', 'func'] },
       setter:[
         {
           componentName: 'SlotSetter',
@@ -233,6 +233,13 @@ export default {
             value: [],
           },
         },
+        {
+          componentName: 'FunctionSetter',
+          props: {
+            template:
+              'dropdownRender(menuNode,props,${extParams}){\n// 自定义下拉框内容\nconsole.log("dropdownRender menuNode",menuNode,"props",props)\n}',
+          },
+        }
       ]
     },
     {
