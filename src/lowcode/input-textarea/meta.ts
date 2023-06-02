@@ -1,7 +1,8 @@
 /* eslint-disable */
 // @ts-ignore
+import avatarImg from './__screenshots__/input-text-area-1.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName: 'AInputTextArea',
   title: '长文本(文本框)',
   category: '表单',
@@ -203,7 +204,7 @@ export default {
   snippets: [
     {
       title: '长文本(文本框)',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/input-text-area-1.png',
+      screenshot: avatarImg,
       schema: {
         componentName: 'AInputTextArea',
         props: {

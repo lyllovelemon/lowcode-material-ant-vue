@@ -1,5 +1,7 @@
+// @ts-ignore
+import avatarImg from './__screenshots__/tooltip-1.jpg?inline'
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'ATooltip',
   title: '文字提示',
   category: '数据展示',
@@ -296,7 +298,7 @@ export default {
   snippets:[
     {
       title: '文字提示',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/tooltip-1.jpg',
+      screenshot: avatarImg,
       schema: {
         componentName: 'ATooltip',
         props: {

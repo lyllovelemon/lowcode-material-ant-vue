@@ -1,7 +1,7 @@
 /* eslint-disable */
 // @ts-ignore
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName: 'ATabs',
   title: '标签',
   category: '数据展示',

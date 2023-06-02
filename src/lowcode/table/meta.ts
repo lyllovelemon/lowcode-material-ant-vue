@@ -1,7 +1,8 @@
 /* eslint-disable */
 // @ts-ignore
+import avatarImg from './__screenshots__/table-1.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName: 'ATable',
   title: '表格',
   category: '数据展示',
@@ -997,7 +998,7 @@ export default {
   snippets:[
     {
       title:'表格',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/table-1.png',
+      screenshot: avatarImg,
       schema:{
         componentName:'ATable',
         props:{

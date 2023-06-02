@@ -1,7 +1,8 @@
 /* eslint-disable */
 // @ts-ignore
+import avatarImg from './__screenshots__/input-password-1.png?inline';
 export default{
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName: 'AInputPassword',
   title: '密码框',
   category: '表单',
@@ -131,7 +132,7 @@ export default{
   snippets:[
     {
       title:'密码框',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/input-password-1.png',
+      screenshot: avatarImg,
       schema:{
         componentName:'AInputPassword',
         props:{}

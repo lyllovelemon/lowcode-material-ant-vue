@@ -1,7 +1,8 @@
 /* eslint-disable */
 // @ts-ignore
+import avatarImg from './__screenshots__/checkbox-group-1.png?inline'
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName: 'ACheckboxGroup',
   title: '多选框组',
   category: '表单',
@@ -132,7 +133,7 @@ export default {
   snippets:[
     {
       title:'多选框组',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/checkbox-group-1.png',
+      screenshot: avatarImg,
       schema:{
         componentName:'ACheckboxGroup',
         props:{

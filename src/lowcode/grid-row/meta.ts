@@ -1,6 +1,16 @@
+// @ts-ignore
+import Row1 from './__screenshots__/row-1.png?inline';
+// @ts-ignore
+import Row2 from './__screenshots__/row-2.png?inline';
+// @ts-ignore
+import Row3 from './__screenshots__/row-3.png?inline';
+// @ts-ignore
+import Row4 from './__screenshots__/row-4.png?inline';
 export default {
+  group: 'ant-vue组件',
   componentName: 'ARow',
   title: '栅格-行',
+  category: '布局',
   props: [
     {
       name: 'align',
@@ -63,7 +73,7 @@ export default {
   snippets:[
     {
       title: '栅格-两栏',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/1-1.png',
+      screenshot: Row1,
       schema: {
         componentName: 'ARow',
         props: {},
@@ -85,7 +95,7 @@ export default {
     },
     {
       title: '栅格-三栏',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/1-1-1.png',
+      screenshot: Row2,
       schema: {
         componentName: 'ARow',
         props: {},
@@ -113,7 +123,7 @@ export default {
     },
     {
       title: '栅格-四栏',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/1-1-1-1.png',
+      screenshot: Row3,
       schema: {
         componentName: 'ARow',
         props: {},
@@ -147,7 +157,7 @@ export default {
     },
     {
       title: '栅格-1:3',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/1-3.png',
+      screenshot:Row4,
       schema: {
         componentName: 'ARow',
         props: {},

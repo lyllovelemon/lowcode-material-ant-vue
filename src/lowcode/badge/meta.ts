@@ -1,6 +1,6 @@
 export default [
   {
-    group:'Antd',
+    group: 'ant-vue组件',
     componentName:"ABadge",
     title:"徽章(徽标数)",
     category:"数据展示",

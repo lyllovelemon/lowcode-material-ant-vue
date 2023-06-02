@@ -1,8 +1,10 @@
+// @ts-ignore
+import avatarImg from './__screenshots__/page-header-1.jpg?inline'
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'APageHeader',
   title: '页头',
-  category: '基础组件',
+  category: '导航',
   npm: {
     destructuring: true,
     componentName: 'APageHeader'
@@ -140,7 +142,7 @@ export default {
   snippets:[
     {
       title:"页头",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/page-header-1.jpg",
+      screenshot:avatarImg,
       schema:{
         componentName:"APageHeader",
         props:{

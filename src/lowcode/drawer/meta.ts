@@ -1,8 +1,12 @@
+// @ts-ignore
+import Drawer1 from './__screenshots__/drawer-1.png?inline';
+// @ts-ignore
+import Drawer2 from './__screenshots__/drawer-2.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'ADrawer',
   title: '抽屉',
-  category: '基础组件',
+  category: '反馈',
   npm: {
     destructuring: true,
     componentName: 'ADrawer'
@@ -411,7 +415,7 @@ export default {
   snippets:[
     {
       title: '侧边抽屉',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/drawer-1.png',
+      screenshot: Drawer1,
       schema: {
         componentName: 'ADrawer',
         props: {
@@ -430,7 +434,7 @@ export default {
     },
     {
       title: '底部抽屉',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/drawer-2.png',
+      screenshot: Drawer2,
       schema: {
         componentName: 'ADrawer',
         props: {

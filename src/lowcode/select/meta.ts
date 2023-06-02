@@ -1,7 +1,8 @@
 /* eslint-disable */
 // @ts-ignore
+import avatarImg from './__screenshots__/select-1.png?inline'
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName: 'ASelect',
   title: '选择器',
   category: '基础组件',
@@ -93,8 +94,11 @@ export default {
     {
       title:'占位提示',
       name:'placeholder',
-      propType:'string',
-      setter:'StringSetter'
+      propType:{
+        type:'oneOfType',
+        value:['string','node']
+      },
+      setter:['StringSetter','SlotSetter']
     },
     {
       title:{label:'展示边框',tip:'是否有边框'},
@@ -337,7 +341,7 @@ export default {
   snippets: [
     {
       title: '选择器',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/select-1.png',
+      screenshot: avatarImg,
       schema: {
         componentName: 'ASelect',
         props: {

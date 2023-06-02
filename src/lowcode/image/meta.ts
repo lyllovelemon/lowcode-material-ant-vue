@@ -1,5 +1,7 @@
+// @ts-ignore
+import Image from './__screenshots__/image-1.png?inline'
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'AImage',
   title: '图片',
   category: '数据展示',
@@ -48,11 +50,11 @@ export default {
   snippets:[
     {
       title:"图片",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/image-1.png",
+      screenshot:Image,
       schema:{
         componentName:"AImage",
         props:{
-          src: "https://zos.alipayobjects.com/rmsportal/jkjgkEfvpUPVyRjUImniVslZfWPnJuuZ.png",
+          src: Image,
           width:120,
           height:120
         }

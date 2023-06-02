@@ -1,5 +1,7 @@
+// @ts-ignore
+import avatarImg from './__screenshots__/spin-1.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName: "ASpin",
   title: '加载中',
   category: '反馈',
@@ -53,7 +55,7 @@ export default {
   snippets:[
     {
       title: "加载中",
-      screenshot: "https://alifd.alicdn.com/fusion-cool/icons/icon-antd/spin-1.png",
+      screenshot: avatarImg,
       schema: {
         componentName: 'ASpin',
         props: {

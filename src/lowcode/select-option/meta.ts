@@ -1,7 +1,7 @@
 /* eslint-disable */
 // @ts-ignore
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName: 'ASelectOption',
   title: '选择器-选择项',
   category: '基础组件',

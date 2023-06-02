@@ -1,5 +1,7 @@
+// @ts-ignore
+import avatarImg from './__screenshots__/tag-1.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'ATag',
   title: '标签',
   category: '反馈',
@@ -55,7 +57,7 @@ export default {
   snippets:[
     {
       title:"标签",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/tag-1.png",
+      screenshot:avatarImg,
       schema:{
         componentName:"ATag",
         props:{

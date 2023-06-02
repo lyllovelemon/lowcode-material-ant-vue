@@ -1,5 +1,7 @@
+// @ts-ignore
+import avatarImg from './__screenshots__/upload-1.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'AUpload',
   title: '上传',
   category: '表单',
@@ -434,7 +436,7 @@ export default {
   snippets:[
     {
       title:"上传",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/upload-1.png",
+      screenshot:avatarImg,
       schema:{
         componentName:"AUpload",
         props:{},

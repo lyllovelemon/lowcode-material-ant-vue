@@ -1,7 +1,8 @@
 /* eslint-disable */
 // @ts-ignore
+import avatarImg from './__screenshots__/skeleton.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName: 'ASkeleton',
   title: '骨架屏',
   category: '反馈',
@@ -60,7 +61,7 @@ export default {
   snippets: [
     {
       title: '骨架屏',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/skeleton-1.png',
+      screenshot: avatarImg,
       schema: {
         componentName: 'ASkeleton',
         props: {

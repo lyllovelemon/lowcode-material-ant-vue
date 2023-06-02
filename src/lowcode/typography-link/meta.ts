@@ -1,8 +1,10 @@
+// @ts-ignore
+import avatarImg from './__screenshots__/typography-link-1.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'ATypographyLink',
   title: '链接',
-  category: '基础组件',
+  category: '基础',
   npm: {
     destructuring: true,
     componentName: 'ATypographyLink'
@@ -39,7 +41,7 @@ export default {
   snippets:[
     {
       title:"链接",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/typography-link-1.png",
+      screenshot:avatarImg,
       schema:{
         componentName:"ATypographyLink",
         props:{

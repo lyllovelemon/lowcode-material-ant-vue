@@ -1,8 +1,10 @@
+// @ts-ignore
+import avatarImg from './__screenshots__/back-top-1.jpg?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'ABackTop',
   title: '回到顶部',
-  category: '导航',
+  category: '其他',
   npm: {
     destructuring: true,
     componentName: 'ABackTop'
@@ -49,7 +51,7 @@ export default {
   snippets:[
     {
       title:"回到顶部",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/back-top-1.jpg",
+      screenshot:avatarImg,
       schema:{
         componentName:"ABackTop",
         props:{}

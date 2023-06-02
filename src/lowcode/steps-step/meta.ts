@@ -1,5 +1,5 @@
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName: 'AStepsStep',
   title: '步骤项',
   props: [

@@ -1,5 +1,9 @@
+// @ts-ignore
+import modal1 from './__screenshots__/modal-1.png?inline';
+// @ts-ignore
+import modal2 from './__screenshots__/modal-2.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'AModal',
   title: '对话框',
   category: '反馈',
@@ -295,7 +299,7 @@ export default {
   snippets:[
     {
       title: '弹窗-普通型',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/modal-1.png',
+      screenshot: modal1,
       schema: {
         componentName: 'AModal',
         props: {
@@ -310,7 +314,7 @@ export default {
     },
     {
       title: '弹窗-隐藏底部',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/modal-2.png',
+      screenshot: modal2,
       schema: {
         componentName: 'AModal',
         props: {

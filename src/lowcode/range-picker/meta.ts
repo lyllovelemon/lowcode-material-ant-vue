@@ -1,7 +1,14 @@
 /* eslint-disable */
 // @ts-ignore
+import Picker1 from './__screenshots__/date-picker-range-picker-1.png?inline';
+// @ts-ignore
+import Picker2 from './__screenshots__/date-picker-range-picker-2.png?inline';
+// @ts-ignore
+import Picker3 from './__screenshots__/date-picker-range-picker-3.png?inline';
+// @ts-ignore
+import Picker4 from './__screenshots__/date-picker-range-picker-4.png?inline';
 export default{
-  group:'Antd',
+  group: 'ant-vue组件',
   componentName:'ARangePicker',
   title:'日期区间选择',
   category:'表单',
@@ -303,8 +310,7 @@ export default{
   snippets: [
     {
       title: '日期区间',
-      screenshot:
-        'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/date-picker-range-picker-1.png',
+      screenshot: Picker1,
       schema: {
         componentName: 'ARangePicker',
         props: {},
@@ -312,8 +318,7 @@ export default{
     },
     {
       title: '周区间',
-      screenshot:
-        'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/date-picker-range-picker-2.png',
+      screenshot: Picker2,
       schema: {
         componentName: 'ARangePicker',
         props: {
@@ -323,8 +328,7 @@ export default{
     },
     {
       title: '月区间',
-      screenshot:
-        'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/date-picker-range-picker-3.png',
+      screenshot:Picker3,
       schema: {
         componentName: 'ARangePicker',
         props: {
@@ -334,8 +338,7 @@ export default{
     },
     {
       title: '年区间',
-      screenshot:
-        'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/date-picker-range-picker-4.png',
+      screenshot:Picker4,
       schema: {
         componentName: 'ARangePicker',
         props: {

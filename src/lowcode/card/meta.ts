@@ -1,3 +1,5 @@
+// @ts-ignore
+import avatarImg from './__screenshots__/card-1.png?inline';
 export default {
   componentName: 'ACard',
   title: '卡片',
@@ -103,7 +105,7 @@ export default {
   snippets:[
     {
       title:"卡片",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/card-1.png",
+      screenshot:avatarImg,
       schema:{
         componentName: "ACard",
         props:{

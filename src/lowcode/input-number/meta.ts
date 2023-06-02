@@ -1,7 +1,8 @@
 /* eslint-disable */
 // @ts-ignore
+import avatarImg from './__screenshots__/input-number-1.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName: 'AInputNumber',
   title: '数字输入框',
   category: '基础组件',
@@ -207,7 +208,7 @@ export default {
   snippets: [
     {
       title: '数字输入框',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/input-number-1.png',
+      screenshot: avatarImg,
       schema: {
         componentName: 'AInputNumber',
         props: {

@@ -2,7 +2,7 @@ import {uuid} from '../../utils/index';
 import {itemsExtraProps} from '../menu/util';
 
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'ASubMenu',
   title: '子菜单',
   category: '基础组件',

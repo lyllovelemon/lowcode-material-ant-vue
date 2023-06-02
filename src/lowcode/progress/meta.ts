@@ -1,5 +1,9 @@
+// @ts-ignore
+import avatarImg from './__screenshots__/progress-1.png?inline';
+// @ts-ignore
+import Progress2 from './__screenshots__/progress-2.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'AProgress',
   title: '进度条',
   category: '反馈',
@@ -137,7 +141,7 @@ export default {
   snippets:[
     {
       title:"进度条",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/progress-1.png",
+      screenshot:avatarImg,
       schema:{
         componentName:"AProgress",
         props:{
@@ -148,7 +152,7 @@ export default {
     },
     {
       title:"进度圈",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/progress-2.png",
+      screenshot:Progress2,
       schema:{
         componentName:"AProgress",
         props:{

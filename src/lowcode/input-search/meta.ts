@@ -1,7 +1,8 @@
 /* eslint-disable */
 // @ts-ignore
+import avatarImg from './__screenshots__/input-search-1.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName: 'AInputSearch',
   title: '搜索框',
   category: '表单',
@@ -149,7 +150,7 @@ export default {
   snippets:[
     {
       title:'搜索框',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/input-search-1.png',
+      screenshot: avatarImg,
       schema:{
         componentName:'AInputSearch',
         props:{

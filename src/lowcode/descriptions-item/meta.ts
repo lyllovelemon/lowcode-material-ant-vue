@@ -1,5 +1,5 @@
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'ADescriptionsItem',
   title: '提及',
   category: '数据展示',

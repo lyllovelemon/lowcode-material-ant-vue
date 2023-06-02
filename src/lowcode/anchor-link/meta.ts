@@ -1,5 +1,5 @@
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'AAnchorLink',
   title: '锚点链接',
   category: '其他',

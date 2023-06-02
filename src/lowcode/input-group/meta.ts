@@ -1,7 +1,8 @@
 /* eslint-disable */
 // @ts-ignore
+import avatarImg from './__screenshots__/input-group.jpg?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName: 'AInputGroup',
   title: '输入框组合',
   category: '表单',
@@ -53,7 +54,7 @@ export default {
   snippets:[
     {
       title:'输入框组合',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/input-group-1.jpg',
+      screenshot: avatarImg,
       schema:{
         componentName:'AInputGroup',
         props:{},

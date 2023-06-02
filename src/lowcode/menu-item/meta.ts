@@ -1,5 +1,5 @@
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'AMenuItem',
   title: '菜单项',
   category: '基础组件',

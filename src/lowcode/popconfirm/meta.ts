@@ -1,8 +1,10 @@
+// @ts-ignore
+import avatarImg from './__screenshots__/popconfirm-1.jpg?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'APopconfirm',
   title: '气泡确认框',
-  category: '基础组件',
+  category: '反馈',
   npm: {
     destructuring: true,
     componentName: 'APopconfirm'
@@ -125,7 +127,7 @@ export default {
   snippets:[
     {
       title:"气泡确认框",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/popconfirm-1.jpg",
+      screenshot:avatarImg,
       schema:{
         componentName:"APopconfirm",
         props:{

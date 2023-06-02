@@ -1,7 +1,15 @@
-/* eslint-disable */
 // @ts-ignore
+import DatePicker1 from './__screenshots__/date-picker-1.png?inline';
+// @ts-ignore
+import DatePicker2 from './__screenshots__/date-picker-2.png?inline';
+// @ts-ignore
+import DatePicker3 from './__screenshots__/date-picker-3.png?inline';
+// @ts-ignore
+import DatePicker4 from './__screenshots__/date-picker-4.png?inline';
+// @ts-ignore
+import DatePicker5 from './__screenshots__/date-picker-5.png?inline';
 export default {
-  group:'Antd',
+  group: 'ant-vue组件',
   componentName:'ADatePicker',
   title:'日期选择框',
   category:'表单',
@@ -244,7 +252,7 @@ export default {
   snippets: [
     {
       title: '选择日期',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/date-picker-1.png',
+      screenshot: DatePicker1,
       schema: {
         componentName: "ADatePicker",
         props: {},
@@ -252,7 +260,7 @@ export default {
     },
     {
       title: '选择周',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/date-picker-2.png',
+      screenshot:DatePicker2,
       schema: {
         componentName: 'ADatePicker',
         props: {
@@ -262,7 +270,7 @@ export default {
     },
     {
       title: '选择月份',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/date-picker-3.png',
+      screenshot: DatePicker3,
       schema: {
         componentName: 'ADatePicker',
         props: {
@@ -272,7 +280,7 @@ export default {
     },
     {
       title: '选择季度',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/date-picker-4.png',
+      screenshot: DatePicker4,
       schema: {
         componentName: 'ADatePicker',
         props: {
@@ -282,7 +290,7 @@ export default {
     },
     {
       title: '选择年份',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/date-picker-5.png',
+      screenshot: DatePicker5,
       schema: {
         componentName: 'ADatePicker',
         props: {

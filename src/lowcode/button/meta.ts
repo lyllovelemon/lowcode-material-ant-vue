@@ -1,10 +1,21 @@
 /* eslint-disable */
 // @ts-ignore
+import Button1 from './__screenshots__/button-1.png?inline';
+// @ts-ignore
+import Button2 from './__screenshots__/button-2.png?inline';
+// @ts-ignore
+import Button3 from './__screenshots__/button-3.png?inline';
+// @ts-ignore
+import Button4 from './__screenshots__/button-4.png?inline';
+// @ts-ignore
+import Button5 from './__screenshots__/button-5.png?inline';
+// @ts-ignore
+import Button6 from './__screenshots__/button-6.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName: 'AButton',
   title: '按钮',
-  category: '基础组件',
+  category: '通用',
   npm: {
     destructuring: true,
     componentName: 'AButton',
@@ -305,7 +316,7 @@ export default {
   snippets: [
     {
       title: "主按钮",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/button-1.png",
+      screenshot:Button1,
       schema: {
         componentName: 'AButton',
         props: {
@@ -316,7 +327,7 @@ export default {
     },
     {
       title:"次按钮",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/button-2.png",
+      screenshot:Button2,
       schema:{
         componentName:"AButton",
         props:{
@@ -327,7 +338,7 @@ export default {
     },
     {
       title:"危险按钮",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/button-3.png",
+      screenshot:Button3,
       schema:{
         componentName:"AButton",
         props:{
@@ -338,7 +349,7 @@ export default {
     },
     {
       title:"文字按钮",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/button-4.png",
+      screenshot:Button4,
       schema:{
         componentName:"AButton",
         props:{
@@ -349,7 +360,7 @@ export default {
     },
     {
       title:"虚框按钮",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/button-5.png",
+      screenshot:Button5,
       schema:{
         componentName:"AButton",
         props:{
@@ -360,7 +371,7 @@ export default {
     },
     {
       title:"链接按钮",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/button-6.png",
+      screenshot:Button6,
       schema:{
         componentName:"AButton",
         props:{

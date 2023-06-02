@@ -1,10 +1,11 @@
 /* eslint-disable */
 // @ts-ignore
+import avatarImg from './__screenshots__/pagination-1.jpg?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName: 'APagination',
   title: '分页',
-  category: '基础组件',
+  category: '导航',
   npm: {
     destructuring: true,
     componentName: 'APagination'
@@ -74,10 +75,10 @@ export default {
           defaultValue: false,
         },
         {
-          name: 'onShowSizeChanger',
+          name: 'showSizeChanger',
           title: {
             label: '页数切换',
-            tip: 'onShowSizeChanger | 是否展示 pageSize 切换器',
+            tip: 'showSizeChanger | 是否展示 pageSize 切换器',
           },
           propType: 'bool',
           setter: 'BoolSetter',
@@ -216,13 +217,25 @@ export default {
   snippets:[
     {
       title:'分页',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/pagination-1.jpg',
+      screenshot: avatarImg,
       schema:{
         componentName:'APagination',
+        style:{
+          width:'100%',
+          height:'36px',
+          display:'flex',
+          alignItems:'center',
+          backgroundColor:'#fff',
+          borderTop:'1px solid #EBEEF5',
+          padding:'0 10px'
+        },
         props:{
           pageSize: 10,
           total: 50,
           current: 1,
+          showSizeChanger:true,
+          hideOnSinglePage:false,
+          showQuickJumper:true
         }
       }
     }

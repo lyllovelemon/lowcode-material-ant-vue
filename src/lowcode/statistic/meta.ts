@@ -1,5 +1,7 @@
+// @ts-ignore
+import avatarImg from './__screenshots__/statistic-1.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'AStatistic',
   title: '统计数值',
   category: '数据展示',
@@ -62,7 +64,7 @@ export default {
   snippets:[
     {
       title:"统计数值",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/statistic-1.png",
+      screenshot:avatarImg,
       schema:{
         componentName:"AStatistic",
         props:{

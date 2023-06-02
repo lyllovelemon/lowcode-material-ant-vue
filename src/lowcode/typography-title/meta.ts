@@ -1,8 +1,16 @@
+// @ts-ignore
+import Title1 from './__screenshots__/typography-title-1.png?inline';
+// @ts-ignore
+import Title2 from './__screenshots__/typography-title-2.png?inline';
+// @ts-ignore
+import Title3 from './__screenshots__/typography-title-3.png?inline';
+// @ts-ignore
+import Title4 from './__screenshots__/typography-title-4.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'ATypographyLink',
-  title: '链接',
-  category: '基础组件',
+  title: '链接-标题',
+  category: '基础',
   npm: {
     destructuring: true,
     componentName: 'ATypographyLink'
@@ -125,7 +133,7 @@ export default {
   snippets:[
     {
       title: '一级标题',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/typography-title-1.png',
+      screenshot: Title1,
       schema: {
         componentName: 'ATypographyTitle',
         props: {
@@ -136,7 +144,7 @@ export default {
     },
     {
       title: '二级标题',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/typography-title-2.png',
+      screenshot: Title2,
       schema: {
         componentName: 'ATypographyTitle',
         props: {
@@ -147,7 +155,7 @@ export default {
     },
     {
       title: '三级标题',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/typography-title-3.png',
+      screenshot: Title3,
       schema: {
         componentName: 'ATypographyTitle',
         props: {
@@ -158,7 +166,7 @@ export default {
     },
     {
       title: '四级标题',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/typography-title-4.png',
+      screenshot: Title4,
       schema: {
         componentName: 'ATypographyTitle',
         props: {

@@ -1,5 +1,5 @@
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'AListItemMeta',
   title: '列表项内容',
   category: '数据展示',

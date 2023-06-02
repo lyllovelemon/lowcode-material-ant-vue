@@ -1,8 +1,10 @@
+// @ts-ignore
+import avatarImg from './__screenshots__/dropdown-1.png?inline'
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'ADropdown',
   title: '下拉菜单',
-  category: '基础组件',
+  category: '导航',
   npm: {
     destructuring: true,
     componentName: 'ADropdown'
@@ -131,7 +133,7 @@ export default {
   snippets:[
     {
       title:"下拉菜单",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/dropdown-1.png",
+      screenshot:avatarImg,
       schema:{
         componentName:"ADropdown",
         props:{

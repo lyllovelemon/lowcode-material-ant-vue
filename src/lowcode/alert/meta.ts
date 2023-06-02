@@ -1,5 +1,13 @@
+// @ts-ignore
+import Alert1 from './__screenshots__/alert-1.png?inline';
+// @ts-ignore
+import Alert2 from './__screenshots__/alert-2.png?inline';
+// @ts-ignore
+import Alert3 from './__screenshots__/alert-3.png?inline';
+// @ts-ignore
+import Alert4 from './__screenshots__/alert-4.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName: "AAlert",
   title: '警告提示',
   category: '反馈',
@@ -87,7 +95,7 @@ export default {
   snippets:[
     {
       title: '成功提示',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/alert-1.png',
+      screenshot: Alert1,
       schema: {
         componentName: 'AAlert',
         props: {
@@ -100,7 +108,7 @@ export default {
     },
     {
       title: '信息提示',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/alert-2.png',
+      screenshot: Alert2,
       schema: {
         componentName: 'AAlert',
         props: {
@@ -113,7 +121,7 @@ export default {
     },
     {
       title: '警告提示',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/alert-3.png',
+      screenshot: Alert3,
       schema: {
         componentName: 'AAlert',
         props: {
@@ -126,7 +134,7 @@ export default {
     },
     {
       title: '错误提示',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/alert-4.png',
+      screenshot: Alert4,
       schema: {
         componentName: 'AAlert',
         props: {

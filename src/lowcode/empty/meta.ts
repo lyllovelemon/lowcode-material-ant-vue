@@ -1,5 +1,7 @@
+// @ts-ignore
+import avatarImg from './__screenshots__/empty-1.png?inline'
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'AEmpty',
   title: '空状态',
   category: '数据展示',
@@ -30,7 +32,7 @@ export default {
   snippets:[
     {
       title:"空状态",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/empty-1.png",
+      screenshot:avatarImg,
       schema:{
         componentName:"AEmpty",
         props:{}

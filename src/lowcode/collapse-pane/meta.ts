@@ -1,5 +1,5 @@
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'ACollapsePanel',
   title: '折叠项',
   category: '数据展示',

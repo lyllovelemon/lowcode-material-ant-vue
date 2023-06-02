@@ -1,7 +1,7 @@
-/* eslint-disable */
 // @ts-ignore
+import avatarImg from './__screenshots__/auto-complete-1.png?inline';
 export default{
-  group:'Antd',
+  group: 'ant-vue组件',
   componentName:'AAutoComplete',
   title:'自动补全输入框',
   category:'表单',
@@ -393,7 +393,7 @@ export default{
   snippets:[
     {
       title:'自动补全输入框',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/auto-complete-1.png',
+      screenshot: avatarImg,
       schema:{
         componentName:'AAutoComplete',
         props:{

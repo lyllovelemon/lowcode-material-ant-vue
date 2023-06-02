@@ -1,5 +1,7 @@
+// @ts-ignore
+import avatarImg from './__screenshots__/comment-1.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'AComment',
   title: '评论',
   category: '数据展示',
@@ -56,7 +58,7 @@ export default {
   snippets:[
     {
       title:"评论",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/comment-1.png",
+      screenshot:avatarImg,
       schema:{
         componentName:"AComment",
         props:{}

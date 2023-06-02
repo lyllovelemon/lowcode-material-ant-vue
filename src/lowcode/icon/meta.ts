@@ -1,34 +1,25 @@
-/* eslint-disable */
-import {AntdIconSetter} from './antd-icon-setter/index';
 // @ts-ignore
+import avatarImg from './__screenshots__/icon-1.jpg?inline'
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'AIcon',
   title: '图标',
-  category: '基础组件',
+  category: '通用',
   npm: {
     destructuring: true,
     componentName: 'AIcon'
   },
-  props:[
+  props: [
     {
       name: 'class',
       title: { label: '设置图标的样式名', tip: '设置图标的样式名' },
       propType: 'string',
     },
     {
-      name: 'style',
-      title: {
-        label: '设置图标的样式，例如 `fontSize` 和 `color`',
-        tip: '设置图标的样式，例如 `fontSize` 和 `color`',
-      },
-      propType: 'object',
-    },
-    {
       name: 'type',
       description: '图标',
       propType: 'string',
-      setter: AntdIconSetter,
+      setter: 'AntdIconSetter',
     },
     {
       name: 'size',
@@ -66,7 +57,7 @@ export default {
   snippets:[
     {
       title: '图标',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/icon-1.jpg',
+      screenshot: avatarImg,
       schema: {
         componentName: 'AIcon',
         props: {

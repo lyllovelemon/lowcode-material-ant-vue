@@ -1,7 +1,7 @@
 import {uuid} from '../../utils/index';
 
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'ACollapse',
   title: '折叠面板',
   category: '数据展示',

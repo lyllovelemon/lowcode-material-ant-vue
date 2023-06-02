@@ -1,5 +1,7 @@
+// @ts-ignore
+import avatarImg from './__screenshots__/form-list-1.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'AFormList',
   title: '表单列表',
   category: '表单',
@@ -33,7 +35,7 @@ export default {
   snippets:[
     {
       title: '表单列表',
-      screenshot: 'https://user-images.githubusercontent.com/5419886/221425341-e982c944-8af4-4bad-9c17-1b2fd3fda835.png',
+      screenshot: avatarImg,
       schema: {
         componentName: 'AFormList',
         props: {},

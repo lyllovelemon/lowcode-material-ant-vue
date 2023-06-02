@@ -1,8 +1,10 @@
+// @ts-ignore
+import avatarImage from './__screenshots__/form-1.png?inline'
 /* eslint-disable */
 import {uuid} from '../../utils/index';
 // @ts-ignore
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName: 'AForm',
   title: '表单',
   category: '表单',
@@ -401,7 +403,7 @@ export default {
   snippets: [
     {
       title: '表单',
-      screenshot: "https://alifd.alicdn.com/fusion-cool/icons/icon-antd/form-1.png",
+      screenshot: avatarImage,
       schema: {
         componentName: 'AForm',
         props: {

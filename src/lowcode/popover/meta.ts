@@ -1,5 +1,7 @@
+// @ts-ignore
+import avatarImg from './__screenshots__/popover-1.jpg?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName: "APopover",
   title: '通知提醒框',
   category: '反馈',
@@ -325,7 +327,7 @@ export default {
   snippets:[
     {
       title: '气泡卡片',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/popover-1.jpg',
+      screenshot: avatarImg,
       schema: {
         componentName: 'APopover',
         props: {},

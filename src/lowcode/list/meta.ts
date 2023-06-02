@@ -1,5 +1,7 @@
+// @ts-ignore
+import List1 from './__screenshots__/list-1.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'AList',
   title: '列表',
   category: '数据展示',
@@ -470,7 +472,7 @@ export default {
   snippets:[
     {
       title: '简单列表',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/list-1.png',
+      screenshot: List1,
       schema: {
         componentName: 'AList',
         props: {
@@ -548,7 +550,7 @@ export default {
     },
     {
       title: '基础列表',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/list-1.png',
+      screenshot: List1,
       schema: {
         componentName: 'AList',
         props: {

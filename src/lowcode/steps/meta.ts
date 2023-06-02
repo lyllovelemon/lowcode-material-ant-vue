@@ -1,7 +1,8 @@
 import {uuid} from '../../utils/index';
-
+// @ts-ignore
+import avatarImg from './__screenshots__/steps-1.png?inline'
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'ASteps',
   title: '步骤条',
   category: '导航',
@@ -280,7 +281,7 @@ export default {
   snippets:[
     {
       title: '步骤条',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/steps-1.png',
+      screenshot: avatarImg,
       schema: {
         componentName: 'ASteps',
         props: {

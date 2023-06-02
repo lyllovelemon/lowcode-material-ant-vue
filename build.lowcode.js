@@ -1,7 +1,8 @@
 module.exports = {
   alias: {
     '@': './src',
-    lowcode: './src/lowcode'
+    "@components": "./src/components",
+    "@lowcode": './src/lowcode'
   },
   plugins: [
     [

@@ -1,8 +1,10 @@
+// @ts-ignore
+import avatarImg from './__screenshots__/space-1.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'ASpace',
   title: '间距',
-  category: '数据展示',
+  category: '布局',
   npm: {
     destructuring: true,
     componentName: 'ASpace'
@@ -62,7 +64,7 @@ export default {
   snippets:[
     {
       title: '间距',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/space-1.png',
+      screenshot: avatarImg,
       schema: {
         componentName: 'ASpace',
         props: {},

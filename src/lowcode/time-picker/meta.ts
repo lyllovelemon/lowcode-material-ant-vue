@@ -1,5 +1,7 @@
+// @ts-ignore
+import avatarImg from './__screenshots__/time-picker-1.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'ATimePicker',
   title: '时间选择框',
   category: '数据展示',
@@ -171,7 +173,7 @@ export default {
   snippets:[
     {
       title:"时间选择框",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/time-picker-1.png",
+      screenshot:avatarImg,
       schema:{
         componentName:"ATimePicker",
         props:{

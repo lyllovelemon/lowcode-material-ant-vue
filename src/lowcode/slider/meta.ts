@@ -1,7 +1,8 @@
 /* eslint-disable */
 // @ts-ignore
+import avatarImg from './__screenshots__/slider-1.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName: 'ASlider',
   title: '滑块(滑动输入条)',
   category: '表单',
@@ -141,7 +142,7 @@ export default {
   snippets:[
     {
       title:"滑块(滑动输入条)",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/slider-1.png",
+      screenshot:avatarImg,
       schema:{
         componentName:"ASlider",
         props:{

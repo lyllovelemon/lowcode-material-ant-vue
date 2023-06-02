@@ -1,7 +1,8 @@
 import {uuid} from '../../utils/index';
-
+// @ts-ignore
+import avatarImg from './__screenshots__/descriptions-1.jpg?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'ADescriptions',
   title: '描述列表',
   category: '数据展示',
@@ -199,7 +200,7 @@ export default {
   snippets:[
     {
       title:"描述列表",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/descriptions-1.jpg",
+      screenshot:avatarImg,
       schema:{
         componentName:"ADescriptions",
         props:{

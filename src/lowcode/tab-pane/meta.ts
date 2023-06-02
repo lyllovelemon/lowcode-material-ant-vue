@@ -1,7 +1,8 @@
 /* eslint-disable */
 // @ts-ignore
+import avatarImg from './__screenshots__/tabs-pane-1.jpg?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName: 'ATabPane',
   title: '标签项',
   category: '数据展示',
@@ -52,7 +53,7 @@ export default {
   snippets:[
     {
       title:'标签项',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/tabs-1.jpg',
+      screenshot: avatarImg,
       schema:{
         componentName:'ATabPane',
         props:{

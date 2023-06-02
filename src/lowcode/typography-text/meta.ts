@@ -1,8 +1,14 @@
+// @ts-ignore
+import Text1 from './__screenshots__/typography-text-1.png?inline';
+// @ts-ignore
+import Text2 from './__screenshots__/typography-text-2.png?inline';
+// @ts-ignore
+import Text3 from './__screenshots__/typography-text-3.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'ATypographyText',
   title: '文本',
-  category: '基础组件',
+  category: '基础',
   npm: {
     destructuring: true,
     componentName: 'ATypographyText'
@@ -191,7 +197,7 @@ export default {
   snippets:[
     {
       title: '文本',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/typography-text-1.png',
+      screenshot: Text1,
       schema: {
         componentName: 'ATypographyText',
         props: {
@@ -201,7 +207,7 @@ export default {
     },
     {
       title: '可复制文本',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/typography-text-2.png',
+      screenshot: Text2,
       schema: {
         componentName: 'ATypographyText',
         props: {
@@ -212,7 +218,7 @@ export default {
     },
     {
       title: '可编辑文本',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/typography-text-3.png',
+      screenshot: Text3,
       schema: {
         componentName: 'ATypographyText',
         props: {

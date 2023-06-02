@@ -1,5 +1,6 @@
 /* eslint-disable */
 // @ts-ignore
+import avatarImg from './__screenshots__/icon-1.jpg?inline';
 export default {
   componentName:'Slot',
   title: '插槽',
@@ -48,7 +49,7 @@ export default {
   snippets:[
     {
       title: '插槽',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/icon-1.jpg',
+      screenshot: avatarImg,
       schema: {
         componentName: 'Slot',
         props: {

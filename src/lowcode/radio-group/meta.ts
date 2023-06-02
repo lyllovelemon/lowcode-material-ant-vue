@@ -1,7 +1,8 @@
 /* eslint-disable */
 // @ts-ignore
+import avatarImg from './__screenshots__/radio-group-1.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName: 'ARadioGroup',
   title: '单选框组',
   category: '表单',
@@ -179,7 +180,7 @@ export default {
   snippets:[
     {
       title:'单选框组',
-      screenshot:'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/radio-group-1.png',
+      screenshot:avatarImg,
       props:{
         options: [
           {

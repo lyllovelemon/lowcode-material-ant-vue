@@ -1,5 +1,7 @@
+// @ts-ignore
+import avatarImg from './__screenshots__/tree-select-1.png?inline';
 export default {
-  group:"Antd",
+  group: 'ant-vue组件',
   componentName:"ATreeSelect",
   title:"树型选择控件",
   category: '数据展示',
@@ -262,7 +264,7 @@ export default {
   snippets:[
     {
       title:"树型选择控件",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/tree-select-1.png",
+      screenshot:avatarImg,
       schema:{
         componentName:"ATreeSelect",
         props:{

@@ -1,10 +1,11 @@
 /* eslint-disable */
 // @ts-ignore
+import avatarImg from './__screenshots__/cascader-1.png?inline';
 export default{
-  group:'Antd',
+  group: 'ant-vue组件',
   componentName:'ACascader',
   title:'级联选择框',
-  category:'数据录入',
+  category:'表单',
   npm:{
     destructuring:true,
     componentName:'ACascader'
@@ -202,7 +203,7 @@ export default{
   },
   snippets: {
     title: '级联选择框',
-    screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/cascader-1.png',
+    screenshot: avatarImg,
     schema:{
       componentName:'ACascader',
       props:{

@@ -1,5 +1,7 @@
+// @ts-ignore
+import avatarImg from './__screenshots__/anchor-1.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'AAnchor',
   title: '锚点',
   category: '基础组件',
@@ -10,7 +12,7 @@ export default {
   snippets:[
     {
       title: '锚点',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/anchor-1.png',
+      screenshot: avatarImg,
       schema: {
         componentName: 'AAnchor',
         props: {},

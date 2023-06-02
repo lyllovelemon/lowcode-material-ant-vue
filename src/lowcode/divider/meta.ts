@@ -1,10 +1,11 @@
 /* eslint-disable */
 // @ts-ignore
+import avatarImg from './__screenshots__/divider-2.png?inline';
 const meta = {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName: 'ADivider',
   title: '分割线',
-  category: '数据展示',
+  category: '布局',
   configure: {
     supports: {
       style: true,
@@ -87,7 +88,7 @@ const meta = {
     },
     {
       title: '带文字分割线',
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/divider-2.png',
+      screenshot: avatarImg,
       schema: {
         componentName: 'ADivider',
         props: {

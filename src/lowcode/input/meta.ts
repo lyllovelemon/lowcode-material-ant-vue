@@ -1,7 +1,8 @@
 /* eslint-disable */
 // @ts-ignore
+import avatarImg from './__screenshots__/input-1.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName: 'AInput',// 组件名
   title: '输入框', // 组件对应标题
   category: '表单', // 分类
@@ -196,15 +197,24 @@ export default {
   snippets: [
     {
       title: '输入框',//标题
-      screenshot: 'https://alifd.alicdn.com/fusion-cool/icons/icon-antd/input-1.png',// 图片
+      screenshot: avatarImg,// 图片
       schema: {
         componentName: 'AInput',// 组件名
+        style:{
+          width:'160px',
+          height:'22px',
+          display:'inline-flex',
+          alignItems:'center',
+          marginRight:'10px',
+          backgroundColor:'#ddf4ff'
+        },
         // props定义了默认属性
         props: {
           type: 'text',
           size: 'default',
           placeholder: '请输入',
-          autocomplete: 'off'
+          autocomplete: 'off',
+          bordered:true
         }
       }
     }

@@ -1,11 +1,12 @@
 import {uuid} from '../../utils/index';
 import {itemsExtraProps} from './util';
-
+// @ts-ignore
+import avatarImg from './__screenshots__/menu-1.jpg?inline'
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'AMenu',
   title: '菜单',
-  category: '基础组件',
+  category: '导航',
   npm: {
     destructuring: true,
     componentName: 'AMenu'
@@ -239,7 +240,7 @@ export default {
   snippets:[
     {
       title:"菜单",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/menu-1.jpg",
+      screenshot:avatarImg,
       schema:{
         componentName:"AMenu",
         props:{

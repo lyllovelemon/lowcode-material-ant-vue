@@ -1,5 +1,7 @@
+// @ts-ignore
+import avatarImg from './__screenshots__/result-1.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'AResult',
   title: '结果',
   category: '反馈',
@@ -48,7 +50,7 @@ export default {
   snippets:[
     {
       title:"结果",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/result-1.png",
+      screenshot:avatarImg,
       schema:{
         componentName:"AResult",
         props:{

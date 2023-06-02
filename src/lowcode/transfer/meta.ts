@@ -1,7 +1,8 @@
 import {uuid} from '../../utils/index';
-
+// @ts-ignore
+import avatarImg from './__screenshots__/transfer-1.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'ATransfer',
   title: '穿梭框',
   category: '数据展示',
@@ -60,7 +61,7 @@ export default {
       },
     },
     {
-      name: 'selectedKeys',
+      name: 'v-model:selectedKeys',
       title: { label: '选中项', tip: '设置哪些项应该被选中' },
       propType: { type: 'arrayOf', value: 'string' },
       setter: {
@@ -72,7 +73,7 @@ export default {
       supportVariable: true,
     },
     {
-      name: 'targetKeys',
+      name: 'v-model:targetKeys',
       title: {
         label: '右侧框数据',
         tip: '显示在右侧框数据的 key 集合',
@@ -252,35 +253,35 @@ export default {
   ],
   configure: {
     supports: {
-      style:true
-    },
-    events:[
-      {
-        name: 'onChange',
-        template:
-          "onChange(targetKeys,direction,moveKeys,${extParams}){\n// 选项在两栏之间转移时的回调函数\nconsole.log('onChange',targetKeys,direction,moveKeys);}",
-      },
-      {
-        name: 'onScroll',
-        template:
-          "onScroll(direction,event,${extParams}){\n// 选项列表滚动时的回调函数\nconsole.log('onScroll',direction,event);}",
-      },
-      {
-        name: 'onSearch',
-        template:
-          "onSearch(direction,value,${extParams}){\n// 搜索框内容时改变时的回调函数\nconsole.log('onSearch',direction,value);}",
-      },
-      {
-        name: 'onSelectChange',
-        template:
-          "onSelectChange(sourceSelectedKeys,targetSelectedKeys,${extParams}){\n// 选中项发生改变时的回调函数\nconsole.log('onSelectChange',sourceSelectedKeys,targetSelectedKeys);}",
-      },
-    ]
+      style:true,
+      events:[
+        {
+          name: 'onChange',
+          template:
+            "onChange(targetKeys,direction,moveKeys,${extParams}){\n// 选项在两栏之间转移时的回调函数\nconsole.log('onChange',targetKeys,direction,moveKeys);}",
+        },
+        {
+          name: 'onScroll',
+          template:
+            "onScroll(direction,event,${extParams}){\n// 选项列表滚动时的回调函数\nconsole.log('onScroll',direction,event);}",
+        },
+        {
+          name: 'onSearch',
+          template:
+            "onSearch(direction,value,${extParams}){\n// 搜索框内容时改变时的回调函数\nconsole.log('onSearch',direction,value);}",
+        },
+        {
+          name: 'onSelectChange',
+          template:
+            "onSelectChange(sourceSelectedKeys,targetSelectedKeys,${extParams}){\n// 选中项发生改变时的回调函数\nconsole.log('onSelectChange',sourceSelectedKeys,targetSelectedKeys);}",
+        },
+      ]
+    }
   },
   snippets:[
     {
       title:"穿梭框",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/transfer-1.png",
+      screenshot:avatarImg,
       schema:{
         componentName:"ATransfer",
         props:{

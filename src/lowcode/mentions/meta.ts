@@ -1,5 +1,7 @@
+// @ts-ignore
+import avatarImg from './__screenshots__/mentions-1.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'AMentions',
   title: '提及',
   category: '数据展示',
@@ -143,7 +145,7 @@ export default {
   snippets:[
     {
       title:"提及",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/mentions-1.png",
+      screenshot:avatarImg,
       schema:{
         componentName:"AMentions",
         props:{}

@@ -1,6 +1,8 @@
+// @ts-ignore
+import avatarImg from './__screenshots__/avatar-1.jpg?inline';
 /* eslint-disable */
 const meta={
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName: 'AAvatar',
   title: '头像',
   category: '数据展示',
@@ -140,7 +142,7 @@ const meta={
   snippets: [
     {
       title: '头像',
-      screenshot: "https://alifd.alicdn.com/fusion-cool/icons/icon-antd/avatar-1.jpg",
+      screenshot: avatarImg,
       schema: {
         componentName: 'AAvatar',
         props: {

@@ -1,8 +1,10 @@
+// @ts-ignore
+import avatarImg from './__screenshots__/breadcrumb-1.jpg?inline'
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'ABreadcrumb',
   title: '面包屑',
-  category: '基础组件',
+  category: '导航',
   npm: {
     destructuring: true,
     componentName: 'ABreadcrumb'
@@ -129,7 +131,7 @@ export default {
   snippets:[
     {
       title:"面包屑",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/breadcrumb-1.jpg",
+      screenshot:avatarImg,
       schema:{
         componentName:"ABreadcrumb",
         props:{

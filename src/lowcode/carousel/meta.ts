@@ -1,7 +1,8 @@
 import {uuid} from '../../utils/index';
-
+// @ts-ignore
+import avatarImg from './__screenshots__/carousel-1.jpg?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName:'ACarousel',
   title: '走马灯',
   category: '数据展示',
@@ -165,7 +166,7 @@ export default {
   snippets:[
     {
       title:"走马灯",
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/carousel-1.jpg",
+      screenshot:avatarImg,
       schema:{
         componentName:"ACarousel",
         children:[

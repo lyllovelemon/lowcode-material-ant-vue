@@ -1,7 +1,8 @@
 /* eslint-disable */
 // @ts-ignore
+import avatarImg from './__screenshots__/switch-1.png?inline';
 export default {
-  group: 'Antd',
+  group: 'ant-vue组件',
   componentName: 'ASwitch',
   title: '开关',
   category: '基础组件',
@@ -99,7 +100,7 @@ export default {
   snippets: [
     {
       title: '开关',
-      screenshot:"https://alifd.alicdn.com/fusion-cool/icons/icon-antd/switch-1.png",
+      screenshot:avatarImg,
       schema: {
         componentName: "ASwitch",
         props: {
