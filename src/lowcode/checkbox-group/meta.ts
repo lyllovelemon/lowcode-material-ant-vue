@@ -12,7 +12,7 @@ export default {
   },
   props:[
     {
-      name: 'value',
+      name: 'v-model:value',
       title: { label: '当前值', tip: '当前选中的选项' },
       propType: { type: 'arrayOf', value: 'string' },
       setter: {
@@ -38,18 +38,21 @@ export default {
               description: '选项名',
               propType: 'string',
               defaultValue: '选项名',
+              supportVariable:true
             },
             {
               name: 'value',
               description: '选项值',
               propType: 'string',
               defaultValue: '选项值',
+              supportVariable:true
             },
             {
               name: 'disabled',
               description: '是否禁用',
               propType: 'bool',
               defaultValue: false,
+              supportVariable:true
             },
           ],
         },
@@ -66,19 +69,28 @@ export default {
                     name: 'label',
                     title: '选项名',
                     setter: 'StringSetter',
+                    supportVariable:true,
                     isRequired: true
                   },
                   {
                     name: 'value',
                     title: '选项值',
                     setter: 'StringSetter',
+                    supportVariable:true,
                     isRequired: true
                   },
                   {
                     name: 'disabled',
                     title: '是否禁用',
+                    supportVariable:true,
                     setter: 'BoolSetter',
                   },
+                  {
+                    name:'indeterminate',
+                    title:'是否全选',
+                    supportVariable:true,
+                    setter:'BoolSetter'
+                  }
                 ],
               },
             },
@@ -137,6 +149,7 @@ export default {
       schema:{
         componentName:'ACheckboxGroup',
         props:{
+          indeterminate:false,
           options:[
             {label:'选项一',value:'1'},
             {label:'选项二',value:'2'},

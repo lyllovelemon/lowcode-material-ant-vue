@@ -414,7 +414,7 @@ export default {
         {
           name: 'pagination',
           title: { label: '显示分页', tip: 'pagination | 显示分页' },
-          propType: 'object',
+          propType: {type:'oneOfType',value:['bool','object']},
           setter: 'BoolSetter',
           extraProps: {
             setValue: (target: { parent: { setPropValue: (arg0: string, arg1: { pageSize: number; }) => void; }; }, value: any) => {
@@ -425,6 +425,7 @@ export default {
               }
             },
           },
+          defaultValue:false
         },
         {
           name: 'pagination.pageSize',
@@ -1002,7 +1003,16 @@ export default {
       schema:{
         componentName:'ATable',
         props:{
-          dataSource:[{
+          style:{
+            backgroundColor:'#fff',
+            marginTop:'4px',
+            minHeight:'240px',
+            color:"#000"
+          },
+          showHeader:true,
+          size:'small',
+          dataSource:[
+            {
             id: '1',
             name: '毛不易',
             age: 32,
@@ -1013,35 +1023,93 @@ export default {
               name: '邓紫棋',
               age: 28,
               address: '滨江区网商路699号',
-            }],
+            }
+            ],
           columns: [
+            {
+              title:"序号",
+              dataIndex:'index',
+              align:'center',
+              fixed:'',
+              ellipsis:false,
+              filterSearch:false,
+              filterMultiple:true,
+              customRender:{
+                type:'JSSlot',
+                params:["data"],
+                value:[
+                  {
+                    componentName:'ATypographyText',
+                    props:{
+                      children:{
+                        type:"JSExpression",
+                        value:"this.data.index+1",
+                        mock:"text"
+                      },
+                      code:false,
+                      delete:false,
+                      underline:false,
+                      strong:false,
+                      style:{
+                        color:'#000'
+                      }
+                    }
+                  }
+                ]
+              },
+              width:60
+            },
             {
               title: '姓名',
               dataIndex: 'name',
               key: 'name',
+              align:'center'
             },
             {
               title: '年龄',
               dataIndex: 'age',
               key: 'age',
+              align:'center'
             },
             {
               title:'地址',
               dataIndex:'address',
-              key:'address'
+              key:'address',
+              align:'center'
             },
             {
               title:'操作',
-              align:'left',
-              fixed:'right'
+              fixed:'right',
+              align:'center',
+              filterSearch:false,
+              filterMultiple:true,
+              customRender:{
+                type:'JSSlot',
+                params:["data"],
+                value:[
+                  {
+                    componentName:"AButton",
+                    props:{
+                      type:"link",
+                      children:"详情",
+                      htmlType:"button",
+                      size:'small',
+                      shape:'default',
+                      block:false,
+                      ghost:false,
+                      danger:false,
+                      style:{
+                        fontSize:"12px"
+                      }
+                    }
+                  }
+                ]
+              },
+              class:"operation-list"
             }
           ],
           rowKey: 'id',
-          pagination: {
-            pageSize: 10,
-            total: 15,
-            current: 1,
-          },
+          pagination: false
         }
       }
     }

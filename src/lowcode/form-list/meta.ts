@@ -38,7 +38,15 @@ export default {
       screenshot: avatarImg,
       schema: {
         componentName: 'AFormList',
-        props: {},
+        props: {
+          style:{
+            backgroundColor:'#fff',
+            padding:'10px',
+            height:'42px',
+            display:'flex',
+            alignItems:'center'
+          }
+        },
       }
     }
   ]

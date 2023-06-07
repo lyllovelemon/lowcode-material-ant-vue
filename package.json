@@ -19,7 +19,7 @@
     "@ant-design/icons-vue": "^6.1.0",
     "ant-design-vue": "^3.2.19",
     "core-js": "^3.30.1",
-    "dayjs": "^1.11.7",
+    "dayjs": "^1.11.8",
     "less-loader": "^6.2.0",
     "lodash": "^4.17.21",
     "vue": "^3.2.47"

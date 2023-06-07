@@ -20,7 +20,7 @@ export default {
       }
     },
     {
-      name:'value',
+      name:'v-model:value',
       title:{label:'当前值',tip:'当前值'},
       propType:{
         type:'oneOfType',
@@ -65,6 +65,13 @@ export default {
           }
         }
       }
+    },
+    {
+      title:{label:'自定义label',tip:'自定义label、value、options字段'},
+      name:'fieldNames',
+      propType: 'object',
+      setter: 'JsonSetter',
+      supportVariable: true
     },
     {
       title:{label:'支持清除',tip:'allowClear|支持清除'},
@@ -125,6 +132,17 @@ export default {
       defaultValue:'value'
     },
     {
+      title:{label:'菜单渲染父节点',tip:'菜单渲染父节点'},
+      name:'getPopupContainer',
+      propType: { type: 'oneOfType', value: ['node', 'func'] },
+    },
+    {
+      title:{label:'回填option',tip:'回填到选择框的 Option 的属性值，默认是 Option 的子元素。比如在子元素需要高亮效果时，此值可以设为 value'},
+      name:'optionLabelProp',
+      propType:'string',
+      setter:'StringSetter'
+    },
+    {
       title:{label:'autoClearSearchValue',tip:'是否在选中项后清空搜索框，只在 mode 为 multiple 或 tags 时有效' },
       name:'autoClearSearchValue',
       propType:'bool',
@@ -164,20 +182,6 @@ export default {
       },
       defaultValue:'default'
     },
-    // {
-    //   title:'是否展开菜单',
-    //   name:'open',
-    //   propType:'bool',
-    //   setter:'BoolSetter',
-    //   defaultValue:false
-    // },
-    // {
-    //   title:'是否默认展开下拉菜单',
-    //   name:'defaultOpen',
-    //   propType:'bool',
-    //   setter:'BoolSetter',
-    //   defaultValue:false
-    // },
     {
       title:{label:'模式',tip:'模式为多选或标签'},
       name:'mode',
@@ -245,6 +249,52 @@ export default {
           },
         }
       ]
+    },
+    {
+      name:'clearIcon',
+      title:{label:'自定义清除图标',tip:'自定义清除图标'},
+      propType: 'node',
+      setter: {
+        componentName: 'SlotSetter',
+        initialValue: {
+          type: 'JSSlot',
+          value: [
+            {
+              componentName: 'AIcon',
+              props: {
+                type: 'CloseCircleFilled',
+                size: 12,
+                color:'#ddd',
+                rotate: 0,
+                spin: false,
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      name:'suffixIcon',
+      title:{label:'自定义后缀图标',tip:'自定义后缀图标'},
+      propType: 'node',
+      setter: {
+        componentName: 'SlotSetter',
+        initialValue: {
+          type: 'JSSlot',
+          value: [
+            {
+              componentName: 'AIcon',
+              props: {
+                type: 'CaretDownFilled',
+                size: 12,
+                color:'#5597f9',
+                rotate: 0,
+                spin: false,
+              }
+            }
+          ]
+        }
+      }
     },
     {
       name:'tagRender',
@@ -346,16 +396,31 @@ export default {
         componentName: 'ASelect',
         props: {
           style:{
-            width:"200px"
+            width:"220px",
+            height:'22px',
+            display:'inline-flex',
+            justifyContent:'center',
+            alignItems:'center'
           },
           options:[
             {label:'选项一',value:'1'},
             {label:'选项二',value:'2'},
             {label:'选项三',value:'3'}
           ],
-          bordered:true
-        },
-      },
+          bordered:true,
+          allowCreate:false,
+          autoFocus:false,
+          labelInValue: false,
+          placeholder:'请选择',
+          filterOption:false,
+          autoClearSearchValue:true,
+          showArrow:true,
+          showSearch:true,
+          size:'default',
+          tokenSeparators: [],
+          getPopupContainer:()=>document.querySelector('#lce-container')
+        }
+      }
     },
   ],
 };

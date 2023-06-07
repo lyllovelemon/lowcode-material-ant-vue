@@ -35,7 +35,7 @@ export default {
       supportVariable: true
     },
     {
-      name: 'checked',
+      name: 'v-model:checked',
       title: { label: '是否选中', tip: '指定当前是否选中' },
       propType: 'bool',
       defaultValue: false,

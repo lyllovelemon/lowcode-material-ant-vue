@@ -28,11 +28,12 @@ export default {
       propType: { type: 'oneOfType', value: ['string', 'node'] },
     },
     {
-      name: 'visible',
+      name: 'v-model:visible',
       title: { label: '是否可见', tip: '对话框是否可见' },
       propType: 'bool',
       setter: 'BoolSetter',
-      supportVariable: true
+      supportVariable: true,
+      defaultValue:true
     },
     {
       name: 'centered',
@@ -303,11 +304,14 @@ export default {
       schema: {
         componentName: 'AModal',
         props: {
+          style:{
+            width:'650px'
+          },
           title: 'Basic Modal',
           okText: '确认',
           cancelText: '取消',
-          open: true,
           destroyOnClose: true,
+          getContainer:()=>document.querySelector('#lce-container')
         },
         children: [],
       },
@@ -318,12 +322,15 @@ export default {
       schema: {
         componentName: 'AModal',
         props: {
+          style:{
+            width:'650px'
+          },
           title: 'Basic Modal',
           okText: '确认',
           cancelText: '取消',
-          open: true,
           footer: null,
           destroyOnClose: true,
+          getContainer:()=>document.querySelector('#lce-container')
         },
         children: [],
       },

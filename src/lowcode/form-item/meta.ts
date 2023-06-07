@@ -33,6 +33,12 @@ export default {
       },
       defaultValue: 'right'
     },
+    {
+      name:'class',
+      title:'class类名',
+      propType:'string',
+      setter:'StringSetter'
+    },
       {
       name: 'colon',
       title: '展示冒号',

@@ -320,8 +320,71 @@ export default {
       schema: {
         componentName: 'AButton',
         props: {
+          style:{
+            marginLeft:'10px',
+            fontSize:'12px',
+            width:'66px',
+            height:'24px',
+            display:'inline-flex',
+            justifyContent:'center',
+            alignItems:'center'
+          },
           type:"primary",
-          children:"主按钮"
+          children:"主按钮",
+          htmlType:"button",
+          size:"middle",
+          shape:"default",
+          block:false
+        },
+      },
+    },
+    {
+      title:'查询按钮',
+      screenshot:Button1,
+      schema: {
+        componentName: 'AButton',
+        props: {
+          style:{
+            fontSize:'12px',
+            width:'66px',
+            height:'24px',
+            display:'inline-flex',
+            justifyContent:'center',
+            alignItems:'center',
+            marginLeft:'10px'
+          },
+          type:"primary",
+          children:"查询",
+          htmlType:"button",
+          size:"middle",
+          shape:"default",
+          block:false
+        },
+      },
+    },
+    {
+      title:'重置按钮',
+      screenshot:Button2,
+      schema: {
+        componentName: 'AButton',
+        props: {
+          style:{
+            margin:'0 30px 0 0',
+            fontSize:'12px',
+            borderColor:'#fff',
+            width:'44px',
+            height:'22px',
+            display:'inline-flex',
+            justifyContent:'center',
+            alignItems:'center',
+            color: '#5597f9'
+          },
+          type:"default",
+          children:"重置",
+          htmlType:"button",
+          size:"middle",
+          shape:"default",
+          block:false
         },
       },
     },
@@ -331,6 +394,15 @@ export default {
       schema:{
         componentName:"AButton",
         props:{
+          style:{
+            marginLeft:'10px',
+            fontSize:'12px',
+            width:'66px',
+            height:'24px',
+            display:'inline-flex',
+            justifyContent:'center',
+            alignItems:'center'
+          },
           type:"default",
           children:"次按钮"
         }
@@ -342,6 +414,15 @@ export default {
       schema:{
         componentName:"AButton",
         props:{
+          style:{
+            marginLeft:'10px',
+            fontSize:'12px',
+            width:'66px',
+            height:'24px',
+            display:'inline-flex',
+            justifyContent:'center',
+            alignItems:'center'
+          },
           type:"danger",
           children:"危险按钮"
         }
@@ -353,6 +434,15 @@ export default {
       schema:{
         componentName:"AButton",
         props:{
+          style:{
+            marginLeft:'10px',
+            fontSize:'12px',
+            width:'66px',
+            height:'24px',
+            display:'inline-flex',
+            justifyContent:'center',
+            alignItems:'center'
+          },
           type:"text",
           children:"文字按钮"
         }
@@ -364,6 +454,15 @@ export default {
       schema:{
         componentName:"AButton",
         props:{
+          style:{
+            marginLeft:'10px',
+            fontSize:'12px',
+            width:'66px',
+            height:'24px',
+            display:'inline-flex',
+            justifyContent:'center',
+            alignItems:'center'
+          },
           type:"dashed",
           children:"虚框按钮"
         }
@@ -375,6 +474,15 @@ export default {
       schema:{
         componentName:"AButton",
         props:{
+          style:{
+            marginLeft:'10px',
+            fontSize:'12px',
+            width:'66px',
+            height:'24px',
+            display:'inline-flex',
+            justifyContent:'center',
+            alignItems:'center'
+          },
           type:"link",
           children:"链接按钮"
         }

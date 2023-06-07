@@ -27,7 +27,7 @@ export default {
       supportVariable: true
     },
     {
-      name: 'checked',
+      name: 'v-model:checked',
       title: { label: '当前值', tip: '指定当前是否选中' },
       propType: 'bool',
       defaultValue: false,
@@ -86,7 +86,8 @@ export default {
       schema:{
         componentName:'ACheckbox',
         props:{
-          children:'checkbox'
+          children:'checkbox',
+          'v-model:checked':true
         }
       }
     }

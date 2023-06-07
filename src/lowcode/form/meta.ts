@@ -196,17 +196,17 @@ export default {
       setter: 'StringSetter',
       supportVariable: true
     },
-    // {
-    //   name: 'validateOnRuleChange',
-    //   title: {
-    //     label: 'rules改变触发验证',
-    //     tip: '是否在 rules 属性改变后立即触发一次验证',
-    //   },
-    //   propType: 'bool',
-    //   defaultValue: true,
-    //   setter: 'BoolSetter',
-    //   supportVariable: true
-    // },
+    {
+      name: 'validateOnRuleChange',
+      title: {
+        label: 'rules改变触发验证',
+        tip: '是否在 rules 属性改变后立即触发一次验证',
+      },
+      propType: 'bool',
+      defaultValue: true,
+      setter: 'BoolSetter',
+      supportVariable: true
+    },
     {
       name: 'scrollToFirstError',
       title: {
@@ -319,18 +319,6 @@ export default {
     supports:{
       style:true,
       events:[
-        // {
-        //   name:'onClearValidate',
-        //   template:"onClearValidate(nameList){\n //移除表单项的校验结果\n console.log('onClearValidate',nameList);}"
-        // },
-        // {
-        //   name:'onResetFields',
-        //   template:"onResetFields(nameList){\n // 重置表单并移除校验结果\n console.log('onResetFields',nameList);}"
-        // },
-        // {
-        //   name:'onValidate',
-        //   template:"onValidate(nameList){\n // 触发表单验证\n console.log('onValidate',nameList);}"
-        // },
         {
           name:'onFinish',
           template:
@@ -360,7 +348,9 @@ export default {
             'AInput',
             'ASelect',
             'ARadio',
+            'ARadioGroup',
             'ACheckbox',
+            'ACheckboxGroup',
             'ASwitch',
             'AUpload',
             'ADatePicker',
@@ -402,11 +392,49 @@ export default {
       },
   snippets: [
     {
+      title:'空表单',
+      componentName: 'AForm',
+      props: {
+        labelCol:{
+          span:6,
+          labelAlign:'right'
+        },
+        wrapperCol:{
+          span:14
+        },
+        onValidate: {
+          type: "JSFunction",
+          value: "function onValidate(e) {\n  console.log('e', changedValues, allValues);\n}"
+        },
+        onFinish: {
+          type: "JSFunction",
+          value: "function onFinish(values) {\n  console.log('onFinish', values);\n}"
+        },
+        onFinishFailed: {
+          type: "JSFunction",
+          value: "function onFinishFailed({ values, errorFields, outOfDate }) {\n  console.log('onFinishFailed', values, errorFields, outOfDate);\n}"
+        },
+        onSubmit:{
+          type:"JSFunction",
+          value:"function onSubmit(e){\n console.log('onSubmit',e);\n}"
+        },
+        name: "basic"
+      },
+      children:[]
+    },
+    {
       title: '表单',
       screenshot: avatarImage,
       schema: {
         componentName: 'AForm',
         props: {
+          style:{
+            backgroundColor:'#fff',
+            padding:'10px',
+            display:'flex',
+            justifyContent:'flex-start',
+            alignItems:'center'
+          },
           labelCol:{
             span:6,
             labelAlign:'right'
@@ -436,47 +464,7 @@ export default {
           {
             componentName:'AFormItem',
             props:{
-              label:'表单项:',
-              labelAlign:'right',
-              colon:true,
-              required:true,
-              valuePropName:"value",
-              name:'a',
-              requiredobj:{
-                required:true,
-                message:"必填"
-              },
-              typeobj:{
-                type:null,
-                message:null
-              },
-              lenobj:{
-                max:null,
-                min:null,
-                message:null
-              },
-              patternobj:{
-                pattern:null,
-                message:null
-              }
-            },
-            children:[
-              {
-                componentName:'AInput',
-                props:{
-                  name:'userName',
-                  size:'default',
-                  bordered:true,
-                  disabled:false,
-                  placeholder:'请输入用户名'
-                }
-              }
-            ]
-          },
-          {
-            componentName:'AFormItem',
-            props:{
-              label:'密码:',
+              label:'',
               labelAlign:"right",
               colon:true,
               required:true,
@@ -484,7 +472,7 @@ export default {
               valuePropName:"value",
               name:'b',
               requiredobj:{
-                required:true,
+                required:false,
                 message:"必填"
               },
               typeobj:{
@@ -502,168 +490,7 @@ export default {
               }
             },
             children:[
-              {
-                componentName:'AInputPassword',
-                props:{
-                  placeholder:'请输入密码',
-                  autoFocus:false,
-                  controls:true,
-                  bordered:true,
-                  size:'medium',
-                  disabled:false
-                }
-              }
-            ]
-          },
-          {
-            componentName:'AFormItem',
-            props:{
-              label:'表单项',
-              name:'c',
-              labelAlign:'right',
-              colon:true,
-              required:false,
-              valuePropName:"value",
-              requiredobj: {
-                required: null,
-                message: null
-              },
-              typeobj: {
-                type: null,
-                message: null
-              },
-              lenobj: {
-                max: null,
-                min: null,
-                message: null
-              },
-              patternobj: {
-                pattern: null,
-                message: null
-              },
-              children:[
-                {
-                  componentName:'ASelect',
-                  props:{
-                    style:{
-                      width:'200px'
-                    },
-                    options:[
-                      { label:'A',value:'A'},
-                      { label:'B',value:'B'},
-                      { label:'C',value:'C'}
-                    ],
-                    allowClear:true,
-                    autoFocus:false,
-                    disabled:false,
-                    filterOption:true,
-                    optionFilterProp:"value",
-                    labelInValue:false,
-                    loading:false,
-                    tokenSeparators:[]
-                  },
 
-                }
-              ]
-            }
-          },
-          {
-            componentName:'AFormItem',
-            props:{
-              wrapperCol:{
-                offset:7
-              },
-              name:"d"
-            },
-            children:[
-              {
-                componentName: "ACheckboxGroup",
-                props: {
-                  options: [
-                    {
-                      label: "A",
-                      value: "A"
-                    },
-                    {
-                      label: "B",
-                      value: "B"
-                    },
-                    {
-                      label: "C",
-                      value: "C"
-                    }
-                  ]
-                }
-              }
-            ]
-          },
-          {
-            componentName:'AFormItem',
-            props:{
-              wrapperCol:{
-                offset:7
-              },
-              name:"e",
-            },
-            children:[
-              {
-                componentName: "ADatePicker",
-                props: {
-                  allowClear:true,
-                  autoFocus:false,
-                  bordered:true,
-                  disabled:false
-                }
-              }
-            ]
-          },
-          {
-            componentName:'AFormItem',
-            props:{
-              wrapperCol:{
-                offset:7
-              },
-              name:"f",
-            },
-            children:[
-              {
-                componentName: "ASwitch",
-                props: {
-                  allowClear:true,
-                  autoFocus:false,
-                  bordered:true,
-                  disabled:false
-                }
-              }
-            ]
-          },
-          {
-            componentName:'AFormItem',
-            props:{
-              wrapperCol:{
-                offset:7
-              },
-              name:"g",
-            },
-            children:[
-              {
-                componentName:'AButton',
-                props:{
-                  type:'primary',
-                  children:"提交",
-                  htmlType:"submit"
-                }
-              },
-              {
-                componentName:'AButton',
-                props:{
-                  style:{
-                    marginLeft:'10px'
-                  },
-                  children:'取消',
-                  htmlType:"text"
-                }
-              }
             ]
           }
         ]

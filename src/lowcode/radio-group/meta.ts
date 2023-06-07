@@ -12,11 +12,18 @@ export default {
   },
   props:[
     {
-      name: 'value',
+      name: 'v-model:value',
       title: { label: '当前值', tip: '指定选中的选项' },
       propType: 'string',
       setter: 'StringSetter',
       supportVariable: true
+    },
+    {
+      name:'name',
+      title:'name属性',
+      propType:'string',
+      setter:'StringSetter',
+      supportVariable:true
     },
     {
       name: 'options',
@@ -30,18 +37,21 @@ export default {
               propType: 'string',
               description: '选项名',
               defaultValue: '选项名',
+              supportVariable:true
             },
             {
               name: 'value',
               propType: 'string',
               description: '选项值',
               defaultValue: '选项值',
+              supportVariable:true
             },
             {
               name: 'disabled',
               propType: 'bool',
               description: '是否禁用',
               defaultValue: false,
+              supportVariable:true
             },
           ],
         },
@@ -138,7 +148,7 @@ export default {
       condition(target: { getProps: () => { (): any; new(): any; getPropValue: { (arg0: string): string; new(): any; }; }; }) {
         return target.getProps().getPropValue('optionType') === 'button';
       },
-      propType: { type: 'oneOf', value: ['large', 'middle', 'small'] },
+      propType: { type: 'oneOf', value: ['large', 'default', 'small'] },
       setter: {
         componentName: 'RadioGroupSetter',
         props: {
@@ -149,7 +159,7 @@ export default {
             },
             {
               title: '中',
-              value: 'middle',
+              value: 'default',
             },
             {
               title: '小',
@@ -158,7 +168,7 @@ export default {
           ],
         },
       },
-      defaultValue: 'middle',
+      defaultValue: 'default',
     },
     {
       name: 'onChange ',
@@ -181,21 +191,26 @@ export default {
     {
       title:'单选框组',
       screenshot:avatarImg,
-      props:{
-        options: [
-          {
-            label: 'A',
-            value: 'A',
-          },
-          {
-            label: 'B',
-            value: 'B',
-          },
-          {
-            label: 'C',
-            value: 'C',
-          },
-        ],
+      schema:{
+        componentName:'ARadioGroup',
+        props:{
+          "v-model:value":"A",
+          name:"radio-group",
+          options: [
+              {
+                label: 'A',
+                value: 'A',
+              },
+              {
+                label: 'B',
+                value: 'B',
+              },
+              {
+                label: 'C',
+                value: 'C',
+              },
+            ],
+        }
       }
     }
   ]

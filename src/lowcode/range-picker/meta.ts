@@ -7,6 +7,7 @@ import Picker2 from './__screenshots__/date-picker-range-picker-2.png?inline';
 import Picker3 from './__screenshots__/date-picker-range-picker-3.png?inline';
 // @ts-ignore
 import Picker4 from './__screenshots__/date-picker-range-picker-4.png?inline';
+import locale from 'ant-design-vue/es/date-picker/locale/zh_CN';
 export default{
   group: 'ant-vue组件',
   componentName:'ARangePicker',
@@ -30,15 +31,17 @@ export default{
           },
           propType: 'object',
           setter: 'JsonSetter',
+          supportVariable:true
         },
         {
-          name: 'value',
+          name: 'v-model:value',
           title: {
             label: '当前值',
-            tip: 'value | 当前值',
+            tip: 'v-model:value | 当前值',
           },
           propType: 'object',
           setter: 'JsonSetter',
+          supportVariable:true
         },
         {
           name: 'defaultPickerValue',
@@ -167,7 +170,7 @@ export default{
           name: 'format',
           title: {
             label: '日期格式',
-            tip: 'format | 展示的日期格式，配置参考 moment.js',
+            tip: 'format | 展示的日期格式，配置参考 day.js',
           },
           propType: 'string',
           setter: 'StringSetter',
@@ -251,13 +254,65 @@ export default{
           defaultValue: false,
           setter: 'BoolSetter',
         },
+        {
+          name:'separator',
+          title:{label:'分隔符',tip:'设置分隔符'},
+          propType:{type:'oneOfType',value:['string','node']},
+          setter:['StringSetter','SlotSetter']
+        }
       ],
+    },
+    {
+      title:'样式设置',
+      display:'block',
+      type:'group',
+      items:[
+        {
+          name:'dropdownClassName',
+          title:'弹出日历class',
+          propType: 'string',
+          setter: 'StringSetter'
+        },
+        {
+          name:'getPopupContainer',
+          title:{label:'定义浮层容器',tip:'getPopupContainer|定义浮层容器'},
+          propType: { type: 'oneOfType', value: ['node', 'func'] },
+        },
+        {
+          name:'popupStyle',
+          title:{label:'弹出日历样式',tip:'popupStyle|弹出日历样式'},
+          propType: 'object'
+        }
+      ]
     },
     {
       title: '高级',
       display: 'block',
       type: 'group',
       items:[
+        {
+          name:'locale',
+          title:'语言',
+          propType:'string',
+          defaultValue:locale
+        },
+        {
+          name:'dateRender',
+          title:{label:'自定义单元格',tip:"自定义日期单元格的内容"},
+          propType: { type: 'oneOfType', value: ['string','node','func'] },
+          setter: [
+            {
+              componentName: 'SlotSetter',
+              title: '单元格插槽',
+              initialValue: {
+                type: 'JSSlot',
+                params: ['current'],
+                value: [],
+              },
+            },
+            'VariableSetter'
+          ]
+        },
         {
           name: 'ranges',
           title: {
@@ -313,8 +368,24 @@ export default{
       screenshot: Picker1,
       schema: {
         componentName: 'ARangePicker',
-        props: {},
-      },
+        props: {
+          style:{
+            width: '379px',
+            height: '22px',
+            background:"#ddf4ff",
+            border:'1px solid #ddf4ff',
+            marginLeft:'10px'
+          },
+          format:'YYYY-MM-DD HH:mm:ss',
+          allowCreate:false,
+          bordered:true,
+          showToday:true,
+          autoFocus:true,
+          inputReadOnly:false,
+          separator:'至',
+          dropdownClassName: "date-range-picker",
+        }
+      }
     },
     {
       title: '周区间',
@@ -322,6 +393,13 @@ export default{
       schema: {
         componentName: 'ARangePicker',
         props: {
+          style:{
+            width: '379px',
+            height: '22px',
+            background:"#ddf4ff",
+            border:'1px solid #ddf4ff',
+            marginLeft:'10px'
+          },
           picker: 'week',
         },
       },
@@ -332,6 +410,13 @@ export default{
       schema: {
         componentName: 'ARangePicker',
         props: {
+          style:{
+            width: '379px',
+            height: '22px',
+            background:"#ddf4ff",
+            border:'1px solid #ddf4ff',
+            marginLeft:'10px'
+          },
           picker: 'month',
         },
       },
@@ -342,6 +427,13 @@ export default{
       schema: {
         componentName: 'ARangePicker',
         props: {
+          style:{
+            width: '379px',
+            height: '22px',
+            background:"#ddf4ff",
+            border:'1px solid #ddf4ff',
+            marginLeft:'10px'
+          },
           picker: 'year',
         },
       },

@@ -19,7 +19,7 @@ export default {
       setter: 'StringSetter',// 设置器定义
     },
     {
-      name: 'value',
+      name: 'v-model:value',
       title: { label: '当前值', tip: '当前值' },
       propType: 'string',
       setter: 'StringSetter'
@@ -200,21 +200,46 @@ export default {
       screenshot: avatarImg,// 图片
       schema: {
         componentName: 'AInput',// 组件名
-        style:{
-          width:'160px',
-          height:'22px',
-          display:'inline-flex',
-          alignItems:'center',
-          marginRight:'10px',
-          backgroundColor:'#ddf4ff'
-        },
         // props定义了默认属性
         props: {
+          style:{
+            width:'160px',
+            height:'22px',
+            display:'inline-flex',
+            alignItems:'center',
+            marginRight:'10px',
+            backgroundColor:'#ddf4ff',
+            border:'1px solid #ddf4ff'
+          },
           type: 'text',
           size: 'default',
           placeholder: '请输入',
           autocomplete: 'off',
-          bordered:true
+          label:"",
+          bordered:true,
+          name:"",
+          prefix:{
+            type:"JSSlot",
+            value:[
+              {
+                componentName:'ATypographyText',
+                props:{
+                  children:'用户姓名：',
+                  code:false,
+                  delete:false,
+                  disabled:false,
+                  mark:false,
+                  keyboard:false,
+                  underline:false,
+                  strong:false,
+                  style:{
+                    color:'#707070',
+                    fontSize:'12px'
+                  }
+                }
+              }
+            ]
+          }
         }
       }
     }
