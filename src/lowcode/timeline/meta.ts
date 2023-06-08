@@ -129,7 +129,7 @@ export default {
               for (const key in map) {
                 if (Object.hasOwnProperty.call(map, key)) {
                   items.push({
-                    componentName: 'Timeline.Item',
+                    componentName: 'ATimelineItem',
                     // @ts-ignore
                     props: map[key],
                   });

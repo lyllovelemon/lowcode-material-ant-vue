@@ -62,7 +62,8 @@ export default {
         componentName:"ATag",
         props:{
           color:"magenta",
-          children:"标签"
+          children:"标签",
+          visible:true
         }
       }
     }

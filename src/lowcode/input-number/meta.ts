@@ -212,6 +212,10 @@ export default {
       schema: {
         componentName: 'AInputNumber',
         props: {
+          style:{
+            backgroundColor:'#ddf4ff',
+            border:'1px solid #ddf4ff'
+          },
           value: 10,
           placeholder:"请输入"
         }

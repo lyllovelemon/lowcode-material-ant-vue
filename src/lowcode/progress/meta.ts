@@ -157,6 +157,7 @@ export default {
         componentName:"AProgress",
         props:{
           percent: 20,
+          type:"circle",
           status: "circle"
         }
       }

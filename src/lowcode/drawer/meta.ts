@@ -210,7 +210,7 @@ export default {
               type: 'JSSlot',
               value: [
                 {
-                  componentName: 'Icon',
+                  componentName: 'AIcon',
                   props: {
                     type: 'CloseOutlined',
                     size: 16
@@ -421,6 +421,7 @@ export default {
         props: {
           title: '基础侧边抽屉',
           open: true,
+          visible:true,
           placement: 'right',
           destroyOnClose: true,
         },
@@ -440,6 +441,7 @@ export default {
         props: {
           title: '底部抽屉',
           open: true,
+          visible:true,
           placement: 'bottom',
           destroyOnClose: true,
         },

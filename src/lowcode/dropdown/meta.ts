@@ -156,7 +156,7 @@ export default {
                     componentName: 'AMenuItem',
                     id: 'node_ocky01yzdq3',
                     props: {
-                      key: 'timeLinei5wd',
+                      key: 'timeLinei5we',
                       category: 'Item',
                       title: '菜单名',
                       children: '菜单名',
