@@ -208,6 +208,12 @@ export default {
       schema: {
         componentName: 'AInputTextArea',
         props: {
+          style:{
+            backgroundColor:'#ddf4ff',
+            border:'1px solid #ddf4ff',
+            fontSize:'12px',
+            borderRadius:'2px'
+          },
           autoSize: {
             minRows: 3,
             maxRows: 3,

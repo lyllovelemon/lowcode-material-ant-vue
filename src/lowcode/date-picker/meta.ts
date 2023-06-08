@@ -8,6 +8,7 @@ import DatePicker3 from './__screenshots__/date-picker-3.png?inline';
 import DatePicker4 from './__screenshots__/date-picker-4.png?inline';
 // @ts-ignore
 import DatePicker5 from './__screenshots__/date-picker-5.png?inline';
+import locale from 'ant-design-vue/es/date-picker/locale/zh_CN';
 export default {
   group: 'ant-vue组件',
   componentName:'ADatePicker',
@@ -214,6 +215,12 @@ export default {
       type: 'group',
       items:[
         {
+          name:'locale',
+          title:'语言',
+          propType:'string',
+          defaultValue:locale
+        },
+        {
           name: 'disabledDate',
           title: {
             label: '不可选日期',
@@ -239,12 +246,12 @@ export default {
       style:true,
       events:[
         {
-          name:'openChange',
-          template:"openChange(status,${extParams}){\n//弹出日历和关闭日历的回调\nconsole.log('openChange',status);}"
+          name:'onOpenChange',
+          template:"onOpenChange(status,${extParams}){\n//弹出日历和关闭日历的回调\nconsole.log('onOpenChange',status);}"
         },
         {
-          name:'panelChange',
-          template:"panelChange(value,mode){\n//日期面板变化时的回调\nconsole.log('panelChange',value,mode);}"
+          name:'onChange',
+          template:"onChange(value,mode){\n//日期面板变化时的回调\nconsole.log('onChange',value,mode);}"
         }
       ]
     }
@@ -255,7 +262,14 @@ export default {
       screenshot: DatePicker1,
       schema: {
         componentName: "ADatePicker",
-        props: {},
+        props: {
+          style:{
+            height:'22px',
+            backgroundColor:'#ddf4ff',
+            border:"1px solid #ddf4ff",
+            marginLeft:'10px'
+          }
+        },
       },
     },
     {
@@ -264,6 +278,12 @@ export default {
       schema: {
         componentName: 'ADatePicker',
         props: {
+          style:{
+            height:'22px',
+            backgroundColor:'#ddf4ff',
+            border:"1px solid #ddf4ff",
+            marginLeft:'10px'
+          },
           picker: 'week',
         },
       },
@@ -274,6 +294,12 @@ export default {
       schema: {
         componentName: 'ADatePicker',
         props: {
+          style:{
+            height:'22px',
+            backgroundColor:'#ddf4ff',
+            border:"1px solid #ddf4ff",
+            marginLeft:'10px'
+          },
           picker: 'month',
         },
       },
@@ -284,6 +310,12 @@ export default {
       schema: {
         componentName: 'ADatePicker',
         props: {
+          style:{
+            height:'22px',
+            backgroundColor:'#ddf4ff',
+            border:"1px solid #ddf4ff",
+            marginLeft:'10px'
+          },
           picker: 'quarter',
         },
       },
@@ -294,6 +326,12 @@ export default {
       schema: {
         componentName: 'ADatePicker',
         props: {
+          style:{
+            height:'22px',
+            backgroundColor:'#ddf4ff',
+            border:"1px solid #ddf4ff",
+            marginLeft:'10px'
+          },
           picker: 'year',
         },
       },

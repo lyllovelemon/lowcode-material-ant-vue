@@ -438,6 +438,19 @@ export default {
           },
         },
         {
+          name: 'pagination.pageSizeOptions',
+          title: { label: '每页条数组', tip: 'pagination.pageSizeOptions | 指定每页可以显示多少条' },
+          propType: {
+            type: 'arrayOf',
+            value: { type: 'oneOfType', value: ['string'] },
+          },
+          defaultValue:['10','20','50','100'],
+          condition: {
+            type: 'JSFunction',
+            value: 'target => !!target.getProps().getPropValue("pagination")',
+          },
+        },
+        {
           name: 'pagination.total',
           title: { label: '数据总数', tip: 'pagination.total | 数据总数' },
           propType: 'number',
@@ -490,7 +503,7 @@ export default {
           condition: {
             type: 'JSFunction',
             value: 'target => !!target.getProps().getPropValue("pagination")',
-          },
+          }
         },
         {
           name: 'pagination.showSizeChanger',
@@ -519,6 +532,25 @@ export default {
             type: 'JSFunction',
             value: 'target => !!target.getProps().getPropValue("pagination")',
           },
+        },
+        {
+          name:'pagination.itemRender',
+          title:{label:"自定义页面结构",tip:"用于自定义页码的结构"},
+          propType:{type:'oneOfType',value:['func','node']},
+          condition: {
+            type: 'JSFunction',
+            value: 'target => !!target.getProps().getPropValue("pagination")',
+          },
+          setter: [
+            'FunctionSetter',
+            {
+              componentName: 'SlotSetter',
+              initialValue: {
+                type: 'JSSlot',
+                value: [],
+              },
+            },
+          ],
         },
         {
           name: 'pagination.simple',
@@ -921,6 +953,12 @@ export default {
             },
             'VariableSetter',
           ],
+        },
+        {
+          name:'emptyText',
+          title:{label:'空数据文本',tip:'自定义空数据时的显示内容'},
+          propType:{type:'oneOfType',value:['string','node','func']},
+          defaultValue:'暂无数据'
         },
         {
           name: 'customHeaderRow',

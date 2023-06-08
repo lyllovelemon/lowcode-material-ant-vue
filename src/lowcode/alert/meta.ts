@@ -99,7 +99,14 @@ export default {
       schema: {
         componentName: 'AAlert',
         props: {
-          message: 'Success Tips',
+          style:{
+            color:'#707070',
+            height:'24px',
+            padding:'0 4px',
+            boxSizing:'border-box',
+            border:'1px solid transparent'
+          },
+          message: '',
           description: 'Detailed description and advice about successful copywriting.',
           type: 'success',
           showIcon: true,
@@ -112,7 +119,14 @@ export default {
       schema: {
         componentName: 'AAlert',
         props: {
-          message: 'Informational Notes',
+          style:{
+            color:'#707070',
+            height:'24px',
+            padding:'0 4px',
+            boxSizing:'border-box',
+            border:'1px solid transparent'
+          },
+          message: '',
           description: 'Additional description and information about copywriting.',
           type: 'info',
           showIcon: true,
@@ -125,10 +139,35 @@ export default {
       schema: {
         componentName: 'AAlert',
         props: {
-          message: 'Warning',
+          style:{
+            backgroundColor:'#fef8e9',
+            color:'#707070',
+            height:'24px',
+            padding:'0 4px',
+            boxSizing:'border-box',
+            border:'1px solid transparent'
+          },
+          message: '',
           description: 'This is a warning notice about copywriting.',
           type: 'warning',
           showIcon: true,
+          banner:false,
+          closable:true,
+          icon:{
+            type:'JSSlot',
+            value:[
+              {
+                componentName:"AIcon",
+                props:{
+                  type:"InfoCircleFilled",
+                  size:12,
+                  color:"#f7ba2b",
+                  rotate:0,
+                  spin:false
+                }
+              }
+            ]
+          }
         },
       },
     },
@@ -138,7 +177,14 @@ export default {
       schema: {
         componentName: 'AAlert',
         props: {
-          message: 'Error',
+          style:{
+            color:'#707070',
+            height:'24px',
+            padding:'0 4px',
+            boxSizing:'border-box',
+            border:'1px solid transparent'
+          },
+          message: '',
           description: 'This is an error message about copywriting.',
           type: 'error',
           showIcon: true,
