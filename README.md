@@ -5,6 +5,9 @@ proCode项目:ant-design-vue
 
 lowcode-engine的物料库低代码描述实现
 
+## 运行示例
+[lowcode-vue-demo](https://github.com/lyllovelemon/lowcode-vue-demo)
+
 ## 自定义配置
 
 参阅 [VueCli 配置参考](https://cli.vuejs.org/zh/config/).
