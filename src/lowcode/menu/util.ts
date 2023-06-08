@@ -40,7 +40,7 @@ export const itemsExtraProps = {
           child.componentName.includes(map[key].category)
         ) {
           // @ts-ignore
-          if (map[key].category === 'Menu.Item') {
+          if (map[key].category === 'AMenuItem') {
             // @ts-ignore
             child.setPropValue('children', map[key].children);
           } else {
@@ -60,9 +60,9 @@ export const itemsExtraProps = {
           const itemProps = map[key];
 
           if (Object.hasOwnProperty.call(map, key)) {
-            if (itemProps.category === 'Menu.Item') {
+            if (itemProps.category === 'AMenuItem') {
               items.push({
-                componentName: 'Menu.Item',
+                componentName: 'AMenuItem',
                 props: {
                   key: itemProps.key,
                   children: itemProps.children,
@@ -70,7 +70,7 @@ export const itemsExtraProps = {
               });
             } else {
               items.push({
-                componentName: 'Menu.SubMenu',
+                componentName: 'ASubMenu',
                 props: {
                   key: itemProps.key,
                   title: itemProps.title || itemProps.children,
@@ -80,7 +80,7 @@ export const itemsExtraProps = {
                       : [
                         {
                           key: `item-${uuid()}`,
-                          category: 'Menu.Item',
+                          category: 'AMenuItem',
                           children: '子菜单名',
                         },
                       ],

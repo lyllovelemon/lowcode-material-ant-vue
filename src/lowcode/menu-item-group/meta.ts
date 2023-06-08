@@ -41,7 +41,7 @@ export default {
                     },
                     propType: {
                       type: 'oneOf',
-                      value: ['Menu.Item', 'Menu.SubMenu', 'Menu.ItemGroup'],
+                      value: ['AMenuItem', 'ASubMenu', 'AMenuItemGroup'],
                     },
                     setter: [
                       {
@@ -50,15 +50,15 @@ export default {
                           options: [
                             {
                               title: 'Item',
-                              value: 'Menu.Item',
+                              value: 'AMenuItem',
                             },
                             {
                               title: 'SubMenu',
-                              value: 'Menu.SubMenu',
+                              value: 'ASubMenu',
                             },
                             {
                               title: 'ItemGroup',
-                              value: 'Menu.ItemGroup',
+                              value: 'AMenuItemGroup',
                             },
                           ],
                         },
@@ -72,7 +72,7 @@ export default {
             initialValue: () => {
               return {
                 key: `item-${uuid()}`,
-                category: 'Menu.Item',
+                category: 'AMenuItem',
                 children: '子菜单名',
               };
             },
