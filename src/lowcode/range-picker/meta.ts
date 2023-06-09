@@ -277,6 +277,7 @@ export default{
           name:'getPopupContainer',
           title:{label:'定义浮层容器',tip:'getPopupContainer|定义浮层容器'},
           propType: { type: 'oneOfType', value: ['node', 'func'] },
+          defaultValue:()=>document.querySelector('#lce-container')
         },
         {
           name:'popupStyle',
