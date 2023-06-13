@@ -13,7 +13,7 @@ export default {
   props:[
     {
       name: 'steps',
-      title: '步骤配置',
+      title: {label:'步骤配置',tip:'steps|步骤配置'},
       setter: {
         componentName: 'ArraySetter',
         props: {
@@ -172,14 +172,14 @@ export default {
     },
     {
       name: 'class',
-      title: { label: '步骤条类名', tip: '步骤条类名' },
+      title: { label: '步骤条类名', tip: 'class|步骤条类名' },
       propType: 'string',
     },
     {
       name: 'type',
       title: {
         label: '类型',
-        tip: '步骤条类型，有 `default` 和 `navigation` 两种',
+        tip: 'type|步骤条类型，有 `default` 和 `navigation` 两种',
       },
       propType: { type: 'oneOf', value: ['default', 'navigation'] },
       defaultValue: 'default',
@@ -188,7 +188,7 @@ export default {
       name: 'current',
       title: {
         label: '当前步骤',
-        tip: '指定当前步骤，从 0 开始记数。在子 Step 元素中，可以通过 `status` 属性覆盖状态',
+        tip: 'current|指定当前步骤，从 0 开始记数。在子 Step 元素中，可以通过 `status` 属性覆盖状态',
       },
       propType: 'number',
     },
@@ -196,7 +196,7 @@ export default {
       name: 'direction',
       title: {
         label: '步骤条方向',
-        tip: '指定步骤条方向。目前支持水平（`horizontal`）和竖直（`vertical`）两种方向',
+        tip: 'direction|指定步骤条方向。目前支持水平（`horizontal`）和竖直（`vertical`）两种方向',
       },
       propType: {
         type: 'oneOf',
@@ -207,7 +207,7 @@ export default {
       name: 'labelPlacement',
       title: {
         label: '标签放置位置',
-        tip: '指定标签放置位置，默认水平放图标右侧，可选 `vertical` 放图标下方',
+        tip: 'labelPlacement|指定标签放置位置，默认水平放图标右侧，可选 `vertical` 放图标下方',
       },
       propType: {
         type: 'oneOf',
@@ -219,7 +219,7 @@ export default {
       name: 'progressDot',
       title: {
         label: '点状步骤条',
-        tip: '点状步骤条，可以设置为一个 func',
+        tip: 'progressDot|点状步骤条，可以设置为一个 func',
       },
       propType: { type: 'oneOfType', value: ['bool', 'func'] },
     },
@@ -227,7 +227,7 @@ export default {
       name: 'size',
       title: {
         label: '尺寸',
-        tip: '指定大小',
+        tip: 'size|指定大小',
       },
       propType: {
         type: 'oneOf',
@@ -239,7 +239,7 @@ export default {
       name: 'status',
       title: {
         label: '当前步骤状态',
-        tip: '指定当前步骤的状态，可选 `wait` `process` `finish` `error`',
+        tip: 'status|指定当前步骤的状态，可选 `wait` `process` `finish` `error`',
       },
       propType: {
         type: 'oneOf',
@@ -251,14 +251,14 @@ export default {
       name: 'initial',
       title: {
         label: '起始序号',
-        tip: '起始序号，从 0 开始记数',
+        tip: 'initial|起始序号，从 0 开始记数',
       },
       propType: 'number',
       defaultValue: 0,
     },
     {
       name: 'onChange ',
-      title: { label: '点击切换步骤时触发', tip: '点击切换步骤时触发' },
+      title: { label: '点击切换步骤时触发', tip: 'onChange|点击切换步骤时触发' },
       propType: 'func',
     },
   ],

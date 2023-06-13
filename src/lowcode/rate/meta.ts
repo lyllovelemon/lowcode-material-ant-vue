@@ -12,14 +12,14 @@ export default {
   props:[
     {
       name: 'value',
-      title: { label: '默认值', tip: '默认值' },
+      title: { label: '默认值', tip: 'value|默认值' },
       propType: 'number',
       setter: 'NumberSetter',
       defaultValue:1
     },
     {
       name: 'allowClear',
-      title: { label: '点击清除', tip: '是否允许再次点击后清除' },
+      title: { label: '点击清除', tip: 'allowClear|是否允许再次点击后清除' },
       propType: 'bool',
       defaultValue: true,
       setter: 'BoolSetter'
@@ -33,33 +33,33 @@ export default {
     },
     {
       name: 'autoFocus',
-      title: { label: '自动聚焦', tip: '自动获得焦点' },
+      title: { label: '自动聚焦', tip: 'autoFocus|自动获得焦点' },
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter'
     },
     {
       name:'character',
-      title:{label:'自定义字符',tip:'自定义字符'},
+      title:{label:'自定义字符',tip:'character|自定义字符'},
       propType:{type:'oneOfType',value:['string','node']}
     },
     {
       name:'count',
-      title:{label:'star总数',tip:'star 总数'},
+      title:{label:'star总数',tip:'count|star 总数'},
       propType: 'number',
       setter: 'NumberSetter',
       defaultValue:5
     },
     {
       name: 'disabled',
-      title: { label: '禁用', tip: '是否禁用' },
+      title: { label: '禁用', tip: 'disabled|是否禁用' },
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter'
     },
     {
       name:'tooltips',
-      title:{label:'提示信息',tip:'自定义每项的提示信息'},
+      title:{label:'提示信息',tip:'tooltips|自定义每项的提示信息'},
       propType:{
         type: 'arrayOf', value:'string'
       }

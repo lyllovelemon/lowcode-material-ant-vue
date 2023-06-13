@@ -12,19 +12,19 @@ export default {
   props:[
     {
       name: 'title',
-      title: { label: '标题', tip: 'title 文字' },
+      title: { label: '标题', tip: 'title|标题' },
       propType: 'node',
     },
     {
       name: 'subTitle',
-      title: { label: '副标题', tip: 'subTitle 文字' },
+      title: { label: '副标题', tip: 'subTitle|副标题' },
       propType: 'node',
     },
     {
       name: 'status',
       title: {
         label: '状态',
-        tip: '结果的状态，决定图标和颜色',
+        tip: 'status|结果的状态，决定图标和颜色',
       },
       propType: {
         type: 'oneOf',
@@ -33,12 +33,12 @@ export default {
     },
     {
       name: 'icon',
-      title: { label: '自定义 icon', tip: '自定义 icon' },
+      title: { label: '自定义 icon', tip: 'icon|自定义 icon' },
       propType: 'node',
     },
     {
       name: 'extra',
-      title: { label: '操作区', tip: '操作区' },
+      title: { label: '操作区', tip: 'extra|操作区' },
       propType: 'node',
     },
   ],

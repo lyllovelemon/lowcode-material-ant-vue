@@ -25,7 +25,7 @@ export default {
       name: 'tab',
       title: {
         label: '标题',
-        tip: '标题',
+        tip: 'tab|标题',
       },
       propType: 'string',
       setter: 'StringSetter',
@@ -35,7 +35,7 @@ export default {
       name: 'forceRender',
       title: {
         label: '隐藏时保留',
-        tip: '被隐藏时是否渲染 DOM 结构',
+        tip: 'forceRender|被隐藏时是否渲染 DOM 结构',
       },
       propType: 'bool',
       setter: 'BoolSetter',

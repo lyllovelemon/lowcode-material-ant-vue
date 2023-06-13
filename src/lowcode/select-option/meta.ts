@@ -11,19 +11,19 @@ export default {
   },
   props:[
     {
-      title:'类名',
+      title:{label:'类名',tip:'class|类名'},
       name:'class',
       propType:'string',
       setter:'StringSetter'
     },
     {
-      title:'是否禁用',
+      title:{label:'是否禁用',tip:'disabled|是否禁用'},
       name:"disabled",
       propType:'bool',
       setter:'BoolSetter'
     },
     {
-      title:'key',
+      title:{label:'key',tip:'key'},
       name:'key',
       propType:'string',
       setter:'StringSetter'

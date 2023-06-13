@@ -27,21 +27,21 @@ export default {
     },
     {
       name: 'model',
-      title: { label: '表单数据对象', tip: '表单数据对象' },
+      title: { label: '表单数据对象', tip: 'model | 表单数据对象' },
       propType: 'object',
       setter: 'JsonSetter',
       supportVariable: true
     },
     {
       name:'rules',
-      title:{label:'表单验证规则',tip:'表单验证规则'},
+      title:{label:'表单验证规则',tip:'rules | 表单验证规则'},
       propType:'object',
       setter:'JsonSetter',
       supportVariable:true
     },
     {
       name: 'colon',
-      title: { label: '展示冒号', tip: '' },
+      title: { label: '展示冒号', tip: 'colon | 展示冒号' },
       propType: 'bool',
       defaultValue: true,
       setter: 'BoolSetter',
@@ -49,7 +49,7 @@ export default {
     },
     {
       name: 'hideRequiredMark',
-      title: { label: '隐藏必填标记', tip: '隐藏必填标记' },
+      title: { label: '隐藏必填标记', tip: 'hideRequiredMark | 隐藏必填标记' },
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter',
@@ -62,7 +62,7 @@ export default {
       items:[
         {
           name: 'labelCol',
-          title: '标签栅格布局设置',
+          title: {label:'标签栅格布局设置',tip:'labelCol | 标签栅格布局设置'},
           display: 'inline',
           setter: {
             componentName: 'ObjectSetter',
@@ -100,7 +100,7 @@ export default {
         },
         {
           name: 'wrapperCol',
-          title: '内容栅格布局设置',
+          title: {label:'内容栅格布局设置',tip:'wrapperCol | 内容栅格布局设置'},
           display: 'inline',
           setter: {
             componentName: 'ObjectSetter',
@@ -141,7 +141,7 @@ export default {
       name: 'labelAlign',
       title: {
         label: '标签对齐',
-        tip: 'label 标签的文本对齐方式',
+        tip: 'labelAlign | label标签的文本对齐方式',
       },
       setter: {
         componentName: 'RadioGroupSetter',
@@ -163,7 +163,7 @@ export default {
     },
     {
       name: 'layout',
-      title: { label: '表单布局', tip: '表单布局' },
+      title: { label: '表单布局', tip: 'layout | 表单布局' },
       setter: {
         componentName: 'RadioGroupSetter',
         props: {
@@ -190,7 +190,7 @@ export default {
       name: 'name',
       title: {
         label: '表单名称',
-        tip: '表单名称，会作为表单字段 `id` 前缀使用',
+        tip: 'name | 表单名称，会作为表单字段 `id` 前缀使用',
       },
       propType: 'string',
       setter: 'StringSetter',
@@ -200,7 +200,7 @@ export default {
       name: 'validateOnRuleChange',
       title: {
         label: 'rules改变触发验证',
-        tip: '是否在 rules 属性改变后立即触发一次验证',
+        tip: 'validateOnRuleChange | 是否在 rules 属性改变后立即触发一次验证',
       },
       propType: 'bool',
       defaultValue: true,
@@ -211,7 +211,7 @@ export default {
       name: 'scrollToFirstError',
       title: {
         label: '滚至错误',
-        tip: '提交失败自动滚动到第一个错误字段',
+        tip: 'scrollToFirstError | 提交失败自动滚动到第一个错误字段',
       },
       propType: 'bool',
       defaultValue: true,
@@ -222,7 +222,7 @@ export default {
       name: 'size',
       title: {
         label: '字段组件尺寸',
-        tip: '设置字段组件的尺寸（仅限 antd 组件）',
+        tip: 'size | 设置字段组件的尺寸（仅限 antd 组件）',
       },
       propType: { type: 'oneOf', value: ['small', 'middle', 'large'] },
       setter: {
@@ -253,13 +253,13 @@ export default {
       items:[
         {
           name: 'validateMessages',
-          title: { label: '验证提示模板', tip: '验证提示模板' },
+          title: { label: '验证提示模板', tip: 'validateMessages | 验证提示模板' },
           setter: 'JsonSetter',
           defaultValue: { required: "'${name}' 不能为空" },
         },
         {
           name: 'validateTrigger',
-          title: { label: '校验时机', tip: '所有字段校验触发时机' },
+          title: { label: '校验时机', tip: 'validateTrigger | 所有字段校验触发时机' },
           propType: {
             type: 'oneOf',
             value: ['onChange', 'onBlur'],
@@ -284,7 +284,7 @@ export default {
           name: 'onClearValidate',
           title: {
             label: '移除表单项的校验结果',
-            tip: '移除表单项的校验结果。传入待移除的表单项的 name 属性或者 name 组成的数组，如不传则移除整个表单的校验结果',
+            tip: 'onClearValidate | 移除表单项的校验结果。传入待移除的表单项的 name 属性或者 name 组成的数组，如不传则移除整个表单的校验结果',
           },
           propType: 'func',
         },
@@ -292,20 +292,20 @@ export default {
           name: 'onResetFields',
           title: {
             label: '重置表单并移除校验结果',
-            tip: '对整个表单进行重置，将所有字段值重置为初始值并移除校验结果',
+            tip: 'onResetFields | 对整个表单进行重置，将所有字段值重置为初始值并移除校验结果',
           },
           propType: 'func',
         },
         {
           name: 'onValidateFields',
-          title: { label: '触发表单验证', tip: '触发表单验证' },
+          title: { label: '触发表单验证', tip: 'onValidateFields | 触发表单验证' },
           propType: 'func',
         },
         {
           name: 'onValidate',
           title: {
             label: '任一表单项被校验后触发',
-            tip: '任一表单项被校验后触发',
+            tip: 'onValidate | 任一表单项被校验后触发',
           },
           propType: 'func',
         }

@@ -12,29 +12,29 @@ export default{
   props:[
     {
       name: 'defaultValue',
-      title: { label: '默认值', tip: '默认选中值' },
+      title: { label: '默认值', tip: 'defaultValue | 默认选中值' },
       propType: 'string',
     },
     {
-      name: 'value',
-      title: { label: '当前值', tip: '当前选中值' },
+      name: 'v-model:value',
+      title: { label: '当前值', tip: 'v-model:value | 当前选中值' },
       propType: 'string',
     },
     {
       name: 'allowClear',
-      title: { label: '支持清除', tip: '是否允许清除' },
+      title: { label: '支持清除', tip: 'allowClear|是否允许清除' },
       propType: 'bool',
       defaultValue: false,
     },
     {
       name: 'autoFocus',
-      title: { label: '自动聚焦', tip: '自动获取焦点' },
+      title: { label: '自动聚焦', tip: 'autoFocus|自动获取焦点' },
       propType: 'bool',
       defaultValue: false,
     },
     {
       name: 'options',
-      title: { label: '选项内容', tip: '选项列表' },
+      title: { label: '选项内容', tip: 'options|选项列表' },
       setter: {
         componentName: 'ArraySetter',
         props: {
@@ -70,71 +70,83 @@ export default{
       name: 'backfill',
       title: {
         label: '键盘选中回填',
-        tip: '使用键盘选择选项的时候把选中项回填到输入框中',
+        tip: 'backfill|使用键盘选择选项的时候把选中项回填到输入框中',
       },
       propType: 'bool',
       defaultValue: false,
     },
     {
       name: 'defaultActiveFirstOption',
-      title: { label: '默认高亮首个选项', tip: '是否默认高亮第一个选项' },
+      title: { label: '默认高亮首个选项', tip: 'defaultActiveFirstOption|是否默认高亮第一个选项' },
       propType: 'bool',
       defaultValue: true,
     },
     {
       name: 'disabled',
-      title: { label: '是否禁用', tip: '是否为禁用状态' },
+      title: { label: '是否禁用', tip: 'disabled|是否为禁用状态' },
       propType: 'bool',
       defaultValue: false,
     },
     {
       name: 'filterOption',
-      title: { label: '可选项筛选', tip: '是否根据输入项进行筛选' },
+      title: { label: '可选项筛选', tip: 'filterOption|是否根据输入项进行筛选' },
       propType: 'bool',
     },
     {
       name: 'placeholder',
-      title: { label: '输入框提示', tip: '输入框提示' },
+      title: { label: '输入框提示', tip: 'placeholder|输入框提示' },
       propType: 'string',
     },
     {
+      name:'default',
+      title:{label:'自定义输入框',tip:'default|自定义输入框 '},
+      propType: 'node',
+      setter: {
+        componentName: 'SlotSetter',
+        initialValue: {
+          type: 'JSSlot',
+          value: []
+        }
+      }
+    },
+    {
+      name: 'defaultOpen',
+      title: { label: '默认展开菜单', tip: 'defaultOpen|是否默认展开下拉菜单' },
+      propType: 'bool',
+    },
+    {
       name:'onBlur',
-      title:{label:'失焦回调',tip:'失去焦点时的回调'},
+      title:{label:'失焦回调',tip:'onBlur|失去焦点时的回调'},
       propType:'func'
     },
     {
       name:'onChange',
-      title:{label:'选中回调',tip:'选中 option，或 input 的 value 变化回调'},
+      title:{label:'选中回调',tip:'onChange|选中 option，或 input 的 value 变化回调'},
       propType:'func'
     },
     {
-      name: 'defaultOpen',
-      title: { label: '默认展开菜单', tip: '是否默认展开下拉菜单' },
-      propType: 'bool',
-    },
-    {
       name:'onDropdownVisibleChange',
-      title:'下拉菜单回调',
+      title:{label:'下拉菜单回调',tip:'onDropdownVisibleChange|下拉菜单回调'},
       propType:'func'
     },
     {
       name:'onFocus',
-      title:'聚焦回调',
+      title:{label:'聚焦回调',tip:"onFocus | 聚焦回调"},
       propType:'func'
     },
     {
       name:'onSearch',
-      title:'搜索补全回调',
+      title:{label:'搜索补全回调',tip:'onSearch|搜索补全回调'},
       propType:'func'
     },
     {
       name:'onSelect',
-      title:'被选中时调用',
+      title:{label:'被选中时调用',tip:'onSelect | 被选中时调用'},
       propType:'func'
     },
     {
       name: 'notFoundContent',
-      title: { label: '无数据展示', tip: '当下拉列表为空时显示的内容' },
+      title: { label: '无数据展示', tip: 'notFoundContent|当下拉列表为空时显示的内容' },
       propType: 'string',
     },
   ],
@@ -215,13 +227,13 @@ export default{
                   items: [
                     {
                       name: 'label',
-                      title: '选项名',
+                      title: {label:'选项名',tip:'label|选项名'},
                       setter: 'StringSetter',
                       isRequired: true
                     },
                     {
                       name: 'value',
-                      title: '选项值',
+                      title: {label:'选项值',tip:'value|选项值'},
                       setter: 'StringSetter',
                       isRequired: true
                     },

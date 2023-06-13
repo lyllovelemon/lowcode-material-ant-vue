@@ -216,7 +216,7 @@ export default {
       items:[
         {
           name:'locale',
-          title:'语言',
+          title:{label:'语言',tip:'locale | 语言'},
           propType:'string',
           defaultValue:locale
         },

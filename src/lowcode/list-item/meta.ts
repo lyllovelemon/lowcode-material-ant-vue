@@ -12,7 +12,7 @@ export default {
       name: 'actions',
       title: {
         label: '列表操作组',
-        tip: '列表操作组',
+        tip: 'actions|列表操作组',
       },
       propType: { type: 'arrayOf', value: 'node' },
       setter: {
@@ -33,7 +33,7 @@ export default {
       name: 'extra',
       title: {
         label: '额外内容',
-        tip: '额外内容',
+        tip: 'extra|额外内容',
       },
       propType: 'node',
       setter: 'SlotSetter'

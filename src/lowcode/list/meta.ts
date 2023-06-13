@@ -17,7 +17,7 @@ export default {
       items: [
         {
           name: 'dataSource',
-          title: { label: '列表数据源', tip: '列表数据源' },
+          title: { label: '列表数据源', tip: 'dataSource | 列表数据源' },
           propType: { type: 'arrayOf', value: 'any' },
           setter: ['JsonSetter', 'VariableSetter'],
         },
@@ -139,7 +139,7 @@ export default {
       items: [
         {
           name: 'gridEnable',
-          title: { label: '启用栅格', tip: 'grid | 是否启用栅格' },
+          title: { label: '启用栅格', tip: 'gridEnable | 是否启用栅格' },
           propType: 'bool',
           setter: 'BoolSetter',
           extraProps: {

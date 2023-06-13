@@ -12,14 +12,14 @@ export default {
   props:[
     {
       name: 'description',
-      title: { label: '内容描述', tip: '自定义描述内容' },
+      title: { label: '内容描述', tip: 'description|自定义描述内容' },
       propType: { type: 'oneOfType', value: ['string', 'node'] },
     },
     {
       name: 'image',
       title: {
         label: '图片地址',
-        tip: '设置显示图片，为string时表示自定义图片地址。',
+        tip: 'image|设置显示图片，为string时表示自定义图片地址。',
       },
       propType: { type: 'oneOfType', value: ['string', 'node'] },
     },

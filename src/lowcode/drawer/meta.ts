@@ -117,7 +117,7 @@ export default {
         },
         {
           name: 'zIndex',
-          title: { label: 'z-index', tip: '设置 Drawer 的 `z-index`' },
+          title: { label: 'z-index', tip: 'zIndex|设置 Drawer 的 `z-index`' },
           propType: 'number',
           setter: 'NumberSetter',
         },

@@ -15,7 +15,7 @@ export default {
       name: 'dataSource',
       title: {
         label: '数据源',
-        tip: '数据源，其中的数据将会被渲染到左边一栏中，`targetKeys` 中指定的除外',
+        tip: 'dataSource|数据源，其中的数据将会被渲染到左边一栏中，`targetKeys` 中指定的除外',
       },
       propType: { type: 'arrayOf', value: 'object' },
       setter: {
@@ -62,7 +62,7 @@ export default {
     },
     {
       name: 'v-model:selectedKeys',
-      title: { label: '选中项', tip: '设置哪些项应该被选中' },
+      title: { label: '选中项', tip: 'v-model:selectedKeys|设置哪些项应该被选中' },
       propType: { type: 'arrayOf', value: 'string' },
       setter: {
         componentName: 'ArraySetter',
@@ -76,7 +76,7 @@ export default {
       name: 'v-model:targetKeys',
       title: {
         label: '右侧框数据',
-        tip: '显示在右侧框数据的 key 集合',
+        tip: 'v-model:targetKeys|显示在右侧框数据的 key 集合',
       },
       propType: { type: 'arrayOf', value: 'string' },
       setter: {
@@ -94,28 +94,28 @@ export default {
       items: [
         {
           name: 'oneWay',
-          title: { label: '展示为单向样式', tip: '展示为单向样式' },
+          title: { label: '展示为单向样式', tip: 'oneWay|展示为单向样式' },
           propType: 'bool',
           setter: 'BoolSetter',
           defaultValue: false,
         },
         {
           name: 'disabled',
-          title: { label: '是否禁用', tip: '是否为禁用状态' },
+          title: { label: '是否禁用', tip: 'disabled|是否为禁用状态' },
           propType: 'bool',
           setter: 'BoolSetter',
           defaultValue: false,
         },
         {
           name: 'showSearch',
-          title: { label: '是否显示搜索框', tip: '是否显示搜索框' },
+          title: { label: '是否显示搜索框', tip: 'showSearch|是否显示搜索框' },
           propType: 'bool',
           setter: 'BoolSetter',
           defaultValue: false,
         },
         {
           name: 'showSelectAll',
-          title: { label: '是否展示全选勾选框', tip: '是否展示全选勾选框' },
+          title: { label: '是否展示全选勾选框', tip: 'showSelectAll|是否展示全选勾选框' },
           propType: 'bool',
           setter: 'BoolSetter',
           defaultValue: true,
@@ -124,7 +124,7 @@ export default {
           name: 'pagination',
           title: {
             label: '分页设置',
-            tip: '使用分页样式，自定义渲染列表下无效',
+            tip: 'pagination|使用分页样式，自定义渲染列表下无效',
           },
           setter: [
             'BoolSetter',
@@ -164,7 +164,7 @@ export default {
           title: {
             label: '每行数据渲染函数',
             tip:
-              '每行数据渲染函数，该函数的入参为 dataSource 中的项，返回值为 element。或者返回一个普通对象，其中 label 字段为 element，value 字段为 title',
+              'render|每行数据渲染函数，该函数的入参为 dataSource 中的项，返回值为 element。或者返回一个普通对象，其中 label 字段为 element，value 字段为 title',
           },
           propType: 'func',
           setter: [
@@ -183,7 +183,7 @@ export default {
           title: {
             label: '过滤选项',
             tip:
-              '接收 `inputValue` `option` 两个参数，当 `option` 符合筛选条件时，应返回 true，反之则返回 false',
+              'filterOption|接收 `inputValue` `option` 两个参数，当 `option` 符合筛选条件时，应返回 true，反之则返回 false',
           },
           propType: 'func',
           setter: [
@@ -227,21 +227,21 @@ export default {
           name: 'operations',
           title: {
             label: '操作文案',
-            tip: '操作文案集合，顺序从上至下',
+            tip: 'operations|操作文案集合，顺序从上至下',
           },
           propType: { type: 'arrayOf', value: 'string' },
         },
 
         {
           name: 'titles',
-          title: { label: '标题集合', tip: '标题集合，顺序从左至右' },
+          title: { label: '标题集合', tip: 'titles|标题集合，顺序从左至右' },
           propType: { type: 'arrayOf', value: 'node' },
         },
         {
           name: 'selectAllLabels',
           title: {
             label: '多选框标题集合',
-            tip: '自定义顶部多选框标题的集合',
+            tip: 'selectAllLabels|自定义顶部多选框标题的集合',
           },
           propType: {
             type: 'arrayOf',

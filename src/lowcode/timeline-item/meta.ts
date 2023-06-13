@@ -10,24 +10,24 @@ export default {
   props:[
     {
       name:'color',
-      title:'颜色',
+      title:{label:'颜色',tip:"color|颜色"},
       propType:'string',
       setter:'StringSetter',
       defaultValue:'blue'
     },
     {
       name:'dot',
-      title:{label:'时间轴点',tip:'自定义时间轴点'},
+      title:{label:'时间轴点',tip:'dot|自定义时间轴点'},
       propType:{type:'oneOfType',value:['string','node']}
     },
     {
       name:'label',
-      title:'标签',
+      title:{label:'标签',tip:'label|标签'},
       propType:{type:'oneOfType',value:['string','node']}
     },
     {
       name:'position',
-      title:'节点位置',
+      title:{label:'节点位置',tip:'position'},
       propType:{
         type:'oneOf',
         value:['left','right']

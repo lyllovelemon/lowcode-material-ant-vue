@@ -13,7 +13,7 @@ export default {
   props:[
     {
       name: 'v-model:value',
-      title: { label: '当前值', tip: '当前选中的选项' },
+      title: { label: '当前值', tip: 'v-model:value|当前选中的选项' },
       propType: { type: 'arrayOf', value: 'string' },
       setter: {
         componentName: 'ArraySetter',
@@ -27,7 +27,7 @@ export default {
     },
     {
       name: 'options',
-      title: { label: '指定可选项', tip: '指定可选项' },
+      title: { label: '指定可选项', tip: 'options|指定可选项' },
       propType: {
         type: 'arrayOf',
         value: {
@@ -108,7 +108,7 @@ export default {
     },
     {
       name: 'disabled',
-      title: { label: '是否禁用', tip: '是否为禁用状态' },
+      title: { label: '是否禁用', tip: 'disabled|是否为禁用状态' },
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter',
@@ -116,14 +116,14 @@ export default {
     },
     {
       name: 'name',
-      title: { label: 'name属性', tip: 'name属性' },
+      title: { label: 'name属性', tip: 'name|name属性' },
       propType: 'string',
       setter: 'StringSetter',
       supportVariable: true
     },
     {
       name: 'onChange',
-      title: { label: '变化时回调函数', tip: '变化时回调函数' },
+      title: { label: '变化时回调函数', tip: 'onChange|变化时回调函数' },
       propType: 'func',
     },
   ],

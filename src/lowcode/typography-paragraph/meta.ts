@@ -12,14 +12,14 @@ export default {
   props:[
     {
       name: 'children',
-      title: { label: '内容', tip: '内容' },
+      title: { label: '内容', tip: 'children|内容' },
       propType: 'string',
       defaultValue: '',
       supportVariable: true,
     },
     {
       name: 'code',
-      title: { label: '添加代码样式', tip: '添加代码样式' },
+      title: { label: '添加代码样式', tip: 'code|添加代码样式' },
       propType: 'bool',
       defaultValue: false,
     },
@@ -27,64 +27,56 @@ export default {
       name: 'copyable',
       title: {
         label: '是否可拷贝',
-        tip: '是否可拷贝，为对象时可进行各种自定义',
+        tip: 'copyable|是否可拷贝，为对象时可进行各种自定义',
       },
       propType: 'bool',
       defaultValue: false,
     },
     {
       name: 'delete',
-      title: { label: '添加删除线样式', tip: '添加删除线样式' },
+      title: { label: '添加删除线样式', tip: 'delete|添加删除线样式' },
       propType: 'bool',
       defaultValue: false,
     },
     {
       name: 'disabled',
-      title: { label: '是否禁用', tip: '是否为禁用状态' },
+      title: { label: '是否禁用', tip: 'disabled|是否为禁用状态' },
       propType: 'bool',
       defaultValue: false,
     },
     {
       name: 'editable',
-      title: { label: '是否可编辑', tip: '是否可编辑' },
+      title: { label: '是否可编辑', tip: 'editable|是否可编辑' },
       propType: 'bool',
       defaultValue: false,
     },
     {
       name: 'ellipsis',
-      title: { label: '自动溢出省略', tip: '自动溢出省略' },
+      title: { label: '自动溢出省略', tip: 'ellipsis|自动溢出省略' },
       propType: 'bool',
       defaultValue: false,
     },
     {
       name: 'mark',
-      title: { label: '添加标记样式', tip: '添加标记样式' },
+      title: { label: '添加标记样式', tip: 'mark|添加标记样式' },
       propType: 'bool',
       defaultValue: false,
     },
     {
       name: 'underline',
-      title: { label: '添加下划线样式', tip: '添加下划线样式' },
+      title: { label: '添加下划线样式', tip: 'underline|添加下划线样式' },
       propType: 'bool',
       defaultValue: false,
     },
     {
-      name: 'onChange ',
-      title: {
-        label: '当用户提交编辑内容时触发',
-        tip: '当用户提交编辑内容时触发',
-      },
-      propType: 'func',
-    },
-    {
       name: 'strong',
-      title: { label: '是否加粗', tip: '是否加粗' },
+      title: { label: '是否加粗', tip: 'strong|是否加粗' },
       propType: 'bool',
       defaultValue: false,
     },
     {
       name: 'type',
-      title: { label: '文本类型', tip: '文本类型' },
+      title: { label: '文本类型', tip: 'type|文本类型' },
       propType: {
         type: 'oneOf',
         value: ['default', 'secondary', 'success', 'warning', 'danger'],
@@ -116,6 +108,14 @@ export default {
           ],
         },
       },
+    },
+    {
+      name: 'onChange ',
+      title: {
+        label: '当用户提交编辑内容时触发',
+        tip: 'onChange|当用户提交编辑内容时触发',
+      },
+      propType: 'func',
     },
   ],
   configure: {

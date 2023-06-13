@@ -11,7 +11,7 @@ export default [
     props:[
       {
         name:'color',
-        title: { label: '圆点颜色', tip: '自定义小圆点的颜色' },
+        title: { label: '圆点颜色', tip: 'color|自定义小圆点的颜色' },
         propType:'string',
         setter:'StringSetter',
       },
@@ -19,7 +19,7 @@ export default [
         name:'count',
         title: {
           label: '展示数字',
-          tip: '展示的数字，大于 overflowCount 时显示为 `${overflowCount}+`，为 0 时隐藏',
+          tip: 'count|展示的数字，大于 overflowCount 时显示为 `${overflowCount}+`，为 0 时隐藏',
         },
         propType:{
           type:'oneOfType',
@@ -30,7 +30,7 @@ export default [
         name: 'dot',
         title: {
           label: '展示圆点',
-          tip: '不展示数字，只有一个小红点',
+          tip: 'dot|不展示数字，只有一个小红点',
         },
         propType: 'bool',
         defaultValue: false,
@@ -39,27 +39,27 @@ export default [
         name: 'offset',
         title: {
           label: '圆点偏移',
-          tip: '设置状态点的位置偏移 [number, number]',
+          tip: 'offset|设置状态点的位置偏移 [number, number]',
         },
         propType: { type: 'arrayOf', value: 'number' },
       },
       {
         name: 'overflowCount',
-        title: { label: '封顶值', tip: '展示封顶的数字值' },
+        title: { label: '封顶值', tip: 'overflowCount|展示封顶的数字值' },
         propType: 'number',
       },
       {
         name: 'showZero',
         title: {
           label: '展示零值',
-          tip: '当数值为 0 时，是否展示 Badge',
+          tip: 'showZero|当数值为 0 时，是否展示 Badge',
         },
         propType: 'bool',
         defaultValue: false,
       },
       {
         name: 'status',
-        title: { label: '状态', tip: '设置 Badge 为状态点' },
+        title: { label: '状态', tip: 'status|设置 Badge 为状态点' },
         propType: {
           type: 'oneOf',
           value: ['success', 'processing', 'default', 'error', 'warning'],
@@ -69,7 +69,7 @@ export default [
         name: 'text',
         title: {
           label: '状态文本',
-          tip: '在设置了 `status` 的前提下有效，设置状态点的文本',
+          tip: 'text|在设置了 `status` 的前提下有效，设置状态点的文本',
         },
         condition(target: { getProps: () => { (): any; new(): any; getPropValue: { (arg0: string): any; new(): any; }; }; }) {
           return !!target.getProps().getPropValue('status');
@@ -80,7 +80,7 @@ export default [
         name: 'title',
         title: {
           label: '悬浮提示',
-          tip: '设置鼠标放在状态点上时显示的文字',
+          tip: 'title|设置鼠标放在状态点上时显示的文字',
         },
         propType: 'string',
       }

@@ -13,14 +13,14 @@ export default {
   props:[
     {
       name:'autoplay',
-      title:{label:'自动切换',tip:'是否自动切换'},
+      title:{label:'自动切换',tip:'autoplay|是否自动切换'},
       propType:'bool',
       setter:'BoolSetter',
       defaultValue:false
     },
     {
       name:'dotPosition',
-      title:{label:'指示点位置',tip:'面板指示点位置'},
+      title:{label:'指示点位置',tip:'dotPosition|面板指示点位置'},
       propType:{type:'oneOf',value:['top','bottom','left','right']},
       setter:{
         componentName:'SelectSetter',
@@ -37,32 +37,32 @@ export default {
     },
     {
       name:'dot',
-      title:{label:'展示指示点',tip:'是否显示面板指示点'},
+      title:{label:'展示指示点',tip:'dot|是否显示面板指示点'},
       propType:'bool',
       setter:'BoolSetter',
       defaultValue:true
     },
     {
       name:'dotsClass',
-      title:{label:'指示点类名',tip:'面板指示点类名'},
+      title:{label:'指示点类名',tip:'dotsClass|面板指示点类名'},
       propType:'string',
       setter:'StringSetter',
       defaultValue:'slick-dots'
     },
     {
       name:'easing',
-      title:{label:'动画效果',tip:'动画效果'},
+      title:{label:'动画效果',tip:'easing|动画效果'},
       propType:'string',
       defaultValue:'linear'
     },
     {
       name: 'effect',
-      title: { label: '动画效果函数', tip: '动画效果函数' },
+      title: { label: '动画效果函数', tip: 'effect|动画效果函数' },
       propType: { type: 'oneOf', value: ['scrollx', 'fade'] },
     },
     {
       name: 'items',
-      title: '折叠项',
+      title: {label:'折叠项',tip:'items|折叠项'},
       setter: {
         componentName: 'ArraySetter',
         props: {

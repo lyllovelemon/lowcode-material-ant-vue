@@ -13,45 +13,45 @@ export default {
   props:[
     {
       name: 'defaultValue',
-      title: { label: '默认值', tip: '默认值' },
+      title: { label: '默认值', tip: 'defaultValue | 默认值' },
       propType: 'string',
       setter: 'StringSetter'
     },
     {
       name: 'value',
-      title: { label: '当前值', tip: '当前值' },
+      title: { label: '当前值', tip: 'value | 当前值' },
       propType: 'string',
       setter: 'StringSetter'
     },
     {
       name: 'bordered',
-      title: { label: '显示边框', tip: '是否有边框' },
+      title: { label: '显示边框', tip: 'bordered | 是否有边框' },
       propType: 'bool',
       defaultValue: true,
       setter: 'BoolSetter'
     },
     {
       name: 'loading',
-      title: { label: '加载状态', tip: 'loading' },
+      title: { label: '加载状态', tip: 'loading | 加载状态' },
       propType: 'bool',
       setter: 'BoolSetter'
     },
     {
       name: 'disabled',
-      title: { label: '是否禁用', tip: '是否为禁用状态' },
+      title: { label: '是否禁用', tip: 'disabled | 是否为禁用状态' },
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter'
     },
     {
       name: 'placeholder',
-      title: { label: '占位提示', tip: '占位提示' },
+      title: { label: '占位提示', tip: 'placeholder | 占位提示' },
       propType: 'string',
       defaultValue: '请输入',
       setter: 'StringSetter'
     },{
       name: 'size',
-      title: { label: '控件大小', tip: '控件大小' },
+      title: { label: '控件大小', tip: 'size | 控件大小' },
       propType: { type: 'oneOf', value: ['large', 'middle', 'small'] },
       setter: {
         componentName: 'RadioGroupSetter',
@@ -78,46 +78,46 @@ export default {
       name: 'enterButton',
       title: {
         label: '确认按钮',
-        tip: '是否有确认按钮，可设为按钮文字。该属性会与 addonAfter 冲突。',
+        tip: 'enterButton | 是否有确认按钮，可设为按钮文字。该属性会与 addonAfter 冲突。',
       },
       propType: { type: 'oneOfType', value: ['bool', 'node'] },
       defaultValue: false,
     },
     {
       name: 'addonAfter',
-      title: { label: '后置标签', tip: '后置标签' },
+      title: { label: '后置标签', tip: 'addonAfter | 后置标签' },
       propType: { type: 'oneOfType', value: ['string', 'node'] },
     },
     {
       name: 'addonBefore',
-      title: { label: '前置标签', tip: '前置标签' },
+      title: { label: '前置标签', tip: 'addonBefore | 前置标签' },
       propType: { type: 'oneOfType', value: ['string', 'node'] },
     },
     {
       name: 'prefix',
-      title: { label: '前缀', tip: '前缀' },
+      title: { label: '前缀', tip: 'prefix | 前缀' },
       propType: { type: 'oneOfType', value: ['string', 'node'] },
     },
     {
       name: 'suffix',
-      title: { label: '后缀', tip: '后缀' },
+      title: { label: '后缀', tip: 'suffix | 后缀' },
       propType: { type: 'oneOfType', value: ['string', 'node'] },
     },
     {
       name: 'onChange',
-      title: { label: '输入框内容变化时的回调', tip: '输入框内容变化时的回调' },
+      title: { label: '输入框内容变化时的回调', tip: 'onChange | 输入框内容变化时的回调' },
       propType: 'func',
     },
     {
       name: 'onPressEnter',
-      title: { label: '按下回车的回调', tip: '按下回车的回调' },
+      title: { label: '按下回车的回调', tip: 'onPressEnter | 按下回车的回调' },
       propType: 'func',
     },
     {
       name: 'onSearch',
       title: {
         label: '点击搜索或按下回车键时的回调',
-        tip: '点击搜索或按下回车键时的回调',
+        tip: 'onSearch | 点击搜索或按下回车键时的回调',
       },
       propType: 'func',
     }

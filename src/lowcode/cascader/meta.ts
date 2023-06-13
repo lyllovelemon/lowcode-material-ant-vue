@@ -13,7 +13,7 @@ export default{
   props:[
     {
       name: 'defaultValue',
-      title: { label: '默认的选中项', tip: '默认的选中项' },
+      title: { label: '默认的选中项', tip: 'defaultValue|默认的选中项' },
       propType: {
         type: 'arrayOf',
         value: { type: 'oneOfType', value: ['string', 'number'] },
@@ -21,7 +21,7 @@ export default{
     },
     {
       name: 'value',
-      title: { label: '当前选中项', tip: '当前选中项' },
+      title: { label: '当前选中项', tip: 'value|当前选中项' },
       propType: {
         type: 'arrayOf',
         value: { type: 'oneOfType', value: ['string', 'number'] },
@@ -29,26 +29,26 @@ export default{
     },
     {
       name: 'options',
-      title: { label: '选项数据', tip: '可选项数据源' },
+      title: { label: '选项数据', tip: 'options|可选项数据源' },
       setter: 'JsonSetter',
     },
     {
       name: 'allowClear',
-      title: { label: '支持清除', tip: '是否允许清除' },
+      title: { label: '支持清除', tip: 'allowClear|是否允许清除' },
       propType: 'bool',
       defaultValue: true,
       setter: 'BoolSetter'
     },
     {
       name: 'autoFocus',
-      title: { label: '自动聚焦', tip: '自动获取焦点' },
+      title: { label: '自动聚焦', tip: 'autoFocus|自动获取焦点' },
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter'
     },
     {
       name: 'bordered',
-      title: { label: '显示边框', tip: '是否有边框' },
+      title: { label: '显示边框', tip: 'bordered|是否有边框' },
       propType: 'bool',
       defaultValue: true,
       setter: 'BoolSetter'
@@ -57,7 +57,7 @@ export default{
       name: 'changeOnSelect',
       title: {
         label: '点选触发',
-        tip: '点选每级菜单选项值都会触发onChange',
+        tip: 'changeOnSelect|点选每级菜单选项值都会触发onChange',
       },
       propType: 'bool',
       defaultValue: false,
@@ -65,31 +65,31 @@ export default{
     },
     {
       name: 'disabled',
-      title: { label: '是否禁用', tip: '是否为禁用状态' },
+      title: { label: '是否禁用', tip: 'disabled|是否为禁用状态' },
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter'
     },
     {
       name: 'expandTrigger',
-      title: { label: '菜单触发方式', tip: '触发次级菜单的展开的方式' },
+      title: { label: '菜单触发方式', tip: 'expandTrigger|触发次级菜单的展开的方式' },
       propType: { type: 'oneOf', value: ['click', 'hover'] },
     },
     {
       name: 'notFoundContent',
-      title: { label: '无数据展示', tip: '无数据' },
+      title: { label: '无数据展示', tip: 'notFoundContent|无数据' },
       propType: 'string',
       setter: 'StringSetter'
     },
     {
       name: 'placeholder',
-      title: { label: '输入框占位文本', tip: '输入框占位文本' },
+      title: { label: '输入框占位文本', tip: 'placeholder|输入框占位文本' },
       propType: 'string',
       setter: 'StringSetter'
     },
     {
       name: 'placement',
-      title: { label: '浮层预设位置', tip: '浮层预设位置' },
+      title: { label: '浮层预设位置', tip: 'placement|浮层预设位置' },
       propType: {
         type: 'oneOf',
         value: ['bottomLeft', 'bottomRight', 'topLeft', 'topRight'],
@@ -98,20 +98,20 @@ export default{
     },
     {
       name:'searchValue',
-      title:'设置搜索的值，需要与 showSearch 配合使用',
+      title:{label:'设置搜索的值，需要与 showSearch 配合使用',tip:'searchValue'},
       propType:'string',
       setter:'StringSetter'
     },
     {
       name:'showSearch',
-      title:{ label: '支持搜索', tip: '在选择框中显示搜索框'},
+      title:{ label: '支持搜索', tip: 'showSearch|在选择框中显示搜索框'},
       propType:'bool',
       defaultValue:false,
       setter:'BoolSetter'
     },
     {
       name: 'size',
-      title: { label: '尺寸', tip: '输入框大小' },
+      title: { label: '尺寸', tip: 'size|输入框大小' },
       propType: { type: 'oneOf', value: ['large', 'middle', 'small'] },
       setter: {
         componentName: 'SelectSetter',
@@ -136,14 +136,14 @@ export default{
     },
     {
       name:'multiple',
-      title:{label:'多选',tip:'支持多选节点'},
+      title:{label:'多选',tip:'multiple|是否支持多选'},
       propType:'bool',
       setter:'BoolSetter',
       defaultValue:false
     },
     {
       name:'tagRender',
-      title:'自定义 tag 内容，多选时生效',
+      title:{label:'自定义 tag 内容，多选时生效',tip:'tagRender'},
       condition:(target:any)=>{
         return target.getProps().getPropValue('multiple') === true
       },
@@ -161,14 +161,14 @@ export default{
     },
     {
       name:'popupVisible',
-      title:'控制浮层显隐',
+      title:{label:'控制浮层显隐',tip:'popupVisible'},
       propType:'bool',
       setter:'BoolSetter',
       supportVariable:true
     },
     {
       name:'onChange',
-      title:'选择完成回调',
+      title:{label:'选择完成回调',tip:'onChange |选择完成回调 '},
       propType:'func'
     },
     {

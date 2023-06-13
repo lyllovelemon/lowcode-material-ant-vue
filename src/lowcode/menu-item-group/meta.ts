@@ -13,7 +13,7 @@ export default {
   props:[
     {
       name: 'items',
-      title: '菜单组项',
+      title: {label:'菜单组项',tip:'items|菜单组项'},
       setter: {
         componentName: 'ArraySetter',
         props: {
@@ -30,14 +30,14 @@ export default {
                   },
                   {
                     name: 'children',
-                    tite: '菜单名',
+                    title: 'children|菜单名',
                     setter: 'StringSetter',
                   },
                   {
                     name: 'category',
                     title: {
                       label: '类型',
-                      tip: '菜单项类型',
+                      tip: 'category|菜单项类型',
                     },
                     propType: {
                       type: 'oneOf',
@@ -83,12 +83,12 @@ export default {
     },
     {
       name: 'children',
-      title: { label: '分组的菜单项', tip: '分组的菜单项' },
+      title: { label: '分组的菜单项', tip: 'children|分组的菜单项' },
       propType: { type: 'oneOfType', value: ['string', 'node'] },
     },
     {
       name: 'title',
-      title: { label: '分组标题', tip: '分组标题' },
+      title: { label: '分组标题', tip: 'title|分组标题' },
       propType: { type: 'oneOfType', value: ['string', 'node'] },
     },
   ],

@@ -14,59 +14,59 @@ export default {
     props: [
       {
         name: 'defaultValue',
-        title: { label: '默认值', tip: '默认值' },
+        title: { label: '默认值', tip: 'defaultValue | 默认值' },
         propType: 'number',
         setter: 'NumberSetter',
       },
       {
         name: 'value',
-        title: { label: '当前值', tip: '当前值' },
+        title: { label: '当前值', tip: 'value | 当前值' },
         propType: 'number',
         setter: 'NumberSetter',
       },
       {
         name: 'autoFocus',
-        title: { label: '自动聚焦', tip: '自动获取焦点' },
+        title: { label: '自动聚焦', tip: 'autoFocus | 自动获取焦点' },
         propType: 'bool',
         defaultValue: false,
         setter: 'BoolSetter'
       },
       {
         name: 'disabled',
-        title: { label: '是否禁用', tip: '是否为禁用状态' },
+        title: { label: '是否禁用', tip: 'disabled | 是否为禁用状态' },
         propType: 'bool',
         defaultValue: false,
         setter: 'BoolSetter'
       },
       {
         name: 'placeholder',
-        title: { label: '占位提示', tip: '占位提示' },
+        title: { label: '占位提示', tip: 'placeholder | 占位提示' },
         propType: 'string',
         defaultValue: '请输入',
         setter: 'StringSetter'
       },
       {
         name: 'controls',
-        title: { label: '是否显示增减按钮', tip: '是否显示增减按钮' },
+        title: { label: '是否显示增减按钮', tip: 'controls | 是否显示增减按钮' },
         propType: 'bool',
         defaultValue: true,
         setter: 'BoolSetter'
       },
       {
         name: 'bordered',
-        title: { label: '显示边框', tip: '是否有边框' },
+        title: { label: '显示边框', tip: 'bordered | 是否有边框' },
         propType: 'bool',
         defaultValue: true,
         setter: 'BoolSetter'
       },
       {
         name: 'addonAfter',
-        title: { label: '后置标签', tip: '后置标签' },
+        title: { label: '后置标签', tip: 'addonAfter | 后置标签' },
         propType: { type: 'oneOfType', value: ['string', 'node'] },
       },
       {
         name: 'addonBefore',
-        title: { label: '前置标签', tip: '前置标签' },
+        title: { label: '前置标签', tip: 'addonBefore | 前置标签' },
         propType: { type: 'oneOfType', value: ['string', 'node'] },
       },
       // {
@@ -79,19 +79,19 @@ export default {
       // },
       {
         name: 'max',
-        title: { label: '最大值', tip: '最大值' },
+        title: { label: '最大值', tip: 'max | 最大值' },
         propType: 'number',
         setter: 'NumberSetter'
       },
       {
         name: 'min',
-        title: { label: '最小值', tip: '最小值' },
+        title: { label: '最小值', tip: 'min | 最小值' },
         propType: 'number',
         setter: 'NumberSetter'
       },
       {
         name: 'precision',
-        title: { label: '数值精度', tip: '数值精度' },
+        title: { label: '数值精度', tip: 'precision | 数值精度' },
         propType: 'number',
         setter: 'NumberSetter'
       },
@@ -102,7 +102,7 @@ export default {
       // },
       {
         name: 'size',
-        title: { label: '尺寸', tip: '输入框大小' },
+        title: { label: '尺寸', tip: 'size | 输入框大小' },
         propType: { type: 'oneOf', value: ['large', 'middle', 'small'] },
         setter: {
           componentName: 'RadioGroupSetter',
@@ -127,43 +127,43 @@ export default {
       },
       {
         name: 'step',
-        title: { label: '单步长', tip: '每次改变步数' },
+        title: { label: '单步长', tip: 'step | 每次改变步数' },
         propType: 'number',
         setter: 'NumberSetter'
       },
       {
         name: 'onChange',
-        title: { label: '变化回调', tip: '变化回调' },
+        title: { label: '变化回调', tip: 'onChange | 变化回调' },
         propType: 'func',
       },
       {
         name: 'onPressEnter',
-        title: { label: '按下回车的回调', tip: '按下回车的回调' },
+        title: { label: '按下回车的回调', tip: 'onPressEnter | 按下回车的回调' },
         propType: 'func',
       },
       {
         name: 'onFocus',
-        title: { label: '获取焦点回调', tip: '获取焦点回调' },
+        title: { label: '获取焦点回调', tip: 'onFocus | 获取焦点回调' },
         propType: 'func',
       },
       {
         name: 'onKeyDown',
-        title: { label: '按键按下时的回调', tip: '按键按下时的回调' },
+        title: { label: '按键按下时的回调', tip: 'onKeyDown | 按键按下时的回调' },
         propType: 'func',
       },
       {
         name: 'onKeyPress',
-        title: { label: '按键按下后的回调', tip: '按键按下之后释放之前的回调' },
+        title: { label: '按键按下后的回调', tip: 'onKeyPress | 按键按下之后释放之前的回调' },
         propType: 'func',
       },
       {
         name: 'onKeyUp',
-        title: { label: '按键释放回调', tip: '按键释放之后的回调' },
+        title: { label: '按键释放回调', tip: 'onKeyUp | 按键释放之后的回调' },
         propType: 'func',
       },
       {
         name: 'onBlur',
-        title: { label: '失去焦点回调', tip: '失去焦点回调' },
+        title: { label: '失去焦点回调', tip: 'onBlur | 失去焦点回调' },
         propType: 'func',
       },
     ],

@@ -14,7 +14,7 @@ export default {
       name: 'activeKey',
       title: {
         label: '当前激活',
-        tip: '当前激活 tab 面板的 key',
+        tip: 'activeKey|当前激活 tab 面板的 key',
       },
       propType: 'string',
       setter: 'StringSetter',
@@ -24,7 +24,7 @@ export default {
       name: 'animated',
       title: {
         label: '切换动画',
-        tip: '是否使用动画切换Tabs',
+        tip: 'animated|是否使用动画切换Tabs',
       },
       propType: 'bool',
       setter: 'BoolSetter',
@@ -34,7 +34,7 @@ export default {
       name: 'size',
       title: {
         label: '尺寸',
-        tip: '大小，提供 `large` `default` 和 `small` 三种大小',
+        tip: 'size|大小，提供 `large` `default` 和 `small` 三种大小',
       },
       propType: {
         type: 'oneOf',
@@ -44,7 +44,7 @@ export default {
     },
     {
       name: 'centered',
-      title: { label: '标签居中', tip: '标签居中展示' },
+      title: { label: '标签居中', tip: 'centered|标签居中展示' },
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter',
@@ -52,7 +52,7 @@ export default {
     },
     {
       name: 'tabBarGutter',
-      title: { label: '标签间隙', tip: 'tabs之间的间隙' },
+      title: { label: '标签间隙', tip: 'tabBarGutter|tabs之间的间隙' },
       propType: 'number',
       setter: 'NumberSetter',
       supportVariable: true
@@ -61,7 +61,7 @@ export default {
       name: 'tabPosition',
       title: {
         label: '页签位置',
-        tip: '页签位置',
+        tip: 'tabPosition|页签位置',
       },
       propType: {
         type: 'oneOf',
@@ -73,7 +73,7 @@ export default {
       name: 'type',
       title: {
         label: '页签样式',
-        tip: '页签的基本样式，可选`line`、`card`、`editable-card`类型',
+        tip: 'type|页签的基本样式，可选`line`、`card`、`editable-card`类型',
       },
       propType: {
         type: 'oneOf',
@@ -83,22 +83,22 @@ export default {
     },
     {
       name:'onChange',
-      title:'切换面板的回调',
+      title:{label:'切换面板的回调',tip:'onChange|切换面板的回调'},
       propType:'func'
     },
     {
-      name:'edit',
-      title:'新增和删除页签的回调',
+      name:'onEdit',
+      title:{label:'新增和删除页签的回调',tip:'onEdit|新增和删除页签的回调'},
       propType:'func'
     },
     {
       name:'tabClick',
-      title:'tab 被点击的回调',
+      title:{label:'tab 被点击的回调',tip:'tabClick|tab 被点击的回调'},
       propType:'func'
     },
     {
       name:'tabScroll',
-      title:'滚动 TabBar触发',
+      title:{label:'滚动 TabBar触发',tip:'tabScroll|滚动 TabBar触发'},
       propType:'func'
     }
   ],

@@ -12,33 +12,38 @@ export default {
   props:[
     {
       name: 'defaultValue',
-      title: { label: '默认值', tip: '默认值' },
+      title: { label: '默认值', tip: 'defaultValue|默认值' },
       propType: 'string',
       setter: 'StringSetter'
     },
     {
+      name: 'value',
+      title: { label: '设置值', tip: 'value|设置值' },
+      propType: 'string',
+    },
+    {
       name: 'autoFocus',
-      title: { label: '自动聚焦', tip: '自动获得焦点' },
+      title: { label: '自动聚焦', tip: 'autoFocus|自动获得焦点' },
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter'
     },
     {
       name: 'filterOption',
-      title: { label: '自定义过滤逻辑', tip: '自定义过滤逻辑' },
+      title: { label: '自定义过滤逻辑', tip: 'filterOption|自定义过滤逻辑' },
       propType: { type: 'oneOfType', value: ['bool', 'func'] },
     },
     {
       name: 'notFoundContent',
       title: {
         label: '空值展示',
-        tip: '当下拉列表为空时显示的内容',
+        tip: 'notFoundContent|当下拉列表为空时显示的内容',
       },
       propType: 'node',
     },
     {
       name: 'placement',
-      title: { label: '弹出层展示位置', tip: '弹出层展示位置' },
+      title: { label: '弹出层展示位置', tip: 'placement|弹出层展示位置' },
       propType: { type: 'oneOf', value: ['top', 'bottom'] },
       setter: {
         componentName: 'RadioGroupSetter',
@@ -58,7 +63,7 @@ export default {
     },
     {
       name: 'prefix',
-      title: { label: '设置触发关键字', tip: '设置触发关键字' },
+      title: { label: '设置触发关键字', tip: 'prefix|设置触发关键字' },
       propType: {
         type: 'oneOfType',
         value: ['string', { type: 'arrayOf', value: 'string' }],
@@ -66,49 +71,44 @@ export default {
     },
     {
       name: 'split',
-      title: { label: '设置选中项前后分隔符', tip: '设置选中项前后分隔符' },
+      title: { label: '设置选中项前后分隔符', tip: 'split|设置选中项前后分隔符' },
       propType: 'string',
     },
     {
       name: 'validateSearch',
-      title: { label: '自定义触发验证逻辑', tip: '自定义触发验证逻辑' },
+      title: { label: '自定义触发验证逻辑', tip: 'validateSearch|自定义触发验证逻辑' },
       propType: 'func',
     },
-    {
-      name: 'value',
-      title: { label: '设置值', tip: '设置值' },
-      propType: 'string',
-    },
-    {
-      name: 'onChange ',
-      title: { label: '值改变时触发', tip: '值改变时触发' },
-      propType: 'func',
-    },
-    {
-      name: 'onSelect',
-      title: { label: '选择选项时触发', tip: '选择选项时触发' },
-      propType: 'func',
-    },
-    {
-      name: 'onSearch',
-      title: { label: '搜索时触发', tip: '搜索时触发' },
-      propType: 'func',
-    },
-    {
-      name: 'onFocus',
-      title: { label: '获得焦点时触发', tip: '获得焦点时触发' },
-      propType: 'func',
-    },
-    {
-      name: 'onBlur',
-      title: { label: '失去焦点时触发', tip: '失去焦点时触发' },
-      propType: 'func',
-    },
+    // {
+    //   name: 'onChange ',
+    //   title: { label: '值改变时触发', tip: 'onChange|值改变时触发' },
+    //   propType: 'func',
+    // },
+    // {
+    //   name: 'onSelect',
+    //   title: { label: '选择选项时触发', tip: 'onSelect|选择选项时触发' },
+    //   propType: 'func',
+    // },
+    // {
+    //   name: 'onSearch',
+    //   title: { label: '搜索时触发', tip: '搜索时触发' },
+    //   propType: 'func',
+    // },
+    // {
+    //   name: 'onFocus',
+    //   title: { label: '获得焦点时触发', tip: '获得焦点时触发' },
+    //   propType: 'func',
+    // },
+    // {
+    //   name: 'onBlur',
+    //   title: { label: '失去焦点时触发', tip: '失去焦点时触发' },
+    //   propType: 'func',
+    // },
     {
       name: 'getPopupContainer',
       title: {
         label: '指定建议框挂载的 HTML 节点',
-        tip: '指定建议框挂载的 HTML 节点',
+        tip: 'getPopupContainer|指定建议框挂载的 HTML 节点',
       },
       propType: 'func',
     }
@@ -148,7 +148,9 @@ export default {
       screenshot:avatarImg,
       schema:{
         componentName:"AMentions",
-        props:{}
+        props:{
+          getPopupContainer:()=>document.querySelector('#lce-container')
+        }
       }
     }
   ]

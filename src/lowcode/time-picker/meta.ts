@@ -12,68 +12,68 @@ export default {
   props:[
     {
       name: 'defaultValue',
-      title: { label: '默认时间', tip: '默认时间' },
+      title: { label: '默认时间', tip: 'defaultValue|默认时间' },
       propType: 'date',
       setter: 'DateSetter',
     },
     {
       name: 'value',
-      title: { label: '当前时间', tip: '当前时间' },
+      title: { label: '当前时间', tip: 'value|当前时间' },
       propType: 'date',
       setter: 'DateSetter',
     },
     {
       name: 'allowClear',
-      title: { label: '支持清除', tip: '是否允许清除' },
+      title: { label: '支持清除', tip: 'allowClear|是否允许清除' },
       propType: 'bool',
       defaultValue: true,
       setter: 'BoolSetter'
     },
     {
       name: 'autoFocus',
-      title: { label: '自动聚焦', tip: '自动获取焦点' },
+      title: { label: '自动聚焦', tip: 'autoFocus|自动获取焦点' },
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter'
     },
     {
       name: 'bordered',
-      title: { label: '显示边框', tip: '是否有边框' },
+      title: { label: '显示边框', tip: 'bordered|是否有边框' },
       propType: 'bool',
       defaultValue: true,
       setter: 'BoolSetter'
     },
     {
       name: 'clearText',
-      title: { label: '清除按钮的提示文案', tip: '清除按钮的提示文案' },
+      title: { label: '清除按钮的提示文案', tip: 'clearText|清除按钮的提示文案' },
       propType: 'string',
       setter: 'StringSetter'
     },
     {
       name: 'disabled',
-      title: { label: '是否禁用', tip: '是否为禁用状态' },
+      title: { label: '是否禁用', tip: 'disabled|是否为禁用状态' },
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter'
     },
     {
       name: 'disabledHours',
-      title: { label: '禁止选择部分小时选项', tip: '禁止选择部分小时选项' },
+      title: { label: '禁止选择部分小时选项', tip: 'disabledHours|禁止选择部分小时选项' },
       propType: 'func',
     },
     {
       name: 'disabledMinutes',
-      title: { label: '禁止选择部分分钟选项', tip: '禁止选择部分分钟选项' },
+      title: { label: '禁止选择部分分钟选项', tip: 'disabledMinutes|禁止选择部分分钟选项' },
       propType: 'func',
     },
     {
       name: 'disabledSeconds',
-      title: { label: '禁止选择部分秒选项', tip: '禁止选择部分秒选项' },
+      title: { label: '禁止选择部分秒选项', tip: 'disabledSeconds|禁止选择部分秒选项' },
       propType: 'func',
     },
     {
       name: 'format',
-      title: { label: '展示的时间格式', tip: '展示的时间格式' },
+      title: { label: '展示的时间格式', tip: 'format|展示的时间格式' },
       propType: 'string',
       setter: 'StringSetter'
     },
@@ -81,20 +81,20 @@ export default {
       name: 'getPopupContainer',
       title: {
         label: '定义浮层的容器',
-        tip: '定义浮层的容器，默认为 body 上新建 div',
+        tip: 'getPopupContainer|定义浮层的容器，默认为 body 上新建 div',
       },
       propType: 'func',
     },
     {
       name: 'hideDisabledOptions',
-      title: { label: '隐藏禁止选择的选项', tip: '隐藏禁止选择的选项' },
+      title: { label: '隐藏禁止选择的选项', tip: 'hideDisabledOptions|隐藏禁止选择的选项' },
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter'
     },
     {
       name: 'hourStep',
-      title: { label: '小时选项间隔', tip: '小时选项间隔' },
+      title: { label: '小时选项间隔', tip: 'hourStep|小时选项间隔' },
       propType: 'number',
       setter: 'NumberSetter'
     },
@@ -102,7 +102,7 @@ export default {
       name: 'inputReadOnly',
       title: {
         label: '只读',
-        tip: '设置输入框为只读（避免在移动设备上打开虚拟键盘）',
+        tip: 'inputReadOnly|设置输入框为只读（避免在移动设备上打开虚拟键盘）',
       },
       propType: 'bool',
       defaultValue: false,
@@ -110,13 +110,13 @@ export default {
     },
     {
       name: 'minuteStep',
-      title: { label: '分钟选项间隔', tip: '分钟选项间隔' },
+      title: { label: '分钟选项间隔', tip: 'minuteStep|分钟选项间隔' },
       propType: 'number',
       setter: 'NumberSetter'
     },
     {
       name: 'placeholder',
-      title: { label: '空值提示', tip: '没有值的时候显示的内容' },
+      title: { label: '空值提示', tip: 'placeholder|没有值的时候显示的内容' },
       propType: {
         type: 'oneOfType',
         value: ['string', { type: 'arrayOf', value: 'string' }],
@@ -124,13 +124,13 @@ export default {
     },
     {
       name: 'popupClassName',
-      title: { label: '弹出层类名', tip: '弹出层类名' },
+      title: { label: '弹出层类名', tip: 'popupClassName|弹出层类名' },
       propType: 'string',
       setter: 'StringSetter'
     },
     {
       name: 'secondStep',
-      title: { label: '秒选项间隔', tip: '秒选项间隔' },
+      title: { label: '秒选项间隔', tip: 'secondStep|秒选项间隔' },
       propType: 'number',
       setter: 'NumberSetter'
     },
@@ -138,7 +138,7 @@ export default {
       name: 'use12Hours',
       title: {
         label: '12小时制',
-        tip: '使用 12 小时制，为 true 时 `format` 默认为 `h:mm:ss a`',
+        tip: 'use12Hours|使用 12 小时制，为 true 时 `format` 默认为 `h:mm:ss a`',
       },
       propType: 'bool',
       defaultValue: false,
@@ -148,7 +148,7 @@ export default {
       name:'showNow',
       title:{
         label:'展示此刻',
-        tip:'面板是否显示“此刻”按钮'
+        tip:'showNow|面板是否显示“此刻”按钮'
       },
       propType:'bool',
       setter:'BoolSetter'
@@ -177,7 +177,8 @@ export default {
       schema:{
         componentName:"ATimePicker",
         props:{
-          showNow:true
+          showNow:true,
+          getPopupContainer:()=>document.querySelector('#lce-container')
         }
       }
     }

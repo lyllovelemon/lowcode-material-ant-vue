@@ -18,14 +18,14 @@ export default {
       items:[
         {
           name:'dataSource',
-          title:{label:'表格数据',tip:'datasource|表格数据'},
+          title:{label:'表格数据',tip:'dataSource | 表格数据'},
           propType:'object',
           setter:'JsonSetter',
           supportVariable:true
         },
         {
           name:'loading',
-          title:{label:'加载中',tip:'页面是否在加载中'},
+          title:{label:'加载中',tip:'loading | 页面是否在加载中'},
           propType:'bool',
           setter:'BoolSetter',
           defaultValue:false,
@@ -53,7 +53,7 @@ export default {
         },
         {
           name: 'columns',
-          title: { label: '表格列', tip: '表格列的配置描述，具体项见下表' },
+          title: { label: '表格列', tip: 'columns | 表格列的配置' },
           setter: {
             componentName: 'ArraySetter',
             props: {
@@ -91,7 +91,7 @@ export default {
                       },
                       {
                         name: 'key',
-                        title: { label: 'key', tip: 'Vue 需要的 key,设置了dataIndex可以忽略这个属性' },
+                        title: { label: 'key', tip: 'key | Vue 需要的 key,设置了dataIndex可以忽略此属性' },
                         propType: 'string',
                         setter: 'StringSetter',
                       },
@@ -170,13 +170,13 @@ export default {
                       },
                       {
                         name:'maxWidth',
-                        title:{label:'最大宽度',tip:'maxWidth|最大宽度'},
+                        title:{label:'最大宽度',tip:'maxWidth | 最大宽度'},
                         propType:'number',
                         setter:['NumberSetter']
                       },
                       {
                         name:'minWidth',
-                        title:{label:'最小宽度',tip:'minWidth|最小宽度'},
+                        title:{label:'最小宽度',tip:'minWidth | 最小宽度'},
                         propType:'number',
                         setter:['NumberSetter']
                       },
@@ -193,7 +193,7 @@ export default {
                         name:'sortDirections',
                         title:{
                           label:'排序方式',
-                          tip:'sortDirections|支持的排序方式'
+                          tip:'sortDirections | 支持的排序方式'
                         },
                         propType:{ type:'oneOf',value:['','ascend','descend']},
                         setter:{
@@ -211,7 +211,7 @@ export default {
                         name:'sortOrder',
                         title:{
                           label:'排序受控属性',
-                          tip:'sortOrder|排序的受控属性，外界可用此控制列的排序'
+                          tip:'sortOrder | 排序的受控属性，外界可用此控制列的排序'
                         },
                         propType:{ type:'oneOf',value:['','ascend','descend']},
                         setter:{
@@ -229,7 +229,7 @@ export default {
                         name:'ellipsis',
                         title:{
                           label:'省略',
-                          tip:'ellipsis|超过宽度将自动省略'
+                          tip:'ellipsis | 超过宽度将自动省略'
                         },
                         propType:'bool',
                         setter:'BoolSetter',
@@ -248,7 +248,7 @@ export default {
                         name:'filterSearch',
                         title:{
                           label:'筛选菜单项是否可搜索',
-                          tip:'filterSearch|筛选菜单项是否可搜索'
+                          tip:'filterSearch | 筛选菜单项是否可搜索'
                         },
                         propType:'bool',
                         setter:'BoolSetter',
@@ -256,7 +256,7 @@ export default {
                       },
                       {
                         name:'filterMultiple',
-                        title:'是否多选',
+                        title:{label:'是否多选',tip:'属性 filterMultiple'},
                         propType:'bool',
                         setter:'BoolSetter',
                         defaultValue:true
@@ -284,7 +284,7 @@ export default {
                         name:'class',
                         title:{
                           label:'列的class',
-                          tip:'class|列的class'
+                          tip:'class | 列的class'
                         },
                         propType:{ type: 'oneOfType', value: ['string', 'func'] },
                         setter:[
@@ -661,7 +661,7 @@ export default {
           title: {
             label: '横向滚动',
             tip:
-              'scroll.x | 	设置横向滚动，也可用于指定滚动区域的宽，可以设置为像素值，百分比，true 和 max-content',
+              'scroll.x | 设置横向滚动，也可用于指定滚动区域的宽，可以设置为像素值，百分比，true 和 max-content',
           },
           propType: { type: 'oneOfType', value: ['number', 'bool'] },
           setter: ['NumberSetter', 'BoolSetter', 'VariableSetter'],
@@ -670,7 +670,7 @@ export default {
           name: 'scroll.y',
           title: {
             label: '纵向滚动',
-            tip: 'scroll.y | 	设置纵向滚动，也可用于指定滚动区域的高，可以设置为像素值',
+            tip: 'scroll.y | 设置纵向滚动，也可用于指定滚动区域的高，可以设置为像素值',
           },
           propType: 'number',
           setter: ['NumberSetter', 'VariableSetter'],
@@ -789,7 +789,7 @@ export default {
           name:'rowSelection.onSelect',
           title:{
             label:'选择/反选回调',
-            tip:'用户手动选择/取消选择某列的回调'
+            tip:'rowSelection.onSelect | 用户手动选择/取消选择某列的回调'
           },
           propType: 'func',
           setter: [
@@ -810,7 +810,7 @@ export default {
           name:'rowSelection.onSelectAll',
           title:{
             label:'全选/反选回调',
-            tip:'用户手动选择/取消选择所有列的回调'
+            tip:'rowSelection.onSelectAll | 用户手动选择/取消选择所有列的回调'
           },
           propType: 'func',
           setter: [
@@ -956,7 +956,7 @@ export default {
         },
         {
           name:'emptyText',
-          title:{label:'空数据文本',tip:'自定义空数据时的显示内容'},
+          title:{label:'空数据文本',tip:'emptyText | 自定义空数据时的显示内容'},
           propType:{type:'oneOfType',value:['string','node','func']},
           defaultValue:'暂无数据'
         },

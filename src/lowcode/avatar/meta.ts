@@ -9,12 +9,12 @@ const meta={
   props:[
     {
       name:'icon',
-      title:{label:'图标头像',tip:'设置头像的图标类型'},
+      title:{label:'图标头像',tip:'icon|设置头像的图标类型'},
       propType:'node'
     },
     {
       name:'shape',
-      title:{ label:'形状',tip:'指定头像的形状'},
+      title:{ label:'形状',tip:'shape|指定头像的形状'},
       propType:{
         type:'oneOf',
         value:['circle','square']
@@ -32,7 +32,7 @@ const meta={
     },
     {
       name: 'size',
-      title: { label: '尺寸', tip: '设置头像的大小' },
+      title: { label: '尺寸', tip: 'size|设置头像的大小' },
       setter: {
         componentName: 'MixedSetter',
         props: {
@@ -55,7 +55,7 @@ const meta={
     },
     {
       name: 'src',
-      title: { label: '图片地址', tip: '图片类头像的资源地址' },
+      title: { label: '图片地址', tip: 'src|图片类头像的资源地址' },
       propType:'string',
       setter: 'StringSetter',
     },
@@ -63,7 +63,7 @@ const meta={
       name: 'alt',
       title: {
         label: '替代文本',
-        tip: '图像无法显示时的替代文本',
+        tip: 'alt|图像无法显示时的替代文本',
       },
       propType:'string',
       setter: 'StringSetter',
@@ -72,7 +72,7 @@ const meta={
       name: 'loadError',
       title: {
         label: '图片加载失败的事件',
-        tip: '图片加载失败的事件，返回 false 会关闭组件默认的 fallback 行为',
+        tip: 'loadError|图片加载失败的事件，返回 false 会关闭组件默认的 fallback 行为',
       },
       propType: 'func',
     },
@@ -80,7 +80,7 @@ const meta={
       name:'crossOrigin',
       title:{
         label:'cors 属性设置',
-        tip:'cors 属性设置'
+        tip:'crossOrigin|cors 属性设置'
       },
       propType:{
         type:'oneOf',
@@ -99,14 +99,14 @@ const meta={
     },
     {
       name: 'src',
-      title: { label: '允许拖动', tip: '图片是否允许拖动' },
+      title: { label: '资源地址', tip: 'src|图片类头像的资源地址' },
       setter: 'BoolSetter',
     },
     {
       name:'srcset',
       title:{
         label:'图片资源地址',
-        tip:'设置图片类头像响应式资源地址'
+        tip:'srcset | 设置图片类头像响应式资源地址'
       },
       propType:'string',
       setter:'StringSetter'
@@ -115,7 +115,7 @@ const meta={
       name: 'gap',
       title: {
         label: '文字边距',
-        tip: '字符类型距离左右两侧边界单位像素',
+        tip: 'gap|字符类型距离左右两侧边界单位像素',
       },
       propType:'number',
       setter: 'NumberSetter',
@@ -123,7 +123,7 @@ const meta={
     },
     {
       name: 'draggable',
-      title: { label: '拖动', tip: '图片是否允许拖动' },
+      title: { label: '拖动', tip: 'draggable|图片是否允许拖动' },
       propType:'bool',
       setter: 'BoolSetter'
     }

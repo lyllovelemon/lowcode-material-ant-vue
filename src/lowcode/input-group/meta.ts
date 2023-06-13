@@ -13,13 +13,13 @@ export default {
   props:[
     {
       name: 'compact',
-      title: { label: '紧凑模式', tip: '是否用紧凑模式' },
+      title: { label: '紧凑模式', tip: 'compact | 是否用紧凑模式' },
       propType: 'bool',
       setter: 'BoolSetter'
     },
     {
       name: 'size',
-      title: { label: '尺寸', tip: '尺寸大小' },
+      title: { label: '尺寸', tip: 'size | 尺寸大小' },
       propType: { type: 'oneOf', value: ['large', 'default', 'small'] },
       setter: {
         componentName: 'RadioGroupSetter',

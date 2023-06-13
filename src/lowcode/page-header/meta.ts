@@ -12,38 +12,38 @@ export default {
   props:[
     {
       name: 'title',
-      title: { label: '标题', tip: '自定义标题文字' },
+      title: { label: '标题', tip: 'title|自定义标题文字' },
       propType: { type: 'oneOfType', value: ['string', 'node'] },
     },
     {
       name: 'subTitle',
-      title: { label: '二级标题', tip: '自定义的二级标题文字' },
+      title: { label: '二级标题', tip: 'subTitle|自定义的二级标题文字' },
       propType: { type: 'oneOfType', value: ['string', 'node'] },
     },
     {
       name: 'ghost',
-      title: { label: 'ghost风格', tip: 'ghost风格' },
+      title: { label: 'ghost风格', tip: 'ghost|ghost风格' },
       propType: 'bool',
       defaultValue: true,
     },
     {
       name: 'tags',
-      title: { label: 'tag 列表', tip: 'title 旁的 tag 列表' },
+      title: { label: 'tag 列表', tip: 'tags|title 旁的 tag 列表' },
       propType: 'node',
     },
     {
       name: 'extra',
-      title: { label: '操作区', tip: '操作区，位于 title 行的行尾' },
+      title: { label: '操作区', tip: 'extra|操作区，位于 title 行的行尾' },
       propType: 'node',
     },
     {
       name: 'footer',
-      title: { label: '页脚', tip: 'PageHeader 的页脚，一般用于渲染 TabBar' },
+      title: { label: '页脚', tip: 'footer|PageHeader 的页脚，一般用于渲染 TabBar' },
       propType: 'node',
     },
     {
       name: 'avatar',
-      title: { label: '头像', tip: '标题栏旁的头像' },
+      title: { label: '头像', tip: 'avatar|标题栏旁的头像' },
       propType: 'object',
       supportVariable: false,
       setter: [
@@ -68,7 +68,7 @@ export default {
     },
     {
       name: 'breadcrumb',
-      title: { label: '面包屑的配置', tip: '面包屑的配置' },
+      title: { label: '面包屑的配置', tip: 'breadcrumb|面包屑的配置' },
       propType: 'object',
       supportVariable: false,
       setter: [
@@ -123,8 +123,8 @@ export default {
       ],
     },
     {
-      name: 'back',
-      title: { label: '返回按钮的点击事件', tip: '返回按钮的点击事件' },
+      name: 'onBack',
+      title: { label: '返回按钮的点击事件', tip: 'onBack|返回按钮的点击事件' },
       propType: 'func',
     },
   ],
@@ -133,8 +133,8 @@ export default {
       style:true,
       events: [
         {
-          name: 'back',
-          template: "back(${extParams}){\n// 返回按钮的点击事件\nconsole.log('back');}",
+          name: 'onBack',
+          template: "onBack(${extParams}){\n// 返回按钮的点击事件\nconsole.log('onBack');}",
         }
       ]
     }

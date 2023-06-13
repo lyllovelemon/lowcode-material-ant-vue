@@ -12,7 +12,7 @@ export default {
   props:[
     {
       name: 'visible',
-      title: { label: '菜单是否显示', tip: '菜单是否显示' },
+      title: { label: '菜单是否显示', tip: 'visible|菜单是否显示' },
       propType: { type: 'oneOf', value: [true, false, '-'] },
       defaultValue: '-',
       setter: {
@@ -55,23 +55,23 @@ export default {
     },
     {
       name: 'arrow',
-      title: { label: '显示下拉箭头', tip: '是否显示下拉箭头' },
+      title: { label: '显示下拉箭头', tip: 'arrow|是否显示下拉箭头' },
       propType: 'bool',
       defaultValue: false,
     },
     {
       name: 'disabled',
-      title: { label: '是否禁用', tip: '是否为禁用状态' },
+      title: { label: '是否禁用', tip: 'disabled|是否为禁用状态' },
       propType: 'bool',
     },
     {
       name: 'overlay',
-      title: { label: '菜单', tip: '菜单' },
+      title: { label: '菜单', tip: 'overlay|菜单' },
       propType: { type: 'oneOfType', value: ['node', 'func'] },
     },
     {
       name:'size',
-      title:{ label:'尺寸',tip:'按钮大小'},
+      title:{ label:'尺寸',tip:'size|按钮大小'},
       propType:{ type:'oneOf',value:['default','small','large']},
       setter:{
         componentName:"RadioGroupSetter",
@@ -90,7 +90,7 @@ export default {
       title: {
         label: '弹出位置',
         tip:
-          '菜单弹出位置：`bottomLeft` `bottomCenter` `bottomRight` `topLeft` `topCenter` `topRight`',
+          'placement|菜单弹出位置：`bottomLeft` `bottomCenter` `bottomRight` `topLeft` `topCenter` `topRight`',
       },
       propType: {
         type: 'oneOf',
@@ -101,7 +101,7 @@ export default {
       name: 'trigger',
       title: {
         label: '触发下拉的行为',
-        tip: '触发下拉的行为, 移动端不支持 hover',
+        tip: 'trigger|触发下拉的行为, 移动端不支持 hover',
       },
       propType: {
         type: 'arrayOf',
@@ -109,10 +109,10 @@ export default {
       },
     },
     {
-      name: 'visibleChange',
+      name: 'onVisibleChange',
       title: {
         label: '显示状态回调',
-        tip: '菜单显示状态改变时调用，参数为 `visible`',
+        tip: 'onVisibleChange|菜单显示状态改变时调用，参数为 `visible`',
       },
       propType: 'func',
     },

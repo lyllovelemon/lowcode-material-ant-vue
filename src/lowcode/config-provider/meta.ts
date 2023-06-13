@@ -14,14 +14,14 @@ export default {
       name: 'autoInsertSpaceInButton',
       title: {
         label: '按钮插入空格',
-        tip: '自动在按钮中 2 个汉字之间插入空格',
+        tip: 'autoInsertSpaceInButton | 自动在按钮中 2 个汉字之间插入空格',
       },
       propType: 'bool',
       defaultValue: true,
     },
     {
       name: 'componentSize',
-      title: { label: '组件大小', tip: '设置 antd 组件大小' },
+      title: { label: '组件大小', tip: 'componentSize | 设置 antd 组件大小' },
       propType: {type:'oneOf',value:['small','middle','large']},
       setter:{
         componentName:'RadioGroupSetter',
@@ -39,7 +39,7 @@ export default {
       name: 'csp',
       title: {
         label: 'CSP配置',
-        tip: '设置Content Security Policy配置',
+        tip: 'csp | 设置Content Security Policy配置',
       },
       propType: 'object',
       setter: 'JsonSetter',
@@ -48,7 +48,7 @@ export default {
       name: 'form',
       title: {
         label: 'Form通用属性',
-        tip: '设置 Form 组件的通用属性',
+        tip: 'form | 设置 Form 组件的通用属性',
       },
       propType: 'object',
       setter: 'JsonSetter',
@@ -57,14 +57,14 @@ export default {
       name: 'input',
       title: {
         label: 'Input通用属性',
-        tip: '设置 Input 组件的通用属性',
+        tip: 'input | 设置 Input 组件的通用属性',
       },
       propType: 'object',
       setter: 'JsonSetter',
     },
     {
       name: 'direction',
-      title: { label: '文本方向', tip: '设置文本展示方向' },
+      title: { label: '文本方向', tip: 'direction | 设置文本展示方向' },
       propType: {type:'oneOf',value:['ltr','rtl']},
       setter:{
         componentName:'RadioGroupSetter',
@@ -80,7 +80,7 @@ export default {
       name: 'getPopupContainer',
       title: {
         label: '弹出框父节点',
-        tip: '弹出框渲染父节点，默认渲染到 body 上。',
+        tip: 'getPopupContainer | 弹出框渲染父节点，默认渲染到 body 上。',
       },
       propType: 'func',
     },
@@ -88,13 +88,13 @@ export default {
       name: 'getTargetContainer',
       title: {
         label: '滚动监听容器',
-        tip: '配置 Affix、Anchor 滚动监听容器。',
+        tip: 'getTargetContainer | 配置 Affix、Anchor 滚动监听容器。',
       },
       propType: 'func',
     },
     {
       name: 'locale',
-      title: { label: '语言', tip: '语言' },
+      title: { label: '语言', tip: 'locale | 语言' },
       propType: {
         type: 'oneOf',
         value: ['zh-CN', 'en-US'],
@@ -105,7 +105,7 @@ export default {
       name: 'prefixCls',
       title: {
         label: '样式前缀',
-        tip: '设置统一样式前缀。注意：需要配合 less 变量 @ant-prefix 使用',
+        tip: 'prefixCls | 设置统一样式前缀。注意：需要配合 less 变量 @ant-prefix 使用',
       },
       propType: 'string',
     },
@@ -113,14 +113,14 @@ export default {
       name: 'pageHeader',
       title: {
         label: '统一设置 PageHeader 的 ghost',
-        tip: '统一设置 PageHeader 的 ghost',
+        tip: 'pageHeader | 统一设置 PageHeader 的 ghost',
       },
       propType: 'object',
       setter: 'JsonSetter',
     },
     {
       name: 'space',
-      title: { label: '设置 Space 的 尺寸', tip: '设置 Space 的 `size`' },
+      title: { label: '设置 Space 的 尺寸', tip: 'space | 设置 Space 的 `size`' },
       propType: {
         type: 'oneOf',
         value: ['small', 'middle', 'large', 'number'],
@@ -130,14 +130,14 @@ export default {
       name: 'virtual',
       title: {
         label: '虚拟滚动',
-        tip: '设置 `false` 时关闭虚拟滚动',
+        tip: 'virtual | 设置 `false` 时关闭虚拟滚动',
       },
       propType: 'bool',
       defaultValue: true,
     },
     {
       name: 'dropdownMatchSelectWidth',
-      title: { label: '下拉菜单和选择器同宽', tip: '下拉菜单和选择器同宽' },
+      title: { label: '下拉菜单和选择器同宽', tip: 'dropdownMatchSelectWidth | 下拉菜单和选择器同宽' },
       propType: { type: 'oneOfType', value: ['bool', 'number'] },
     }
   ],

@@ -11,13 +11,13 @@ export default {
   },
   props:[
     {
-      title:'key',
+      title:{label:'key',tip:'key'},
       name:'key',
       propType:'string',
       setter:'StringSetter'
     },
     {
-      title:{label:'title',tip:'组名'},
+      title:{label:'title',tip:'title|组名'},
       name:'title',
       propType:{
         type:'oneOfType',

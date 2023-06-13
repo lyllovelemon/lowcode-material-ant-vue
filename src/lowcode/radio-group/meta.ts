@@ -13,14 +13,14 @@ export default {
   props:[
     {
       name: 'v-model:value',
-      title: { label: '当前值', tip: '指定选中的选项' },
+      title: { label: '当前值', tip: 'v-model:value|指定选中的选项' },
       propType: 'string',
       setter: 'StringSetter',
       supportVariable: true
     },
     {
       name:'name',
-      title:'name属性',
+      title:{label:'name属性',tip:'name|name属性'},
       propType:'string',
       setter:'StringSetter',
       supportVariable:true
@@ -35,21 +35,21 @@ export default {
             {
               name: 'label',
               propType: 'string',
-              description: '选项名',
+              title: {label:'选项名',tip:'label|选项名'},
               defaultValue: '选项名',
               supportVariable:true
             },
             {
               name: 'value',
               propType: 'string',
-              description: '选项值',
+              title: {label:'选项值',tip:'value|选项值'},
               defaultValue: '选项值',
               supportVariable:true
             },
             {
               name: 'disabled',
               propType: 'bool',
-              description: '是否禁用',
+              title:{label: '是否禁用',tip:'disabled|是否禁用'},
               defaultValue: false,
               supportVariable:true
             },
@@ -97,7 +97,7 @@ export default {
     },
     {
       name: 'buttonStyle',
-      title: { label: 'buttonStyle', tip: 'RadioButton 的风格样式' },
+      title: { label: 'buttonStyle', tip: 'buttonStyle|RadioButton 的风格样式' },
       propType: {type:'oneOf',value:['outline','solid']},
       defaultValue: 'outline',
       condition(target: { getProps: () => { (): any; new(): any; getPropValue: { (arg0: string): string; new(): any; }; }; }) {
@@ -115,7 +115,7 @@ export default {
     },
     {
       name: 'disabled',
-      title: { label: '是否禁用', tip: '禁选所有子单选器' },
+      title: { label: '是否禁用', tip: 'disabled|禁选所有子单选器' },
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter',
@@ -123,7 +123,7 @@ export default {
     },
     {
       name: 'optionType',
-      title: { label: '类型', tip: '类型' },
+      title: { label: '类型', tip: 'optionType|类型' },
       propType: { type: 'oneOf', value: ['default', 'button'] },
       setter: {
         componentName: 'RadioGroupSetter',
@@ -144,7 +144,7 @@ export default {
     },
     {
       name: 'size',
-      title: { label: '尺寸', tip: '大小，只对按钮样式生效' },
+      title: { label: '尺寸', tip: 'size|尺寸，只对按钮样式生效' },
       condition(target: { getProps: () => { (): any; new(): any; getPropValue: { (arg0: string): string; new(): any; }; }; }) {
         return target.getProps().getPropValue('optionType') === 'button';
       },
@@ -172,7 +172,7 @@ export default {
     },
     {
       name: 'onChange ',
-      title: { label: '变化时回调函数', tip: '变化时回调函数' },
+      title: { label: '变化时回调函数', tip: 'onChange|变化时回调函数' },
       propType: 'func',
     },
   ],

@@ -15,7 +15,7 @@ export default {
       name: 'defaultValue',
       title: {
         label: '默认值',
-        tip: '设置初始取值。当 `range` 为 false 时，使用 number，否则用 \\[number, number]',
+        tip: 'defaultValue|设置初始取值。当 `range` 为 false 时，使用 number，否则用 \\[number, number]',
       },
       propType: {
         type: 'oneOfType',
@@ -24,7 +24,7 @@ export default {
     },
     {
       name: 'range',
-      title: { label: '双滑块模式', tip: '双滑块模式' },
+      title: { label: '双滑块模式', tip: 'range|双滑块模式' },
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter',
@@ -45,7 +45,7 @@ export default {
       title: {
         label: '当前值',
         tip:
-          '设置当前取值。当 `range` 为 false 时，使用 number，否则用 \\[number, number]',
+          'value|设置当前取值。当 `range` 为 false 时，使用 number，否则用 \\[number, number]',
       },
       propType: {
         type: 'oneOfType',
@@ -54,7 +54,7 @@ export default {
     },
     {
       name: 'allowClear',
-      title: { label: '支持清除', tip: '是否允许清除' },
+      title: { label: '支持清除', tip: 'allowClear|是否允许清除' },
       condition(target: { getProps: () => { (): any; new(): any; getPropValue: { (arg0: string): boolean; new(): any; }; }; }) {
         return target.getProps().getPropValue('range');
       },
@@ -66,7 +66,7 @@ export default {
       name: 'disabled',
       title: {
         label: '是否禁用',
-        tip: '是否为禁用状态',
+        tip: 'disabled|是否为禁用状态',
       },
       propType: 'bool',
       defaultValue: false,
@@ -74,26 +74,26 @@ export default {
     },
     {
       name: 'dots',
-      title: { label: '对齐刻度', tip: '是否只能拖拽到刻度上' },
+      title: { label: '对齐刻度', tip: 'dots|是否只能拖拽到刻度上' },
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter'
     },
     {
       name: 'max',
-      title: { label: '最大值', tip: '最大值' },
+      title: { label: '最大值', tip: 'max|最大值' },
       propType: 'number',
       setter: 'NumberSetter'
     },
     {
       name: 'min',
-      title: { label: '最小值', tip: '最小值' },
+      title: { label: '最小值', tip: 'min|最小值' },
       propType: 'number',
       setter: 'NumberSetter'
     },
     {
       name: 'reverse',
-      title: { label: '反向坐标轴', tip: '反向坐标轴' },
+      title: { label: '反向坐标轴', tip: 'reverse|是否反向坐标轴' },
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter'
@@ -103,7 +103,7 @@ export default {
       title: {
         label: '步长',
         tip:
-          '步长，取值必须大于 0，并且可被 (max - min) 整除。当 `marks` 不为空对象时，可以设置 `step` 为 null，此时 Slider 的可选值仅有 marks 标出来的部分',
+          'step|步长，取值必须大于 0，并且可被 (max - min) 整除。当 `marks` 不为空对象时，可以设置 `step` 为 null，此时 Slider 的可选值仅有 marks 标出来的部分',
       },
       propType: 'number',
       setter: 'NumberSetter'
@@ -112,7 +112,7 @@ export default {
       name: 'vertical',
       title: {
         label: '垂直方向',
-        tip: '值为 true 时，Slider 为垂直方向',
+        tip: 'vertical|值为 true 时，Slider 为垂直方向',
       },
       propType: 'bool',
       defaultValue: false,

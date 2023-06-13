@@ -13,19 +13,19 @@ export default {
   props: [
     {
       name: 'name',
-      title: '字段名',
+      title: {label:'字段名',tip:'name|字段名'},
       isRequired: true,
       propType: 'string',
       setter: 'StringSetter',
       supportVariable: true
     },
     { name: 'label',
-      title: '标签',
+      title: {label:'标签',tip:'label|标签'},
       propType: { type: 'oneOfType', value: ['string', 'node'] }
     },
     {
       name: 'labelAlign',
-      title: '标签对齐',
+      title: {label:'标签对齐',tip:'labelAlign|标签对齐'},
       propType: { type: 'oneOf', value: ['left', 'right'] },
       setter: {
         componentName: 'RadioGroupSetter',
@@ -35,13 +35,13 @@ export default {
     },
     {
       name:'class',
-      title:'class类名',
+      title:{label:'class类名',tip:'class|class类名'},
       propType:'string',
       setter:'StringSetter'
     },
       {
       name: 'colon',
-      title: '展示冒号',
+      title: { label:'展示冒号',tip:'colon|展示冒号'},
       propType: 'bool',
       defaultValue: true,
       setter: 'BoolSetter',
@@ -49,12 +49,12 @@ export default {
     },
     {
       name: 'extra',
-      title: '提示信息',
+      title: {label:'提示信息',tip:'extra|提示信息'},
       propType: { type: 'oneOfType', value: ['string', 'node'] }
       },
     {
       name: 'required',
-      title: '必填',
+      title: {label:'必填',tip:'required|是否必填'},
       propType: 'bool',
       setter: 'BoolSetter',
       defaultValue: false
@@ -63,14 +63,14 @@ export default {
       name: 'initialValue',
       title: {
         label: '默认值',
-        tip: '设置子元素默认值，如果与 Form 的 initialValues 冲突则以 Form 为准',
+        tip: 'initialValue|设置子元素默认值，如果与 Form 的 initialValues 冲突则以 Form 为准',
       },
       propType: 'string',
       setter: 'StringSetter',
       supportVariable: true
     },
     { name: 'autoLink',
-      title: '是否自动关联表单域',
+      title: {label:'是否自动关联表单域',tip:'autoLink'},
       propType: 'bool',
       defaultValue: true,
       setter: 'BoolSetter'
@@ -78,8 +78,8 @@ export default {
     {
       name: 'noStyle',
       title: {
-        label: '隐藏标签',
-        tip: '为 true 时不带样式，作为纯字段控件使用',
+        label: '是否隐藏标签',
+        tip: 'noStyle|为 true 时不带样式，作为纯字段控件使用',
       },
       propType: 'bool',
       defaultValue: false,
@@ -88,19 +88,19 @@ export default {
     },
     {
       name: 'hasFeedback',
-      title: { label: 'hasFeedback', tip: '配合 validateStatus 属性使用，展示校验状态图标，建议只配合 Input 组件使用' },
+      title: { label: 'hasFeedback', tip: 'hasFeedback|配合 validateStatus 属性使用，展示校验状态图标，建议只配合 Input 组件使用' },
       prop: 'bool',
       setter: 'BoolSetter',
       defaultValue: false
     },
     {
       name: 'help',
-      title: { label: '提示信息', tip: '不设置，则会根据校验规则自动生成' },
+      title: { label: '提示信息', tip: 'help|不设置，则会根据校验规则自动生成' },
       propType: { type: 'oneOfType', value: ['string', 'node'] }
     },
     {
       name: 'htmlFor',
-      title: { label: 'htmlFor', tip: '设置子元素 label htmlFor 属性' },
+      title: { label: 'htmlFor', tip: 'htmlFor|设置子元素 label htmlFor 属性' },
       propType: 'string',
       setter: 'StringSetter',
       supportVariable: true
@@ -112,7 +112,7 @@ export default {
       items: [
         {
           name: 'labelCol',
-          title: '标签栅格布局设置',
+          title: {label:'标签栅格布局设置',tip:'labelCol|标签栅格布局设置'},
           display: 'inline',
           setter: {
             componentName: 'ObjectSetter',
@@ -150,7 +150,7 @@ export default {
         },
         {
           name: 'wrapperCol',
-          title: '内容栅格布局设置',
+          title: { label:'内容栅格布局设置',tip:'wrapperCol|内容栅格布局设置'},
           display: 'inline',
           setter: {
             componentName: 'ObjectSetter',
@@ -188,12 +188,12 @@ export default {
       ],},
     {
       name: 'rules',
-      title: '表单验证规则',
+      title: {label:'表单验证规则',tip:'rules|表单验证规则'},
       propType: { type: 'oneOfType', value: ['object', 'array'] }
     },
     {
       name: 'requiredobj',
-      title: { label: '必填设置', tip: '必填设置' },
+      title: { label: '必填设置', tip: 'requiredobj|必填设置' },
       propType: {
         type: 'shape',
         value: [
@@ -222,7 +222,7 @@ export default {
     },
     {
       name: 'typeobj',
-      title: { label: '输入类型设置', tip: '输入类型设置' },
+      title: { label: '输入类型设置', tip: 'typeobj|输入类型设置' },
       propType: {
         type: 'shape',
         value: [
@@ -263,7 +263,7 @@ export default {
     },
     {
       name: 'lenobj',
-      title: { label: '长度校验设置', tip: '长度校验设置' },
+      title: { label: '长度校验设置', tip: 'lenobj|长度校验设置' },
       propType: {
         type: 'shape',
         value: [
@@ -276,7 +276,7 @@ export default {
     },
     {
       name: 'patternobj',
-      title: { label: '正则设置', tip: '正则设置' },
+      title: { label: '正则设置', tip: 'patternobj|正则设置' },
       propType: {
         type: 'shape',
         value: [
@@ -289,7 +289,7 @@ export default {
       name: 'validator',
       title: {
         label: '自定义校验函数',
-        tip: '自定义校验，接收 Promise 作为返回值',
+        tip: 'validator|自定义校验，接收 Promise 作为返回值',
       },
       propType: 'func',
     },

@@ -14,14 +14,14 @@ export default {
     props: [
       {
         name: 'defaultChecked',
-        title: { label: '默认选中', tip: '默认是否选中' },
+        title: { label: '默认选中', tip: 'defaultChecked|默认是否选中' },
         propType: 'bool',
         defaultValue: false,
         setter: 'BoolSetter'
       },
       {
         name: 'checked',
-        title: { label: '是否选中', tip: '当前是否选中' },
+        title: { label: '是否选中', tip: 'checked|当前是否选中' },
         propType: 'bool',
         defaultValue: false,
         setter: 'BoolSetter',
@@ -29,40 +29,40 @@ export default {
       },
       {
         name: 'autoFocus',
-        title: { label: '自动聚焦', tip: '组件自动获取焦点' },
+        title: { label: '自动聚焦', tip: 'autoFocus|组件自动获取焦点' },
         propType: 'bool',
         defaultValue: false,
         setter: 'BoolSetter'
       },
       {
         name: 'checkedChildren',
-        title: { label: '选中时内容', tip: '选中时的内容' },
+        title: { label: '选中时内容', tip: 'checkedChildren|选中时的内容' },
         propType: 'string',
         setter: 'StringSetter'
       },
       {
         name: 'unCheckedChildren',
-        title: { label: '非选中时内容', tip: '非选中时的内容' },
+        title: { label: '非选中时内容', tip: 'unCheckedChildren|非选中时的内容' },
         propType: 'string',
         setter: 'StringSetter'
       },
       {
         name: 'disabled',
-        title: { label: '是否禁用', tip: '是否为禁用状态' },
+        title: { label: '是否禁用', tip: 'disabled|是否为禁用状态' },
         propType: 'bool',
         defaultValue: false,
         setter: 'BoolSetter'
       },
       {
         name: 'loading',
-        title: { label: '加载中', tip: '加载中' },
+        title: { label: '加载中', tip: 'loading|加载中' },
         propType: 'bool',
         defaultValue: false,
         setter: 'BoolSetter'
       },
       {
         name: 'size',
-        title: { label: '尺寸', tip: '开关大小' },
+        title: { label: '尺寸', tip: 'size|开关大小' },
         propType: { type: 'oneOf', value: ['default', 'small'] },
         setter: {
           componentName: 'RadioGroupSetter',

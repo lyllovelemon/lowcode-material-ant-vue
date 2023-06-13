@@ -16,57 +16,57 @@ export default {
   props:[
     {
       name: 'children',
-      title: { label: '内容', tip: '内容' },
+      title: { label: '内容', tip: 'children|内容' },
       propType: 'string',
       defaultValue: '',
       supportVariable: true,
     },
     {
       name: 'code',
-      title: { label: '添加代码样式', tip: '添加代码样式' },
+      title: { label: '添加代码样式', tip: 'code|添加代码样式' },
       propType: 'bool',
       defaultValue: false,
     },
     {
       name: 'delete',
-      title: { label: '添加删除线样式', tip: '添加删除线样式' },
+      title: { label: '添加删除线样式', tip: 'delete|添加删除线样式' },
       propType: 'bool',
       defaultValue: false,
     },
     {
       name: 'disabled',
-      title: { label: '是否禁用', tip: '是否为禁用状态' },
+      title: { label: '是否禁用', tip: 'disabled|是否为禁用状态' },
       propType: 'bool',
       defaultValue: false,
     },
 
     {
       name: 'mark',
-      title: { label: '添加标记样式', tip: '添加标记样式' },
+      title: { label: '添加标记样式', tip: 'mark|添加标记样式' },
       propType: 'bool',
       defaultValue: false,
     },
     {
       name: 'keyboard',
-      title: { label: '添加键盘样式', tip: '添加键盘样式' },
+      title: { label: '添加键盘样式', tip: 'keyboard|添加键盘样式' },
       propType: 'bool',
       defaultValue: false,
     },
     {
       name: 'underline',
-      title: { label: '添加下划线样式', tip: '添加下划线样式' },
+      title: { label: '添加下划线样式', tip: 'underline|添加下划线样式' },
       propType: 'bool',
       defaultValue: false,
     },
     {
       name: 'strong',
-      title: { label: '是否加粗', tip: '是否加粗' },
+      title: { label: '是否加粗', tip: 'strong|是否加粗' },
       propType: 'bool',
       defaultValue: false,
     },
     {
       name: 'type',
-      title: { label: '文本类型', tip: '文本类型' },
+      title: { label: '文本类型', tip: 'type|文本类型' },
       propType: { type: 'oneOf', value: ['secondary', 'warning', 'danger'] },
       setter: {
         componentName: 'SelectSetter',
@@ -103,7 +103,7 @@ export default {
       items: [
         {
           name: 'copyable',
-          title: { label: '是否可拷贝', tip: '是否可拷贝' },
+          title: { label: '是否可拷贝', tip: 'copyable|是否可拷贝' },
           propType: { type: 'oneOfType', value: ['bool', 'object'] },
           setter: [
             {
@@ -119,7 +119,7 @@ export default {
         },
         {
           name: 'editable',
-          title: { label: '是否可编辑', tip: '是否可编辑' },
+          title: { label: '是否可编辑', tip: 'editable|是否可编辑' },
           propType: { type: 'oneOfType', value: ['bool', 'object'] },
           setter: [
             {
@@ -137,7 +137,7 @@ export default {
           name: 'ellipsis',
           title: {
             label: '自动溢出省略',
-            tip: '设置自动溢出省略，需要设置元素宽度',
+            tip: 'ellipsis|设置自动溢出省略，需要设置元素宽度',
           },
           propType: { type: 'oneOfType', value: ['bool', 'object'] },
           setter: [

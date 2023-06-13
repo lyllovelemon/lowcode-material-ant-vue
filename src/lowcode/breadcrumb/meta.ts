@@ -17,7 +17,7 @@ export default {
       items:[
         {
           name: 'routes',
-          title: { label: '路由栈信息', tip: 'router 的路由栈信息' },
+          title: { label: '路由栈信息', tip: 'routes|router 的路由栈信息' },
           propType: {
             type: 'arrayOf',
             value: {
@@ -66,13 +66,13 @@ export default {
         },
         {
           name: 'params',
-          title: { label: '路由的参数', tip: '路由的参数' },
+          title: { label: '路由的参数', tip: 'params|路由的参数' },
           propType: 'object',
           setter: 'JsonSetter',
         },
         {
           name: 'separator',
-          title: { label: '分隔符自定义', tip: '分隔符自定义' },
+          title: { label: '分隔符自定义', tip: 'separator|分隔符自定义' },
           propType: { type: 'oneOfType', value: ['string', 'node'] },
           setter: [
             'StringSetter',

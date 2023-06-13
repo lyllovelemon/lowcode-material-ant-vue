@@ -14,14 +14,14 @@ export default {
   props: [
     {
       name: 'align',
-      title: { label: '垂直对齐方式', tip: '垂直对齐方式' },
+      title: { label: '垂直对齐方式', tip: 'align|垂直对齐方式' },
       propType: { type: 'oneOf', value: ['top', 'middle', 'bottom'] },
     },
     {
       name: 'gutter',
       title: {
         label: '间隔',
-        tip: '栅格间隔，单位为像素(px)',
+        tip: 'gutter|栅格间隔，单位为像素(px)',
       },
       propType: {
         type:'oneOfType',
@@ -53,7 +53,7 @@ export default {
     },
     {
       name: 'justify',
-      title: { label: '水平排列方式', tip: '水平排列方式' },
+      title: { label: '水平排列方式', tip: 'justify|水平排列方式' },
       propType: {
         type: 'oneOf',
         value: ['start', 'end', 'center', 'space-around', 'space-between'],
@@ -61,7 +61,7 @@ export default {
     },
     {
       name: 'wrap',
-      title: { label: '自动换行', tip: '是否自动换行' },
+      title: { label: '自动换行', tip: 'wrap|是否自动换行' },
       propType: 'bool',
       defaultValue: true,
     },

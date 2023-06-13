@@ -12,7 +12,7 @@ export default {
   props: [
     {
       name: 'class',
-      title: { label: '设置图标的样式名', tip: '设置图标的样式名' },
+      title: { label: '设置图标的样式名', tip: 'class|设置图标的样式名' },
       propType: 'string',
     },
     {
@@ -23,13 +23,13 @@ export default {
     },
     {
       name: 'size',
-      description: '大小',
+      title:{label: '大小',tip:'size|大小'},
       propType: 'number',
       defaultValue: 20,
     },
     {
       name: 'color',
-      description: '颜色',
+      title:{label: '颜色',tip:'color|颜色'},
       propType: 'string',
       setter: 'ColorSetter',
     },
@@ -37,14 +37,14 @@ export default {
       name: 'rotate',
       title: {
         label: '旋转角度',
-        tip: '图标旋转角度',
+        tip: 'rotate|图标旋转角度',
       },
       propType: 'number',
       defaultValue: 0,
     },
     {
       name: 'spin',
-      title: { label: '旋转动画', tip: '是否有旋转动画' },
+      title: { label: '旋转动画', tip: 'spin|是否有旋转动画' },
       propType: 'bool',
       defaultValue: false,
     },

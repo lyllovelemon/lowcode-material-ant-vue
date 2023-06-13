@@ -12,20 +12,20 @@ export default {
   props:[
     {
       name: 'children',
-      title: { label: '内容', tip: '内容' },
+      title: { label: '内容', tip: 'children|内容' },
       propType: 'string',
       defaultValue: '',
       supportVariable: true,
     },
     {
       name: 'href',
-      title: { label: '跳转链接', tip: '跳转链接' },
+      title: { label: '跳转链接', tip: 'href|跳转链接' },
       propType: 'string',
       defaultValue: '',
     },
     {
       name: 'target',
-      title: { label: '跳转位置', tip: '在何处显示链接的资源' },
+      title: { label: '跳转位置', tip: 'target|在何处显示链接的资源' },
       propType: {
         type: 'oneOf',
         value: ['_self', '_blank', '_parent', '_top'],

@@ -15,7 +15,7 @@ export default {
       name: 'title',
       title: {
         label: '标题',
-        tip: '描述列表的标题，显示在最顶部',
+        tip: 'title|描述列表的标题，显示在最顶部',
       },
       propType: {
         type: 'oneOfType',
@@ -26,7 +26,7 @@ export default {
       name: 'items',
       title: {
         label: '列表项',
-        tip: '列表项',
+        tip: 'items|列表项',
       },
       setter: {
         componentName: 'ArraySetter',
@@ -153,7 +153,7 @@ export default {
     },
     {
       name: 'bordered',
-      title: { label: '显示边框', tip: '是否展示边框' },
+      title: { label: '显示边框', tip: 'bordered|是否展示边框' },
       propType: 'bool',
       defaultValue: false,
     },
@@ -161,7 +161,7 @@ export default {
       name: 'column',
       title: {
         label: '列数',
-        tip: '一行的列表项数量',
+        tip: 'column|一行的列表项数量',
       },
       propType: 'number',
       defaultValue: 3,
@@ -171,14 +171,14 @@ export default {
       title: {
         label: '尺寸',
         tip:
-          '设置列表的大小。可以设置为 `middle` 、`small`, 或不填（只有设置 `bordered={true}` 生效）',
+          'size|设置列表的大小。可以设置为 `middle` 、`small`, 或不填（只有设置 `bordered={true}` 生效）',
       },
       propType: { type: 'oneOf', value: ['default', 'middle', 'small'] },
       defaultValue: 'middle',
     },
     {
       name: 'layout',
-      title: { label: '布局方向', tip: '描述布局' },
+      title: { label: '布局方向', tip: 'layout|描述布局' },
       propType: { type: 'oneOf', value: ['horizontal', 'vertical'] },
       defaultValue: 'horizontal',
     },
@@ -186,7 +186,7 @@ export default {
       name: 'colon',
       title: {
         label: '展示冒号',
-        tip: '配置 `Descriptions.Item` 的 `colon` 的默认值',
+        tip: 'colon|配置 `Descriptions.Item` 的 `colon` 的默认值',
       },
       propType: 'bool',
       defaultValue: true,

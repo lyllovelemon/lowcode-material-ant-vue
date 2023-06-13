@@ -14,7 +14,7 @@ export default {
   props:[
     {
       name: 'type',
-      title: { label: '类型', tip: '类型' },
+      title: { label: '类型', tip: 'type|类型' },
       propType: { type: 'oneOf', value: ['line', 'circle', 'dashboard'] },
       setter: {
         componentName: 'RadioGroupSetter',
@@ -30,23 +30,23 @@ export default {
     },
     {
       name: 'format',
-      title: { label: '内容格式', tip: '内容格式' },
+      title: { label: '内容格式', tip: 'format|内容格式' },
       propType: 'func',
     },
     {
       name: 'percent',
-      title: { label: '百分比', tip: '百分比' },
+      title: { label: '百分比', tip: 'percent|百分比' },
       propType: 'number',
     },
     {
       name: 'showInfo',
-      title: { label: '显示数值或图标', tip: '显示数值或图标' },
+      title: { label: '显示数值或图标', tip: 'showInfo|显示数值或图标' },
       propType: 'bool',
       defaultValue: true,
     },
     {
       name: 'status',
-      title: { label: '状态', tip: '状态' },
+      title: { label: '状态', tip: 'status|状态' },
       propType: {
         type: 'oneOf',
         value: ['success', 'exception', 'normal', 'active'],
@@ -54,7 +54,7 @@ export default {
     },
     {
       name: 'steps',
-      title: { label: '总步数', tip: '进度条总共步数' },
+      title: { label: '总步数', tip: 'steps|进度条总共步数' },
       condition(target: { getProps: () => { (): any; new(): any; getPropValue: { (arg0: string): string; new(): any; }; }; }) {
         // 仅线型有效
         return target.getProps().getPropValue('type') === 'line';
@@ -63,7 +63,7 @@ export default {
     },
     {
       name: 'strokeLinecap',
-      title: { label: '进度条的样式', tip: '进度条的样式' },
+      title: { label: '进度条的样式', tip: 'strokeLinecap|进度条的样式' },
       propType: {
         type: 'oneOf',
         value: ['round', 'square'],
@@ -81,12 +81,12 @@ export default {
     },
     {
       name: 'strokeWidth',
-      title: { label: '线宽度', tip: '线宽度' },
+      title: { label: '线宽度', tip: 'strokeWidth|线宽度' },
       propType: 'number',
     },
     {
       name: 'strokeColor',
-      title: { label: '进度条的颜色', tip: '进度条的颜色' },
+      title: { label: '进度条的颜色', tip: 'strokeColor|进度条的颜色' },
       propType: 'string',
       condition(target: { getProps: () => { (): any; new(): any; getPropValue: { (arg0: string): string; new(): any; }; }; }) {
         // 仪表盘样式无效
@@ -98,7 +98,7 @@ export default {
       name: 'trailColor',
       title: {
         label: '未完成的分段的颜色',
-        tip: '未完成的分段的颜色',
+        tip: 'trailColor|未完成的分段的颜色',
       },
       propType: 'string',
       setter: 'ColorSetter',
@@ -107,7 +107,7 @@ export default {
       name: 'gapDegree',
       title: {
         label: '缺口角度',
-        tip: '仪表盘进度条缺口角度，可取值 0 ~ 295',
+        tip: 'gapDegree|仪表盘进度条缺口角度，可取值 0 ~ 295',
       },
       condition(target: { getProps: () => { (): any; new(): any; getPropValue: { (arg0: string): string; new(): any; }; }; }) {
         // 仅仪表盘样式有效
@@ -120,7 +120,7 @@ export default {
       name: 'gapPosition',
       title: {
         label: '缺口位置',
-        tip: '仪表盘进度条缺口位置',
+        tip: 'gapPosition|仪表盘进度条缺口位置',
       },
       condition(target: { getProps: () => { (): any; new(): any; getPropValue: { (arg0: string): string; new(): any; }; }; }) {
         // 仅仪表盘样式有效

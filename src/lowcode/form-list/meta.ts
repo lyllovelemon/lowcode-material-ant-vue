@@ -12,7 +12,7 @@ export default {
   props:[
     {
       name: 'name',
-      title: { label: '字段名', tip: '字段名' },
+      title: { label: '字段名', tip: 'name|字段名' },
       isRequired: true,
       propType: 'string',
     },
@@ -20,7 +20,7 @@ export default {
       name: 'initialValue',
       title: {
         label: '默认值',
-        tip: '设置子元素默认值，如果与 Form 的 initialValues 冲突则以 Form 为准',
+        tip: 'initialValue|设置子元素默认值，如果与 Form 的 initialValues 冲突则以 Form 为准',
       },
       propType: 'object',
       setter: 'JsonSetter',

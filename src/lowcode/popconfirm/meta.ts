@@ -12,45 +12,40 @@ export default {
   props:[
     {
       name: 'title',
-      title: { label: '确认框内容', tip: '确认框内容' },
+      title: { label: '确认框内容', tip: 'title|确认框内容' },
       propType: { type: 'oneOfType', value: ['string', 'node', 'func'] },
     },
     {
       name: 'visible',
-      title: { label: '是否可见', tip: '确认框是否可见' },
+      title: { label: '是否可见', tip: 'visible|确认框是否可见' },
       propType: 'bool',
       setter: 'BoolSetter',
       supportVariable: true
     },
     {
       name: 'okText',
-      title: { label: '确认按钮文字', tip: '确认按钮文字' },
+      title: { label: '确认按钮文字', tip: 'okText|确认按钮文字' },
       propType: 'string',
       setter: 'StringSetter',
       supportVariable: true
     },
     {
       name: 'showCancel',
-      title: { label: '是否展示取消', tip: '是否显示取消按钮' },
+      title: { label: '是否展示取消', tip: 'showCancel|是否显示取消按钮' },
       propType: 'bool',
       setter: 'BoolSetter',
       supportVariable: true
     },
     {
       name: 'cancelText',
-      title: { label: '取消按钮文字', tip: '取消按钮文字' },
+      title: { label: '取消按钮文字', tip: 'cancelText|取消按钮文字' },
       propType: 'string',
       setter: 'StringSetter',
       supportVariable: true
     },
     {
-      name: 'onConfirm',
-      title: { label: '点击确认回调', tip: '点击确认回调' },
-      propType: 'func',
-    },
-    {
       name: 'okType',
-      title: { label: '确认按钮类型', tip: '确认按钮类型' },
+      title: { label: '确认按钮类型', tip: 'okType|确认按钮类型' },
       propType: {
         type: 'oneOf',
         value: ['primary', 'ghost', 'dashed', 'danger', 'link', 'text'],
@@ -85,27 +80,32 @@ export default {
     },
     {
       name: 'okButtonProps',
-      title: { label: 'ok按钮props', tip: 'ok按钮props' },
+      title: { label: 'ok按钮props', tip: 'okButtonProps|ok按钮props' },
       propType: 'object',
     },
     {
       name: 'cancelButtonProps',
-      title: { label: 'cancel按钮props', tip: 'cancel按钮props' },
+      title: { label: 'cancel按钮props', tip: 'cancelButtonProps|cancel按钮props' },
       propType: 'object',
     },
     {
       name: 'icon',
-      title: { label: '自定义Icon图标', tip: '自定义弹出气泡Icon图标' },
+      title: { label: '自定义Icon图标', tip: 'icon|自定义弹出气泡Icon图标' },
       propType: 'node',
     },
     {
       name: 'disabled',
       title: {
         label: '是否禁用',
-        tip: '是否为禁用状态',
+        tip: 'disabled|是否为禁用状态',
       },
       propType: 'bool',
       defaultValue: false,
+    },
+    {
+      name: 'onConfirm',
+      title: { label: '点击确认回调', tip: 'onConfirm|点击确认回调' },
+      propType: 'func',
     },
   ],
   configure: {

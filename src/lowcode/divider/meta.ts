@@ -14,20 +14,20 @@ const meta = {
     props: [
       {
         name:'children',
-        title:{label:'文案',tip:'自定义分割线文本内容'},
+        title:{label:'文案',tip:'children|自定义分割线文本内容'},
         setter:'StringSetter',
         supportVariable:true
       },
       {
         name: 'dashed',
-        title: { label: '是否虚线', tip: '是否虚线' },
+        title: { label: '是否虚线', tip: 'dashed|是否虚线' },
         setter: 'BoolSetter',
       },
       {
-        name: 'content-position',
+        name: 'orientation',
         title: {
-          label: '分割线内容的位置',
-          tip: '分割线内容的位置',
+          label: '分割线标题的位置',
+          tip: 'orientation|分割线标题的位置',
         },
         setter: {
           componentName:'RadioGroupSetter',
@@ -42,33 +42,32 @@ const meta = {
         defaultValue:'center'
       },
       {
-        name: 'border-style',
-        title: { label: '设置分隔符样式', tip: '设置分隔符样式' },
-        setter: {
-          componentName:'RadioGroupSetter',
-          props:{
-            options:[
-              { title:'none',value:'none'},
-              { title:'solid',value:'solid'},
-              { title:'hidden',value:'hidden'},
-              { title:'dashed',value:'dashed'}
-            ]
-          }
+        name:'orientationMargin',
+        title:{label:'边距',tip:'orientationMargin|标题和最近 left/right 边框之间的距离，去除了分割线'},
+        propType: { type: 'oneOfType', value: ['string', 'number'] },
+        condition:(target:any)=>{
+          return target.getProps().getPropValue('orientation') === 'left'||target.getProps().getPropValue('orientation') === 'right'
         },
-        defaultValue:'solid'
       },
       {
-        name: 'direction',
+        name: 'plain',
+        title: { label: '普通正文', tip: 'plain|文字是否显示为普通正文样式' },
+        propType:'bool',
+        setter: 'BoolSetter',
+        defaultValue:false
+      },
+      {
+        name: 'type',
         title: {
           label: '方向',
-          tip: '水平还是垂直方向',
+          tip: 'type|水平还是垂直方向',
         },
         setter: {
           componentName:'RadioGroupSetter',
           props:{
             options:[
-              { title:'水平',value:'horizontal' },
-              { title:'垂直',value:'vertical'}]
+              { title:'horizontal|水平',value:'horizontal' },
+              { title:'vertical|垂直',value:'vertical'}]
           }
         },
         defaultValue: 'horizontal',

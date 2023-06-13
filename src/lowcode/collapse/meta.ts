@@ -12,7 +12,7 @@ export default {
   props:[
     {
       name: 'bordered',
-      title: { label: '显示边框', tip: '带边框风格的折叠面板' },
+      title: { label: '显示边框', tip: 'bordered|带边框风格的折叠面板' },
       propType: 'bool',
       defaultValue: true,
       setter: 'BoolSetter',
@@ -20,7 +20,7 @@ export default {
     },
     {
       name: 'accordion',
-      title: { label: '手风琴模式', tip: '手风琴模式' },
+      title: { label: '手风琴模式', tip: 'accordion|手风琴模式' },
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter',
@@ -28,7 +28,7 @@ export default {
     },
     {
       name: 'collapsible',
-      title: '可折叠触发区域',
+      title: {label:'可折叠触发区域',tip:'collapsible|可折叠触发区域'},
       propType: {
         type: 'oneOf',
         value: ['-', 'header', 'disabled'],
@@ -36,12 +36,12 @@ export default {
     },
     {
       name: 'expandIconPosition',
-      title: { label: '图标位置', tip: '设置图标位置' },
+      title: { label: '图标位置', tip: 'expandIconPosition|设置图标位置' },
       propType: { type: 'oneOf', value: ['left', 'right'] },
     },
     {
       name: 'destroyInactivePanel',
-      title: { label: '隐藏时销毁', tip: '销毁折叠隐藏的面板' },
+      title: { label: '隐藏时销毁', tip: 'destroyInactivePanel|销毁折叠隐藏的面板' },
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter',
@@ -49,7 +49,7 @@ export default {
     },
     {
       name: 'ghost',
-      title: { label: '透明无边框', tip: '使折叠面板透明且无边框' },
+      title: { label: '透明无边框', tip: 'ghost|使折叠面板透明且无边框' },
       propType: 'bool',
       defaultValue: false,
       setter: 'BoolSetter',
@@ -57,7 +57,7 @@ export default {
     },
     {
       name: 'collapses',
-      title: '折叠项',
+      title: {label:'折叠项',tip:'collapses'},
       setter: {
         componentName: 'ArraySetter',
         props: {
@@ -169,7 +169,7 @@ export default {
     },
     {
       name: 'defaultActiveKey',
-      title: { label: '初始化选中面板的 key', tip: '初始化选中面板的 key' },
+      title: { label: '初始化选中面板的 key', tip: 'defaultActiveKey|初始化选中面板的 key' },
       propType: {
         type: 'oneOfType',
         value: [
@@ -184,7 +184,7 @@ export default {
       name: 'activeKey',
       title: {
         label: '当前激活 tab 面板的 key',
-        tip: '当前激活 tab 面板的 key',
+        tip: 'activeKey|当前激活 tab 面板的 key',
       },
       propType: {
         type: 'oneOfType',

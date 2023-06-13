@@ -9,7 +9,7 @@ export default {
   props: [
     {
       name: 'span',
-      title: { label: '占位格数', tip: '栅格占位格数' },
+      title: { label: '占位格数', tip: 'span|栅格占位格数' },
       propType: 'number',
       setter: {
         componentName: 'NumberSetter',
@@ -21,12 +21,12 @@ export default {
     },
     {
       name: 'order',
-      title: { label: '栅格顺序', tip: '栅格顺序' },
+      title: { label: '栅格顺序', tip: 'order|栅格顺序' },
       propType: 'number',
     },
     {
       name: 'pull',
-      title: { label: '右侧偏移', tip: '栅格往右移动格数' },
+      title: { label: '右侧偏移', tip: 'pull|栅格往右移动格数' },
       propType: 'number',
       setter: {
         componentName: 'NumberSetter',
@@ -38,7 +38,7 @@ export default {
     },
     {
       name: 'push',
-      title: { label: '左侧偏移', tip: '栅格往左移动格数' },
+      title: { label: '左侧偏移', tip: 'push|栅格往左移动格数' },
       propType: 'number',
       setter: {
         componentName: 'NumberSetter',

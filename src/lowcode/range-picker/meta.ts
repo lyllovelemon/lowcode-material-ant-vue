@@ -256,7 +256,7 @@ export default{
         },
         {
           name:'separator',
-          title:{label:'分隔符',tip:'设置分隔符'},
+          title:{label:'分隔符',tip:'separator | 设置分隔符'},
           propType:{type:'oneOfType',value:['string','node']},
           setter:['StringSetter','SlotSetter']
         }
@@ -269,19 +269,18 @@ export default{
       items:[
         {
           name:'dropdownClassName',
-          title:'弹出日历class',
+          title:{label:'弹出日历class',tip:'dropdownClassName | 弹出日历class'},
           propType: 'string',
           setter: 'StringSetter'
         },
         {
           name:'getPopupContainer',
-          title:{label:'定义浮层容器',tip:'getPopupContainer|定义浮层容器'},
-          propType: { type: 'oneOfType', value: ['node', 'func'] },
-          defaultValue:()=>document.querySelector('#lce-container')
+          title:{label:'定义浮层容器',tip:'getPopupContainer | 定义浮层容器'},
+          propType: { type: 'oneOfType', value: ['node', 'func'] }
         },
         {
           name:'popupStyle',
-          title:{label:'弹出日历样式',tip:'popupStyle|弹出日历样式'},
+          title:{label:'弹出日历样式',tip:'popupStyle | 弹出日历样式'},
           propType: 'object'
         }
       ]
@@ -293,13 +292,13 @@ export default{
       items:[
         {
           name:'locale',
-          title:'语言',
+          title:{label:'语言',tip:'locale | 语言'},
           propType:'string',
           defaultValue:locale
         },
         {
           name:'dateRender',
-          title:{label:'自定义单元格',tip:"自定义日期单元格的内容"},
+          title:{label:'自定义单元格',tip:"dateRender | 自定义日期单元格的内容"},
           propType: { type: 'oneOfType', value: ['string','node','func'] },
           setter: [
             {
@@ -385,6 +384,7 @@ export default{
           inputReadOnly:false,
           separator:'至',
           dropdownClassName: "date-range-picker",
+          getPopupContainer:()=>document.querySelector('#lce-container')
         }
       }
     },
@@ -402,6 +402,7 @@ export default{
             marginLeft:'10px'
           },
           picker: 'week',
+          getPopupContainer:()=>document.querySelector('#lce-container')
         },
       },
     },
@@ -419,6 +420,7 @@ export default{
             marginLeft:'10px'
           },
           picker: 'month',
+          getPopupContainer:()=>document.querySelector('#lce-container')
         },
       },
     },
@@ -436,6 +438,7 @@ export default{
             marginLeft:'10px'
           },
           picker: 'year',
+          getPopupContainer:()=>document.querySelector('#lce-container')
         },
       },
     },

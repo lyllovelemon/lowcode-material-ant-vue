@@ -12,39 +12,67 @@ export default {
   props:[
     {
       name: 'src',
-      title: { label: '图片地址', tip: '图片地址' },
+      title: { label: '图片地址', tip: 'src|图片地址' },
       propType: { type: 'string', isRequired: true },
     },
     {
       name: 'alt',
-      title: { label: '替换文本', tip: '替换文本' },
+      title: { label: '替换文本', tip: 'alt|替换文本' },
       propType: 'string',
     },
     {
       name: 'preview',
-      title: { label: '支持预览', tip: '支持预览' },
+      title: { label: '支持预览', tip: 'preview|支持预览' },
       defaultValue: true,
       propType: 'bool',
     },
     {
       name: 'fallback',
-      title: { label: '失败地址', tip: '加载失败容错地址' },
+      title: { label: '失败地址', tip: 'fallback|加载失败容错地址' },
       propType: 'string',
     },
     {
       name: 'width',
       title: { label: '宽度', tip: '宽度' },
-      propType: 'number',
+      propType: {type:'oneOfType',value:['number','string']},
     },
     {
       name: 'height',
-      title: { label: '高度', tip: '高度' },
-      propType: 'number',
+      title: { label: '高度', tip: 'height|高度' },
+      propType: {type:'oneOfType',value:['number','string']},
     },
+    {
+      name:'previewMask',
+      title:{label:'自定义mask',tip:'previewMask|自定义 mask'},
+      propType:{type:'oneOfType',value:['bool','func','node']},
+      setter:[
+        'BoolSetter',
+        {
+        componentName: 'SlotSetter',
+        initialValue: {
+          type: 'JSSlot',
+          value: []
+        }
+      },
+        {
+          componentName: 'FunctionSetter',
+          props: {
+            template:
+              'showPreviewMask(${extParams}){\n// ;\n}',
+          },
+        },],
+      defaultValue:false
+    }
   ],
   configure: {
     supports: {
-      style:true
+      style:true,
+      events: [
+        {
+          name: 'onError',
+          template: "onError(event,${extParams}){\n// 图片加载错误回调\nconsole.log('onError',e);}",
+        },
+      ],
     }
   },
   snippets:[

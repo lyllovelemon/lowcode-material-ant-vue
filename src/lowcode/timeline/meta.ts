@@ -13,7 +13,7 @@ export default {
   props:[
     {
       name: 'steps',
-      title: '步骤配置',
+      title: {label:'步骤配置',tip:'steps|步骤配置'},
       setter: {
         componentName: 'ArraySetter',
         props: {
@@ -155,7 +155,7 @@ export default {
       name: 'mode',
       title: {
         label: '模式',
-        tip: '通过设置 `mode` 可以改变时间轴和内容的相对位置',
+        tip: 'mode|通过设置 `mode` 可以改变时间轴和内容的相对位置',
       },
       propType: { type: 'oneOf', value: ['left', 'alternate', 'right'] },
     },
@@ -163,7 +163,7 @@ export default {
       name: 'pending',
       title: {
         label: '存在最后节点',
-        tip: '指定最后一个幽灵节点是否存在',
+        tip: 'pending|指定最后一个幽灵节点是否存在',
       },
       propType: 'bool',
     },
@@ -171,13 +171,13 @@ export default {
       name: 'pendingDot',
       title: {
         label: '当最后一个幽灵节点存在時，指定其时间图点',
-        tip: '当最后一个幽灵节点存在時，指定其时间图点',
+        tip: 'pendingDot|当最后一个幽灵节点存在時，指定其时间图点',
       },
       propType: { type: 'oneOfType', value: ['string', 'node'] },
     },
     {
       name: 'reverse',
-      title: { label: '节点排序', tip: '节点排序' },
+      title: { label: '节点排序', tip: 'reverse|节点排序' },
       propType: 'bool',
       defaultValue: false,
     }

@@ -194,7 +194,7 @@ export default {
     },
     {
       name: 'overlayInnerStyle',
-      title: '卡片内容样式',
+      title: {label:'卡片样式',tip:'overlayInnerStyle | 卡片内容样式'},
       type: 'group',
       extraProps: {
         display: 'entry',
