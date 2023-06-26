@@ -96,6 +96,11 @@ export default {
       propType: { type: 'arrayOf', value: 'string' },
     },
     {
+      name: 'selectedKeys',
+      title: { label: '当前选中项', tip: 'selectedKeys | 当前选中的菜单项 key 数组' },
+      propType: { type: 'arrayOf', value: 'string' },
+    },
+    {
       name: 'forceSubMenuRender',
       title: {
         label: '子菜单预渲染',
@@ -141,11 +146,6 @@ export default {
       title: { label: '是否允许选中', tip: 'selectable | 是否允许选中' },
       propType: 'bool',
       defaultValue: true,
-    },
-    {
-      name: 'selectedKeys',
-      title: { label: '当前选中项', tip: 'selectedKeys | 当前选中的菜单项 key 数组' },
-      propType: { type: 'arrayOf', value: 'string' },
     },
     {
       name: 'style',
@@ -239,26 +239,76 @@ export default {
   },
   snippets:[
     {
-      title:"菜单",
+      title:"水平菜单",
       screenshot:avatarImg,
       schema:{
         componentName:"AMenu",
         props:{
           style:{
-            height:'80px',
-            lineHeight:'80px'
+            height:'200px',
+            lineHeight:'200px',
+            paddingLeft:"10px"
           },
           mode:"inline",
-          defaultSelectedKeys:["1"],
+          defaultSelectedKeys:["sub1"],
           defaultOpenKeys:["sub1"],
-          theme:"dark",
+          theme:"light",
           items:[
             {
-              key:"item-i5wd",
+              key:"sub1",
               category:"AMenuItem",
-              children:"菜单名"
+              children:"菜单名1"
+            },
+            {
+              key:"sub2",
+              category:"AMenuItem",
+              children:"菜单名2"
+            },
+            {
+              key:"sub3",
+              category:"AMenuItem",
+              children:"菜单名3"
             }
-          ]
+          ],
+          selectedKeys:["sub1"],
+          triggerSubMenuAction:"click"
+        }
+      }
+    },
+    {
+      title:"垂直菜单",
+      screenshot:avatarImg,
+      schema:{
+        componentName:"AMenu",
+        props:{
+          style:{
+            width:'160px',
+            height:'100%',
+            lineHeight:'100%'
+          },
+          mode:"vertical",
+          defaultSelectedKeys:["sub1"],
+          defaultOpenKeys:["sub1"],
+          theme:"light",
+          items:[
+            {
+              key:"sub1",
+              category:"AMenuItem",
+              children:"菜单名1"
+            },
+            {
+              key:"sub2",
+              category:"AMenuItem",
+              children:"菜单名2"
+            },
+            {
+              key:"sub3",
+              category:"AMenuItem",
+              children:"菜单名3"
+            }
+          ],
+          selectedKeys:["sub1"],
+          triggerSubMenuAction:"click"
         }
       }
     }
