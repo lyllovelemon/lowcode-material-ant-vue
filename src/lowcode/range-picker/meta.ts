@@ -1,343 +1,343 @@
 /* eslint-disable */
 // @ts-ignore
-import Picker1 from './__screenshots__/date-picker-range-picker-1.png?inline';
+import Picker1 from "./__screenshots__/date-picker-range-picker-1.png?inline";
 // @ts-ignore
-import Picker2 from './__screenshots__/date-picker-range-picker-2.png?inline';
+import Picker2 from "./__screenshots__/date-picker-range-picker-2.png?inline";
 // @ts-ignore
-import Picker3 from './__screenshots__/date-picker-range-picker-3.png?inline';
+import Picker3 from "./__screenshots__/date-picker-range-picker-3.png?inline";
 // @ts-ignore
-import Picker4 from './__screenshots__/date-picker-range-picker-4.png?inline';
-import locale from 'ant-design-vue/es/date-picker/locale/zh_CN';
+import Picker4 from "./__screenshots__/date-picker-range-picker-4.png?inline";
+import locale from "ant-design-vue/es/date-picker/locale/zh_CN";
 export default{
-  group: 'ant-vue组件',
-  componentName:'ARangePicker',
-  title:'日期区间选择',
-  category:'表单',
+  group: "ant-vue组件",
+  componentName:"ARangePicker",
+  title:"日期区间选择",
+  category:"表单",
   npm:{
     destructuring:true,
-    componentName:'ARangePicker'
+    componentName:"ARangePicker"
   },
   props:[
     {
-      title: '值设置',
-      display: 'block',
-      type: 'group',
+      title: "值设置",
+      display: "block",
+      type: "group",
       items: [
         {
-          name: 'defaultValue',
+          name: "defaultValue",
           title: {
-            label: '默认值',
-            tip: 'defaultValue | 默认值',
+            label: "默认值",
+            tip: "defaultValue | 默认值",
           },
-          propType: 'object',
-          setter: 'JsonSetter',
+          propType: "object",
+          setter: "JsonSetter",
           supportVariable:true
         },
         {
-          name: 'v-model:value',
+          name: "v-model:value",
           title: {
-            label: '当前值',
-            tip: 'v-model:value | 当前值',
+            label: "当前值",
+            tip: "v-model:value | 当前值",
           },
-          propType: 'object',
-          setter: 'JsonSetter',
+          propType: "object",
+          setter: "JsonSetter",
           supportVariable:true
         },
         {
-          name: 'defaultPickerValue',
+          name: "defaultPickerValue",
           title: {
-            label: '默认面板日期',
-            tip: 'defaultPickerValue | 默认面板日期',
+            label: "默认面板日期",
+            tip: "defaultPickerValue | 默认面板日期",
           },
-          propType: 'object',
-          setter: 'JsonSetter',
+          propType: "object",
+          setter: "JsonSetter",
         },
       ],
     },
     {
-      title: '功能选项',
-      display: 'block',
-      type: 'group',
+      title: "功能选项",
+      display: "block",
+      type: "group",
       items: [
         {
-          name: 'size',
+          name: "size",
           title: {
-            label: '尺寸',
-            tip: 'size | 输入框大小',
+            label: "尺寸",
+            tip: "size | 输入框大小",
           },
           propType: {
-            type: 'oneOf',
-            value: ['large', 'middle', 'small'],
+            type: "oneOf",
+            value: ["large", "middle", "small"],
           },
           setter: {
-            componentName: 'RadioGroupSetter',
+            componentName: "RadioGroupSetter",
             props: {
               options: [
                 {
-                  title: '大',
-                  value: 'large',
+                  title: "大",
+                  value: "large",
                 },
                 {
-                  title: '中',
-                  value: 'middle',
+                  title: "中",
+                  value: "middle",
                 },
                 {
-                  title: '小',
-                  value: 'small',
+                  title: "小",
+                  value: "small",
                 },
               ],
             },
           },
-          defaultValue: 'middle',
+          defaultValue: "middle",
         },
         {
-          name: 'picker',
+          name: "picker",
           title: {
-            label: '日期类型',
-            tip: 'picker | 选择器日期类型',
+            label: "日期类型",
+            tip: "picker | 选择器日期类型",
           },
           setter: {
-            componentName: 'SelectSetter',
+            componentName: "SelectSetter",
             props: {
               options: [
                 {
-                  title: '日期',
-                  value: 'date',
+                  title: "日期",
+                  value: "date",
                 },
                 {
-                  title: '周',
-                  value: 'week',
+                  title: "周",
+                  value: "week",
                 },
                 {
-                  title: '月份',
-                  value: 'month',
+                  title: "月份",
+                  value: "month",
                 },
                 {
-                  title: '季度',
-                  value: 'quarter',
+                  title: "季度",
+                  value: "quarter",
                 },
                 {
-                  title: '年份',
-                  value: 'year',
+                  title: "年份",
+                  value: "year",
                 },
               ],
             },
           },
           propType: {
-            type: 'oneOf',
-            value: ['date', 'week', 'month', 'quarter', 'year'],
+            type: "oneOf",
+            value: ["date", "week", "month", "quarter", "year"],
           },
         },
         {
-          name: 'mode',
+          name: "mode",
           title: {
-            label: '面板模式',
-            tip: 'mode | 日期面板的状态',
+            label: "面板模式",
+            tip: "mode | 日期面板的状态",
           },
           propType: {
-            type: 'oneOf',
-            value: ['time', 'date', 'month', 'year', 'decade'],
+            type: "oneOf",
+            value: ["time", "date", "month", "year", "decade"],
           },
           setter: {
-            componentName: 'SelectSetter',
+            componentName: "SelectSetter",
             props: {
               options: [
                 {
-                  title: '日期',
-                  value: 'date',
+                  title: "日期",
+                  value: "date",
                 },
                 {
-                  title: '周',
-                  value: 'week',
+                  title: "周",
+                  value: "week",
                 },
                 {
-                  title: '月份',
-                  value: 'month',
+                  title: "月份",
+                  value: "month",
                 },
                 {
-                  title: '年份',
-                  value: 'year',
+                  title: "年份",
+                  value: "year",
                 },
                 {
-                  title: '十年间隔',
-                  value: 'decade',
+                  title: "十年间隔",
+                  value: "decade",
                 },
               ],
             },
           },
         },
         {
-          name: 'format',
+          name: "format",
           title: {
-            label: '日期格式',
-            tip: 'format | 展示的日期格式，配置参考 day.js',
+            label: "日期格式",
+            tip: "format | 展示的日期格式，配置参考 day.js",
           },
-          propType: 'string',
-          setter: 'StringSetter',
+          propType: "string",
+          setter: "StringSetter",
         },
         {
-          name: 'placeholder',
+          name: "placeholder",
           title: {
-            label: '提示文字',
-            tip: 'placeholder | 输入框提示文字',
+            label: "提示文字",
+            tip: "placeholder | 输入框提示文字",
           },
-          propType: 'string',
-          setter: 'StringSetter',
+          propType: "string",
+          setter: "StringSetter",
         },
         {
-          name: 'allowClear',
+          name: "allowClear",
           title: {
-            label: '支持清除',
-            tip: 'allowClear | 是否允许清除',
+            label: "支持清除",
+            tip: "allowClear | 是否允许清除",
           },
-          propType: 'bool',
+          propType: "bool",
           defaultValue: true,
-          setter: 'BoolSetter',
+          setter: "BoolSetter",
         },
         {
-          name: 'bordered',
+          name: "bordered",
           title: {
-            label: '显示边框',
-            tip: 'bordered | 是否有边框',
+            label: "显示边框",
+            tip: "bordered | 是否有边框",
           },
-          propType: 'bool',
+          propType: "bool",
           defaultValue: true,
-          setter: 'BoolSetter',
+          setter: "BoolSetter",
         },
         {
-          name: 'showToday',
+          name: "showToday",
           title: {
-            label: '展示今天按钮',
-            tip: 'showToday | 是否展示今天按钮',
+            label: "展示今天按钮",
+            tip: "showToday | 是否展示今天按钮",
           },
-          propType: 'bool',
+          propType: "bool",
           defaultValue: true,
-          setter: 'BoolSetter',
+          setter: "BoolSetter",
         },
         {
-          name: 'autoFocus',
+          name: "autoFocus",
           title: {
-            label: '自动聚焦',
-            tip: 'autoFocus | 自动获取焦点',
+            label: "自动聚焦",
+            tip: "autoFocus | 自动获取焦点",
           },
-          propType: 'bool',
+          propType: "bool",
           defaultValue: false,
-          setter: 'BoolSetter',
+          setter: "BoolSetter",
         },
         {
-          name: 'disabled',
+          name: "disabled",
           title: {
-            label: '是否禁用',
-            tip: 'disabled | 是否为禁用状态',
+            label: "是否禁用",
+            tip: "disabled | 是否为禁用状态",
           },
-          propType: 'bool',
+          propType: "bool",
           defaultValue: false,
-          setter: 'BoolSetter',
+          setter: "BoolSetter",
         },
         {
-          name: 'inputReadOnly',
+          name: "inputReadOnly",
           title: {
-            label: '是否只读',
-            tip: 'inputReadOnly | 避免在移动设备上打开虚拟键盘',
+            label: "是否只读",
+            tip: "inputReadOnly | 避免在移动设备上打开虚拟键盘",
           },
-          propType: 'bool',
+          propType: "bool",
           defaultValue: false,
-          setter: 'BoolSetter',
+          setter: "BoolSetter",
         },
         {
-          name: 'showTime',
+          name: "showTime",
           title: {
-            label: '时间选择',
-            tip: 'showTime | 是否能选择时间',
+            label: "时间选择",
+            tip: "showTime | 是否能选择时间",
           },
-          propType: 'bool',
+          propType: "bool",
           defaultValue: false,
-          setter: 'BoolSetter',
+          setter: "BoolSetter",
         },
         {
-          name:'separator',
-          title:{label:'分隔符',tip:'separator | 设置分隔符'},
-          propType:{type:'oneOfType',value:['string','node']},
-          setter:['StringSetter','SlotSetter']
+          name:"separator",
+          title:{label:"分隔符",tip:"separator | 设置分隔符"},
+          propType:{type:"oneOfType",value:["string","node"]},
+          setter:["StringSetter","SlotSetter"]
         }
       ],
     },
     {
-      title:'样式设置',
-      display:'block',
-      type:'group',
+      title:"样式设置",
+      display:"block",
+      type:"group",
       items:[
         {
-          name:'dropdownClassName',
-          title:{label:'弹出日历class',tip:'dropdownClassName | 弹出日历class'},
-          propType: 'string',
-          setter: 'StringSetter'
+          name:"dropdownClassName",
+          title:{label:"弹出日历class",tip:"dropdownClassName | 弹出日历class"},
+          propType: "string",
+          setter: "StringSetter"
         },
         {
-          name:'getPopupContainer',
-          title:{label:'定义浮层容器',tip:'getPopupContainer | 定义浮层容器'},
-          propType: { type: 'oneOfType', value: ['node', 'func'] }
+          name:"getPopupContainer",
+          title:{label:"定义浮层容器",tip:"getPopupContainer | 定义浮层容器"},
+          propType: { type: "oneOfType", value: ["node", "func"] }
         },
         {
-          name:'popupStyle',
-          title:{label:'弹出日历样式',tip:'popupStyle | 弹出日历样式'},
-          propType: 'object'
+          name:"popupStyle",
+          title:{label:"弹出日历样式",tip:"popupStyle | 弹出日历样式"},
+          propType: "object"
         }
       ]
     },
     {
-      title: '高级',
-      display: 'block',
-      type: 'group',
+      title: "高级",
+      display: "block",
+      type: "group",
       items:[
         {
-          name:'locale',
-          title:{label:'语言',tip:'locale | 语言'},
-          propType:'string',
+          name:"locale",
+          title:{label:"语言",tip:"locale | 语言"},
+          propType:"string",
           defaultValue:locale
         },
         {
-          name:'dateRender',
-          title:{label:'自定义单元格',tip:"dateRender | 自定义日期单元格的内容"},
-          propType: { type: 'oneOfType', value: ['string','node','func'] },
+          name:"dateRender",
+          title:{label:"自定义单元格",tip:"dateRender | 自定义日期单元格的内容"},
+          propType: { type: "oneOfType", value: ["string","node","func"] },
           setter: [
             {
-              componentName: 'SlotSetter',
-              title: '单元格插槽',
+              componentName: "SlotSetter",
+              title: "单元格插槽",
               initialValue: {
-                type: 'JSSlot',
-                params: ['current'],
+                type: "JSSlot",
+                params: ["current"],
                 value: [],
               },
             },
-            'VariableSetter'
+            "VariableSetter"
           ]
         },
         {
-          name: 'ranges',
+          name: "ranges",
           title: {
-            label: '预设范围',
-            tip: 'ranges | 预设时间范围快捷选择',
+            label: "预设范围",
+            tip: "ranges | 预设时间范围快捷选择",
           },
-          propType: 'object',
-          setter: 'JsonSetter',
+          propType: "object",
+          setter: "JsonSetter",
         },
         {
-          name: 'disabledDate',
+          name: "disabledDate",
           title: {
-            label: '不可选日期',
-            tip: 'disabledDate | 不可选择的日期',
+            label: "不可选日期",
+            tip: "disabledDate | 不可选择的日期",
           },
-          propType: 'func',
+          propType: "func",
           setter: [
             {
-              componentName: 'FunctionSetter',
+              componentName: "FunctionSetter",
               props: {
                 template:
-                  'disabledDate(currentDate,${extParams}){\n// 设置不可选择的日期\nreturn true\n}',
+                  "disabledDate(currentDate,${extParams}){\n// 设置不可选择的日期\nreturn true\n}",
               },
             },
-            'VariableSetter',
+            "VariableSetter",
           ],
         },
       ]
@@ -348,97 +348,97 @@ export default{
       style:true,
       events:[
         {
-          name:'onChange',
-          template:"onChange(dates,dateStrings){\n//日期范围发生变化的回调\nconsole.log('onChange ',JSON.stringify(dates));}"
+          name:"onChange",
+          template:"onChange(dates,dateStrings){\n//日期范围发生变化的回调\nconsole.log(\"onChange \",JSON.stringify(dates));}"
         },
         {
-          name:'onCalendarChange',
-          template:"onCalendarChange(dates,dateStrings){\n//待选日期发生变化的回调\nconst [start,end] = dates;\nconsole.log('onCalendarChange',start,end);}"
+          name:"onCalendarChange",
+          template:"onCalendarChange(dates,dateStrings){\n//待选日期发生变化的回调\nconst [start,end] = dates;\nconsole.log(\"onCalendarChange\",start,end);}"
         },
         {
-          name:'onOk',
-          template:"onOk(dates){\n//点击确定按钮的回调\nconst [start,end] = dates;\nconsole.log('onOk',start,end);}"
+          name:"onOk",
+          template:"onOk(dates){\n//点击确定按钮的回调\nconst [start,end] = dates;\nconsole.log(\"onOk\",start,end);}"
         }
       ]
     }
   },
   snippets: [
     {
-      title: '日期区间',
+      title: "日期区间",
       screenshot: Picker1,
       schema: {
-        componentName: 'ARangePicker',
+        componentName: "ARangePicker",
         props: {
           style:{
-            width: '379px',
-            height: '22px',
+            width: "379px",
+            height: "22px",
             background:"#ddf4ff",
-            border:'1px solid #ddf4ff',
-            marginLeft:'10px'
+            border:"1px solid #ddf4ff",
+            marginLeft:"10px"
           },
-          format:'YYYY-MM-DD HH:mm:ss',
+          format:"YYYY-MM-DD HH:mm:ss",
           allowCreate:false,
           bordered:true,
           showToday:true,
           autoFocus:true,
           inputReadOnly:false,
-          separator:'至',
+          separator:"至",
           dropdownClassName: "date-range-picker",
-          getPopupContainer:()=>document.querySelector('#lce-container')
+          getPopupContainer:()=>document.querySelector("#lce-container")
         }
       }
     },
     {
-      title: '周区间',
+      title: "周区间",
       screenshot: Picker2,
       schema: {
-        componentName: 'ARangePicker',
+        componentName: "ARangePicker",
         props: {
           style:{
-            width: '379px',
-            height: '22px',
+            width: "379px",
+            height: "22px",
             background:"#ddf4ff",
-            border:'1px solid #ddf4ff',
-            marginLeft:'10px'
+            border:"1px solid #ddf4ff",
+            marginLeft:"10px"
           },
-          picker: 'week',
-          getPopupContainer:()=>document.querySelector('#lce-container')
+          picker: "week",
+          getPopupContainer:()=>document.querySelector("#lce-container")
         },
       },
     },
     {
-      title: '月区间',
+      title: "月区间",
       screenshot:Picker3,
       schema: {
-        componentName: 'ARangePicker',
+        componentName: "ARangePicker",
         props: {
           style:{
-            width: '379px',
-            height: '22px',
+            width: "379px",
+            height: "22px",
             background:"#ddf4ff",
-            border:'1px solid #ddf4ff',
-            marginLeft:'10px'
+            border:"1px solid #ddf4ff",
+            marginLeft:"10px"
           },
-          picker: 'month',
-          getPopupContainer:()=>document.querySelector('#lce-container')
+          picker: "month",
+          getPopupContainer:()=>document.querySelector("#lce-container")
         },
       },
     },
     {
-      title: '年区间',
+      title: "年区间",
       screenshot:Picker4,
       schema: {
-        componentName: 'ARangePicker',
+        componentName: "ARangePicker",
         props: {
           style:{
-            width: '379px',
-            height: '22px',
+            width: "379px",
+            height: "22px",
             background:"#ddf4ff",
-            border:'1px solid #ddf4ff',
-            marginLeft:'10px'
+            border:"1px solid #ddf4ff",
+            marginLeft:"10px"
           },
-          picker: 'year',
-          getPopupContainer:()=>document.querySelector('#lce-container')
+          picker: "year",
+          getPopupContainer:()=>document.querySelector("#lce-container")
         },
       },
     },

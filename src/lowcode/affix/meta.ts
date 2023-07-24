@@ -1,32 +1,32 @@
 // @ts-ignore
-import avatarImg from './__screenshots__/affix-1.jpg?inline'
+import avatarImg from "./__screenshots__/affix-1.jpg?inline"
 export default {
-  group: 'ant-vue组件',
-  componentName:'AAffix',
-  title: '固钉',
-  category: '导航',
+  group: "ant-vue组件",
+  componentName:"AAffix",
+  title: "固钉",
+  category: "导航",
   npm: {
     destructuring: true,
-    componentName: 'AAffix'
+    componentName: "AAffix"
   },
   props:[
     {
-      name: 'offsetBottom',
-      title: { label: '底部触发距离', tip: 'offsetBottom | 距离窗口底部达到指定偏移量后触发' },
-      propType: 'number',
+      name: "offsetBottom",
+      title: { label: "底部触发距离", tip: "offsetBottom | 距离窗口底部达到指定偏移量后触发" },
+      propType: "number",
     },
     {
-      name: 'offsetTop',
-      title: { label: '顶部触发距离', tip: 'offsetTop | 距离窗口顶部达到指定偏移量后触发' },
-      propType: 'number',
+      name: "offsetTop",
+      title: { label: "顶部触发距离", tip: "offsetTop | 距离窗口顶部达到指定偏移量后触发" },
+      propType: "number",
     },
     {
-      name: 'target',
+      name: "target",
       title: {
-        label: '获取触发元素',
-        tip: 'target|设置 `Affix` 需要监听其滚动事件的元素，值为一个返回对应 DOM 元素的函数',
+        label: "获取触发元素",
+        tip: "target|设置 `Affix` 需要监听其滚动事件的元素，值为一个返回对应 DOM 元素的函数",
       },
-      propType: 'func',
+      propType: "func",
     }
   ],
   configure: {
@@ -34,9 +34,9 @@ export default {
       style:true,
       events: [
         {
-          name: 'onChange ',
+          name: "onChange ",
           template:
-            "onChange (affixed,${extParams}){\n// 固定状态变更回调函数\nconsole.log('onChange ', affixed);}",
+            "onChange (affixed,${extParams}){\n// 固定状态变更回调函数\nconsole.log(\"onChange \", affixed);}",
         },
       ],
     }

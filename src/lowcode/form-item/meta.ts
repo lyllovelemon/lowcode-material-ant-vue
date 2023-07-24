@@ -1,129 +1,129 @@
 /* eslint-disable */
 // @ts-ignore
-import avatarImg from './__screenshots__/form-item-1.jpg?inline';
+import avatarImg from "./__screenshots__/form-item-1.jpg?inline";
 export default {
-  group: 'ant-vue组件',
-  componentName: 'AFormItem',
-  title: '表单项',
-  category: '表单',
+  group: "ant-vue组件",
+  componentName: "AFormItem",
+  title: "表单项",
+  category: "表单",
   npm: {
     destructuring: true,
-    componentName: 'AFormItem'
+    componentName: "AFormItem"
   },
   props: [
     {
-      name: 'name',
-      title: {label:'字段名',tip:'name|字段名'},
+      name: "name",
+      title: {label:"字段名",tip:"name|字段名"},
       isRequired: true,
-      propType: 'string',
-      setter: 'StringSetter',
+      propType: "string",
+      setter: "StringSetter",
       supportVariable: true
     },
-    { name: 'label',
-      title: {label:'标签',tip:'label|标签'},
-      propType: { type: 'oneOfType', value: ['string', 'node'] }
+    { name: "label",
+      title: {label:"标签",tip:"label|标签"},
+      propType: { type: "oneOfType", value: ["string", "node"] }
     },
     {
-      name: 'labelAlign',
-      title: {label:'标签对齐',tip:'labelAlign|标签对齐'},
-      propType: { type: 'oneOf', value: ['left', 'right'] },
+      name: "labelAlign",
+      title: {label:"标签对齐",tip:"labelAlign|标签对齐"},
+      propType: { type: "oneOf", value: ["left", "right"] },
       setter: {
-        componentName: 'RadioGroupSetter',
-        props: { options: [{ title: '左', value: 'left' }, { title: '右', value: 'right' }] }
+        componentName: "RadioGroupSetter",
+        props: { options: [{ title: "左", value: "left" }, { title: "右", value: "right" }] }
       },
-      defaultValue: 'right'
+      defaultValue: "right"
     },
     {
-      name:'class',
-      title:{label:'class类名',tip:'class|class类名'},
-      propType:'string',
-      setter:'StringSetter'
+      name:"class",
+      title:{label:"class类名",tip:"class|class类名"},
+      propType:"string",
+      setter:"StringSetter"
     },
       {
-      name: 'colon',
-      title: { label:'展示冒号',tip:'colon|展示冒号'},
-      propType: 'bool',
+      name: "colon",
+      title: { label:"展示冒号",tip:"colon|展示冒号"},
+      propType: "bool",
       defaultValue: true,
-      setter: 'BoolSetter',
+      setter: "BoolSetter",
       supportVariable: true
     },
     {
-      name: 'extra',
-      title: {label:'提示信息',tip:'extra|提示信息'},
-      propType: { type: 'oneOfType', value: ['string', 'node'] }
+      name: "extra",
+      title: {label:"提示信息",tip:"extra|提示信息"},
+      propType: { type: "oneOfType", value: ["string", "node"] }
       },
     {
-      name: 'required',
-      title: {label:'必填',tip:'required|是否必填'},
-      propType: 'bool',
-      setter: 'BoolSetter',
+      name: "required",
+      title: {label:"必填",tip:"required|是否必填"},
+      propType: "bool",
+      setter: "BoolSetter",
       defaultValue: false
     },
     {
-      name: 'initialValue',
+      name: "initialValue",
       title: {
-        label: '默认值',
-        tip: 'initialValue|设置子元素默认值，如果与 Form 的 initialValues 冲突则以 Form 为准',
+        label: "默认值",
+        tip: "initialValue|设置子元素默认值，如果与 Form 的 initialValues 冲突则以 Form 为准",
       },
-      propType: 'string',
-      setter: 'StringSetter',
+      propType: "string",
+      setter: "StringSetter",
       supportVariable: true
     },
-    { name: 'autoLink',
-      title: {label:'是否自动关联表单域',tip:'autoLink'},
-      propType: 'bool',
+    { name: "autoLink",
+      title: {label:"是否自动关联表单域",tip:"autoLink"},
+      propType: "bool",
       defaultValue: true,
-      setter: 'BoolSetter'
+      setter: "BoolSetter"
     },
     {
-      name: 'noStyle',
+      name: "noStyle",
       title: {
-        label: '是否隐藏标签',
-        tip: 'noStyle|为 true 时不带样式，作为纯字段控件使用',
+        label: "是否隐藏标签",
+        tip: "noStyle|为 true 时不带样式，作为纯字段控件使用",
       },
-      propType: 'bool',
+      propType: "bool",
       defaultValue: false,
-      setter: 'BoolSetter',
+      setter: "BoolSetter",
       supportVariable: true
     },
     {
-      name: 'hasFeedback',
-      title: { label: 'hasFeedback', tip: 'hasFeedback|配合 validateStatus 属性使用，展示校验状态图标，建议只配合 Input 组件使用' },
-      prop: 'bool',
-      setter: 'BoolSetter',
+      name: "hasFeedback",
+      title: { label: "hasFeedback", tip: "hasFeedback|配合 validateStatus 属性使用，展示校验状态图标，建议只配合 Input 组件使用" },
+      prop: "bool",
+      setter: "BoolSetter",
       defaultValue: false
     },
     {
-      name: 'help',
-      title: { label: '提示信息', tip: 'help|不设置，则会根据校验规则自动生成' },
-      propType: { type: 'oneOfType', value: ['string', 'node'] }
+      name: "help",
+      title: { label: "提示信息", tip: "help|不设置，则会根据校验规则自动生成" },
+      propType: { type: "oneOfType", value: ["string", "node"] }
     },
     {
-      name: 'htmlFor',
-      title: { label: 'htmlFor', tip: 'htmlFor|设置子元素 label htmlFor 属性' },
-      propType: 'string',
-      setter: 'StringSetter',
+      name: "htmlFor",
+      title: { label: "htmlFor", tip: "htmlFor|设置子元素 label htmlFor 属性" },
+      propType: "string",
+      setter: "StringSetter",
       supportVariable: true
     },
     {
-      type: 'group',
-      title: '布局',
-      display: 'accordion',
+      type: "group",
+      title: "布局",
+      display: "accordion",
       items: [
         {
-          name: 'labelCol',
-          title: {label:'标签栅格布局设置',tip:'labelCol|标签栅格布局设置'},
-          display: 'inline',
+          name: "labelCol",
+          title: {label:"标签栅格布局设置",tip:"labelCol|标签栅格布局设置"},
+          display: "inline",
           setter: {
-            componentName: 'ObjectSetter',
+            componentName: "ObjectSetter",
             props: {
               config: {
                 items: [
                   {
-                    name: 'span',
-                    title: '宽度',
+                    name: "span",
+                    title: "宽度",
                     setter: {
-                      componentName: 'NumberSetter',
+                      componentName: "NumberSetter",
                       props: {
                         min: 0,
                         max: 24,
@@ -131,10 +131,10 @@ export default {
                     },
                   },
                   {
-                    name: 'offset',
-                    title: '偏移',
+                    name: "offset",
+                    title: "偏移",
                     setter: {
-                      componentName: 'NumberSetter',
+                      componentName: "NumberSetter",
                       props: {
                         min: 0,
                         max: 24,
@@ -146,22 +146,22 @@ export default {
             },
           },
           description:
-            'label 标签布局，同 `<Col>` 组件，设置 span offset 值，如 {span: 8, offset: 16}，该项仅在垂直表单有效',
+            "label 标签布局，同 `<Col>` 组件，设置 span offset 值，如 {span: 8, offset: 16}，该项仅在垂直表单有效",
         },
         {
-          name: 'wrapperCol',
-          title: { label:'内容栅格布局设置',tip:'wrapperCol|内容栅格布局设置'},
-          display: 'inline',
+          name: "wrapperCol",
+          title: { label:"内容栅格布局设置",tip:"wrapperCol|内容栅格布局设置"},
+          display: "inline",
           setter: {
-            componentName: 'ObjectSetter',
+            componentName: "ObjectSetter",
             props: {
               config: {
                 items: [
                   {
-                    name: 'span',
-                    title: '宽度',
+                    name: "span",
+                    title: "宽度",
                     setter: {
-                      componentName: 'NumberSetter',
+                      componentName: "NumberSetter",
                       props: {
                         min: 0,
                         max: 24,
@@ -169,10 +169,10 @@ export default {
                     },
                   },
                   {
-                    name: 'offset',
-                    title: '偏移',
+                    name: "offset",
+                    title: "偏移",
                     setter: {
-                      componentName: 'NumberSetter',
+                      componentName: "NumberSetter",
                       props: {
                         min: 0,
                         max: 24,
@@ -183,127 +183,127 @@ export default {
               },
             },
           },
-          description: '需要为输入控件设置布局样式时，使用该属性，用法同 labelCol',
+          description: "需要为输入控件设置布局样式时，使用该属性，用法同 labelCol",
         },
       ],},
     {
-      name: 'rules',
-      title: {label:'表单验证规则',tip:'rules|表单验证规则'},
-      propType: { type: 'oneOfType', value: ['object', 'array'] }
+      name: "rules",
+      title: {label:"表单验证规则",tip:"rules|表单验证规则"},
+      propType: { type: "oneOfType", value: ["object", "array"] }
     },
     {
-      name: 'requiredobj',
-      title: { label: '必填设置', tip: 'requiredobj|必填设置' },
+      name: "requiredobj",
+      title: { label: "必填设置", tip: "requiredobj|必填设置" },
       propType: {
-        type: 'shape',
+        type: "shape",
         value: [
           {
-            name: 'required',
-            title: '是否必填',
-            propType: 'bool',
-            setter: 'BoolSetter',
+            name: "required",
+            title: "是否必填",
+            propType: "bool",
+            setter: "BoolSetter",
             supportVariable: true,
             extraProps: {
               setValue(target: any, value: boolean) {
                 // 同步 必填标记
-                target.parent.parent.setPropValue('required', value);
+                target.parent.parent.setPropValue("required", value);
               }
             }
           },
           {
-            name: 'message',
-            title: '错误信息提示',
-            propType: 'string',
-            setter: 'StringSetter',
+            name: "message",
+            title: "错误信息提示",
+            propType: "string",
+            setter: "StringSetter",
             supportVariable: true
           },
         ],
       },
     },
     {
-      name: 'typeobj',
-      title: { label: '输入类型设置', tip: 'typeobj|输入类型设置' },
+      name: "typeobj",
+      title: { label: "输入类型设置", tip: "typeobj|输入类型设置" },
       propType: {
-        type: 'shape',
+        type: "shape",
         value: [
           {
-            name: 'type',
-            title: '输入类型',
+            name: "type",
+            title: "输入类型",
             setter: {
-              componentName: 'SelectSetter',
+              componentName: "SelectSetter",
               props: {
                 options: [
                   {
-                    title: '字符串',
-                    value: 'string',
+                    title: "字符串",
+                    value: "string",
                   },
                   {
-                    title: '纯数字',
-                    value: 'number',
+                    title: "纯数字",
+                    value: "number",
                   },
                   {
-                    title: '邮箱',
-                    value: 'email',
+                    title: "邮箱",
+                    value: "email",
                   },
                   {
-                    title: '网址',
-                    value: 'url',
+                    title: "网址",
+                    value: "url",
                   },
                 ],
               },
             },
             propType: {
-              type: 'oneOf',
-              value: ['string', 'number', 'email', 'url'],
+              type: "oneOf",
+              value: ["string", "number", "email", "url"],
             },
           },
-          { name: 'message', title: '错误信息提示', propType: 'string' },
+          { name: "message", title: "错误信息提示", propType: "string" },
         ],
       },
     },
     {
-      name: 'lenobj',
-      title: { label: '长度校验设置', tip: 'lenobj|长度校验设置' },
+      name: "lenobj",
+      title: { label: "长度校验设置", tip: "lenobj|长度校验设置" },
       propType: {
-        type: 'shape',
+        type: "shape",
         value: [
-          // { name: 'len', title: '固定长度', propType: 'string' },
-          { name: 'max', title: '最大长度', propType: 'number' },
-          { name: 'min', title: '最小长度', propType: 'number' },
-          { name: 'message', title: '错误信息提示', propType: 'string' },
+          // { name: "len", title: "固定长度", propType: "string" },
+          { name: "max", title: "最大长度", propType: "number" },
+          { name: "min", title: "最小长度", propType: "number" },
+          { name: "message", title: "错误信息提示", propType: "string" },
         ],
       },
     },
     {
-      name: 'patternobj',
-      title: { label: '正则设置', tip: 'patternobj|正则设置' },
+      name: "patternobj",
+      title: { label: "正则设置", tip: "patternobj|正则设置" },
       propType: {
-        type: 'shape',
+        type: "shape",
         value: [
-          { name: 'pattern', title: '正则', propType: 'string' },
-          { name: 'message', title: '错误信息提示', propType: 'string' },
+          { name: "pattern", title: "正则", propType: "string" },
+          { name: "message", title: "错误信息提示", propType: "string" },
         ],
       },
     },
     {
-      name: 'validator',
+      name: "validator",
       title: {
-        label: '自定义校验函数',
-        tip: 'validator|自定义校验，接收 Promise 作为返回值',
+        label: "自定义校验函数",
+        tip: "validator|自定义校验，接收 Promise 作为返回值",
       },
-      propType: 'func',
+      propType: "func",
     },
     // {
-    //   name: 'validateTrigger',
-    //   title: { label: '校验时机', tip: '设置字段校验的时机' },
-    //   propType: { type: 'oneOfType', value: ['string', 'array'] },
-    //   defaultValue: 'onChange'
+    //   name: "validateTrigger",
+    //   title: { label: "校验时机", tip: "设置字段校验的时机" },
+    //   propType: { type: "oneOfType", value: ["string", "array"] },
+    //   defaultValue: "onChange"
     // }
     // {
-    //   name: 'validateFirst',
-    //   title: { label: 'validateFirst', tip: '当某一规则校验不通过时，是否停止剩下的规则的校验' },
-    //   prop: 'bool',
-    //   setter: 'BoolSetter',
+    //   name: "validateFirst",
+    //   title: { label: "validateFirst", tip: "当某一规则校验不通过时，是否停止剩下的规则的校验" },
+    //   prop: "bool",
+    //   setter: "BoolSetter",
     //   defaultValue: false
     // },
   ],
@@ -332,13 +332,13 @@ export default {
   },
   snippets: [
     {
-      title: '表单项',
+      title: "表单项",
       screenshot: avatarImg,
       schema: {
-        componentName: 'AFormItem',
+        componentName: "AFormItem",
         props: {
-          label: '表单项',
-          validateStatus:'error'
+          label: "表单项",
+          validateStatus:""
         }
       }
     }

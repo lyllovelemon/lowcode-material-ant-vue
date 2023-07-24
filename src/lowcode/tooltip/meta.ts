@@ -1,280 +1,280 @@
 // @ts-ignore
-import avatarImg from './__screenshots__/tooltip-1.jpg?inline'
+import avatarImg from "./__screenshots__/tooltip-1.jpg?inline"
 export default {
-  group: 'ant-vue组件',
-  componentName:'ATooltip',
-  title: '文字提示',
-  category: '数据展示',
+  group: "ant-vue组件",
+  componentName:"ATooltip",
+  title: "文字提示",
+  category: "数据展示",
   npm: {
     destructuring: true,
-    componentName: 'ATooltip'
+    componentName: "ATooltip"
   },
   props:[
     {
-      title: '内容',
-      display: 'block',
-      type: 'group',
+      title: "内容",
+      display: "block",
+      type: "group",
       items: [
         {
-          name: 'title',
+          name: "title",
           title: {
-            label: '提示文字',
-            tip: 'title | 提示文字',
+            label: "提示文字",
+            tip: "title | 提示文字",
           },
-          propType: { type: 'oneOfType', value: ['string', 'node'] },
-          setter: ['StringSetter', 'SlotSetter', 'VariableSetter'],
+          propType: { type: "oneOfType", value: ["string", "node"] },
+          setter: ["StringSetter", "SlotSetter", "VariableSetter"],
         },
       ],
     },
     {
-      title: '控制',
-      display: 'block',
-      type: 'group',
+      title: "控制",
+      display: "block",
+      type: "group",
       items: [
         {
-          name: 'defaultVisible',
+          name: "defaultVisible",
           title: {
-            label: '默认显隐',
-            tip: 'defaultVisible | 默认是否显隐',
+            label: "默认显隐",
+            tip: "defaultVisible | 默认是否显隐",
           },
-          propType: 'bool',
-          setter: 'BoolSetter',
+          propType: "bool",
+          setter: "BoolSetter",
           defaultValue: false,
         },
         {
-          name: 'visible',
+          name: "visible",
           title: {
-            label: '当前显隐',
-            tip: 'visible | 当前是否显隐',
+            label: "当前显隐",
+            tip: "visible | 当前是否显隐",
           },
-          propType: 'bool',
-          setter: 'BoolSetter',
+          propType: "bool",
+          setter: "BoolSetter",
         },
       ],
     },
     {
-      title: '外观',
-      display: 'block',
-      type: 'group',
+      title: "外观",
+      display: "block",
+      type: "group",
       items: [
         {
-          name: 'placement',
-          title: { label: '气泡位置', tip: 'placement | 气泡位置' },
+          name: "placement",
+          title: { label: "气泡位置", tip: "placement | 气泡位置" },
           propType: {
-            type: 'oneOf',
+            type: "oneOf",
             value: [
-              'top',
-              'left',
-              'right',
-              'bottom',
-              'topLeft',
-              'topRight',
-              'bottomLeft',
-              'bottomRight',
-              'leftTop',
-              'leftBottom',
-              'rightTop',
-              'rightBottom',
+              "top",
+              "left",
+              "right",
+              "bottom",
+              "topLeft",
+              "topRight",
+              "bottomLeft",
+              "bottomRight",
+              "leftTop",
+              "leftBottom",
+              "rightTop",
+              "rightBottom",
             ],
           },
-          defaultValue: 'top',
+          defaultValue: "top",
           setter: {
-            componentName: 'SelectSetter',
+            componentName: "SelectSetter",
             props: {
               options: [
                 {
-                  title: '上',
-                  value: 'top',
+                  title: "上",
+                  value: "top",
                 },
                 {
-                  title: '左',
-                  value: 'left',
+                  title: "左",
+                  value: "left",
                 },
                 {
-                  title: '右',
-                  value: 'right',
+                  title: "右",
+                  value: "right",
                 },
                 {
-                  title: '下',
-                  value: 'bottom',
+                  title: "下",
+                  value: "bottom",
                 },
                 {
-                  title: '上左',
-                  value: 'topLeft',
+                  title: "上左",
+                  value: "topLeft",
                 },
                 {
-                  title: '上右',
-                  value: 'topRight',
+                  title: "上右",
+                  value: "topRight",
                 },
                 {
-                  title: '下左',
-                  value: 'bottomLeft',
+                  title: "下左",
+                  value: "bottomLeft",
                 },
                 {
-                  title: '下右',
-                  value: 'bottomRight',
+                  title: "下右",
+                  value: "bottomRight",
                 },
                 {
-                  title: '左上',
-                  value: 'leftTop',
+                  title: "左上",
+                  value: "leftTop",
                 },
                 {
-                  title: '左下',
-                  value: 'leftBottom',
+                  title: "左下",
+                  value: "leftBottom",
                 },
                 {
-                  title: '右上',
-                  value: 'rightTop',
+                  title: "右上",
+                  value: "rightTop",
                 },
                 {
-                  title: '右下',
-                  value: 'rightBottom',
+                  title: "右下",
+                  value: "rightBottom",
                 },
               ],
             },
           },
         },
         {
-          name: 'autoAdjustOverflow',
+          name: "autoAdjustOverflow",
           title: {
-            label: '自动调整',
-            tip: 'autoAdjustOverflow | 气泡被遮挡时自动调整位置',
+            label: "自动调整",
+            tip: "autoAdjustOverflow | 气泡被遮挡时自动调整位置",
           },
-          propType: 'bool',
-          setter: 'BoolSetter',
+          propType: "bool",
+          setter: "BoolSetter",
           defaultValue: true,
         },
         {
-          name: 'arrowPointAtCenter',
+          name: "arrowPointAtCenter",
           title: {
-            label: '指向中心',
-            tip: 'arrowPointAtCenter | 箭头是否指向目标元素中心',
+            label: "指向中心",
+            tip: "arrowPointAtCenter | 箭头是否指向目标元素中心",
           },
-          propType: 'bool',
-          setter: 'BoolSetter',
+          propType: "bool",
+          setter: "BoolSetter",
           defaultValue: false,
         },
         {
-          name: 'color',
+          name: "color",
           title: {
-            label: '背景颜色',
-            tip: 'color | 背景颜色',
+            label: "背景颜色",
+            tip: "color | 背景颜色",
           },
-          propType: 'string',
-          setter: 'ColorSetter',
+          propType: "string",
+          setter: "ColorSetter",
         },
         {
-          name: 'zIndex',
+          name: "zIndex",
           title: {
-            label: 'zIndex',
-            tip: 'zIndex | 设置 Tooltip 的 z-index值',
+            label: "zIndex",
+            tip: "zIndex | 设置 Tooltip 的 z-index值",
           },
-          propType: 'number',
-          setter: 'NumberSetter',
+          propType: "number",
+          setter: "NumberSetter",
         },
       ],
     },
     {
-      name: 'overlayStyle',
-      title: '卡片样式',
-      type: 'group',
+      name: "overlayStyle",
+      title: "卡片样式",
+      type: "group",
       extraProps: {
-        display: 'entry',
+        display: "entry",
       },
       items: [
         {
-          name: 'overlayStyle',
-          title: { label: '样式设置', tip: 'overlayStyle | 卡片样式' },
-          setter: 'StyleSetter',
+          name: "overlayStyle",
+          title: { label: "样式设置", tip: "overlayStyle | 卡片样式" },
+          setter: "StyleSetter",
           extraProps: {
-            display: 'block',
+            display: "block",
           },
         },
       ],
     },
     {
-      name: 'overlayInnerStyle',
-      title: {label:'卡片样式',tip:'overlayInnerStyle | 卡片内容样式'},
-      type: 'group',
+      name: "overlayInnerStyle",
+      title: {label:"卡片样式",tip:"overlayInnerStyle | 卡片内容样式"},
+      type: "group",
       extraProps: {
-        display: 'entry',
+        display: "entry",
       },
       items: [
         {
-          name: 'overlayInnerStyle',
+          name: "overlayInnerStyle",
           title: {
-            label: '样式设置',
-            tip: 'overlayStyle | 卡片内容区域的样式',
+            label: "样式设置",
+            tip: "overlayStyle | 卡片内容区域的样式",
           },
-          setter: 'StyleSetter',
+          setter: "StyleSetter",
           extraProps: {
-            display: 'block',
+            display: "block",
           },
         },
       ],
     },
     {
-      title: '行为',
-      display: 'block',
-      type: 'group',
+      title: "行为",
+      display: "block",
+      type: "group",
       items: [
         {
-          name: 'trigger',
-          title: { label: '触发行为', tip: 'trigger | 触发行为' },
+          name: "trigger",
+          title: { label: "触发行为", tip: "trigger | 触发行为" },
           propType: {
-            type: 'oneOf',
-            value: ['hover', 'onFocus', 'click', 'contextMenu'],
+            type: "oneOf",
+            value: ["hover", "onFocus", "click", "contextMenu"],
           },
-          defaultValue: 'hover',
+          defaultValue: "hover",
           setter: {
-            componentName: 'SelectSetter',
+            componentName: "SelectSetter",
             props: {
               options: [
                 {
-                  title: '鼠标悬停',
-                  value: 'hover',
+                  title: "鼠标悬停",
+                  value: "hover",
                 },
                 {
-                  title: '获得焦点',
-                  value: 'onFocus',
+                  title: "获得焦点",
+                  value: "onFocus",
                 },
                 {
-                  title: '鼠标点击',
-                  value: 'click',
+                  title: "鼠标点击",
+                  value: "click",
                 },
                 {
-                  title: '右键菜单',
-                  value: 'contextMenu',
+                  title: "右键菜单",
+                  value: "contextMenu",
                 },
               ],
             },
           },
         },
         {
-          name: 'mouseEnterDelay',
+          name: "mouseEnterDelay",
           title: {
-            label: '展示延时',
-            tip: 'mouseEnterDelay | 鼠标移入后延时多少才显示 Tooltip，单位：秒',
+            label: "展示延时",
+            tip: "mouseEnterDelay | 鼠标移入后延时多少才显示 Tooltip，单位：秒",
           },
-          propType: 'number',
+          propType: "number",
           defaultValue: 0.1,
           setter: {
-            componentName: 'NumberSetter',
+            componentName: "NumberSetter",
             props: {
               step: 0.1,
             },
           },
         },
         {
-          name: 'mouseLeaveDelay',
+          name: "mouseLeaveDelay",
           title: {
-            label: '隐藏延时',
-            tip: 'mouseLeaveDelay | 鼠标移出后延时多少才隐藏 Tooltip，单位：秒',
+            label: "隐藏延时",
+            tip: "mouseLeaveDelay | 鼠标移出后延时多少才隐藏 Tooltip，单位：秒",
           },
-          propType: 'number',
+          propType: "number",
           defaultValue: 0.1,
           setter: {
-            componentName: 'NumberSetter',
+            componentName: "NumberSetter",
             props: {
               step: 0.1,
             },
@@ -290,19 +290,19 @@ export default {
     },
     events:[
       {
-        name: 'onVisibleChange',
-        template: "onVisibleChange(visible,${extParams}){\n// 显示隐藏的回调\nconsole.log('onVisibleChange',visible);}",
+        name: "onVisibleChange",
+        template: "onVisibleChange(visible,${extParams}){\n// 显示隐藏的回调\nconsole.log(\"onVisibleChange\",visible);}",
       }
     ]
   },
   snippets:[
     {
-      title: '文字提示',
+      title: "文字提示",
       screenshot: avatarImg,
       schema: {
-        componentName: 'ATooltip',
+        componentName: "ATooltip",
         props: {
-          title: '提示内容',
+          title: "提示内容",
         }
       }
     }

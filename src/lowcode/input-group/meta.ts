@@ -1,46 +1,46 @@
 /* eslint-disable */
 // @ts-ignore
-import avatarImg from './__screenshots__/input-group.jpg?inline';
+import avatarImg from "./__screenshots__/input-group.jpg?inline";
 export default {
-  group: 'ant-vue组件',
-  componentName: 'AInputGroup',
-  title: '输入框组合',
-  category: '表单',
+  group: "ant-vue组件",
+  componentName: "AInputGroup",
+  title: "输入框组合",
+  category: "表单",
   npm: {
     destructuring: true,
-    componentName: 'AInputGroup'
+    componentName: "AInputGroup"
   },
   props:[
     {
-      name: 'compact',
-      title: { label: '紧凑模式', tip: 'compact | 是否用紧凑模式' },
-      propType: 'bool',
-      setter: 'BoolSetter'
+      name: "compact",
+      title: { label: "紧凑模式", tip: "compact | 是否用紧凑模式" },
+      propType: "bool",
+      setter: "BoolSetter"
     },
     {
-      name: 'size',
-      title: { label: '尺寸', tip: 'size | 尺寸大小' },
-      propType: { type: 'oneOf', value: ['large', 'default', 'small'] },
+      name: "size",
+      title: { label: "尺寸", tip: "size | 尺寸大小" },
+      propType: { type: "oneOf", value: ["large", "default", "small"] },
       setter: {
-        componentName: 'RadioGroupSetter',
+        componentName: "RadioGroupSetter",
         props: {
           options: [
             {
-              title: '大',
-              value: 'large',
+              title: "大",
+              value: "large",
             },
             {
-              title: '中',
-              value: 'middle',
+              title: "中",
+              value: "middle",
             },
             {
-              title: '小',
-              value: 'small',
+              title: "小",
+              value: "small",
             },
           ],
         },
       },
-      defaultValue: 'default',
+      defaultValue: "default",
     },
   ],
   configure:{
@@ -53,22 +53,22 @@ export default {
   },
   snippets:[
     {
-      title:'输入框组合',
+      title:"输入框组合",
       screenshot: avatarImg,
       schema:{
-        componentName:'AInputGroup',
+        componentName:"AInputGroup",
         props:{},
         children:[
           {
-            componentName:'AInput',
+            componentName:"AInput",
             props:{
-              placeholder:'请输入'
+              placeholder:"请输入"
             }
           },
           {
-            componentName:'AInput',
+            componentName:"AInput",
             props:{
-              placeholder:'请输入'
+              placeholder:"请输入"
             }
           }
         ]

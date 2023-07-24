@@ -4,15 +4,15 @@ function clamp(value: number, min: number, max: number) {
 }
 
 export default {
-  componentName: 'ACol',
-  title: '栅格-列',
+  componentName: "ACol",
+  title: "栅格-列",
   props: [
     {
-      name: 'span',
-      title: { label: '占位格数', tip: 'span|栅格占位格数' },
-      propType: 'number',
+      name: "span",
+      title: { label: "占位格数", tip: "span|栅格占位格数" },
+      propType: "number",
       setter: {
-        componentName: 'NumberSetter',
+        componentName: "NumberSetter",
         props: {
           min: 0,
           max: 24,
@@ -20,16 +20,16 @@ export default {
       },
     },
     {
-      name: 'order',
-      title: { label: '栅格顺序', tip: 'order|栅格顺序' },
-      propType: 'number',
+      name: "order",
+      title: { label: "栅格顺序", tip: "order|栅格顺序" },
+      propType: "number",
     },
     {
-      name: 'pull',
-      title: { label: '右侧偏移', tip: 'pull|栅格往右移动格数' },
-      propType: 'number',
+      name: "pull",
+      title: { label: "右侧偏移", tip: "pull|栅格往右移动格数" },
+      propType: "number",
       setter: {
-        componentName: 'NumberSetter',
+        componentName: "NumberSetter",
         props: {
           min: 0,
           max: 24,
@@ -37,11 +37,11 @@ export default {
       },
     },
     {
-      name: 'push',
-      title: { label: '左侧偏移', tip: 'push|栅格往左移动格数' },
-      propType: 'number',
+      name: "push",
+      title: { label: "左侧偏移", tip: "push|栅格往左移动格数" },
+      propType: "number",
       setter: {
-        componentName: 'NumberSetter',
+        componentName: "NumberSetter",
         props: {
           min: 0,
           max: 24,
@@ -50,11 +50,11 @@ export default {
     },
   ],
   configure: {
-    component: { isContainer: true, nestingRule: { parentWhitelist: ['ARow'] } },
+    component: { isContainer: true, nestingRule: { parentWhitelist: ["ARow"] } },
     supports: { style: true },
     advanced: {
       getResizingHandlers: () => {
-        return ['e'];
+        return ["e"];
       },
       callbacks: {
         resizeStart: (e: any, currentNode: { parent: any; parentRect: any; beforeSpan: any; getPropValue: (arg0: string) => number; startRect: any; getRect: () => any; }) => {
@@ -65,7 +65,7 @@ export default {
               currentNode.parentRect = parentNode.getBoundingClientRect();
             }
           }
-          currentNode.beforeSpan = currentNode.getPropValue('span') || 24;
+          currentNode.beforeSpan = currentNode.getPropValue("span") || 24;
           currentNode.startRect = currentNode.getRect();
         },
         resize: (e: { deltaX: any; }, currentNode: { startRect: { width: any; }; beforeSpan: number; parentRect: { width: number; }; moveAColumn: number; targetAColumn: number; getDOMNode: () => any; }) => {
@@ -86,16 +86,16 @@ export default {
             currentNode.moveAColumn--;
           }
           currentNode.targetAColumn = clamp(currentNode.beforeSpan + currentNode.moveAColumn, 1, 24);
-          // currentNode.setPropValue('span', currentNode.targetAColumn);
+          // currentNode.setPropValue("span", currentNode.targetAColumn);
           const dom = currentNode.getDOMNode();
           dom.style.width = `${Math.round(width)}px`;
-          dom.style.flex = 'none';
-          dom.style.maxWidth = '100%';
+          dom.style.flex = "none";
+          dom.style.maxWidth = "100%";
         },
         resizeEnd: (e: any, currentNode: { getDOMNode: () => { (): any; new(): any; style: { (): any; new(): any; cssText: string; }; }; targetAColumn: number; setPropValue: (arg0: string, arg1: any) => void; }) => {
-          currentNode.getDOMNode().style.cssText = '';
+          currentNode.getDOMNode().style.cssText = "";
           currentNode.targetAColumn = clamp(currentNode.targetAColumn, 1, 24);
-          currentNode.setPropValue('span', currentNode.targetAColumn);
+          currentNode.setPropValue("span", currentNode.targetAColumn);
         },
       },
     },

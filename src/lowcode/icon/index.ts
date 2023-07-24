@@ -1,11 +1,11 @@
-import 'ant-design-vue/es/icon/style';
-import * as icons from '@ant-design/icons-vue';
-import { defineComponent, h } from 'vue';
+import "ant-design-vue/es/icon/style";
+import * as icons from "@ant-design/icons-vue";
+import { defineComponent, h } from "vue";
 
 const createFromIconfontCN = icons.createFromIconfontCN;
 
 export const AIcon = defineComponent({
-  name: 'AIcon',
+  name: "AIcon",
   props: {
     type: {
       type: String,
@@ -20,7 +20,7 @@ export const AIcon = defineComponent({
   setup(props) {
     return () => {
       // eslint-disable-next-line vue/no-setup-props-destructure
-      const { type = '', size, color, style, ...rest } = props;
+      const { type = "", size, color, style, ...rest } = props;
       const IconComp = ((icons || {}) as any)[type];
       const cStyle = {
         ...style,

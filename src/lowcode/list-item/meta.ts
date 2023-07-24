@@ -1,28 +1,28 @@
 export default {
-  group: 'ant-vue组件',
-  componentName:'AListItem',
-  title: '列表项',
-  category: '数据展示',
+  group: "ant-vue组件",
+  componentName:"AListItem",
+  title: "列表项",
+  category: "数据展示",
   npm: {
     destructuring: true,
-    componentName: 'AListItem'
+    componentName: "AListItem"
   },
   props:[
     {
-      name: 'actions',
+      name: "actions",
       title: {
-        label: '列表操作组',
-        tip: 'actions|列表操作组',
+        label: "列表操作组",
+        tip: "actions|列表操作组",
       },
-      propType: { type: 'arrayOf', value: 'node' },
+      propType: { type: "arrayOf", value: "node" },
       setter: {
-        componentName: 'ArraySetter',
+        componentName: "ArraySetter",
         props: {
           itemSetter: {
-            componentName: 'SlotSetter',
-            title: '操作组插槽',
+            componentName: "SlotSetter",
+            title: "操作组插槽",
             initialValue: {
-              type: 'JSSlot',
+              type: "JSSlot",
               value: []
             }
           }
@@ -30,20 +30,20 @@ export default {
       }
     },
     {
-      name: 'extra',
+      name: "extra",
       title: {
-        label: '额外内容',
-        tip: 'extra|额外内容',
+        label: "额外内容",
+        tip: "extra|额外内容",
       },
-      propType: 'node',
-      setter: 'SlotSetter'
+      propType: "node",
+      setter: "SlotSetter"
     },
   ],
   configure: {
     component:{
       isContainer:true,
       nestingRule:{
-        parentWhitelist:['AList']
+        parentWhitelist:["AList"]
       }
     },
     supports: {

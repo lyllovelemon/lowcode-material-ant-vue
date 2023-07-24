@@ -1,38 +1,38 @@
 // @ts-ignore
-import avatarImg from './__screenshots__/anchor-1.png?inline';
+import avatarImg from "./__screenshots__/anchor-1.png?inline";
 export default {
-  group: 'ant-vue组件',
-  componentName:'AAnchor',
-  title: '锚点',
-  category: '基础组件',
+  group: "ant-vue组件",
+  componentName:"AAnchor",
+  title: "锚点",
+  category: "基础组件",
   npm: {
     destructuring: true,
-    componentName: 'AAnchor'
+    componentName: "AAnchor"
   },
   snippets:[
     {
-      title: '锚点',
+      title: "锚点",
       screenshot: avatarImg,
       schema: {
-        componentName: 'AAnchor',
+        componentName: "AAnchor",
         props: {},
         children: [
           {
-            componentName: 'AAnchorLink',
+            componentName: "AAnchorLink",
             props: {
-              title: 'Document',
+              title: "Document",
             },
           },
           {
-            componentName: 'AAnchorLink',
+            componentName: "AAnchorLink",
             props: {
-              title: 'API',
+              title: "API",
             },
           },
           {
-            componentName: 'AAnchorLink',
+            componentName: "AAnchorLink",
             props: {
-              title: 'Demo',
+              title: "Demo",
             }
           }
         ]

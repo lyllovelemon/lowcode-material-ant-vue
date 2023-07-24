@@ -1,111 +1,111 @@
 // @ts-ignore
-import avatarImg from './__screenshots__/popconfirm-1.jpg?inline';
+import avatarImg from "./__screenshots__/popconfirm-1.jpg?inline";
 export default {
-  group: 'ant-vue组件',
-  componentName:'APopconfirm',
-  title: '气泡确认框',
-  category: '反馈',
+  group: "ant-vue组件",
+  componentName:"APopconfirm",
+  title: "气泡确认框",
+  category: "反馈",
   npm: {
     destructuring: true,
-    componentName: 'APopconfirm'
+    componentName: "APopconfirm"
   },
   props:[
     {
-      name: 'title',
-      title: { label: '确认框内容', tip: 'title|确认框内容' },
-      propType: { type: 'oneOfType', value: ['string', 'node', 'func'] },
+      name: "title",
+      title: { label: "确认框内容", tip: "title|确认框内容" },
+      propType: { type: "oneOfType", value: ["string", "node", "func"] },
     },
     {
-      name: 'visible',
-      title: { label: '是否可见', tip: 'visible|确认框是否可见' },
-      propType: 'bool',
-      setter: 'BoolSetter',
+      name: "visible",
+      title: { label: "是否可见", tip: "visible|确认框是否可见" },
+      propType: "bool",
+      setter: "BoolSetter",
       supportVariable: true
     },
     {
-      name: 'okText',
-      title: { label: '确认按钮文字', tip: 'okText|确认按钮文字' },
-      propType: 'string',
-      setter: 'StringSetter',
+      name: "okText",
+      title: { label: "确认按钮文字", tip: "okText|确认按钮文字" },
+      propType: "string",
+      setter: "StringSetter",
       supportVariable: true
     },
     {
-      name: 'showCancel',
-      title: { label: '是否展示取消', tip: 'showCancel|是否显示取消按钮' },
-      propType: 'bool',
-      setter: 'BoolSetter',
+      name: "showCancel",
+      title: { label: "是否展示取消", tip: "showCancel|是否显示取消按钮" },
+      propType: "bool",
+      setter: "BoolSetter",
       supportVariable: true
     },
     {
-      name: 'cancelText',
-      title: { label: '取消按钮文字', tip: 'cancelText|取消按钮文字' },
-      propType: 'string',
-      setter: 'StringSetter',
+      name: "cancelText",
+      title: { label: "取消按钮文字", tip: "cancelText|取消按钮文字" },
+      propType: "string",
+      setter: "StringSetter",
       supportVariable: true
     },
     {
-      name: 'okType',
-      title: { label: '确认按钮类型', tip: 'okType|确认按钮类型' },
+      name: "okType",
+      title: { label: "确认按钮类型", tip: "okType|确认按钮类型" },
       propType: {
-        type: 'oneOf',
-        value: ['primary', 'ghost', 'dashed', 'danger', 'link', 'text'],
+        type: "oneOf",
+        value: ["primary", "ghost", "dashed", "danger", "link", "text"],
       },
       setter: {
-        componentName: 'SelectSetter',
+        componentName: "SelectSetter",
         props: {
           options: [
             {
-              title: '主按钮',
-              value: 'primary',
+              title: "主按钮",
+              value: "primary",
             },
             {
-              title: '虚线框按钮',
-              value: 'dashed',
+              title: "虚线框按钮",
+              value: "dashed",
             },
             {
-              title: '危险按钮',
-              value: 'danger',
+              title: "危险按钮",
+              value: "danger",
             },
             {
-              title: '链接按钮',
-              value: 'link',
+              title: "链接按钮",
+              value: "link",
             },
             {
-              title: '类文本按钮',
-              value: 'text',
+              title: "类文本按钮",
+              value: "text",
             },
           ],
         },
       },
     },
     {
-      name: 'okButtonProps',
-      title: { label: 'ok按钮props', tip: 'okButtonProps|ok按钮props' },
-      propType: 'object',
+      name: "okButtonProps",
+      title: { label: "ok按钮props", tip: "okButtonProps|ok按钮props" },
+      propType: "object",
     },
     {
-      name: 'cancelButtonProps',
-      title: { label: 'cancel按钮props', tip: 'cancelButtonProps|cancel按钮props' },
-      propType: 'object',
+      name: "cancelButtonProps",
+      title: { label: "cancel按钮props", tip: "cancelButtonProps|cancel按钮props" },
+      propType: "object",
     },
     {
-      name: 'icon',
-      title: { label: '自定义Icon图标', tip: 'icon|自定义弹出气泡Icon图标' },
-      propType: 'node',
+      name: "icon",
+      title: { label: "自定义Icon图标", tip: "icon|自定义弹出气泡Icon图标" },
+      propType: "node",
     },
     {
-      name: 'disabled',
+      name: "disabled",
       title: {
-        label: '是否禁用',
-        tip: 'disabled|是否为禁用状态',
+        label: "是否禁用",
+        tip: "disabled|是否为禁用状态",
       },
-      propType: 'bool',
+      propType: "bool",
       defaultValue: false,
     },
     {
-      name: 'onConfirm',
-      title: { label: '点击确认回调', tip: 'onConfirm|点击确认回调' },
-      propType: 'func',
+      name: "onConfirm",
+      title: { label: "点击确认回调", tip: "onConfirm|点击确认回调" },
+      propType: "func",
     },
   ],
   configure: {
@@ -114,12 +114,12 @@ export default {
       style:true,
       events: [
         {
-          name: 'onConfirm',
-          template: "onConfirm(${extParams}){\n// 点击确认的回调\nwindow.LowcodeMaterialAntVue.message.success('点击确定');}",
+          name: "onConfirm",
+          template: "onConfirm(${extParams}){\n// 点击确认的回调\nwindow.LowcodeMaterialAntVue.message.success(\"点击确定\");}",
         },
         {
-          name:'onCancel',
-          template:"onCancel(${extParams}){\n // 点击取消的回调\n window.LowcodeMaterialAntVue.message.error('点击取消');}"
+          name:"onCancel",
+          template:"onCancel(${extParams}){\n // 点击取消的回调\n window.LowcodeMaterialAntVue.message.error(\"点击取消\");}"
         }
       ]
     }

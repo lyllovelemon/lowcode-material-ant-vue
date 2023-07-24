@@ -1,28 +1,28 @@
 export default {
-  group: 'ant-vue组件',
-  componentName:'ADescriptionsItem',
-  title: '提及',
-  category: '数据展示',
+  group: "ant-vue组件",
+  componentName:"ADescriptionsItem",
+  title: "提及",
+  category: "数据展示",
   npm: {
     destructuring: true,
-    componentName: 'ADescriptionsItem'
+    componentName: "ADescriptionsItem"
   },
   props:[
     {
-      name: 'key',
+      name: "key",
       title: {
-        label: 'key',
-        tip: 'key',
+        label: "key",
+        tip: "key",
       },
-      propType: 'string',
+      propType: "string",
     },
     {
-      name: 'tab',
+      name: "tab",
       title: {
-        label: '标题',
-        tip: 'tab|标题',
+        label: "标题",
+        tip: "tab|标题",
       },
-      propType: 'string',
+      propType: "string",
     }
   ],
   configure: {

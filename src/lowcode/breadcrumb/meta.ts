@@ -1,123 +1,123 @@
 // @ts-ignore
-import avatarImg from './__screenshots__/breadcrumb-1.jpg?inline'
+import avatarImg from "./__screenshots__/breadcrumb-1.jpg?inline"
 export default {
-  group: 'ant-vue组件',
-  componentName:'ABreadcrumb',
-  title: '面包屑',
-  category: '导航',
+  group: "ant-vue组件",
+  componentName:"ABreadcrumb",
+  title: "面包屑",
+  category: "导航",
   npm: {
     destructuring: true,
-    componentName: 'ABreadcrumb'
+    componentName: "ABreadcrumb"
   },
   props:[
     {
-      title: '基础',
-      display: 'block',
-      type: 'group',
+      title: "基础",
+      display: "block",
+      type: "group",
       items:[
         {
-          name: 'routes',
-          title: { label: '路由栈信息', tip: 'routes|router 的路由栈信息' },
+          name: "routes",
+          title: { label: "路由栈信息", tip: "routes|router 的路由栈信息" },
           propType: {
-            type: 'arrayOf',
+            type: "arrayOf",
             value: {
-              type: 'shape',
+              type: "shape",
               value: [
-                { name: 'path', propType: 'string' },
-                { name: 'breadcrumbName', propType: 'string' },
+                { name: "path", propType: "string" },
+                { name: "breadcrumbName", propType: "string" },
               ],
             },
           },
           setter: {
-            componentName: 'ArraySetter',
+            componentName: "ArraySetter",
             props: {
               itemSetter: {
-                componentName: 'ObjectSetter',
+                componentName: "ObjectSetter",
                 props: {
                   config: {
                     items: [
                       {
-                        name: 'path',
-                        title: { label: '路由路径', tip: 'path | 路由路径' },
-                        propType: 'string',
-                        setter: 'StringSetter',
+                        name: "path",
+                        title: { label: "路由路径", tip: "path | 路由路径" },
+                        propType: "string",
+                        setter: "StringSetter",
                         isRequired: true
                       },
                       {
-                        name: 'breadcrumbName',
+                        name: "breadcrumbName",
                         title: {
-                          label: '路由名称',
-                          tip: 'breadcrumbName | 路由名称',
+                          label: "路由名称",
+                          tip: "breadcrumbName | 路由名称",
                         },
-                        propType: 'string',
-                        setter: 'StringSetter',
+                        propType: "string",
+                        setter: "StringSetter",
                         isRequired: true
                       },
                     ],
                   },
                 },
                 initialValue: {
-                  path: 'path',
-                  breadcrumbName: 'breadcrumbName',
+                  path: "path",
+                  breadcrumbName: "breadcrumbName",
                 },
               },
             },
           },
         },
         {
-          name: 'params',
-          title: { label: '路由的参数', tip: 'params|路由的参数' },
-          propType: 'object',
-          setter: 'JsonSetter',
+          name: "params",
+          title: { label: "路由的参数", tip: "params|路由的参数" },
+          propType: "object",
+          setter: "JsonSetter",
         },
         {
-          name: 'separator',
-          title: { label: '分隔符自定义', tip: 'separator|分隔符自定义' },
-          propType: { type: 'oneOfType', value: ['string', 'node'] },
+          name: "separator",
+          title: { label: "分隔符自定义", tip: "separator|分隔符自定义" },
+          propType: { type: "oneOfType", value: ["string", "node"] },
           setter: [
-            'StringSetter',
+            "StringSetter",
             {
-              componentName: 'SlotSetter',
+              componentName: "SlotSetter",
               initialValue: {
-                type: 'JSSlot',
+                type: "JSSlot",
                 value: [],
               },
             },
-            'VariableSetter',
+            "VariableSetter",
           ],
         },
       ]
     },
     {
-      title: '扩展',
-      display: 'block',
-      type: 'group',
+      title: "扩展",
+      display: "block",
+      type: "group",
       items:[
         {
-          name: 'itemRender',
+          name: "itemRender",
           title: {
-            label: '自定义渲染',
-            tip: 'itemRender | 自定义渲染',
+            label: "自定义渲染",
+            tip: "itemRender | 自定义渲染",
           },
-          propType: { type: 'oneOfType', value: ['func', 'node'] },
+          propType: { type: "oneOfType", value: ["func", "node"] },
           setter: [
             {
-              componentName: 'SlotSetter',
-              title: '自定义渲染插槽',
+              componentName: "SlotSetter",
+              title: "自定义渲染插槽",
               initialValue: {
-                type: 'JSSlot',
-                params: ['route', 'params', 'routes', 'paths'],
+                type: "JSSlot",
+                params: ["route", "params", "routes", "paths"],
                 value: [],
               },
             },
             {
-              componentName: 'FunctionSetter',
+              componentName: "FunctionSetter",
               props: {
                 template:
-                  'itemRender(route, params, routes, paths,${extParams}){\n// 自定义渲染\nreturn `${route.breadcrumbName}`}',
+                  "itemRender(route, params, routes, paths,${extParams}){\n// 自定义渲染\nreturn `${route.breadcrumbName}`}",
               },
             },
-            'VariableSetter',
+            "VariableSetter",
           ],
         }
       ]
@@ -150,19 +150,19 @@ export default {
             }
           ],
           itemRender: {
-            type: 'JSSlot',
-            params: ['route', 'params', 'routes', 'paths'],
+            type: "JSSlot",
+            params: ["route", "params", "routes", "paths"],
             value: [
               {
-                componentName: 'ATypographyLink',
+                componentName: "ATypographyLink",
                 props: {
                   href: {
-                    type: 'JSExpression',
-                    value: 'this.route.path',
+                    type: "JSExpression",
+                    value: "this.route.path",
                   },
                   children: {
-                    type: 'JSExpression',
-                    value: 'this.route.breadcrumbName',
+                    type: "JSExpression",
+                    value: "this.route.breadcrumbName",
                   },
                 },
               },

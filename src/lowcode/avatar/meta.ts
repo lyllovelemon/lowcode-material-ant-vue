@@ -1,131 +1,131 @@
 // @ts-ignore
-import avatarImg from './__screenshots__/avatar-1.jpg?inline';
+import avatarImg from "./__screenshots__/avatar-1.jpg?inline";
 /* eslint-disable */
 const meta={
-  group: 'ant-vue组件',
-  componentName: 'AAvatar',
-  title: '头像',
-  category: '数据展示',
+  group: "ant-vue组件",
+  componentName: "AAvatar",
+  title: "头像",
+  category: "数据展示",
   props:[
     {
-      name:'icon',
-      title:{label:'图标头像',tip:'icon|设置头像的图标类型'},
-      propType:'node'
+      name:"icon",
+      title:{label:"图标头像",tip:"icon|设置头像的图标类型"},
+      propType:"node"
     },
     {
-      name:'shape',
-      title:{ label:'形状',tip:'shape|指定头像的形状'},
+      name:"shape",
+      title:{ label:"形状",tip:"shape|指定头像的形状"},
       propType:{
-        type:'oneOf',
-        value:['circle','square']
+        type:"oneOf",
+        value:["circle","square"]
       },
       setter:{
-        componentName:'RadioGroupSetter',
+        componentName:"RadioGroupSetter",
         props:{
           options:[
-            { title:'circle',value:'circle'},
-            { title:'square',value:'square'}
+            { title:"circle",value:"circle"},
+            { title:"square",value:"square"}
           ]
         }
       },
-      defaultValue:'circle'
+      defaultValue:"circle"
     },
     {
-      name: 'size',
-      title: { label: '尺寸', tip: 'size|设置头像的大小' },
+      name: "size",
+      title: { label: "尺寸", tip: "size|设置头像的大小" },
       setter: {
-        componentName: 'MixedSetter',
+        componentName: "MixedSetter",
         props: {
           setters: [
             {
-              componentName: 'RadioGroupSetter',
+              componentName: "RadioGroupSetter",
               props: {
                 options: [
-                  { label: 'default', value: 'default' },
-                  { label: 'large', value: 'large' },
-                  { label: 'small', value: 'small' },
+                  { label: "default", value: "default" },
+                  { label: "large", value: "large" },
+                  { label: "small", value: "small" },
                 ],
               },
             },
-            'NumberSetter',
+            "NumberSetter",
           ],
         },
       },
-      defaultValue: 'default',
+      defaultValue: "default",
     },
     {
-      name: 'src',
-      title: { label: '图片地址', tip: 'src|图片类头像的资源地址' },
-      propType:'string',
-      setter: 'StringSetter',
+      name: "src",
+      title: { label: "图片地址", tip: "src|图片类头像的资源地址" },
+      propType:"string",
+      setter: "StringSetter",
     },
     {
-      name: 'alt',
+      name: "alt",
       title: {
-        label: '替代文本',
-        tip: 'alt|图像无法显示时的替代文本',
+        label: "替代文本",
+        tip: "alt|图像无法显示时的替代文本",
       },
-      propType:'string',
-      setter: 'StringSetter',
+      propType:"string",
+      setter: "StringSetter",
     },
     {
-      name: 'loadError',
+      name: "loadError",
       title: {
-        label: '图片加载失败的事件',
-        tip: 'loadError|图片加载失败的事件，返回 false 会关闭组件默认的 fallback 行为',
+        label: "图片加载失败的事件",
+        tip: "loadError|图片加载失败的事件，返回 false 会关闭组件默认的 fallback 行为",
       },
-      propType: 'func',
+      propType: "func",
     },
     {
-      name:'crossOrigin',
+      name:"crossOrigin",
       title:{
-        label:'cors 属性设置',
-        tip:'crossOrigin|cors 属性设置'
+        label:"cors 属性设置",
+        tip:"crossOrigin|cors 属性设置"
       },
       propType:{
-        type:'oneOf',
-        value:['anonymous','use-credentials','']
+        type:"oneOf",
+        value:["anonymous","use-credentials",""]
       },
       setter:{
-        componentName: 'RadioGroupSetter',
+        componentName: "RadioGroupSetter",
         props: {
           options: [
-            { label: 'anonymous', value: 'anonymous' },
-            { label: 'use-credentials', value: 'use-credentials' },
-            { label:'default',value:''}
+            { label: "anonymous", value: "anonymous" },
+            { label: "use-credentials", value: "use-credentials" },
+            { label:"default",value:""}
           ],
         },
       }
     },
     {
-      name: 'src',
-      title: { label: '资源地址', tip: 'src|图片类头像的资源地址' },
-      setter: 'BoolSetter',
+      name: "src",
+      title: { label: "资源地址", tip: "src|图片类头像的资源地址" },
+      setter: "BoolSetter",
     },
     {
-      name:'srcset',
+      name:"srcset",
       title:{
-        label:'图片资源地址',
-        tip:'srcset | 设置图片类头像响应式资源地址'
+        label:"图片资源地址",
+        tip:"srcset | 设置图片类头像响应式资源地址"
       },
-      propType:'string',
-      setter:'StringSetter'
+      propType:"string",
+      setter:"StringSetter"
     },
     {
-      name: 'gap',
+      name: "gap",
       title: {
-        label: '文字边距',
-        tip: 'gap|字符类型距离左右两侧边界单位像素',
+        label: "文字边距",
+        tip: "gap|字符类型距离左右两侧边界单位像素",
       },
-      propType:'number',
-      setter: 'NumberSetter',
+      propType:"number",
+      setter: "NumberSetter",
       defaultValue: 4,
     },
     {
-      name: 'draggable',
-      title: { label: '拖动', tip: 'draggable|图片是否允许拖动' },
-      propType:'bool',
-      setter: 'BoolSetter'
+      name: "draggable",
+      title: { label: "拖动", tip: "draggable|图片是否允许拖动" },
+      propType:"bool",
+      setter: "BoolSetter"
     }
   ],
   configure: {
@@ -133,21 +133,21 @@ const meta={
       style: true,
       events: [
         {
-          name: 'loadError',
-          template: "loadError(${extParams}){\n// 图片加载失败的事件\nconsole.log('loadError');}",
+          name: "loadError",
+          template: "loadError(${extParams}){\n// 图片加载失败的事件\nconsole.log(\"loadError\");}",
         },
       ],
     }
   },
   snippets: [
     {
-      title: '头像',
+      title: "头像",
       screenshot: avatarImg,
       schema: {
-        componentName: 'AAvatar',
+        componentName: "AAvatar",
         props: {
-          src: 'https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',
-          size: 'default'
+          src: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",
+          size: "default"
         },
       },
     },

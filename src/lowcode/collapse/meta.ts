@@ -1,82 +1,82 @@
-import {uuid} from '../../utils/index';
+import {uuid} from "../../utils/index";
 
 export default {
-  group: 'ant-vue组件',
-  componentName:'ACollapse',
-  title: '折叠面板',
-  category: '数据展示',
+  group: "ant-vue组件",
+  componentName:"ACollapse",
+  title: "折叠面板",
+  category: "数据展示",
   npm: {
     destructuring: true,
-    componentName: 'ACollapse'
+    componentName: "ACollapse"
   },
   props:[
     {
-      name: 'bordered',
-      title: { label: '显示边框', tip: 'bordered|带边框风格的折叠面板' },
-      propType: 'bool',
+      name: "bordered",
+      title: { label: "显示边框", tip: "bordered|带边框风格的折叠面板" },
+      propType: "bool",
       defaultValue: true,
-      setter: 'BoolSetter',
+      setter: "BoolSetter",
       supportVariable: true
     },
     {
-      name: 'accordion',
-      title: { label: '手风琴模式', tip: 'accordion|手风琴模式' },
-      propType: 'bool',
+      name: "accordion",
+      title: { label: "手风琴模式", tip: "accordion|手风琴模式" },
+      propType: "bool",
       defaultValue: false,
-      setter: 'BoolSetter',
+      setter: "BoolSetter",
       supportVariable: true
     },
     {
-      name: 'collapsible',
-      title: {label:'可折叠触发区域',tip:'collapsible|可折叠触发区域'},
+      name: "collapsible",
+      title: {label:"可折叠触发区域",tip:"collapsible|可折叠触发区域"},
       propType: {
-        type: 'oneOf',
-        value: ['-', 'header', 'disabled'],
+        type: "oneOf",
+        value: ["-", "header", "disabled"],
       },
     },
     {
-      name: 'expandIconPosition',
-      title: { label: '图标位置', tip: 'expandIconPosition|设置图标位置' },
-      propType: { type: 'oneOf', value: ['left', 'right'] },
+      name: "expandIconPosition",
+      title: { label: "图标位置", tip: "expandIconPosition|设置图标位置" },
+      propType: { type: "oneOf", value: ["left", "right"] },
     },
     {
-      name: 'destroyInactivePanel',
-      title: { label: '隐藏时销毁', tip: 'destroyInactivePanel|销毁折叠隐藏的面板' },
-      propType: 'bool',
+      name: "destroyInactivePanel",
+      title: { label: "隐藏时销毁", tip: "destroyInactivePanel|销毁折叠隐藏的面板" },
+      propType: "bool",
       defaultValue: false,
-      setter: 'BoolSetter',
+      setter: "BoolSetter",
       supportVariable: true
     },
     {
-      name: 'ghost',
-      title: { label: '透明无边框', tip: 'ghost|使折叠面板透明且无边框' },
-      propType: 'bool',
+      name: "ghost",
+      title: { label: "透明无边框", tip: "ghost|使折叠面板透明且无边框" },
+      propType: "bool",
       defaultValue: false,
-      setter: 'BoolSetter',
+      setter: "BoolSetter",
       supportVariable: true
     },
     {
-      name: 'collapses',
-      title: {label:'折叠项',tip:'collapses'},
+      name: "collapses",
+      title: {label:"折叠项",tip:"collapses"},
       setter: {
-        componentName: 'ArraySetter',
+        componentName: "ArraySetter",
         props: {
           itemSetter: {
-            componentName: 'ObjectSetter',
+            componentName: "ObjectSetter",
             props: {
               config: {
                 items: [
                   {
-                    name: 'key',
-                    title: 'key',
-                    setter: 'StringSetter',
+                    name: "key",
+                    title: "key",
+                    setter: "StringSetter",
                     initialValue: (val: any) => val || uuid()
                   },
                   {
-                    name: 'header',
-                    title: '面板头内容',
-                    setter: 'StringSetter',
-                    initialValue: '折叠项'
+                    name: "header",
+                    title: "面板头内容",
+                    setter: "StringSetter",
+                    initialValue: "折叠项"
                   },
                 ],
               },
@@ -84,7 +84,7 @@ export default {
             initialValue: () => {
               return {
                 key: uuid(),
-                header: '折叠项',
+                header: "折叠项",
                 showArrow: true,
                 collapsible: undefined,
                 forceRender: false,
@@ -95,15 +95,15 @@ export default {
       },
       extraProps: {
         getValue(target: { node: { children: any[]; }; }) {
-          console.log('getValue', target.node.children.length);
+          console.log("getValue", target.node.children.length);
           const map = target.node.children.map((child) => {
-            const key = child.getPropValue('key') ? String(child.getPropValue('key')) : child.id;
+            const key = child.getPropValue("key") ? String(child.getPropValue("key")) : child.id;
             return {
               key,
-              header: child.getPropValue('header'),
-              showArrow: child.getPropValue('showArrow'),
-              collapsible: child.getPropValue('collapsible'),
-              forceRender: child.getPropValue('forceRender'),
+              header: child.getPropValue("header"),
+              showArrow: child.getPropValue("showArrow"),
+              collapsible: child.getPropValue("collapsible"),
+              forceRender: child.getPropValue("forceRender"),
             };
           });
           return map;
@@ -112,7 +112,7 @@ export default {
           const { node } = target;
           const map = {};
 
-          // console.log('setValue',value);
+          // console.log("setValue",value);
 
           if (!Array.isArray(value)) {
             value = [];
@@ -125,16 +125,16 @@ export default {
 
           node.children.mergeChildren(
             (child: { getPropValue: (arg0: string) => any; setPropValue: (arg0: string, arg1: any) => void; }) => {
-              const key = String(child.getPropValue('key'));
+              const key = String(child.getPropValue("key"));
               if (Object.hasOwnProperty.call(map, key)) {
                 // @ts-ignore
-                child.setPropValue('header', map[key].header);
+                child.setPropValue("header", map[key].header);
                 // @ts-ignore
-                child.setPropValue('showArrow', map[key].showArrow);
+                child.setPropValue("showArrow", map[key].showArrow);
                 // @ts-ignore
-                child.setPropValue('collapsible', map[key].collapsible);
+                child.setPropValue("collapsible", map[key].collapsible);
                 // @ts-ignore
-                child.setPropValue('forceRender', map[key].forceRender);
+                child.setPropValue("forceRender", map[key].forceRender);
                 // @ts-ignore
                 delete map[key];
                 return false;
@@ -146,7 +146,7 @@ export default {
               for (const key in map) {
                 if (Object.hasOwnProperty.call(map, key)) {
                   items.push({
-                    componentName: 'ACollapsePanel',
+                    componentName: "ACollapsePanel",
                     // @ts-ignore
                     props: map[key],
                   });
@@ -156,10 +156,10 @@ export default {
             },
             (child1: { getPropValue: (arg0: string) => any; }, child2: { getPropValue: (arg0: string) => any; }) => {
               const a = value.findIndex(
-                (item: { key: any; }) => String(item.key) === String(child1.getPropValue('key')),
+                (item: { key: any; }) => String(item.key) === String(child1.getPropValue("key")),
               );
               const b = value.findIndex(
-                (item) => String(item.key) === String(child2.getPropValue('key')),
+                (item) => String(item.key) === String(child2.getPropValue("key")),
               );
               return a - b;
             },
@@ -168,31 +168,31 @@ export default {
       },
     },
     {
-      name: 'defaultActiveKey',
-      title: { label: '初始化选中面板的 key', tip: 'defaultActiveKey|初始化选中面板的 key' },
+      name: "defaultActiveKey",
+      title: { label: "初始化选中面板的 key", tip: "defaultActiveKey|初始化选中面板的 key" },
       propType: {
-        type: 'oneOfType',
+        type: "oneOfType",
         value: [
-          'string',
-          { type: 'arrayOf', value: 'string' },
-          'number',
-          { type: 'arrayOf', value: 'number' },
+          "string",
+          { type: "arrayOf", value: "string" },
+          "number",
+          { type: "arrayOf", value: "number" },
         ],
       },
     },
     {
-      name: 'activeKey',
+      name: "activeKey",
       title: {
-        label: '当前激活 tab 面板的 key',
-        tip: 'activeKey|当前激活 tab 面板的 key',
+        label: "当前激活 tab 面板的 key",
+        tip: "activeKey|当前激活 tab 面板的 key",
       },
       propType: {
-        type: 'oneOfType',
+        type: "oneOfType",
         value: [
-          'string',
-          { type: 'arrayOf', value: 'string' },
-          'number',
-          { type: 'arrayOf', value: 'number' },
+          "string",
+          { type: "arrayOf", value: "string" },
+          "number",
+          { type: "arrayOf", value: "number" },
         ],
       },
     }
@@ -206,8 +206,8 @@ export default {
     },
     events:[
       {
-        name: 'onChange ',
-        template: "onChange (key,${extParams}){\n// 切换面板的回调\nconsole.log('onChange ',key);}",
+        name: "onChange ",
+        template: "onChange (key,${extParams}){\n// 切换面板的回调\nconsole.log(\"onChange \",key);}",
       }
     ]
   },
@@ -218,21 +218,21 @@ export default {
       schema:{
         componentName:"ACollapse",
         props:{
-          defaultActiveKey: ['collapse-item-1']
+          defaultActiveKey: ["collapse-item-1"]
         },
         children: [
           {
-            componentName: 'ACollapsePanel',
+            componentName: "ACollapsePanel",
             props: {
-              header: '折叠项1',
-              key: 'collapse-item-1',
+              header: "折叠项1",
+              key: "collapse-item-1",
             },
           },
           {
-            componentName: 'ACollapsePanel',
+            componentName: "ACollapsePanel",
             props: {
-              header: '折叠项2',
-              key: 'collapse-item-2',
+              header: "折叠项2",
+              key: "collapse-item-2",
             }
           }
         ]

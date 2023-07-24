@@ -1,60 +1,60 @@
 // @ts-ignore
-import avatarImg from './__screenshots__/calendar-1.jpg?inline';
+import avatarImg from "./__screenshots__/calendar-1.jpg?inline";
 export default {
-  group: 'ant-vue组件',
-  componentName: 'ACalendar',
-  title: '日历',
-  category: '数据展示',
+  group: "ant-vue组件",
+  componentName: "ACalendar",
+  title: "日历",
+  category: "数据展示",
   npm: {
     destructuring: true,
-    componentName: 'ACalendar'
+    componentName: "ACalendar"
   },
   props:[
     {
-      name: 'defaultValue',
-      title: { label: '默认值', tip: 'defaultValue|默认展示的日期' },
-      propType: 'date',
-      setter: 'DateSetter',
+      name: "defaultValue",
+      title: { label: "默认值", tip: "defaultValue|默认展示的日期" },
+      propType: "date",
+      setter: "DateSetter",
     },
     {
-      name: 'disabledDate',
-      title: { label: '不可选日期', tip: 'disabledDate|不可选择的日期' },
-      propType: 'func',
+      name: "disabledDate",
+      title: { label: "不可选日期", tip: "disabledDate|不可选择的日期" },
+      propType: "func",
     },
     {
-      name: 'dateCellRender',
+      name: "dateCellRender",
       title: {
-        label: '自定义日期追加渲染',
-        tip: 'dateCellRender|自定义渲染日期单元格，返回内容会被追加到单元格',
+        label: "自定义日期追加渲染",
+        tip: "dateCellRender|自定义渲染日期单元格，返回内容会被追加到单元格",
       },
-      propType: 'func',
+      propType: "func",
     },
     {
-      name: 'dateFullCellRender',
+      name: "dateFullCellRender",
       title: {
-        label: '自定义渲染日期单元格，返回内容覆盖单元格',
-        tip: 'dateFullCellRender|自定义渲染日期单元格，返回内容覆盖单元格',
+        label: "自定义渲染日期单元格，返回内容覆盖单元格",
+        tip: "dateFullCellRender|自定义渲染日期单元格，返回内容覆盖单元格",
       },
-      propType: 'func',
+      propType: "func",
     },
     {
-      name: 'fullscreen',
-      title: { label: '全屏显示', tip: 'fullscreen|是否全屏显示' },
-      propType: 'bool',
+      name: "fullscreen",
+      title: { label: "全屏显示", tip: "fullscreen|是否全屏显示" },
+      propType: "bool",
       defaultValue: true,
     },
     {
-      name: 'mode',
-      title: { label: '初始模式', tip: 'mode|初始模式' },
-      propType: { type: 'oneOf', value: ['month', 'year'] },
-      defaultValue: 'month',
+      name: "mode",
+      title: { label: "初始模式", tip: "mode|初始模式" },
+      propType: { type: "oneOf", value: ["month", "year"] },
+      defaultValue: "month",
     },
     {
-      name:'valueFormat',
-      title:{label:'格式',tip:"valueFormat|绑定值的格式"},
-      propType: 'string',
-      defaultValue: 'YYYY-MM-DD',
-      setter: 'StringSetter',
+      name:"valueFormat",
+      title:{label:"格式",tip:"valueFormat|绑定值的格式"},
+      propType: "string",
+      defaultValue: "YYYY-MM-DD",
+      setter: "StringSetter",
     }
 
 
@@ -64,26 +64,26 @@ export default {
       style: true,
       events: [
         {
-          name: 'onPanelChange',
+          name: "onPanelChange",
           template:
-            "onPanelChange(date,mode,${extParams}){\n// 日期面板变化回调\nconsole.log('onPanelChange', date, mode);}",
+            "onPanelChange(date,mode,${extParams}){\n// 日期面板变化回调\nconsole.log(\"onPanelChange\", date, mode);}",
         },
         {
-          name: 'onSelect',
+          name: "onSelect",
           template:
-            "onSelect(date,${extParams}){\n// 点击选择日期回调\nconsole.log('onSelect', date);}",
+            "onSelect(date,${extParams}){\n// 点击选择日期回调\nconsole.log(\"onSelect\", date);}",
         },
         {
-          name: 'onChange',
+          name: "onChange",
           template:
-            "onChange (date,${extParams}){\n// 日期变化回调\nconsole.log('onChange', date);}",
+            "onChange (date,${extParams}){\n// 日期变化回调\nconsole.log(\"onChange\", date);}",
         },
       ],
     }
   },
   snippets:[
     {
-      title:'日历',
+      title:"日历",
       screenshot:avatarImg,
       schema:{
         componentName:"ACalendar",

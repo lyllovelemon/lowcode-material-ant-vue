@@ -1,112 +1,112 @@
 /* eslint-disable */
 // @ts-ignore
-import avatarImg from './__screenshots__/input-password-1.png?inline';
+import avatarImg from "./__screenshots__/input-password-1.png?inline";
 export default{
-  group: 'ant-vue组件',
-  componentName: 'AInputPassword',
-  title: '密码框',
-  category: '表单',
+  group: "ant-vue组件",
+  componentName: "AInputPassword",
+  title: "密码框",
+  category: "表单",
   npm: {
     destructuring: true,
-    componentName: 'AInputPassword'
+    componentName: "AInputPassword"
   },
   props:[
     {
-      name: 'defaultValue',
-      title: { label: '默认值', tip: 'defaultValue | 默认内容' },
-      propType: 'string',
-      setter: 'StringSetter'
+      name: "defaultValue",
+      title: { label: "默认值", tip: "defaultValue | 默认内容" },
+      propType: "string",
+      setter: "StringSetter"
     },
     {
-      name:'value',
-      title:{label:'当前值',tip:'value | 当前值'},
-      propType: 'string',
-      setter: 'StringSetter'
+      name:"value",
+      title:{label:"当前值",tip:"value | 当前值"},
+      propType: "string",
+      setter: "StringSetter"
     },
     {
-      name: 'allowClear',
-      title: { label: '支持清除', tip: 'allowClear | 是否允许清除' },
-      propType: 'bool',
-      setter: 'BoolSetter',
+      name: "allowClear",
+      title: { label: "支持清除", tip: "allowClear | 是否允许清除" },
+      propType: "bool",
+      setter: "BoolSetter",
     },
     {
-      name: 'bordered',
-      title: { label: '显示边框', tip: 'bordered | 是否有边框' },
-      propType: 'bool',
+      name: "bordered",
+      title: { label: "显示边框", tip: "bordered | 是否有边框" },
+      propType: "bool",
       defaultValue: true,
-      setter: 'BoolSetter'
+      setter: "BoolSetter"
     },
     {
-      name: 'disabled',
-      title: { label: '是否禁用', tip: 'disabled | 是否为禁用状态' },
-      propType: 'bool',
+      name: "disabled",
+      title: { label: "是否禁用", tip: "disabled | 是否为禁用状态" },
+      propType: "bool",
       defaultValue: false,
-      setter: 'BoolSetter'
+      setter: "BoolSetter"
     },
     {
-      name: 'visibilityToggle',
-      title: { label: '切换按钮', tip: 'visibilityToggle | 是否显示切换按钮' },
-      propType: 'bool',
+      name: "visibilityToggle",
+      title: { label: "切换按钮", tip: "visibilityToggle | 是否显示切换按钮" },
+      propType: "bool",
       defaultValue: true,
-      setter: 'BoolSetter'
+      setter: "BoolSetter"
     },
     {
-      name: 'placeholder',
-      title: { label: '占位提示', tip: 'placeholder | 占位提示' },
-      propType: 'string',
-      defaultValue: '请输入',
-      setter: 'StringSetter'
+      name: "placeholder",
+      title: { label: "占位提示", tip: "placeholder | 占位提示" },
+      propType: "string",
+      defaultValue: "请输入",
+      setter: "StringSetter"
     },
     {
-      name: 'maxLength',
-      title: { label: '最大长度', tip: 'maxLength | 最大长度' },
-      propType: 'number',
-      setter: 'NumberSetter'
+      name: "maxLength",
+      title: { label: "最大长度", tip: "maxLength | 最大长度" },
+      propType: "number",
+      setter: "NumberSetter"
     },
     {
-      name: 'size',
-      title: { label: '尺寸', tip: 'size | 密码框尺寸' },
-      propType: { type: 'oneOf', value: ['large', 'default', 'small'] },
+      name: "size",
+      title: { label: "尺寸", tip: "size | 密码框尺寸" },
+      propType: { type: "oneOf", value: ["large", "default", "small"] },
       setter: {
-        componentName: 'RadioGroupSetter',
+        componentName: "RadioGroupSetter",
         props: {
           options: [
             {
-              title: '大',
-              value: 'large',
+              title: "大",
+              value: "large",
             },
             {
-              title: '中',
-              value: 'middle',
+              title: "中",
+              value: "middle",
             },
             {
-              title: '小',
-              value: 'small',
+              title: "小",
+              value: "small",
             },
           ],
         },
       },
-      defaultValue: 'default',
+      defaultValue: "default",
     },
     {
-      name: 'addonAfter',
-      title: { label: '后置标签', tip: 'addonAfter | 后置标签' },
-      propType: { type: 'oneOfType', value: ['string', 'node'] },
+      name: "addonAfter",
+      title: { label: "后置标签", tip: "addonAfter | 后置标签" },
+      propType: { type: "oneOfType", value: ["string", "node"] },
     },
     {
-      name: 'addonBefore',
-      title: { label: '前置标签', tip: 'addonBefore | 前置标签' },
-      propType: { type: 'oneOfType', value: ['string', 'node'] },
+      name: "addonBefore",
+      title: { label: "前置标签", tip: "addonBefore | 前置标签" },
+      propType: { type: "oneOfType", value: ["string", "node"] },
     },
     {
-      name: 'onChange',
-      title: { label: '输入框内容变化时的回调', tip: 'onChange | 输入框内容变化时的回调' },
-      propType: 'func',
+      name: "onChange",
+      title: { label: "输入框内容变化时的回调", tip: "onChange | 输入框内容变化时的回调" },
+      propType: "func",
     },
     {
-      name: 'onPressEnter',
-      title: { label: '按下回车的回调', tip: 'onPressEnter | 按下回车的回调' },
-      propType: 'func',
+      name: "onPressEnter",
+      title: { label: "按下回车的回调", tip: "onPressEnter | 按下回车的回调" },
+      propType: "func",
     },
   ],
   configure:{
@@ -117,24 +117,24 @@ export default{
       style:true,
       events:[
         {
-          name: 'onChange',
+          name: "onChange",
           template:
-            "onChange(event,${extParams}){\n// 输入框内容变化时的回调\nconsole.log('onChange',event);}",
+            "onChange(event,${extParams}){\n// 输入框内容变化时的回调\nconsole.log(\"onChange\",event);}",
         },
         {
-          name: 'onPressEnter',
+          name: "onPressEnter",
           template:
-            "onPressEnter(event,${extParams}){\n// 按下回车的回调\nconsole.log('onPressEnter',event);}",
+            "onPressEnter(event,${extParams}){\n// 按下回车的回调\nconsole.log(\"onPressEnter\",event);}",
         },
       ]
     }
   },
   snippets:[
     {
-      title:'密码框',
+      title:"密码框",
       screenshot: avatarImg,
       schema:{
-        componentName:'AInputPassword',
+        componentName:"AInputPassword",
         props:{}
       }
     }

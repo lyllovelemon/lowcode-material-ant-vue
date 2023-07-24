@@ -1,218 +1,218 @@
 // @ts-ignore
-import Drawer1 from './__screenshots__/drawer-1.png?inline';
+import Drawer1 from "./__screenshots__/drawer-1.png?inline";
 // @ts-ignore
-import Drawer2 from './__screenshots__/drawer-2.png?inline';
+import Drawer2 from "./__screenshots__/drawer-2.png?inline";
 export default {
-  group: 'ant-vue组件',
-  componentName:'ADrawer',
-  title: '抽屉',
-  category: '反馈',
+  group: "ant-vue组件",
+  componentName:"ADrawer",
+  title: "抽屉",
+  category: "反馈",
   npm: {
     destructuring: true,
-    componentName: 'ADrawer'
+    componentName: "ADrawer"
   },
   props:[
     {
-      title: '基础',
-      display: 'block',
-      type: 'group',
+      title: "基础",
+      display: "block",
+      type: "group",
       items: [
         {
-          name: 'visible',
-          title: { label: '是否可见', tip: 'visible | Drawer 是否可见' },
-          propType: 'bool',
-          setter: 'BoolSetter',
+          name: "visible",
+          title: { label: "是否可见", tip: "visible | Drawer 是否可见" },
+          propType: "bool",
+          setter: "BoolSetter",
         },
         {
-          name: 'title',
-          title: { label: '标题', tip: 'title | 标题' },
-          propType: { type: 'oneOfType', value: ['string', 'node'] },
+          name: "title",
+          title: { label: "标题", tip: "title | 标题" },
+          propType: { type: "oneOfType", value: ["string", "node"] },
           setter: [
-            'StringSetter',
+            "StringSetter",
             {
-              componentName: 'SlotSetter',
-              title: '标题插槽',
+              componentName: "SlotSetter",
+              title: "标题插槽",
               initialValue: {
-                type: 'JSSlot',
+                type: "JSSlot",
                 value: [],
               },
             },
-            'VariableSetter',
+            "VariableSetter",
           ],
         },
       ],
     },
     {
-      title: '外观',
-      display: 'block',
-      type: 'group',
+      title: "外观",
+      display: "block",
+      type: "group",
       items: [
         {
-          name: 'placement',
-          title: { label: '位置', tip: 'placement | 抽屉的显示位置' },
+          name: "placement",
+          title: { label: "位置", tip: "placement | 抽屉的显示位置" },
           propType: {
-            type: 'oneOf',
-            value: ['top', 'right', 'bottom', 'left'],
+            type: "oneOf",
+            value: ["top", "right", "bottom", "left"],
           },
-          defaultValue: 'right',
+          defaultValue: "right",
           setter: {
-            componentName: 'SelectSetter',
+            componentName: "SelectSetter",
             props: {
               options: [
                 {
-                  title: '上方',
-                  value: 'top',
+                  title: "上方",
+                  value: "top",
                 },
                 {
-                  title: '右侧',
-                  value: 'right',
+                  title: "右侧",
+                  value: "right",
                 },
                 {
-                  title: '下方',
-                  value: 'bottom',
+                  title: "下方",
+                  value: "bottom",
                 },
                 {
-                  title: '左侧',
-                  value: 'left',
+                  title: "左侧",
+                  value: "left",
                 },
               ],
             },
           },
         },
         {
-          name: 'size',
-          title: { label: '大小', tip: 'size | 抽屉的大小' },
-          propType: { type: 'oneOf', value: ['default', 'large'] },
-          defaultValue: 'default',
+          name: "size",
+          title: { label: "大小", tip: "size | 抽屉的大小" },
+          propType: { type: "oneOf", value: ["default", "large"] },
+          defaultValue: "default",
           setter: {
-            componentName: 'RadioGroupSetter',
+            componentName: "RadioGroupSetter",
             props: {
               options: [
                 {
-                  title: '默认',
-                  value: 'default',
+                  title: "默认",
+                  value: "default",
                 },
                 {
-                  title: '超大',
-                  value: 'large',
+                  title: "超大",
+                  value: "large",
                 },
               ],
             },
           },
         },
         {
-          name: 'width',
-          title: { label: '宽度', tip: 'width | 宽度' },
-          propType: { type: 'oneOfType', value: ['string', 'number'] },
-          setter: ['StringSetter', 'NumberSetter', 'VariableSetter'],
+          name: "width",
+          title: { label: "宽度", tip: "width | 宽度" },
+          propType: { type: "oneOfType", value: ["string", "number"] },
+          setter: ["StringSetter", "NumberSetter", "VariableSetter"],
         },
         {
-          name: 'height',
+          name: "height",
           title: {
-            label: '高度',
-            tip: 'height | 高度, 在 placement 为 top 或 bottom 时使用',
+            label: "高度",
+            tip: "height | 高度, 在 placement 为 top 或 bottom 时使用",
           },
-          propType: { type: 'oneOfType', value: ['string', 'number'] },
-          setter: ['StringSetter', 'NumberSetter', 'VariableSetter'],
+          propType: { type: "oneOfType", value: ["string", "number"] },
+          setter: ["StringSetter", "NumberSetter", "VariableSetter"],
         },
         {
-          name: 'zIndex',
-          title: { label: 'z-index', tip: 'zIndex|设置 Drawer 的 `z-index`' },
-          propType: 'number',
-          setter: 'NumberSetter',
+          name: "zIndex",
+          title: { label: "z-index", tip: "zIndex|设置 Drawer 的 `z-index`" },
+          propType: "number",
+          setter: "NumberSetter",
         },
       ],
     },
     {
-      title: '功能',
-      display: 'block',
-      type: 'group',
+      title: "功能",
+      display: "block",
+      type: "group",
       items: [
         {
-          name: 'mask',
-          title: { label: '显示遮罩', tip: 'mask | 是否显示遮罩' },
-          propType: 'bool',
+          name: "mask",
+          title: { label: "显示遮罩", tip: "mask | 是否显示遮罩" },
+          propType: "bool",
           defaultValue: true,
-          setter: 'BoolSetter',
+          setter: "BoolSetter",
         },
         {
-          name: 'maskClosable',
+          name: "maskClosable",
           title: {
-            label: '点击遮罩关闭',
-            tip: 'maskClosable | 点击遮罩是否关闭抽屉',
+            label: "点击遮罩关闭",
+            tip: "maskClosable | 点击遮罩是否关闭抽屉",
           },
-          propType: 'bool',
+          propType: "bool",
           defaultValue: true,
-          setter: 'BoolSetter',
+          setter: "BoolSetter",
         },
         {
-          name: 'autoFocus',
+          name: "autoFocus",
           title: {
-            label: '自动获得焦点',
-            tip: 'autoFocus | 抽屉展开后是否将焦点切换至其 Dom 节点',
+            label: "自动获得焦点",
+            tip: "autoFocus | 抽屉展开后是否将焦点切换至其 Dom 节点",
           },
-          propType: 'bool',
+          propType: "bool",
           defaultValue: true,
-          setter: 'BoolSetter',
+          setter: "BoolSetter",
         },
         {
-          name: 'keyboard',
+          name: "keyboard",
           title: {
-            label: '键盘Esc关闭',
-            tip: 'keyboard | 是否支持键盘按 Esc 关闭',
+            label: "键盘Esc关闭",
+            tip: "keyboard | 是否支持键盘按 Esc 关闭",
           },
-          propType: 'bool',
+          propType: "bool",
           defaultValue: true,
-          setter: 'BoolSetter',
+          setter: "BoolSetter",
         },
         {
-          name: 'destroyOnClose',
+          name: "destroyOnClose",
           title: {
-            label: '关闭时销毁',
-            tip: 'destroyOnClose | 关闭时销毁 Drawer 里的子元素',
+            label: "关闭时销毁",
+            tip: "destroyOnClose | 关闭时销毁 Drawer 里的子元素",
           },
-          propType: 'bool',
+          propType: "bool",
           defaultValue: false,
-          setter: 'BoolSetter',
+          setter: "BoolSetter",
         },
         {
-          name: 'closable',
+          name: "closable",
           title: {
-            label: '关闭按钮',
-            tip: 'closable | 是否显示左上角的关闭按钮',
+            label: "关闭按钮",
+            tip: "closable | 是否显示左上角的关闭按钮",
           },
-          propType: 'bool',
+          propType: "bool",
           defaultValue: true,
-          setter: 'BoolSetter',
+          setter: "BoolSetter",
         },
         {
-          name: 'forceRender',
-          title: { label: '预渲染', tip: 'forceRender | 预渲染 Drawer 内元素' },
-          propType: 'bool',
+          name: "forceRender",
+          title: { label: "预渲染", tip: "forceRender | 预渲染 Drawer 内元素" },
+          propType: "bool",
           defaultValue: false,
-          setter: 'BoolSetter',
+          setter: "BoolSetter",
         },
       ],
     },
     {
-      title: '插槽扩展',
-      display: 'block',
-      type: 'group',
+      title: "插槽扩展",
+      display: "block",
+      type: "group",
       items: [
         {
-          name: 'closeIcon',
-          title: { label: '关闭图标', tip: 'closeIcon | 自定义关闭图标' },
-          propType: 'node',
+          name: "closeIcon",
+          title: { label: "关闭图标", tip: "closeIcon | 自定义关闭图标" },
+          propType: "node",
           setter: {
-            componentName: 'SlotSetter',
-            title: '关闭图标插槽',
+            componentName: "SlotSetter",
+            title: "关闭图标插槽",
             initialValue: {
-              type: 'JSSlot',
+              type: "JSSlot",
               value: [
                 {
-                  componentName: 'AIcon',
+                  componentName: "AIcon",
                   props: {
-                    type: 'CloseOutlined',
+                    type: "CloseOutlined",
                     size: 16
                   },
                 },
@@ -221,27 +221,27 @@ export default {
           },
         },
         {
-          name: 'extra',
-          title: { label: '操作区域', tip: 'extra | 抽屉右上角的操作区域' },
-          propType: 'node',
+          name: "extra",
+          title: { label: "操作区域", tip: "extra | 抽屉右上角的操作区域" },
+          propType: "node",
           setter: {
-            componentName: 'SlotSetter',
-            title: '操作区域插槽',
+            componentName: "SlotSetter",
+            title: "操作区域插槽",
             initialValue: {
-              type: 'JSSlot',
+              type: "JSSlot",
               value: [],
             },
           },
         },
         {
-          name: 'footer',
-          title: { label: '抽屉的页脚', tip: 'footer | 抽屉的页脚' },
-          propType: 'node',
+          name: "footer",
+          title: { label: "抽屉的页脚", tip: "footer | 抽屉的页脚" },
+          propType: "node",
           setter: {
-            componentName: 'SlotSetter',
-            title: '抽屉页脚插槽',
+            componentName: "SlotSetter",
+            title: "抽屉页脚插槽",
             initialValue: {
-              type: 'JSSlot',
+              type: "JSSlot",
               value: [],
             },
           },
@@ -249,138 +249,138 @@ export default {
       ],
     },
     {
-      title: '其它',
-      display: 'block',
-      type: 'group',
+      title: "其它",
+      display: "block",
+      type: "group",
       items: [
         {
-          name: 'class',
-          title: { label: '容器类名', tip: 'class | 对话框外层容器的类名' },
-          propType: 'string',
-          setter: 'StringSetter',
+          name: "class",
+          title: { label: "容器类名", tip: "class | 对话框外层容器的类名" },
+          propType: "string",
+          setter: "StringSetter",
         },
         {
-          name: 'drawerStyle',
-          title: '弹出层样式',
-          type: 'group',
+          name: "drawerStyle",
+          title: "弹出层样式",
+          type: "group",
           extraProps: {
-            display: 'entry',
+            display: "entry",
           },
           items: [
             {
-              name: 'drawerStyle',
+              name: "drawerStyle",
               title: {
-                label: '样式设置',
-                tip: 'drawerStyle | 用于设置 Drawer 弹出层的样式',
+                label: "样式设置",
+                tip: "drawerStyle | 用于设置 Drawer 弹出层的样式",
               },
-              setter: 'StyleSetter',
+              setter: "StyleSetter",
               extraProps: {
-                display: 'block',
+                display: "block",
               },
             },
           ],
         },
         {
-          name: 'contentWrapperStyle',
-          title: '包裹层样式',
-          type: 'group',
+          name: "contentWrapperStyle",
+          title: "包裹层样式",
+          type: "group",
           extraProps: {
-            display: 'entry',
+            display: "entry",
           },
           items: [
             {
-              name: 'contentWrapperStyle',
+              name: "contentWrapperStyle",
               title: {
-                label: '样式设置',
-                tip: 'contentWrapperStyle | 可用于设置 Drawer 包裹内容部分的样式',
+                label: "样式设置",
+                tip: "contentWrapperStyle | 可用于设置 Drawer 包裹内容部分的样式",
               },
-              setter: 'StyleSetter',
+              setter: "StyleSetter",
               extraProps: {
-                display: 'block',
+                display: "block",
               },
             },
           ],
         },
         {
-          name: 'headerStyle',
-          title: '头部样式',
-          type: 'group',
+          name: "headerStyle",
+          title: "头部样式",
+          type: "group",
           extraProps: {
-            display: 'entry',
+            display: "entry",
           },
           items: [
             {
-              name: 'headerStyle',
+              name: "headerStyle",
               title: {
-                label: '样式设置',
-                tip: 'headerStyle | 用于设置 Drawer 头部的样式',
+                label: "样式设置",
+                tip: "headerStyle | 用于设置 Drawer 头部的样式",
               },
-              setter: 'StyleSetter',
+              setter: "StyleSetter",
               extraProps: {
-                display: 'block',
+                display: "block",
               },
             },
           ],
         },
         {
-          name: 'bodyStyle',
-          title: '内容样式',
-          type: 'group',
+          name: "bodyStyle",
+          title: "内容样式",
+          type: "group",
           extraProps: {
-            display: 'entry',
+            display: "entry",
           },
           items: [
             {
-              name: 'bodyStyle',
+              name: "bodyStyle",
               title: {
-                label: '样式设置',
-                tip: 'bodyStyle | 可用于设置 Drawer 内容部分的样式',
+                label: "样式设置",
+                tip: "bodyStyle | 可用于设置 Drawer 内容部分的样式",
               },
-              setter: 'StyleSetter',
+              setter: "StyleSetter",
               extraProps: {
-                display: 'block',
+                display: "block",
               },
             },
           ],
         },
         {
-          name: 'footerStyle',
-          title: '页脚样式',
-          type: 'group',
+          name: "footerStyle",
+          title: "页脚样式",
+          type: "group",
           extraProps: {
-            display: 'entry',
+            display: "entry",
           },
           items: [
             {
-              name: 'footerStyle',
+              name: "footerStyle",
               title: {
-                label: '样式设置',
-                tip: 'footerStyle | 抽屉页脚部件的样式',
+                label: "样式设置",
+                tip: "footerStyle | 抽屉页脚部件的样式",
               },
-              setter: 'StyleSetter',
+              setter: "StyleSetter",
               extraProps: {
-                display: 'block',
+                display: "block",
               },
             },
           ],
         },
         {
-          name: 'maskStyle',
-          title: '遮罩样式',
-          type: 'group',
+          name: "maskStyle",
+          title: "遮罩样式",
+          type: "group",
           extraProps: {
-            display: 'entry',
+            display: "entry",
           },
           items: [
             {
-              name: 'maskStyle',
+              name: "maskStyle",
               title: {
-                label: '样式设置',
-                tip: 'maskStyle | 遮罩样式',
+                label: "样式设置",
+                tip: "maskStyle | 遮罩样式",
               },
-              setter: 'StyleSetter',
+              setter: "StyleSetter",
               extraProps: {
-                display: 'block',
+                display: "block",
               },
             },
           ],
@@ -393,62 +393,62 @@ export default {
       isContainer: true,
       isModal: true,
       nestingRule: {
-        parentWhitelist: ['Page', 'Component'],
+        parentWhitelist: ["Page", "Component"],
       },
     },
     supports: {
       style:true,
       events: [
         {
-          name: 'close',
+          name: "close",
           template:
-            "close(event,${extParams}){\n// 点击遮罩层或右上角叉或取消按钮的回调\nconsole.log('close',event);}",
+            "close(event,${extParams}){\n// 点击遮罩层或右上角叉或取消按钮的回调\nconsole.log(\"close\",event);}",
         },
         {
-          name: 'afterVisibleChange',
+          name: "afterVisibleChange",
           template:
-            "afterVisibleChange(open,${extParams}){\n// 切换抽屉时动画结束后的回调\nconsole.log('afterVisibleChange',open);}",
+            "afterVisibleChange(open,${extParams}){\n// 切换抽屉时动画结束后的回调\nconsole.log(\"afterVisibleChange\",open);}",
         },
       ]
     }
   },
   snippets:[
     {
-      title: '侧边抽屉',
+      title: "侧边抽屉",
       screenshot: Drawer1,
       schema: {
-        componentName: 'ADrawer',
+        componentName: "ADrawer",
         props: {
-          title: '基础侧边抽屉',
+          title: "基础侧边抽屉",
           open: true,
           visible:true,
-          placement: 'right',
+          placement: "right",
           destroyOnClose: true,
         },
         children: [
           {
-            componentName: 'ATypographyParagraph',
-            children: 'Some contents...',
+            componentName: "ATypographyParagraph",
+            children: "Some contents...",
           }
         ]
       }
     },
     {
-      title: '底部抽屉',
+      title: "底部抽屉",
       screenshot: Drawer2,
       schema: {
-        componentName: 'ADrawer',
+        componentName: "ADrawer",
         props: {
-          title: '底部抽屉',
+          title: "底部抽屉",
           open: true,
           visible:true,
-          placement: 'bottom',
+          placement: "bottom",
           destroyOnClose: true,
         },
         children: [
           {
-            componentName: 'ATypographyParagraph',
-            children: 'Some contents...',
+            componentName: "ATypographyParagraph",
+            children: "Some contents...",
           }
         ]
       }

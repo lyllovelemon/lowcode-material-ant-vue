@@ -1,14 +1,14 @@
-import {uuid} from '../../utils/index';
+import {uuid} from "../../utils/index";
 
 export const itemsExtraProps = {
   getValue(target: { node: { children: any[]; }; }, fieldValue: any) {
     const map = target.node.children.map((child) => {
-      const key = child.getPropValue('key') ? String(child.getPropValue('key')) : child.id;
+      const key = child.getPropValue("key") ? String(child.getPropValue("key")) : child.id;
       const result = {
         key,
         category: child.componentName,
       };
-      ['children', 'items', 'title'].forEach((propKey) => {
+      ["children", "items", "title"].forEach((propKey) => {
         if (child.getPropValue(propKey)) {
           // @ts-ignore
           result[propKey] = child.getPropValue(propKey);
@@ -32,7 +32,7 @@ export const itemsExtraProps = {
     });
     node.children.mergeChildren(
       (child: { getPropValue: (arg0: string) => any; componentName: string | any[]; setPropValue: (arg0: string, arg1: any) => void; }) => {
-        const key = String(child.getPropValue('key'));
+        const key = String(child.getPropValue("key"));
 
         if (
           Object.hasOwnProperty.call(map, key) &&
@@ -40,12 +40,12 @@ export const itemsExtraProps = {
           child.componentName.includes(map[key].category)
         ) {
           // @ts-ignore
-          if (map[key].category === 'AMenuItem') {
+          if (map[key].category === "AMenuItem") {
             // @ts-ignore
-            child.setPropValue('children', map[key].children);
+            child.setPropValue("children", map[key].children);
           } else {
             // @ts-ignore
-            child.setPropValue('title', map[key].title || map[key].children);
+            child.setPropValue("title", map[key].title || map[key].children);
           }
           // @ts-ignore
           delete map[key];
@@ -60,9 +60,9 @@ export const itemsExtraProps = {
           const itemProps = map[key];
 
           if (Object.hasOwnProperty.call(map, key)) {
-            if (itemProps.category === 'AMenuItem') {
+            if (itemProps.category === "AMenuItem") {
               items.push({
-                componentName: 'AMenuItem',
+                componentName: "AMenuItem",
                 props: {
                   key: itemProps.key,
                   children: itemProps.children,
@@ -70,7 +70,7 @@ export const itemsExtraProps = {
               });
             } else {
               items.push({
-                componentName: 'ASubMenu',
+                componentName: "ASubMenu",
                 props: {
                   key: itemProps.key,
                   title: itemProps.title || itemProps.children,
@@ -80,8 +80,8 @@ export const itemsExtraProps = {
                       : [
                         {
                           key: `item-${uuid()}`,
-                          category: 'AMenuItem',
-                          children: '子菜单名',
+                          category: "AMenuItem",
+                          children: "子菜单名",
                         },
                       ],
                 },
@@ -93,10 +93,10 @@ export const itemsExtraProps = {
       },
       (child1: { getPropValue: (arg0: string) => any; }, child2: { getPropValue: (arg0: string) => any; }) => {
         const a = value.findIndex(
-          (item) => String(item.key) === String(child1.getPropValue('key')),
+          (item) => String(item.key) === String(child1.getPropValue("key")),
         );
         const b = value.findIndex(
-          (item) => String(item.key) === String(child2.getPropValue('key')),
+          (item) => String(item.key) === String(child2.getPropValue("key")),
         );
         return a - b;
       },

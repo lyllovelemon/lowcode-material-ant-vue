@@ -1,31 +1,31 @@
 /* eslint-disable */
 // @ts-ignore
-import avatarImg from './__screenshots__/icon-1.jpg?inline';
+import avatarImg from "./__screenshots__/icon-1.jpg?inline";
 export default {
-  componentName:'Slot',
-  title: '插槽',
-  category: '基础组件',
+  componentName:"Slot",
+  title: "插槽",
+  category: "基础组件",
   npm: {
     destructuring: true,
-    componentName: 'Slot'
+    componentName: "Slot"
   },
   props:[
     {
       name:"__title",
-      title:'title|插槽标题',
-      setter:'StringSetter',
-      defaultValue:'插槽容器'
+      title:"title|插槽标题",
+      setter:"StringSetter",
+      defaultValue:"插槽容器"
     },
     {
       name:"__params",
       title:"params|插槽入参",
       setter:{
-        componentName:'ArraySetter',
+        componentName:"ArraySetter",
         props:{
           itemSetter:{
-            componentName:'StringSetter',
+            componentName:"StringSetter",
             props:{
-              placeholder:'参数名称'
+              placeholder:"参数名称"
             }
           }
         }
@@ -35,7 +35,14 @@ export default {
   configure: {
     component:{
       isContainer:true,
-      disableBehaviors:'*'
+      disableBehaviors:["hide"],
+      actions: {
+        name: "copy", // string;
+        content: "＋", // string | ReactNode | ActionContentObject;
+        items: [], // ComponentAction[];
+        condition: "always", // boolean | ((currentNode: any) => boolean) | "always";
+        important: true, // boolean;
+      },
     },
     supports: false,
     advanced:{
@@ -48,12 +55,12 @@ export default {
   },
   snippets:[
     {
-      title: '插槽',
+      title: "插槽",
       screenshot: avatarImg,
       schema: {
-        componentName: 'Slot',
+        componentName: "Slot",
         props: {
-          type: 'SmileOutlined',
+          type: "SmileOutlined",
           size: 20,
         },
       },

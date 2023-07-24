@@ -1,34 +1,34 @@
 // @ts-ignore
-import avatarImg from './__screenshots__/dropdown-1.png?inline'
+import avatarImg from "./__screenshots__/dropdown-1.png?inline"
 export default {
-  group: 'ant-vue组件',
-  componentName:'ADropdown',
-  title: '下拉菜单',
-  category: '导航',
+  group: "ant-vue组件",
+  componentName:"ADropdown",
+  title: "下拉菜单",
+  category: "导航",
   npm: {
     destructuring: true,
-    componentName: 'ADropdown'
+    componentName: "ADropdown"
   },
   props:[
     {
-      name: 'visible',
-      title: { label: '菜单是否显示', tip: 'visible|菜单是否显示' },
-      propType: { type: 'oneOf', value: [true, false, '-'] },
-      defaultValue: '-',
+      name: "visible",
+      title: { label: "菜单是否显示", tip: "visible|菜单是否显示" },
+      propType: { type: "oneOf", value: [true, false, "-"] },
+      defaultValue: "-",
       setter: {
-        componentName: 'RadioGroupSetter',
+        componentName: "RadioGroupSetter",
         props: {
           options: [
             {
-              title: '默认非受控',
-              value: '-',
+              title: "默认非受控",
+              value: "-",
             },
             {
-              title: '显示',
+              title: "显示",
               value: true,
             },
             {
-              title: '不显示',
+              title: "不显示",
               value: false,
             },
           ],
@@ -37,84 +37,84 @@ export default {
       extraProps: {
         getValue(target: { node: any; }) {
           const { node } = target;
-          let value = node.getPropValue('visible');
+          let value = node.getPropValue("visible");
           if (value === undefined) {
-            value = '-';
+            value = "-";
           }
           return value;
         },
         setValue(target: { node: any; }, value: string) {
           const { node } = target;
-          if (value === '-') {
+          if (value === "-") {
             setTimeout(() => {
-              node.clearPropValue('visible');
+              node.clearPropValue("visible");
             });
           }
         },
       },
     },
     {
-      name: 'arrow',
-      title: { label: '显示下拉箭头', tip: 'arrow|是否显示下拉箭头' },
-      propType: 'bool',
+      name: "arrow",
+      title: { label: "显示下拉箭头", tip: "arrow|是否显示下拉箭头" },
+      propType: "bool",
       defaultValue: false,
     },
     {
-      name: 'disabled',
-      title: { label: '是否禁用', tip: 'disabled|是否为禁用状态' },
-      propType: 'bool',
+      name: "disabled",
+      title: { label: "是否禁用", tip: "disabled|是否为禁用状态" },
+      propType: "bool",
     },
     {
-      name: 'overlay',
-      title: { label: '菜单', tip: 'overlay|菜单' },
-      propType: { type: 'oneOfType', value: ['node', 'func'] },
+      name: "overlay",
+      title: { label: "菜单", tip: "overlay|菜单" },
+      propType: { type: "oneOfType", value: ["node", "func"] },
     },
     {
-      name:'size',
-      title:{ label:'尺寸',tip:'size|按钮大小'},
-      propType:{ type:'oneOf',value:['default','small','large']},
+      name:"size",
+      title:{ label:"尺寸",tip:"size|按钮大小"},
+      propType:{ type:"oneOf",value:["default","small","large"]},
       setter:{
         componentName:"RadioGroupSetter",
         props: {
           options: [
-            { label: 'default', value: 'default' },
-            { label: 'large', value: 'large' },
-            { label: 'small', value: 'small' },
+            { label: "default", value: "default" },
+            { label: "large", value: "large" },
+            { label: "small", value: "small" },
           ],
         }
       },
-      defaultValue:'default'
+      defaultValue:"default"
     },
     {
-      name: 'placement',
+      name: "placement",
       title: {
-        label: '弹出位置',
+        label: "弹出位置",
         tip:
-          'placement|菜单弹出位置：`bottomLeft` `bottomCenter` `bottomRight` `topLeft` `topCenter` `topRight`',
+          "placement|菜单弹出位置：`bottomLeft` `bottomCenter` `bottomRight` `topLeft` `topCenter` `topRight`",
       },
       propType: {
-        type: 'oneOf',
-        value: ['bottomLeft', 'bottomCenter', 'bottomRight', 'topLeft', 'topCenter', 'topRight'],
+        type: "oneOf",
+        value: ["bottomLeft", "bottomCenter", "bottomRight", "topLeft", "topCenter", "topRight"],
       },
     },
     {
-      name: 'trigger',
+      name: "trigger",
       title: {
-        label: '触发下拉的行为',
-        tip: 'trigger|触发下拉的行为, 移动端不支持 hover',
+        label: "触发下拉的行为",
+        tip: "trigger|触发下拉的行为, 移动端不支持 hover",
       },
       propType: {
-        type: 'arrayOf',
-        value: { type: 'oneOf', value: ['click', 'hover', 'contextMenu'] },
+        type: "arrayOf",
+        value: { type: "oneOf", value: ["click", "hover", "contextMenu"] },
       },
     },
     {
-      name: 'onVisibleChange',
+      name: "onVisibleChange",
       title: {
-        label: '显示状态回调',
-        tip: 'onVisibleChange|菜单显示状态改变时调用，参数为 `visible`',
+        label: "显示状态回调",
+        tip: "onVisibleChange|菜单显示状态改变时调用，参数为 `visible`",
       },
-      propType: 'func',
+      propType: "func",
     },
   ],
   configure: {
@@ -123,9 +123,9 @@ export default {
       style:true,
       events: [
         {
-          name: 'visibleChange',
+          name: "visibleChange",
           template:
-            "visibleChange(open,${extParams}){\n// 菜单显示状态改变时调用\nconsole.log('visibleChange',open);}",
+            "visibleChange(open,${extParams}){\n// 菜单显示状态改变时调用\nconsole.log(\"visibleChange\",open);}",
         },
       ]
     }
@@ -138,28 +138,28 @@ export default {
         componentName:"ADropdown",
         props:{
           overlay: {
-            type: 'JSSlot',
+            type: "JSSlot",
             value: [
               {
-                componentName: 'AMenu',
+                componentName: "AMenu",
                 props: {
                   items: [
                     {
-                      key: 'timeLinei5wd',
-                      category: 'Item',
-                      title: '菜单名',
+                      key: "timeLinei5wd",
+                      category: "Item",
+                      title: "菜单名",
                     },
                   ],
                 },
                 children: [
                   {
-                    componentName: 'AMenuItem',
-                    id: 'node_ocky01yzdq3',
+                    componentName: "AMenuItem",
+                    id: "node_ocky01yzdq3",
                     props: {
-                      key: 'timeLinei5we',
-                      category: 'Item',
-                      title: '菜单名',
-                      children: '菜单名',
+                      key: "timeLinei5we",
+                      category: "Item",
+                      title: "菜单名",
+                      children: "菜单名",
                     },
                   },
                 ],
@@ -169,18 +169,18 @@ export default {
         },
         children: [
           {
-            componentName: 'AButton',
+            componentName: "AButton",
             props: {
-              type: 'link',
+              type: "link",
               children: {
-                type: 'JSSlot',
+                type: "JSSlot",
                 value: [
                   {
-                    componentName: 'ATypographyText',
+                    componentName: "ATypographyText",
                     props: {
-                      children: 'Hover me',
+                      children: "Hover me",
                       style: {
-                        color: 'inherit',
+                        color: "inherit",
                       },
                     },
                   }

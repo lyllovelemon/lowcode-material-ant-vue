@@ -1,44 +1,44 @@
 /* eslint-disable */
 // @ts-ignore
-import avatarImg from './__screenshots__/tabs-pane-1.jpg?inline';
+import avatarImg from "./__screenshots__/tabs-pane-1.jpg?inline";
 export default {
-  group: 'ant-vue组件',
-  componentName: 'ATabPane',
-  title: '标签项',
-  category: '数据展示',
+  group: "ant-vue组件",
+  componentName: "ATabPane",
+  title: "标签项",
+  category: "数据展示",
   npm: {
     destructuring: true,
-    componentName: 'ATabPane'
+    componentName: "ATabPane"
   },
   props:[
     {
-      name: 'key',
+      name: "key",
       title: {
-        label: 'key',
-        tip: 'key',
+        label: "key",
+        tip: "key",
       },
-      propType: 'string',
-      setter: 'StringSetter',
+      propType: "string",
+      setter: "StringSetter",
       supportVariable: true
     },
     {
-      name: 'tab',
+      name: "tab",
       title: {
-        label: '标题',
-        tip: 'tab|标题',
+        label: "标题",
+        tip: "tab|标题",
       },
-      propType: 'string',
-      setter: 'StringSetter',
+      propType: "string",
+      setter: "StringSetter",
       supportVariable: true
     },
     {
-      name: 'forceRender',
+      name: "forceRender",
       title: {
-        label: '隐藏时保留',
-        tip: 'forceRender|被隐藏时是否渲染 DOM 结构',
+        label: "隐藏时保留",
+        tip: "forceRender|被隐藏时是否渲染 DOM 结构",
       },
-      propType: 'bool',
-      setter: 'BoolSetter',
+      propType: "bool",
+      setter: "BoolSetter",
       supportVariable: true
     },
   ],
@@ -46,19 +46,19 @@ export default {
     component:{
       isContainer:true,
       nestingRule:{
-        parentWhitelist:['ATabs']
+        parentWhitelist:["ATabs"]
       }
     }
   },
   snippets:[
     {
-      title:'标签项',
+      title:"标签项",
       screenshot: avatarImg,
       schema:{
-        componentName:'ATabPane',
+        componentName:"ATabPane",
         props:{
-          type:'inline',
-          activeKey:'1'
+          type:"inline",
+          activeKey:"1"
         }
       }
     }

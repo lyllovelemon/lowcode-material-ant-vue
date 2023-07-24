@@ -1,425 +1,426 @@
 /* eslint-disable */
 // @ts-ignore
-import avatarImg from './__screenshots__/table-1.png?inline';
+import avatarImg from "./__screenshots__/table-1.png?inline";
+import zhCN from "ant-design-vue/es/locale/zh_CN";
 export default {
-  group: 'ant-vue组件',
-  componentName: 'ATable',
-  title: '表格',
-  category: '数据展示',
+  group: "ant-vue组件",
+  componentName: "ATable",
+  title: "表格",
+  category: "数据展示",
   npm: {
     destructuring: true,
-    componentName: 'ATable'
+    componentName: "ATable"
   },
   props:[
     {
-      title:'数据源',
-      display:'block',
-      type:'group',
+      title:"数据源",
+      display:"block",
+      type:"group",
       items:[
         {
-          name:'dataSource',
-          title:{label:'表格数据',tip:'dataSource | 表格数据'},
-          propType:'object',
-          setter:'JsonSetter',
+          name:"dataSource",
+          title:{label:"表格数据",tip:"dataSource | 表格数据"},
+          propType:"object",
+          setter:"JsonSetter",
           supportVariable:true
         },
         {
-          name:'loading',
-          title:{label:'加载中',tip:'loading | 页面是否在加载中'},
-          propType:'bool',
-          setter:'BoolSetter',
+          name:"loading",
+          title:{label:"加载中",tip:"loading | 页面是否在加载中"},
+          propType:"bool",
+          setter:"BoolSetter",
           defaultValue:false,
           supportVariable:true
         },
         {
-          name: 'rowKey',
+          name: "rowKey",
           title: {
-            label: '行Key',
-            tip: 'rowKey | 表格行 key 的取值，可以是字符串或一个函数',
+            label: "行Key",
+            tip: "rowKey | 表格行 key 的取值，可以是字符串或一个函数",
           },
-          propType: { type: 'oneOfType', value: ['string', 'func'] },
+          propType: { type: "oneOfType", value: ["string", "func"] },
           setter: [
-            'StringSetter',
+            "StringSetter",
             {
-              componentName: 'FunctionSetter',
+              componentName: "FunctionSetter",
               props: {
                 template:
-                  'getRowKey(record,index,${extParams}){\n// 通过函数获取表格行 key\nreturn record.id;\n}',
+                  "getRowKey(record,index,${extParams}){\n// 通过函数获取表格行 key\nreturn record.id;\n}",
               },
             },
-            'VariableSetter',
+            "VariableSetter",
           ],
-          defaultValue: 'id',
+          defaultValue: "id",
         },
         {
-          name: 'columns',
-          title: { label: '表格列', tip: 'columns | 表格列的配置' },
+          name: "columns",
+          title: { label: "表格列", tip: "columns | 表格列的配置" },
           setter: {
-            componentName: 'ArraySetter',
+            componentName: "ArraySetter",
             props: {
               itemSetter: {
-                componentName: 'ObjectSetter',
+                componentName: "ObjectSetter",
                 props: {
                   config: {
                     items: [
                       {
-                        name: 'title',
-                        title: { label: '列标题', tip: 'title | 列头显示文字' },
-                        propType: { type: 'oneOfType', value: ['string', 'func'] },
+                        name: "title",
+                        title: { label: "列标题", tip: "title | 列头显示文字" },
+                        propType: { type: "oneOfType", value: ["string", "func"] },
                         setter: [
-                          'StringSetter',
+                          "StringSetter",
                           {
-                            componentName: 'SlotSetter',
-                            title: '列标题插槽',
+                            componentName: "SlotSetter",
+                            title: "列标题插槽",
                             initialValue: {
-                              type: 'JSSlot',
-                              params: ['options'],
+                              type: "JSSlot",
+                              params: ["options"],
                               value: [],
                             },
                           }
                         ],
                       },
                       {
-                        name: 'dataIndex',
-                        title: { label: '数据字段', tip: 'dataIndex | 数据字段' },
+                        name: "dataIndex",
+                        title: { label: "数据字段", tip: "dataIndex | 数据字段" },
                         propType: {
-                          type:'oneOfType',
-                          value:['string',{type:'arrayOf',value:'string'}]
+                          type:"oneOfType",
+                          value:["string",{type:"arrayOf",value:"string"}]
                         },
-                        setter: ['StringSetter','ArraySetter'],
+                        setter: ["StringSetter","ArraySetter"],
                         isRequired: true,
                       },
                       {
-                        name: 'key',
-                        title: { label: 'key', tip: 'key | Vue 需要的 key,设置了dataIndex可以忽略此属性' },
-                        propType: 'string',
-                        setter: 'StringSetter',
+                        name: "key",
+                        title: { label: "key", tip: "key | Vue 需要的 key,设置了dataIndex可以忽略此属性" },
+                        propType: "string",
+                        setter: "StringSetter",
                       },
                       {
-                        name: 'align',
-                        title: { label: '对齐方式', tip: 'align | 对齐方式' },
+                        name: "align",
+                        title: { label: "对齐方式", tip: "align | 对齐方式" },
                         propType: {
-                          type: 'oneOf',
-                          value: ['left', 'right', 'center'],
+                          type: "oneOf",
+                          value: ["left", "right", "center"],
                         },
-                        defaultValue: 'left',
+                        defaultValue: "left",
                         setter: [
                           {
-                            componentName: 'RadioGroupSetter',
+                            componentName: "RadioGroupSetter",
                             props: {
                               options: [
                                 {
-                                  title: 'left',
-                                  value: 'left',
+                                  title: "left",
+                                  value: "left",
                                 },
                                 {
-                                  title: 'right',
-                                  value: 'right',
+                                  title: "right",
+                                  value: "right",
                                 },
                                 {
-                                  title: 'center',
-                                  value: 'center',
+                                  title: "center",
+                                  value: "center",
                                 },
                               ],
                             },
                           },
-                          'VariableSetter',
+                          "VariableSetter",
                         ],
                       },
                       {
-                        name: 'fixed',
-                        title: { label: '列是否固定', tip: 'fixed | 列是否固定' },
-                        description: '（IE 下无效）列是否固定，可选 true (等效于 left) left right',
-                        defaultValue: '',
+                        name: "fixed",
+                        title: { label: "列是否固定", tip: "fixed | 列是否固定" },
+                        description: "（IE 下无效）列是否固定，可选 true (等效于 left) left right",
+                        defaultValue: "",
                         propType: {
-                          type: 'oneOf',
-                          value: ['', 'left', 'right',true,false],
+                          type: "oneOf",
+                          value: ["", "left", "right",true,false],
                         },
                         setter: [
                           {
-                            componentName: 'RadioGroupSetter',
+                            componentName: "RadioGroupSetter",
                             props: {
                               options: [
                                 {
-                                  title: '不固定',
-                                  value: '',
+                                  title: "不固定",
+                                  value: "",
                                 },
                                 {
-                                  title: '固定在左侧',
-                                  value: 'left',
+                                  title: "固定在左侧",
+                                  value: "left",
                                 },
                                 {
-                                  title: '固定在右侧',
-                                  value: 'right',
+                                  title: "固定在右侧",
+                                  value: "right",
                                 },
                               ],
                             },
                           },
-                          'BoolSetter',
-                          'VariableSetter',
+                          "BoolSetter",
+                          "VariableSetter",
                         ],
                       },
                       {
-                        name: 'width',
-                        title: { label: '宽度', tip: 'width | 列宽度' },
+                        name: "width",
+                        title: { label: "宽度", tip: "width | 列宽度" },
                         propType: {
-                          type: 'oneOfType',
-                          value: ['number', 'string'],
+                          type: "oneOfType",
+                          value: ["number", "string"],
                         },
-                        setter: ['NumberSetter', 'StringSetter', 'VariableSetter'],
+                        setter: ["NumberSetter", "StringSetter", "VariableSetter"],
                       },
                       {
-                        name:'maxWidth',
-                        title:{label:'最大宽度',tip:'maxWidth | 最大宽度'},
-                        propType:'number',
-                        setter:['NumberSetter']
+                        name:"maxWidth",
+                        title:{label:"最大宽度",tip:"maxWidth | 最大宽度"},
+                        propType:"number",
+                        setter:["NumberSetter"]
                       },
                       {
-                        name:'minWidth',
-                        title:{label:'最小宽度',tip:'minWidth | 最小宽度'},
-                        propType:'number',
-                        setter:['NumberSetter']
+                        name:"minWidth",
+                        title:{label:"最小宽度",tip:"minWidth | 最小宽度"},
+                        propType:"number",
+                        setter:["NumberSetter"]
                       },
                       {
-                        name: 'sorter',
+                        name: "sorter",
                         title: {
-                          label: '排序规则',
-                          tip: 'sorter | 排序函数，本地排序使用一个函数，需要服务端排序可设为 true',
+                          label: "排序规则",
+                          tip: "sorter | 排序函数，本地排序使用一个函数，需要服务端排序可设为 true",
                         },
-                        propType: { type: 'oneOfType', value: ['bool', 'func'] },
-                        setter: ['BoolSetter', 'FunctionSetter', 'VariableSetter'],
+                        propType: { type: "oneOfType", value: ["bool", "func"] },
+                        setter: ["BoolSetter", "FunctionSetter", "VariableSetter"],
                       },
                       {
-                        name:'sortDirections',
+                        name:"sortDirections",
                         title:{
-                          label:'排序方式',
-                          tip:'sortDirections | 支持的排序方式'
+                          label:"排序方式",
+                          tip:"sortDirections | 支持的排序方式"
                         },
-                        propType:{ type:'oneOf',value:['','ascend','descend']},
+                        propType:{ type:"oneOf",value:["","ascend","descend"]},
                         setter:{
-                          componentName:'RadioGroupSetter',
+                          componentName:"RadioGroupSetter",
                           props:{
                             options:[
-                              { title:'不排序',value:''},
-                              { title:'升序',value:'ascend'},
-                              { title:'降序',value:'descend'}
+                              { title:"不排序",value:""},
+                              { title:"升序",value:"ascend"},
+                              { title:"降序",value:"descend"}
                             ]
                           }
                         }
                       },
                       {
-                        name:'sortOrder',
+                        name:"sortOrder",
                         title:{
-                          label:'排序受控属性',
-                          tip:'sortOrder | 排序的受控属性，外界可用此控制列的排序'
+                          label:"排序受控属性",
+                          tip:"sortOrder | 排序的受控属性，外界可用此控制列的排序"
                         },
-                        propType:{ type:'oneOf',value:['','ascend','descend']},
+                        propType:{ type:"oneOf",value:["","ascend","descend"]},
                         setter:{
-                          componentName:'RadioGroupSetter',
+                          componentName:"RadioGroupSetter",
                           props:{
                             options:[
-                              { title:'不排序',value:''},
-                              { title:'升序',value:'ascend'},
-                              { title:'降序',value:'descend'}
+                              { title:"不排序",value:""},
+                              { title:"升序",value:"ascend"},
+                              { title:"降序",value:"descend"}
                             ]
                           }
                         }
                       },
                       {
-                        name:'ellipsis',
+                        name:"ellipsis",
                         title:{
-                          label:'省略',
-                          tip:'ellipsis | 超过宽度将自动省略'
+                          label:"省略",
+                          tip:"ellipsis | 超过宽度将自动省略"
                         },
-                        propType:'bool',
-                        setter:'BoolSetter',
+                        propType:"bool",
+                        setter:"BoolSetter",
                         defaultValue:false
                       },
                       {
-                        name: 'filters',
+                        name: "filters",
                         title: {
-                          label: '筛选菜单项',
-                          tip: 'filters | 表头的筛选菜单项',
+                          label: "筛选菜单项",
+                          tip: "filters | 表头的筛选菜单项",
                         },
-                        propType: 'object',
-                        setter: 'JsonSetter',
+                        propType: "object",
+                        setter: "JsonSetter",
                       },
                       {
-                        name:'filterSearch',
+                        name:"filterSearch",
                         title:{
-                          label:'筛选菜单项是否可搜索',
-                          tip:'filterSearch | 筛选菜单项是否可搜索'
+                          label:"筛选菜单项是否可搜索",
+                          tip:"filterSearch | 筛选菜单项是否可搜索"
                         },
-                        propType:'bool',
-                        setter:'BoolSetter',
+                        propType:"bool",
+                        setter:"BoolSetter",
                         defaultValue:false
                       },
                       {
-                        name:'filterMultiple',
-                        title:{label:'是否多选',tip:'属性 filterMultiple'},
-                        propType:'bool',
-                        setter:'BoolSetter',
+                        name:"filterMultiple",
+                        title:{label:"是否多选",tip:"属性 filterMultiple"},
+                        propType:"bool",
+                        setter:"BoolSetter",
                         defaultValue:true
                       },
                       {
-                        name: 'filterMode',
+                        name: "filterMode",
                         title: {
-                          label: 'filterMode',
+                          label: "filterMode",
                           tip:
-                            'filterMode | 指定筛选菜单的用户界面',
+                            "filterMode | 指定筛选菜单的用户界面",
                         },
-                        propType: {type:'oneOf',value:['menu','tree']},
+                        propType: {type:"oneOf",value:["menu","tree"]},
                         setter: [{
-                          componentName:'RadioGroupSetter',
+                          componentName:"RadioGroupSetter",
                           props:{
                             options:[
-                              {title:'menu',value:'menu'},
-                              {title:'tree',value:'tree'}
+                              {title:"menu",value:"menu"},
+                              {title:"tree",value:"tree"}
                             ]
                           }
                         }],
-                        defaultValue:'menu'
+                        defaultValue:"menu"
                       },
                       {
-                        name:'class',
+                        name:"class",
                         title:{
-                          label:'列的class',
-                          tip:'class | 列的class'
+                          label:"列的class",
+                          tip:"class | 列的class"
                         },
-                        propType:{ type: 'oneOfType', value: ['string', 'func'] },
+                        propType:{ type: "oneOfType", value: ["string", "func"] },
                         setter:[
-                          'StringSetter','FunctionSetter'
+                          "StringSetter","FunctionSetter"
                         ]
                       },
                       {
-                        name: 'customRender',
+                        name: "customRender",
                         title: {
-                          label: '自定义渲染',
+                          label: "自定义渲染",
                           tip:
-                            'customRender | 插槽内的物料表达式可通过this.data.record获取当前行数据，this.data.index获取索引(该项用于自定义操作列)',
+                            "customRender | 插槽内的物料表达式可通过this.data.record获取当前行数据，this.data.index获取索引(该项用于自定义操作列)",
                         },
-                        propType: { type: 'oneOfType', value: ['string','node','func'] },
+                        propType: { type: "oneOfType", value: ["string","node","func"] },
                         setter: [
                           {
-                            componentName: 'SlotSetter',
-                            title: '单元格插槽',
+                            componentName: "SlotSetter",
+                            title: "单元格插槽",
                             initialValue: {
-                              type: 'JSSlot',
-                              params: ['data'],
+                              type: "JSSlot",
+                              params: ["data"],
                               value: [],
                             },
                           },
-                          'VariableSetter'
+                          "VariableSetter"
                         ]
                       },
                     ],
                   },
                 },
-                initialValue: { title: '标题' },
+                initialValue: { title: "标题" },
               },
             },}
         }
       ]
     },
     {
-      title: '外观',
-      display: 'block',
-      type: 'group',
+      title: "外观",
+      display: "block",
+      type: "group",
       items: [
         {
-          name: 'showHeader',
-          title: { label: '显示表头', tip: 'showHeader | 是否显示表头' },
-          propType: 'bool',
-          setter: 'BoolSetter',
+          name: "showHeader",
+          title: { label: "显示表头", tip: "showHeader | 是否显示表头" },
+          propType: "bool",
+          setter: "BoolSetter",
           defaultValue: true,
         },
         {
-          name: 'bordered',
+          name: "bordered",
           title: {
-            label: '显示边框',
-            tip: 'bordered | 是否展示外边框和列边框',
+            label: "显示边框",
+            tip: "bordered | 是否展示外边框和列边框",
           },
-          propType: 'bool',
-          setter: 'BoolSetter',
+          propType: "bool",
+          setter: "BoolSetter",
         },
         {
-          name: 'size',
-          title: { label: '表格大小', tip: 'size | 表格大小' },
+          name: "size",
+          title: { label: "表格大小", tip: "size | 表格大小" },
           propType: {
-            type: 'oneOf',
-            value: ['default', 'middle', 'small'],
+            type: "oneOf",
+            value: ["default", "middle", "small"],
           },
           setter: [
             {
-              componentName: 'RadioGroupSetter',
+              componentName: "RadioGroupSetter",
               props: {
                 options: [
                   {
-                    title: '默认',
-                    value: 'default',
+                    title: "默认",
+                    value: "default",
                   },
                   {
-                    title: '中',
-                    value: 'middle',
+                    title: "中",
+                    value: "middle",
                   },
                   {
-                    title: '小',
-                    value: 'small',
+                    title: "小",
+                    value: "small",
                   },
                 ],
               },
             },
-            'VariableSetter',
+            "VariableSetter",
           ],
-          defaultValue: 'default',
+          defaultValue: "default",
         },
         {
-          name: 'tableLayout',
-          title: { label: '表格布局', tip: 'tableLayout | 表格布局' },
-          defaultValue: '',
+          name: "tableLayout",
+          title: { label: "表格布局", tip: "tableLayout | 表格布局" },
+          defaultValue: "",
           propType: {
-            type: 'oneOf',
-            value: ['', 'auto', 'fixed'],
+            type: "oneOf",
+            value: ["", "auto", "fixed"],
           },
           setter: [
             {
-              componentName: 'RadioGroupSetter',
+              componentName: "RadioGroupSetter",
               props: {
                 options: [
                   {
-                    title: '默认',
-                    value: '',
+                    title: "默认",
+                    value: "",
                   },
                   {
-                    title: '自动',
-                    value: 'auto',
+                    title: "自动",
+                    value: "auto",
                   },
                   {
-                    title: '固定',
-                    value: 'fixed',
+                    title: "固定",
+                    value: "fixed",
                   },
                 ],
               },
             },
-            'VariableSetter',
+            "VariableSetter",
           ],
         },
       ],
     },
     {
-      title: '分页',
-      display: 'block',
-      type: 'group',
+      title: "分页",
+      display: "block",
+      type: "group",
       items: [
         {
-          name: 'pagination',
-          title: { label: '显示分页', tip: 'pagination | 显示分页' },
-          propType: {type:'oneOfType',value:['bool','object']},
-          setter: 'BoolSetter',
+          name: "pagination",
+          title: { label: "显示分页", tip: "pagination | 显示分页" },
+          propType: {type:"oneOfType",value:["bool","object"]},
+          setter: "BoolSetter",
           extraProps: {
             setValue: (target: { parent: { setPropValue: (arg0: string, arg1: { pageSize: number; }) => void; }; }, value: any) => {
               if (value) {
-                target.parent.setPropValue('pagination', {
+                target.parent.setPropValue("pagination", {
                   pageSize: 10,
                 });
               }
@@ -428,585 +429,606 @@ export default {
           defaultValue:false
         },
         {
-          name: 'pagination.pageSize',
-          title: { label: '每页条数', tip: 'pagination.pageSize | 每页条数' },
-          propType: 'number',
-          setter: 'NumberSetter',
+          name: "pagination.pageSize",
+          title: { label: "每页条数", tip: "pagination.pageSize | 每页条数" },
+          propType: "number",
+          setter: "NumberSetter",
           condition: {
-            type: 'JSFunction',
-            value: 'target => !!target.getProps().getPropValue("pagination")',
+            type: "JSFunction",
+            value: "target => !!target.getProps().getPropValue(\"pagination\")",
           },
         },
         {
-          name: 'pagination.pageSizeOptions',
-          title: { label: '每页条数组', tip: 'pagination.pageSizeOptions | 指定每页可以显示多少条' },
+          name: "pagination.pageSizeOptions",
+          title: { label: "每页条数组", tip: "pagination.pageSizeOptions | 指定每页可以显示多少条" },
           propType: {
-            type: 'arrayOf',
-            value: { type: 'oneOfType', value: ['string'] },
+            type: "arrayOf",
+            value: { type: "oneOfType", value: ["string"] },
           },
-          defaultValue:['10','20','50','100'],
+          defaultValue:["10","20","50","100"],
           condition: {
-            type: 'JSFunction',
-            value: 'target => !!target.getProps().getPropValue("pagination")',
+            type: "JSFunction",
+            value: "target => !!target.getProps().getPropValue(\"pagination\")",
           },
         },
         {
-          name: 'pagination.total',
-          title: { label: '数据总数', tip: 'pagination.total | 数据总数' },
-          propType: 'number',
-          setter: 'NumberSetter',
+          name: "pagination.total",
+          title: { label: "数据总数", tip: "pagination.total | 数据总数" },
+          propType: "number",
+          setter: "NumberSetter",
           condition: {
-            type: 'JSFunction',
-            value: 'target => !!target.getProps().getPropValue("pagination")',
+            type: "JSFunction",
+            value: "target => !!target.getProps().getPropValue(\"pagination\")",
           },
         },
         {
-          name: 'pagination.defaultCurrent',
+          name: "pagination.defaultCurrent",
           title: {
-            label: '默认当前页',
-            tip: 'pagination.defaultCurrent | 默认的当前页数',
+            label: "默认当前页",
+            tip: "pagination.defaultCurrent | 默认的当前页数",
           },
-          propType: 'number',
-          setter: 'NumberSetter',
+          propType: "number",
+          setter: "NumberSetter",
           condition: {
-            type: 'JSFunction',
-            value: 'target => !!target.getProps().getPropValue("pagination")',
+            type: "JSFunction",
+            value: "target => !!target.getProps().getPropValue(\"pagination\")",
           },
         },
         {
-          name: 'pagination.current',
-          title: { label: '当前页数', tip: 'pagination.current | 当前页数' },
-          propType: 'number',
-          setter: 'NumberSetter',
+          name: "pagination.current",
+          title: { label: "当前页数", tip: "pagination.current | 当前页数" },
+          propType: "number",
+          setter: "NumberSetter",
           condition: {
-            type: 'JSFunction',
-            value: 'target => !!target.getProps().getPropValue("pagination")',
+            type: "JSFunction",
+            value: "target => !!target.getProps().getPropValue(\"pagination\")",
           },
         },
         {
-          name: 'pagination.showTotal',
+          name: "pagination.showTotal",
           title: {
-            label: '显示总数',
-            tip: 'pagination.showTotal | 用于显示数据总量和当前数据顺序',
+            label: "显示总数",
+            tip: "pagination.showTotal | 用于显示数据总量和当前数据顺序",
           },
-          propType: 'func',
+          propType: "func",
           setter: [
             {
-              componentName: 'FunctionSetter',
+              componentName: "FunctionSetter",
               props: {
                 template:
-                  'showTotal(total,range,${extParams}){\n// 用于格式化显示表格数据总量\nreturn `共 ${total} 条`;\n}',
+                  "showTotal(total,range,${extParams}){\n// 用于格式化显示表格数据总量\nreturn `共 ${total} 条`;\n}",
               },
             },
-            'VariableSetter',
+            "VariableSetter",
           ],
           condition: {
-            type: 'JSFunction',
-            value: 'target => !!target.getProps().getPropValue("pagination")',
+            type: "JSFunction",
+            value: "target => !!target.getProps().getPropValue(\"pagination\")",
           }
         },
         {
-          name: 'pagination.showSizeChanger',
+          name: "pagination.showSizeChanger",
           title: {
-            label: '页数切换',
-            tip: 'pagination.showSizeChanger | 是否展示 pageSize 切换器',
+            label: "页数切换",
+            tip: "pagination.showSizeChanger | 是否展示 pageSize 切换器",
           },
-          propType: 'bool',
-          setter: 'BoolSetter',
+          propType: "bool",
+          setter: "BoolSetter",
           defaultValue: false,
           condition: {
-            type: 'JSFunction',
-            value: 'target => !!target.getProps().getPropValue("pagination")',
+            type: "JSFunction",
+            value: "target => !!target.getProps().getPropValue(\"pagination\")",
           },
         },
         {
-          name: 'pagination.showQuickJumper',
+          name: "pagination.showQuickJumper",
           title: {
-            label: '快速跳转',
-            tip: 'pagination.showQuickJumper | 是否可以快速跳转至某页',
+            label: "快速跳转",
+            tip: "pagination.showQuickJumper | 是否可以快速跳转至某页",
           },
-          propType: 'bool',
-          setter: 'BoolSetter',
+          propType: "bool",
+          setter: "BoolSetter",
           defaultValue: false,
           condition: {
-            type: 'JSFunction',
-            value: 'target => !!target.getProps().getPropValue("pagination")',
+            type: "JSFunction",
+            value: "target => !!target.getProps().getPropValue(\"pagination\")",
           },
         },
         {
-          name:'pagination.itemRender',
+          name:"pagination.itemRender",
           title:{label:"自定义页面结构",tip:"用于自定义页码的结构"},
-          propType:{type:'oneOfType',value:['func','node']},
+          propType:{type:"oneOfType",value:["func","node"]},
           condition: {
-            type: 'JSFunction',
-            value: 'target => !!target.getProps().getPropValue("pagination")',
+            type: "JSFunction",
+            value: "target => !!target.getProps().getPropValue(\"pagination\")",
           },
           setter: [
-            'FunctionSetter',
+            "FunctionSetter",
             {
-              componentName: 'SlotSetter',
+              componentName: "SlotSetter",
               initialValue: {
-                type: 'JSSlot',
+                type: "JSSlot",
                 value: [],
               },
             },
           ],
         },
         {
-          name: 'pagination.simple',
-          title: { label: '简单分页', tip: 'pagination.simple | 简单分页' },
-          propType: 'bool',
-          setter: 'BoolSetter',
+          name: "pagination.simple",
+          title: { label: "简单分页", tip: "pagination.simple | 简单分页" },
+          propType: "bool",
+          setter: "BoolSetter",
           defaultValue: false,
           condition: {
-            type: 'JSFunction',
-            value: 'target => !!target.getProps().getPropValue("pagination")',
+            type: "JSFunction",
+            value: "target => !!target.getProps().getPropValue(\"pagination\")",
           },
         },
         {
-          name: 'pagination.size',
-          title: { label: '分页尺寸', tip: 'pagination.size | 分页尺寸' },
+          name: "pagination.size",
+          title: { label: "分页尺寸", tip: "pagination.size | 分页尺寸" },
           propType: {
-            type: 'oneOf',
-            value: ['default', 'small'],
+            type: "oneOf",
+            value: ["default", "small"],
           },
           setter: [
             {
-              componentName: 'RadioGroupSetter',
+              componentName: "RadioGroupSetter",
               props: {
                 options: [
                   {
-                    title: '默认',
-                    value: 'default',
+                    title: "默认",
+                    value: "default",
                   },
                   {
-                    title: '小',
-                    value: 'small',
+                    title: "小",
+                    value: "small",
                   },
                 ],
               },
             },
-            'VariableSetter',
+            "VariableSetter",
           ],
-          defaultValue: 'default',
+          defaultValue: "default",
           condition: {
-            type: 'JSFunction',
-            value: 'target => !!target.getProps().getPropValue("pagination")',
+            type: "JSFunction",
+            value: "target => !!target.getProps().getPropValue(\"pagination\")",
           },
         },
         {
-          name: 'pagination.position',
-          title: { label: '分页位置', tip: 'pagination.position | 分页位置' },
+          name: "pagination.position",
+          title: { label: "分页位置", tip: "pagination.position | 分页位置" },
           setter: {
-            componentName: 'ArraySetter',
+            componentName: "ArraySetter",
             props: {
               itemSetter: {
-                componentName: 'SelectSetter',
+                componentName: "SelectSetter",
                 props: {
                   options: [
                     {
-                      title: '上左',
-                      value: 'topLeft',
+                      title: "上左",
+                      value: "topLeft",
                     },
                     {
-                      title: '上中',
-                      value: 'topCenter',
+                      title: "上中",
+                      value: "topCenter",
                     },
                     {
-                      title: '上右',
-                      value: 'topRight',
+                      title: "上右",
+                      value: "topRight",
                     },
                     {
-                      title: '下左',
-                      value: 'bottomLeft',
+                      title: "下左",
+                      value: "bottomLeft",
                     },
                     {
-                      title: '下中',
-                      value: 'bottomCenter',
+                      title: "下中",
+                      value: "bottomCenter",
                     },
                     {
-                      title: '下右',
-                      value: 'bottomRight',
+                      title: "下右",
+                      value: "bottomRight",
                     },
                   ],
                 },
-                initialValue: 'bottomRight',
+                initialValue: "bottomRight",
               },
             },
           },
           condition: {
-            type: 'JSFunction',
-            value: 'target => !!target.getProps().getPropValue("pagination")',
+            type: "JSFunction",
+            value: "target => !!target.getProps().getPropValue(\"pagination\")",
           },
         },
       ],
     },
     {
-      title: '滚动',
-      display: 'block',
-      type: 'group',
+      title: "滚动",
+      display: "block",
+      type: "group",
       items: [
         {
-          name: 'scroll.scrollToFirstRowOnChange',
+          name: "scroll.scrollToFirstRowOnChange",
           title: {
-            label: '自动滚动',
-            tip: 'scroll.scrollToFirstRowOnChange | 是否自动滚动到表格顶部',
+            label: "自动滚动",
+            tip: "scroll.scrollToFirstRowOnChange | 是否自动滚动到表格顶部",
           },
-          propType: 'bool',
-          setter: 'BoolSetter',
+          propType: "bool",
+          setter: "BoolSetter",
           defaultValue: true,
         },
         {
-          name: 'scroll.x',
+          name: "scroll.x",
           title: {
-            label: '横向滚动',
+            label: "横向滚动",
             tip:
-              'scroll.x | 设置横向滚动，也可用于指定滚动区域的宽，可以设置为像素值，百分比，true 和 max-content',
+              "scroll.x | 设置横向滚动，也可用于指定滚动区域的宽，可以设置为像素值，百分比，true 和 max-content",
           },
-          propType: { type: 'oneOfType', value: ['number', 'bool'] },
-          setter: ['NumberSetter', 'BoolSetter', 'VariableSetter'],
+          propType: { type: "oneOfType", value: ["number", "bool"] },
+          setter: ["NumberSetter", "BoolSetter", "VariableSetter"],
         },
         {
-          name: 'scroll.y',
+          name: "scroll.y",
           title: {
-            label: '纵向滚动',
-            tip: 'scroll.y | 设置纵向滚动，也可用于指定滚动区域的高，可以设置为像素值',
+            label: "纵向滚动",
+            tip: "scroll.y | 设置纵向滚动，也可用于指定滚动区域的高，可以设置为像素值",
           },
-          propType: 'number',
-          setter: ['NumberSetter', 'VariableSetter'],
+          propType: "number",
+          setter: ["NumberSetter", "VariableSetter"],
         },
       ],
     },
     {
-      title: '行选择器',
-      display: 'block',
-      type: 'group',
+      title: "行选择器",
+      display: "block",
+      type: "group",
       items: [
         {
-          name: 'rowSelection',
-          title: { label: '行选择', tip: 'rowSelection | 行选择' },
-          propType: {type:'oneOfType',value:['object','bool']},
-          setter:['JsonSetter','boolSetter'],
+          name: "rowSelection",
+          title: { label: "行选择", tip: "rowSelection | 行选择" },
+          propType: {type:"oneOfType",value:["object","bool"]},
+          setter:["JsonSetter","boolSetter"],
           extraProps: {
             setValue: (target: { parent: { setPropValue: (arg0: string, arg1: { type: string; }) => void; }; }, value: any) => {
               if (value) {
-                target.parent.setPropValue('rowSelection', {
-                  type: 'radio',
+                target.parent.setPropValue("rowSelection", {
+                  type: "radio",
                 });
               }
             },
           },
         },
         {
-          name: 'rowSelection.type',
-          title: { label: '行选择类型', tip: 'rowSelection.type | 多选/单选' },
+          name: "rowSelection.type",
+          title: { label: "行选择类型", tip: "rowSelection.type | 多选/单选" },
           propType: {
-            type: 'oneOf',
-            value: ['checkbox', 'radio'],
+            type: "oneOf",
+            value: ["checkbox", "radio"],
           },
           setter: [
             {
-              componentName: 'RadioGroupSetter',
+              componentName: "RadioGroupSetter",
               props: {
                 options: [
                   {
-                    title: '多选',
-                    value: 'checkbox',
+                    title: "多选",
+                    value: "checkbox",
                   },
                   {
-                    title: '单选',
-                    value: 'radio',
+                    title: "单选",
+                    value: "radio",
                   },
                 ],
               },
             },
-            'VariableSetter',
+            "VariableSetter",
           ],
           condition: {
-            type: 'JSFunction',
-            value: 'target => !!target.getProps().getPropValue("rowSelection")',
+            type: "JSFunction",
+            value: "target => !!target.getProps().getPropValue(\"rowSelection\")",
           },
         },
         {
-          name: 'rowSelection.fixed',
+          name: "rowSelection.fixed",
           title: {
-            label: '固定左边',
-            tip: 'rowSelection.fixed | 把选择框列固定在左边',
+            label: "固定左边",
+            tip: "rowSelection.fixed | 把选择框列固定在左边",
           },
-          propType: 'bool',
-          setter: 'BoolSetter',
+          propType: "bool",
+          setter: "BoolSetter",
           condition: {
-            type: 'JSFunction',
-            value: 'target => !!target.getProps().getPropValue("rowSelection")',
+            type: "JSFunction",
+            value: "target => !!target.getProps().getPropValue(\"rowSelection\")",
           },
         },
         {
-          name: 'rowSelection.selectedRowKeys',
+          name: "rowSelection.selectedRowKeys",
           title: {
-            label: '选中行Key',
-            tip: 'rowSelection.selectedRowKeys | 指定选中项的 key 数组',
+            label: "选中行Key",
+            tip: "rowSelection.selectedRowKeys | 指定选中项的 key 数组",
           },
-          propType: 'object',
-          setter: 'JsonSetter',
+          propType: "object",
+          setter: "JsonSetter",
           condition: {
-            type: 'JSFunction',
-            value: 'target => !!target.getProps().getPropValue("rowSelection")',
+            type: "JSFunction",
+            value: "target => !!target.getProps().getPropValue(\"rowSelection\")",
           },
         },
         {
-          name: 'rowSelection.preserveSelectedRowKeys',
-          title: { label: '保留选项', tip: 'rowSelection.preserveSelectedRowKeys | 当数据被删除时仍然保留选项' },
-          propType: 'bool',
-          setter: 'BoolSetter',
+          name: "rowSelection.preserveSelectedRowKeys",
+          title: { label: "保留选项", tip: "rowSelection.preserveSelectedRowKeys | 当数据被删除时仍然保留选项" },
+          propType: "bool",
+          setter: "BoolSetter",
           condition: {
-            type: 'JSFunction',
-            value: 'target => !!target.getProps().getPropValue("rowSelection")',
+            type: "JSFunction",
+            value: "target => !!target.getProps().getPropValue(\"rowSelection\")",
           },
         },
         {
-          name: 'rowSelection.getCheckboxProps',
+          name: "rowSelection.getCheckboxProps",
           title: {
-            label: '默认属性',
-            tip: 'rowSelection.getCheckboxProps | 选择框的默认属性配置',
+            label: "默认属性",
+            tip: "rowSelection.getCheckboxProps | 选择框的默认属性配置",
           },
-          propType: 'func',
+          propType: "func",
           setter: [
             {
-              componentName: 'FunctionSetter',
+              componentName: "FunctionSetter",
               props: {
                 template:
-                  'getCheckboxProps(record,${extParams}){\n// 选择框的默认属性配置\nreturn { disabled: false };\n}',
+                  "getCheckboxProps(record,${extParams}){\n// 选择框的默认属性配置\nreturn { disabled: false };\n}",
               },
             },
-            'VariableSetter',
+            "VariableSetter",
           ],
           condition: {
-            type: 'JSFunction',
-            value: 'target => !!target.getProps().getPropValue("rowSelection")',
+            type: "JSFunction",
+            value: "target => !!target.getProps().getPropValue(\"rowSelection\")",
           },
         },
         {
-          name:'rowSelection.onSelect',
+          name:"rowSelection.onSelect",
           title:{
-            label:'选择/反选回调',
-            tip:'rowSelection.onSelect | 用户手动选择/取消选择某列的回调'
+            label:"选择/反选回调",
+            tip:"rowSelection.onSelect | 用户手动选择/取消选择某列的回调"
           },
-          propType: 'func',
+          propType: "func",
           setter: [
             {
-              componentName: 'FunctionSetter',
+              componentName: "FunctionSetter",
               props: {
                 template:
-                  'onSelect(record,${extParams}){\n// 用户手动选择/取消选择某列的回调\nreturn ${record.id};\n}',
+                  "onSelect(record,${extParams}){\n// 用户手动选择/取消选择某列的回调\nreturn ${record.id};\n}",
               },
             }
           ],
           condition: {
-            type: 'JSFunction',
-            value: 'target => !!target.getProps().getPropValue("rowSelection")',
+            type: "JSFunction",
+            value: "target => !!target.getProps().getPropValue(\"rowSelection\")",
           }
         },
         {
-          name:'rowSelection.onSelectAll',
+          name:"rowSelection.onSelectAll",
           title:{
-            label:'全选/反选回调',
-            tip:'rowSelection.onSelectAll | 用户手动选择/取消选择所有列的回调'
+            label:"全选/反选回调",
+            tip:"rowSelection.onSelectAll | 用户手动选择/取消选择所有列的回调"
           },
-          propType: 'func',
+          propType: "func",
           setter: [
             {
-              componentName: 'FunctionSetter',
+              componentName: "FunctionSetter",
               props: {
                 template:
-                  'onSelectAll(record,${extParams}){\n// 用户手动选择/取消选择所有列的回调\nreturn ${record.id};\n}',
+                  "onSelectAll(record,${extParams}){\n// 用户手动选择/取消选择所有列的回调\nreturn ${record.id};\n}",
               },
             }
           ],
           condition: {
-            type: 'JSFunction',
-            value: 'target => !!target.getProps().getPropValue("rowSelection")',
+            type: "JSFunction",
+            value: "target => !!target.getProps().getPropValue(\"rowSelection\")",
           }
         }
       ],
     },
     {
-      title: '行展开',
-      display: 'block',
-      type: 'group',
+      title: "行展开",
+      display: "block",
+      type: "group",
       items: [
         {
-          name: 'expandedRowRender',
+          name: "expandedRowRender",
           title: {
-            label: '展开行渲染',
-            tip: 'expandedRowRender | 额外的展开行',
+            label: "展开行渲染",
+            tip: "expandedRowRender | 额外的展开行",
           },
-          propType: 'func',
+          propType: "func",
           setter: [
             {
-              componentName: 'SlotSetter',
-              title: '展开行插槽',
+              componentName: "SlotSetter",
+              title: "展开行插槽",
               initialValue: {
-                type: 'JSSlot',
-                params: ['data']
+                type: "JSSlot",
+                params: ["data"]
               },
             },
             {
-              componentName: 'FunctionSetter',
+              componentName: "FunctionSetter",
               props: {
                 template:
-                  'onExpandedRowRender(data,${extParams}){\n// 展开行渲染\nreturn `${data.id}`}',
+                  "onExpandedRowRender(data,${extParams}){\n// 展开行渲染\nreturn `${data.id}`}",
               },
             },
-            'VariableSetter',
+            "VariableSetter",
           ],
         },
         {
-          name:'defaultExpandAllRows',
+          name:"defaultExpandAllRows",
           title:{
-            label:'初始是否展开所有行',
-            tip:'defaultExpandAllRows|初始时，是否展开所有行'
+            label:"初始是否展开所有行",
+            tip:"defaultExpandAllRows|初始时，是否展开所有行"
           },
-          propType:'bool',
-          setter:['BoolSetter','VariableSetter']
+          propType:"bool",
+          setter:["BoolSetter","VariableSetter"]
         },
         {
-          name:'expandedRowKeys',
+          name:"expandedRowKeys",
           title:{
-            label:'展开的行',
-            tip:'expandedRowKeys|展开的行，控制属性'
+            label:"展开的行",
+            tip:"expandedRowKeys|展开的行，控制属性"
           },
           propType:{
-            type: 'arrayOf', value:'string'
+            type: "arrayOf", value:"string"
           }
         },
         {
-          name: 'rowExpandable',
+          name: "rowExpandable",
           title: {
-            label: '是否可展开',
-            tip: 'rowExpandable | 行是否可展开',
+            label: "是否可展开",
+            tip: "rowExpandable | 行是否可展开",
           },
-          propType: 'func',
+          propType: "func",
           setter: [
             {
-              componentName: 'FunctionSetter',
+              componentName: "FunctionSetter",
               props: {
-                template: 'rowExpandable(record,${extParams}){\n// 行是否可展开\nreturn true;\n}',
+                template: "rowExpandable(record,${extParams}){\n// 行是否可展开\nreturn true;\n}",
               },
             },
-            'VariableSetter',
+            "VariableSetter",
           ],
         },
+        {
+          name:"expandRowByClick",
+          title:{
+            label:"点击行展开",
+            tip:"expandRowByClick|通过点击行来展开子行"
+          },
+          propType:"bool",
+          setter:["BoolSetter"],
+          defaultValue:true
+        }
       ],
     },
     {
-      title: '扩展',
-      display: 'block',
-      type: 'group',
+      title: "扩展",
+      display: "block",
+      type: "group",
       items: [
         {
-          name: 'title',
-          title: { label: '表格标题', tip: 'title | 表格标题' },
-          propType: 'func',
+          name: "title",
+          title: { label: "表格标题", tip: "title | 表格标题" },
+          propType: "func",
           setter: [
             {
-              componentName: 'SlotSetter',
-              title: '表格标题插槽',
+              componentName: "SlotSetter",
+              title: "表格标题插槽",
               initialValue: {
-                type: 'JSSlot',
-                params: ['currentPageData'],
+                type: "JSSlot",
+                params: ["currentPageData"],
                 value: [],
               },
             },
             {
-              componentName: 'FunctionSetter',
+              componentName: "FunctionSetter",
               props: {
                 template:
-                  'renderTitle(currentPageData,${extParams}){\n// 自定义渲染表格顶部\nreturn "表格顶部";\n}',
+                  "renderTitle(currentPageData,${extParams}){\n// 自定义渲染表格顶部\nreturn \"表格顶部\";\n}",
               },
             },
-            'VariableSetter',
+            "VariableSetter",
           ],
         },
         {
-          name: 'footer',
-          title: { label: '表格尾部', tip: 'footer | 表格尾部' },
+          name: "footer",
+          title: { label: "表格尾部", tip: "footer | 表格尾部" },
           propType: {
-            type:'oneOfType',
-            value:['func','node']
+            type:"oneOfType",
+            value:["node","func"]
           },
           setter: [
             {
-              componentName: 'SlotSetter',
-              title: '表格尾部插槽',
+              componentName: "SlotSetter",
+              title: "表格尾部插槽",
               initialValue: {
-                type: 'JSSlot',
-                params: ['currentPageData'],
+                type: "JSSlot",
+                params: ["currentPageData"],
                 value: [],
               },
             },
             {
-              componentName: 'FunctionSetter',
+              componentName: "FunctionSetter",
               props: {
                 template:
-                  'renderFooter(currentPageData,${extParams}){\n// 自定义渲染表格尾部\nreturn "表格尾部";\n}',
+                  "renderFooter(currentPageData,${extParams}){\n// 自定义渲染表格尾部\nreturn \"表格尾部\";\n}",
               },
             },
-            'VariableSetter',
+            "VariableSetter",
           ],
         },
         {
-          name:'emptyText',
-          title:{label:'空数据文本',tip:'emptyText | 自定义空数据时的显示内容'},
-          propType:{type:'oneOfType',value:['string','node','func']},
-          defaultValue:'暂无数据'
+          name:"emptyText",
+          title:{label:"空数据文本",tip:"emptyText | 自定义空数据时的显示内容"},
+          propType:{type:"oneOfType",value:["string","node"]},
+          setter:[
+            "StringSetter",
+            {
+            componentName: "SlotSetter",
+            title: "SlotSetter",
+            initialValue: {
+              type: "JSSlot",
+              params: ["emptyNode"],
+              value: [],
+            },
+          }],
+          defaultValue:"暂无数据"
         },
         {
-          name: 'customHeaderRow',
-          title: { label: '头部行属性', tip: 'customHeaderRow | 设置头部行属性' },
-          propType: 'func',
+          name: "customHeaderRow",
+          title: { label: "头部行属性", tip: "customHeaderRow | 设置头部行属性" },
+          propType: "func",
           setter: [
             {
-              componentName: 'FunctionSetter',
+              componentName: "FunctionSetter",
               props: {
                 template:
-                  'customHeaderRow(columns,index,${extParams}){\n// 设置头部行属性\nreturn {onClick:()=>{}};\n}',
+                  "customHeaderRow(columns,index,${extParams}){\n// 设置头部行属性\nreturn {onClick:()=>{}};\n}",
               },
             },
-            'VariableSetter',
+            "VariableSetter",
           ],
         },
         {
-          name: 'customRow',
-          title: { label: '行属性', tip: 'customRow | 设置行属性' },
-          propType: 'func',
+          name: "customRow",
+          title: { label: "行属性", tip: "customRow | 设置行属性" },
+          propType: "func",
           setter: [
             {
-              componentName: 'FunctionSetter',
+              componentName: "FunctionSetter",
               props: {
                 template:
-                  'customRow(record,index,${extParams}){\n// 设置行属性\nreturn {onClick: (event) => {},       // 点击行\n' +
-                  '      onDblclick: (event) => {},\n' +
-                  '      onContextmenu: (event) => {},\n' +
-                  '      onMouseEnter: (event) => {},  // 鼠标移入行\n' +
-                  '      onMouseLeave: (event) => {}};\n}',
+                  "customRow(record,index,${extParams}){\n// 设置行属性\nreturn {onClick: (event) => {},       // 点击行\n" +
+                  "      onDblclick: (event) => {},\n" +
+                  "      onContextmenu: (event) => {},\n" +
+                  "      onMouseEnter: (event) => {},  // 鼠标移入行\n" +
+                  "      onMouseLeave: (event) => {}};\n}",
               },
             },
-            'VariableSetter',
+            "VariableSetter",
           ],
         },
         {
-          name: 'rowClassName',
-          title: { label: '行类名', tip: 'rowClassName | 表格行的类名' },
-          propType: 'func',
+          name: "rowClassName",
+          title: { label: "行类名", tip: "rowClassName | 表格行的类名" },
+          propType: "func",
           setter: [
             {
-              componentName: 'FunctionSetter',
+              componentName: "FunctionSetter",
               props: {
                 template:
-                  'rowClassName(record,index,${extParams}){\n// 表格行的类名\nreturn `table-${record.type}`;\n}',
+                  "rowClassName(record,index,${extParams}){\n// 表格行的类名\nreturn `table-${record.type}`;\n}",
               },
             },
-            'VariableSetter',
+            "VariableSetter",
           ],
         }
       ]
@@ -1017,67 +1039,67 @@ export default {
       style:true,
       events: [
         {
-          name: 'onChange',
+          name: "onChange",
           template:
-            "onChange(pagination,filters,sorter,extra,${extParams}){\n// 分页、排序、筛选变化时触发\nconsole.log('onChange', pagination);}",
+            "onChange(pagination,filters,sorter,extra,${extParams}){\n// 分页、排序、筛选变化时触发\nconsole.log(\"onChange\", pagination);}",
         },
         {
-          name: 'onExpandedRowsChange',
+          name: "onExpandedRowsChange",
           template:
-            "onExpandedRowsChange(expanded, record,${extParams}){\n// 展开的行变化时触发\nconsole.log('onExpandedRowsChange', expanded, record);}",
+            "onExpandedRowsChange(expanded, record,${extParams}){\n// 展开的行变化时触发\nconsole.log(\"onExpandedRowsChange\", expanded, record);}",
         },
         {
-          name: 'onExpand',
+          name: "onExpand",
           template:
-            "onExpand(expanded,record){\n// 点击展开图标时触发\nconsole.log('onExpand', expanded, record);}",
+            "onExpand(expanded,record){\n// 点击展开图标时触发\nconsole.log(\"onExpand\", expanded, record);}",
         },
       ],
     }
   },
   snippets:[
     {
-      title:'表格',
+      title:"表格",
       screenshot: avatarImg,
       schema:{
-        componentName:'ATable',
+        componentName:"ATable",
         props:{
           style:{
-            backgroundColor:'#fff',
-            marginTop:'4px',
-            minHeight:'240px',
+            backgroundColor:"#fff",
+            marginTop:"4px",
+            minHeight:"240px",
             color:"#000"
           },
           showHeader:true,
-          size:'small',
+          size:"small",
           dataSource:[
             {
-            id: '1',
-            name: '毛不易',
+            id: "1",
+            name: "毛不易",
             age: 32,
-            address: '西湖区湖底公园1号',
+            address: "西湖区湖底公园1号",
           },
             {
-              id: '2',
-              name: '邓紫棋',
+              id: "2",
+              name: "邓紫棋",
               age: 28,
-              address: '滨江区网商路699号',
+              address: "滨江区网商路699号",
             }
             ],
           columns: [
             {
               title:"序号",
-              dataIndex:'index',
-              align:'center',
-              fixed:'',
+              dataIndex:"index",
+              align:"center",
+              fixed:"",
               ellipsis:false,
               filterSearch:false,
               filterMultiple:true,
               customRender:{
-                type:'JSSlot',
+                type:"JSSlot",
                 params:["data"],
                 value:[
                   {
-                    componentName:'ATypographyText',
+                    componentName:"ATypographyText",
                     props:{
                       children:{
                         type:"JSExpression",
@@ -1089,7 +1111,7 @@ export default {
                       underline:false,
                       strong:false,
                       style:{
-                        color:'#000'
+                        color:"#000"
                       }
                     }
                   }
@@ -1098,31 +1120,31 @@ export default {
               width:60
             },
             {
-              title: '姓名',
-              dataIndex: 'name',
-              key: 'name',
-              align:'center'
+              title: "姓名",
+              dataIndex: "name",
+              key: "name",
+              align:"center"
             },
             {
-              title: '年龄',
-              dataIndex: 'age',
-              key: 'age',
-              align:'center'
+              title: "年龄",
+              dataIndex: "age",
+              key: "age",
+              align:"center"
             },
             {
-              title:'地址',
-              dataIndex:'address',
-              key:'address',
-              align:'center'
+              title:"地址",
+              dataIndex:"address",
+              key:"address",
+              align:"center"
             },
             {
-              title:'操作',
-              fixed:'right',
-              align:'center',
+              title:"操作",
+              fixed:"right",
+              align:"center",
               filterSearch:false,
               filterMultiple:true,
               customRender:{
-                type:'JSSlot',
+                type:"JSSlot",
                 params:["data"],
                 value:[
                   {
@@ -1131,8 +1153,8 @@ export default {
                       type:"link",
                       children:"详情",
                       htmlType:"button",
-                      size:'small',
-                      shape:'default',
+                      size:"small",
+                      shape:"default",
                       block:false,
                       ghost:false,
                       danger:false,
@@ -1146,8 +1168,10 @@ export default {
               class:"operation-list"
             }
           ],
-          rowKey: 'id',
-          pagination: false
+          rowKey: "id",
+          pagination: false,
+          locale:zhCN,
+          getPopupContainer:()=>document.querySelector("#lce-container")
         }
       }
     }

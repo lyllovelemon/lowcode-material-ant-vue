@@ -1,29 +1,29 @@
 // @ts-ignore
-import avatarImg from './__screenshots__/form-list-1.png?inline';
+import avatarImg from "./__screenshots__/form-list-1.png?inline";
 export default {
-  group: 'ant-vue组件',
-  componentName:'AFormList',
-  title: '表单列表',
-  category: '表单',
+  group: "ant-vue组件",
+  componentName:"AFormList",
+  title: "表单列表",
+  category: "表单",
   npm: {
     destructuring: true,
-    componentName: 'AFormList'
+    componentName: "AFormList"
   },
   props:[
     {
-      name: 'name',
-      title: { label: '字段名', tip: 'name|字段名' },
+      name: "name",
+      title: { label: "字段名", tip: "name|字段名" },
       isRequired: true,
-      propType: 'string',
+      propType: "string",
     },
     {
-      name: 'initialValue',
+      name: "initialValue",
       title: {
-        label: '默认值',
-        tip: 'initialValue|设置子元素默认值，如果与 Form 的 initialValues 冲突则以 Form 为准',
+        label: "默认值",
+        tip: "initialValue|设置子元素默认值，如果与 Form 的 initialValues 冲突则以 Form 为准",
       },
-      propType: 'object',
-      setter: 'JsonSetter',
+      propType: "object",
+      setter: "JsonSetter",
     },
   ],
   configure: {
@@ -34,17 +34,17 @@ export default {
   },
   snippets:[
     {
-      title: '表单列表',
+      title: "表单列表",
       screenshot: avatarImg,
       schema: {
-        componentName: 'AFormList',
+        componentName: "AFormList",
         props: {
           style:{
-            backgroundColor:'#fff',
-            padding:'10px',
-            height:'42px',
-            display:'flex',
-            alignItems:'center'
+            backgroundColor:"#fff",
+            padding:"10px",
+            height:"42px",
+            display:"flex",
+            alignItems:"center"
           }
         },
       }

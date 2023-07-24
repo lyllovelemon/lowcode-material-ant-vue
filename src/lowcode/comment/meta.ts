@@ -1,53 +1,53 @@
 // @ts-ignore
-import avatarImg from './__screenshots__/comment-1.png?inline';
+import avatarImg from "./__screenshots__/comment-1.png?inline";
 export default {
-  group: 'ant-vue组件',
-  componentName:'AComment',
-  title: '评论',
-  category: '数据展示',
+  group: "ant-vue组件",
+  componentName:"AComment",
+  title: "评论",
+  category: "数据展示",
   npm: {
     destructuring: true,
-    componentName: 'AComment'
+    componentName: "AComment"
   },
   props:[
     {
-      name: 'actions',
+      name: "actions",
       title: {
-        label: '操作列表',
-        tip: 'actions|在评论内容下面呈现的操作项列表',
+        label: "操作列表",
+        tip: "actions|在评论内容下面呈现的操作项列表",
       },
-      propType: { type: 'arrayOf', value: 'node' },
+      propType: { type: "arrayOf", value: "node" },
     },
     {
-      name: 'author',
-      title: { label: '要显示为注释作者的元素', tip: 'author|要显示为注释作者的元素' },
-      propType: { type: 'oneOfType', value: ['string', 'node'] },
+      name: "author",
+      title: { label: "要显示为注释作者的元素", tip: "author|要显示为注释作者的元素" },
+      propType: { type: "oneOfType", value: ["string", "node"] },
     },
     {
-      name: 'avatar',
+      name: "avatar",
       title: {
-        label: '头像元素',
-        tip: 'avatar|要显示为评论头像的元素 - 通常是 antd Avatar 或者 src',
+        label: "头像元素",
+        tip: "avatar|要显示为评论头像的元素 - 通常是 antd Avatar 或者 src",
       },
-      propType: { type: 'oneOfType', value: ['string', 'node'] },
+      propType: { type: "oneOfType", value: ["string", "node"] },
     },
     {
-      name: 'children',
+      name: "children",
       title: {
-        label: '子节点',
-        tip: 'children|嵌套注释应作为注释的子项提供',
+        label: "子节点",
+        tip: "children|嵌套注释应作为注释的子项提供",
       },
-      propType: 'node',
+      propType: "node",
     },
     {
-      name: 'content',
-      title: { label: '评论的主要内容', tip: 'content|评论的主要内容' },
-      propType: { type: 'oneOfType', value: ['string', 'node'] },
+      name: "content",
+      title: { label: "评论的主要内容", tip: "content|评论的主要内容" },
+      propType: { type: "oneOfType", value: ["string", "node"] },
     },
     {
-      name: 'datetime',
-      title: { label: '展示时间描述', tip: 'datetime|展示时间描述' },
-      propType: { type: 'oneOfType', value: ['string', 'node'] },
+      name: "datetime",
+      title: { label: "展示时间描述", tip: "datetime|展示时间描述" },
+      propType: { type: "oneOfType", value: ["string", "node"] },
     },
   ],
   configure: {

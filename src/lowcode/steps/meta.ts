@@ -1,85 +1,85 @@
-import {uuid} from '../../utils/index';
+import {uuid} from "../../utils/index";
 // @ts-ignore
-import avatarImg from './__screenshots__/steps-1.png?inline'
+import avatarImg from "./__screenshots__/steps-1.png?inline"
 export default {
-  group: 'ant-vue组件',
-  componentName:'ASteps',
-  title: '步骤条',
-  category: '导航',
+  group: "ant-vue组件",
+  componentName:"ASteps",
+  title: "步骤条",
+  category: "导航",
   npm: {
     destructuring: true,
-    componentName: 'ASteps'
+    componentName: "ASteps"
   },
   props:[
     {
-      name: 'steps',
-      title: {label:'步骤配置',tip:'steps|步骤配置'},
+      name: "steps",
+      title: {label:"步骤配置",tip:"steps|步骤配置"},
       setter: {
-        componentName: 'ArraySetter',
+        componentName: "ArraySetter",
         props: {
           itemSetter: {
-            componentName: 'ObjectSetter',
+            componentName: "ObjectSetter",
             props: {
               config: {
                 items: [
                   {
-                    name: 'key',
-                    title: 'key',
-                    setter: 'StringSetter',
+                    name: "key",
+                    title: "key",
+                    setter: "StringSetter",
                     initialValue: (val: any) => val || uuid(),
                   },
                   {
-                    name: 'title',
-                    title: '标题',
-                    setter: 'StringSetter',
+                    name: "title",
+                    title: "标题",
+                    setter: "StringSetter",
                   },
                   {
-                    name: 'subTitle',
-                    title: '子标题',
-                    setter: 'StringSetter',
+                    name: "subTitle",
+                    title: "子标题",
+                    setter: "StringSetter",
                   },
                   {
-                    name: 'description',
-                    title: '详细描述',
-                    setter: 'StringSetter',
+                    name: "description",
+                    title: "详细描述",
+                    setter: "StringSetter",
                   },
                   {
-                    name: 'disabled',
-                    title: '禁用',
-                    setter: 'BoolSetter',
+                    name: "disabled",
+                    title: "禁用",
+                    setter: "BoolSetter",
                     initialValue: false,
                   },
                   {
-                    name: 'status',
-                    title: { label: '状态', tip: '选择框大小' },
+                    name: "status",
+                    title: { label: "状态", tip: "选择框大小" },
                     setter: {
-                      componentName: 'RadioGroupSetter',
+                      componentName: "RadioGroupSetter",
                       props: {
                         options: [
                           {
-                            title: 'wait',
-                            value: 'wait',
+                            title: "wait",
+                            value: "wait",
                           },
                           {
-                            title: 'process',
-                            value: 'process',
+                            title: "process",
+                            value: "process",
                           },
                           {
-                            title: 'finish',
-                            value: 'finish',
+                            title: "finish",
+                            value: "finish",
                           },
                           {
-                            title: 'error',
-                            value: 'error',
+                            title: "error",
+                            value: "error",
                           },
                         ],
                       },
                     },
                     propType: {
-                      type: 'oneOf',
-                      value: ['wait', 'process', 'finish', 'error'],
+                      type: "oneOf",
+                      value: ["wait", "process", "finish", "error"],
                     },
-                    defaultValue: 'wait',
+                    defaultValue: "wait",
                   },
                 ],
               },
@@ -87,7 +87,7 @@ export default {
             initialValue: () => {
               return {
                 key: `Steps${uuid()}`,
-                title: '步骤',
+                title: "步骤",
                 disabled: false,
               };
             },
@@ -97,14 +97,14 @@ export default {
       extraProps: {
         getValue(target: { node: { children: any[]; }; }) {
           const map = target.node.children.map((child) => {
-            const key = child.getPropValue('key') ? String(child.getPropValue('key')) : child.id;
+            const key = child.getPropValue("key") ? String(child.getPropValue("key")) : child.id;
             return {
               key,
-              title: child.getPropValue('title'),
-              subTitle: child.getPropValue('subTitle'),
-              description: child.getPropValue('description'),
-              disabled: child.getPropValue('disabled'),
-              status: child.getPropValue('status'),
+              title: child.getPropValue("title"),
+              subTitle: child.getPropValue("subTitle"),
+              description: child.getPropValue("description"),
+              disabled: child.getPropValue("disabled"),
+              status: child.getPropValue("status"),
             };
           });
           return map;
@@ -124,18 +124,18 @@ export default {
 
           node.children.mergeChildren(
             (child: { getPropValue: (arg0: string) => any; setPropValue: (arg0: string, arg1: any) => void; }) => {
-              const key = String(child.getPropValue('key'));
+              const key = String(child.getPropValue("key"));
               if (Object.hasOwnProperty.call(map, key)) {
                 // @ts-ignore
-                child.setPropValue('title', map[key].title);
+                child.setPropValue("title", map[key].title);
                 // @ts-ignore
-                child.setPropValue('subTitle', map[key].subTitle);
+                child.setPropValue("subTitle", map[key].subTitle);
                 // @ts-ignore
-                child.setPropValue('description', map[key].description);
+                child.setPropValue("description", map[key].description);
                 // @ts-ignore
-                child.setPropValue('disabled', map[key].disabled);
+                child.setPropValue("disabled", map[key].disabled);
                 // @ts-ignore
-                child.setPropValue('status', map[key].status);
+                child.setPropValue("status", map[key].status);
 
                 // @ts-ignore
                 delete map[key];
@@ -148,7 +148,7 @@ export default {
               for (const key in map) {
                 if (Object.hasOwnProperty.call(map, key)) {
                   items.push({
-                    componentName: 'AStepsStep',
+                    componentName: "AStepsStep",
                     // @ts-ignore
                     props: map[key],
                   });
@@ -159,10 +159,10 @@ export default {
 
             (child1: { getPropValue: (arg0: string) => any; }, child2: { getPropValue: (arg0: string) => any; }) => {
               const a = value.findIndex(
-                (item) => String(item.key) === String(child1.getPropValue('key')),
+                (item) => String(item.key) === String(child1.getPropValue("key")),
               );
               const b = value.findIndex(
-                (item) => String(item.key) === String(child2.getPropValue('key')),
+                (item) => String(item.key) === String(child2.getPropValue("key")),
               );
               return a - b;
             },
@@ -171,143 +171,143 @@ export default {
       },
     },
     {
-      name: 'class',
-      title: { label: '步骤条类名', tip: 'class|步骤条类名' },
-      propType: 'string',
+      name: "class",
+      title: { label: "步骤条类名", tip: "class|步骤条类名" },
+      propType: "string",
     },
     {
-      name: 'type',
+      name: "type",
       title: {
-        label: '类型',
-        tip: 'type|步骤条类型，有 `default` 和 `navigation` 两种',
+        label: "类型",
+        tip: "type|步骤条类型，有 `default` 和 `navigation` 两种",
       },
-      propType: { type: 'oneOf', value: ['default', 'navigation'] },
-      defaultValue: 'default',
+      propType: { type: "oneOf", value: ["default", "navigation"] },
+      defaultValue: "default",
     },
     {
-      name: 'current',
+      name: "current",
       title: {
-        label: '当前步骤',
-        tip: 'current|指定当前步骤，从 0 开始记数。在子 Step 元素中，可以通过 `status` 属性覆盖状态',
+        label: "当前步骤",
+        tip: "current|指定当前步骤，从 0 开始记数。在子 Step 元素中，可以通过 `status` 属性覆盖状态",
       },
-      propType: 'number',
+      propType: "number",
     },
     {
-      name: 'direction',
+      name: "direction",
       title: {
-        label: '步骤条方向',
-        tip: 'direction|指定步骤条方向。目前支持水平（`horizontal`）和竖直（`vertical`）两种方向',
+        label: "步骤条方向",
+        tip: "direction|指定步骤条方向。目前支持水平（`horizontal`）和竖直（`vertical`）两种方向",
       },
       propType: {
-        type: 'oneOf',
-        value: ['horizontal', 'vertical'],
+        type: "oneOf",
+        value: ["horizontal", "vertical"],
       },
     },
     {
-      name: 'labelPlacement',
+      name: "labelPlacement",
       title: {
-        label: '标签放置位置',
-        tip: 'labelPlacement|指定标签放置位置，默认水平放图标右侧，可选 `vertical` 放图标下方',
+        label: "标签放置位置",
+        tip: "labelPlacement|指定标签放置位置，默认水平放图标右侧，可选 `vertical` 放图标下方",
       },
       propType: {
-        type: 'oneOf',
-        value: ['horizontal', 'vertical'],
+        type: "oneOf",
+        value: ["horizontal", "vertical"],
       },
-      defaultValue: 'horizontal',
+      defaultValue: "horizontal",
     },
     {
-      name: 'progressDot',
+      name: "progressDot",
       title: {
-        label: '点状步骤条',
-        tip: 'progressDot|点状步骤条，可以设置为一个 func',
+        label: "点状步骤条",
+        tip: "progressDot|点状步骤条，可以设置为一个 func",
       },
-      propType: { type: 'oneOfType', value: ['bool', 'func'] },
+      propType: { type: "oneOfType", value: ["bool", "func"] },
     },
     {
-      name: 'size',
+      name: "size",
       title: {
-        label: '尺寸',
-        tip: 'size|指定大小',
+        label: "尺寸",
+        tip: "size|指定大小",
       },
       propType: {
-        type: 'oneOf',
-        value: ['default', 'small'],
+        type: "oneOf",
+        value: ["default", "small"],
       },
-      defaultValue: 'default',
+      defaultValue: "default",
     },
     {
-      name: 'status',
+      name: "status",
       title: {
-        label: '当前步骤状态',
-        tip: 'status|指定当前步骤的状态，可选 `wait` `process` `finish` `error`',
+        label: "当前步骤状态",
+        tip: "status|指定当前步骤的状态，可选 `wait` `process` `finish` `error`",
       },
       propType: {
-        type: 'oneOf',
-        value: ['wait', 'process', 'finish', 'error'],
+        type: "oneOf",
+        value: ["wait", "process", "finish", "error"],
       },
-      defaultValue: 'process',
+      defaultValue: "process",
     },
     {
-      name: 'initial',
+      name: "initial",
       title: {
-        label: '起始序号',
-        tip: 'initial|起始序号，从 0 开始记数',
+        label: "起始序号",
+        tip: "initial|起始序号，从 0 开始记数",
       },
-      propType: 'number',
+      propType: "number",
       defaultValue: 0,
     },
     {
-      name: 'onChange ',
-      title: { label: '点击切换步骤时触发', tip: 'onChange|点击切换步骤时触发' },
-      propType: 'func',
+      name: "onChange ",
+      title: { label: "点击切换步骤时触发", tip: "onChange|点击切换步骤时触发" },
+      propType: "func",
     },
   ],
   configure: {
     component: {
       isContainer: true,
-      nestingRule: { childWhitelist: ['AStepsStep'] },
+      nestingRule: { childWhitelist: ["AStepsStep"] },
     },
     supports: {
       style:true,
       events: [
         {
-          name: 'onChange',
+          name: "onChange",
           template:
-            "onChange(current,${extParams}){\n// 点击切换步骤时触发\nconsole.log('onChange ',current);}",
+            "onChange(current,${extParams}){\n// 点击切换步骤时触发\nconsole.log(\"onChange\",current);}",
         },
       ],
     }
   },
   snippets:[
     {
-      title: '步骤条',
+      title: "步骤条",
       screenshot: avatarImg,
       schema: {
-        componentName: 'ASteps',
+        componentName: "ASteps",
         props: {
           current: 1,
         },
         children: [
           {
-            componentName: 'AStepsStep',
+            componentName: "AStepsStep",
             props: {
-              title: 'Finished',
-              description: 'This is a description.',
+              title: "Finished",
+              description: "This is a description.",
             },
           },
           {
-            componentName: 'AStepsStep',
+            componentName: "AStepsStep",
             props: {
-              title: 'In Progress',
-              subTitle: 'Left 00:00:08',
-              description: 'This is a description.',
+              title: "In Progress",
+              subTitle: "Left 00:00:08",
+              description: "This is a description.",
             },
           },
           {
-            componentName: 'AStepsStep',
+            componentName: "AStepsStep",
             props: {
-              title: 'Waiting',
-              description: 'This is a description.',
+              title: "Waiting",
+              description: "This is a description.",
             },
           },
         ],

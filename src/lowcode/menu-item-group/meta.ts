@@ -1,69 +1,69 @@
-import {uuid} from '../../utils/index';
-import {itemsExtraProps} from '../menu/util';
+import {uuid} from "../../utils/index";
+import {itemsExtraProps} from "../menu/util";
 
 export default {
-  group: 'ant-vue组件',
-  componentName:'AMenuItemGroup',
-  title: '菜单组',
-  category: '基础组件',
+  group: "ant-vue组件",
+  componentName:"AMenuItemGroup",
+  title: "菜单组",
+  category: "基础组件",
   npm: {
     destructuring: true,
-    componentName: 'AMenuItemGroup'
+    componentName: "AMenuItemGroup"
   },
   props:[
     {
-      name: 'items',
-      title: {label:'菜单组项',tip:'items|菜单组项'},
+      name: "items",
+      title: {label:"菜单组项",tip:"items|菜单组项"},
       setter: {
-        componentName: 'ArraySetter',
+        componentName: "ArraySetter",
         props: {
           itemSetter: {
-            componentName: 'ObjectSetter',
+            componentName: "ObjectSetter",
             props: {
               config: {
                 items: [
                   {
-                    name: 'key',
-                    title: 'key',
-                    setter: 'StringSetter',
+                    name: "key",
+                    title: "key",
+                    setter: "StringSetter",
                     initialValue: (val: any) => val || uuid(),
                   },
                   {
-                    name: 'children',
-                    title: 'children|菜单名',
-                    setter: 'StringSetter',
+                    name: "children",
+                    title: "children|菜单名",
+                    setter: "StringSetter",
                   },
                   {
-                    name: 'category',
+                    name: "category",
                     title: {
-                      label: '类型',
-                      tip: 'category|菜单项类型',
+                      label: "类型",
+                      tip: "category|菜单项类型",
                     },
                     propType: {
-                      type: 'oneOf',
-                      value: ['AMenuItem', 'ASubMenu', 'AMenuItemGroup'],
+                      type: "oneOf",
+                      value: ["AMenuItem", "ASubMenu", "AMenuItemGroup"],
                     },
                     setter: [
                       {
-                        componentName: 'RadioGroupSetter',
+                        componentName: "RadioGroupSetter",
                         props: {
                           options: [
                             {
-                              title: 'Item',
-                              value: 'AMenuItem',
+                              title: "Item",
+                              value: "AMenuItem",
                             },
                             {
-                              title: 'SubMenu',
-                              value: 'ASubMenu',
+                              title: "SubMenu",
+                              value: "ASubMenu",
                             },
                             {
-                              title: 'ItemGroup',
-                              value: 'AMenuItemGroup',
+                              title: "ItemGroup",
+                              value: "AMenuItemGroup",
                             },
                           ],
                         },
                       },
-                      'VariableSetter',
+                      "VariableSetter",
                     ],
                   },
                 ],
@@ -72,8 +72,8 @@ export default {
             initialValue: () => {
               return {
                 key: `item-${uuid()}`,
-                category: 'AMenuItem',
-                children: '子菜单名',
+                category: "AMenuItem",
+                children: "子菜单名",
               };
             },
           },
@@ -82,20 +82,20 @@ export default {
       extraProps: itemsExtraProps,
     },
     {
-      name: 'children',
-      title: { label: '分组的菜单项', tip: 'children|分组的菜单项' },
-      propType: { type: 'oneOfType', value: ['string', 'node'] },
+      name: "children",
+      title: { label: "分组的菜单项", tip: "children|分组的菜单项" },
+      propType: { type: "oneOfType", value: ["string", "node"] },
     },
     {
-      name: 'title',
-      title: { label: '分组标题', tip: 'title|分组标题' },
-      propType: { type: 'oneOfType', value: ['string', 'node'] },
+      name: "title",
+      title: { label: "分组标题", tip: "title|分组标题" },
+      propType: { type: "oneOfType", value: ["string", "node"] },
     },
   ],
   configure: {
     component: {
       isContainer: true,
-      nestingRule: { parentWhitelist: ['AMenu', 'ASubMenu'] },
+      nestingRule: { parentWhitelist: ["AMenu", "ASubMenu"] },
     },
     supports: {
       style:true
